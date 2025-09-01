@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfcb7a2id3p3n"]
+
+[ext_resource type="AudioStream" uid="uid://crs8s2u8fiuir" path="res://Assets/Audio/731791__victor_natas__mission-to-planet-volx.mp3" id="1_fghhr"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_fghhr")
+autoplay = true
+bus = &"Music"
