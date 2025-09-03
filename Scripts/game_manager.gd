@@ -24,6 +24,9 @@ func decrease_health():
 		timer.start()
 		Engine.time_scale = 0.3
 
+func _on_timer_timeout() -> void:
+	get_tree().reload_current_scene()
+	Engine.time_scale = 1
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	get_tree().change_scene_to_file("res://Scenes/map/underWorld.tscn")

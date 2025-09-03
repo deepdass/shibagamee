@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://dly6jv8oiogek"]
+[gd_scene load_steps=34 format=4 uid="uid://dly6jv8oiogek"]
 
 [ext_resource type="Script" uid="uid://b8tcib7cuxmbg" path="res://Scripts/game_manager.gd" id="1_c00dn"]
 [ext_resource type="MeshLibrary" uid="uid://crol18xh2ltij" path="res://Assets/HalloweenBits/Assets/upperworldtiles.tres" id="5_16mms"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://deuso4xcfgy4i" path="res://Assets/HalloweenBits/Assets/gltf/coffin_decorated.gltf" id="16_oakbx"]
 [ext_resource type="Texture2D" uid="uid://dnbldkcba3nhk" path="res://Assets/noise.tres" id="16_s6n8h"]
 [ext_resource type="Script" uid="uid://d07pg1sb8lt1m" path="res://Scripts/edge_detection_compositor.gd" id="17_t7lc4"]
+[ext_resource type="VoxelGIData" uid="uid://ccne5m20fj2j" path="res://Scenes/overWorld.VoxelGI_data.res" id="20_sjwbd"]
 [ext_resource type="Texture2D" uid="uid://dwnmocndg7gk7" path="res://Assets/UI/Heart.png" id="21_ps8ey"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7xp1n"]
@@ -56,7 +57,7 @@ ssil_sharpness = 0.43
 ssil_normal_rejection = 0.9
 sdfgi_read_sky_light = false
 
-[sub_resource type="CompositorEffect" id="CompositorEffect_fkbhw"]
+[sub_resource type="CompositorEffect" id="CompositorEffect_sjwbd"]
 resource_local_to_scene = false
 resource_name = ""
 enabled = true
@@ -66,8 +67,8 @@ needs_normal_roughness = true
 script = ExtResource("17_t7lc4")
 metadata/_custom_type_script = "uid://d07pg1sb8lt1m"
 
-[sub_resource type="Compositor" id="Compositor_pphgw"]
-compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_fkbhw")])
+[sub_resource type="Compositor" id="Compositor_mh7yw"]
+compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_sjwbd")])
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hh47q"]
 render_priority = 0
@@ -119,6 +120,7 @@ script = ExtResource("1_c00dn")
 hearts = [NodePath("../UI/Panel/Heart1"), NodePath("../UI/Panel/Heart2"), NodePath("../UI/Panel/Heart3")]
 
 [node name="Timer" type="Timer" parent="GameManager"]
+wait_time = 0.5
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -169,7 +171,7 @@ stretch_shrink = 3
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(640, 360)
+size = Vector2i(660, 360)
 render_target_update_mode = 4
 
 [node name="myy" type="Node" parent="SubViewportContainer/SubViewport"]
@@ -312,8 +314,9 @@ shape = SubResource("BoxShape3D_h2kxg")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(-0.101372, 0.707474, 0.699432, 0.00664804, -0.702556, 0.711598, 0.994826, 0.076786, 0.0665162, 5.85244, 6.7486, 0)
-light_color = Color(1, 0.948, 0.61, 1)
-light_energy = 2.0
+light_color = Color(1, 0.979, 0.86, 1)
+light_energy = 1.5
+light_bake_mode = 1
 shadow_enabled = true
 shadow_bias = 0.5
 shadow_blur = 0.1
@@ -321,7 +324,7 @@ directional_shadow_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
 environment = SubResource("Environment_n4gow")
-compositor = SubResource("Compositor_pphgw")
+compositor = SubResource("Compositor_mh7yw")
 
 [node name="meshes" type="Node3D" parent="SubViewportContainer/SubViewport"]
 visible = false
@@ -360,6 +363,11 @@ transform = Transform3D(-1.69018, -0.0567408, -0.344499, -0.325707, -0.357119, 1
 mesh = SubResource("ArrayMesh_ng7s3")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_hh47q")
+
+[node name="VoxelGI" type="VoxelGI" parent="SubViewportContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.10825, 5.19086, -6.74261)
+size = Vector3(46.9776, 12.5194, 58.3453)
+data = ExtResource("20_sjwbd")
 
 [connection signal="body_entered" from="SubViewportContainer/SubViewport/myy/Area3D" to="GameManager" method="_on_area_3d_body_entered"]
 

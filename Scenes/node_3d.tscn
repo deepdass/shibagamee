@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://ylub7krgwbu2"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_bi5fs"]
+rayleigh_coefficient = 1.29
+ground_color = Color(0.313219, 0.479875, 0.8463, 1)
+
+[sub_resource type="Sky" id="Sky_kypv1"]
+sky_material = SubResource("PhysicalSkyMaterial_bi5fs")
+
+[sub_resource type="Environment" id="Environment_okq71"]
+background_mode = 1
+background_color = Color(0.147604, 0.21763, 0.326386, 1)
+sky = SubResource("Sky_kypv1")
+ambient_light_source = 2
+ambient_light_color = Color(0.415686, 0.537255, 0.72549, 1)
+ambient_light_energy = 1.5
+ssao_radius = 1.41
+ssao_intensity = 3.39
+ssao_detail = 2.0
+ssao_sharpness = 0.26
+ssil_radius = 3.65
+ssil_intensity = 4.0
+ssil_sharpness = 0.43
+ssil_normal_rejection = 0.9
+sdfgi_read_sky_light = false
+
+[node name="Node3D" type="Node3D"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1020.0
+offset_bottom = -540.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 3
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(320, 180)
+render_target_update_mode = 4
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(-0.101372, 0.707474, 0.699432, 0.00664804, -0.702556, 0.711598, 0.994826, 0.076786, 0.0665162, 5.85244, 6.7486, 0)
+light_color = Color(0.949333, 1, 0.92, 1)
+light_bake_mode = 1
+shadow_enabled = true
+shadow_bias = 0.5
+shadow_blur = 0.1
+directional_shadow_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
+environment = SubResource("Environment_okq71")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)

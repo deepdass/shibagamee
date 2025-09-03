@@ -1,0 +1,44 @@
+extends CharacterBody3D
+
+@onready var game_manager: Node = %GameManager
+
+const  SPEED = 3.0
+const ATTACK_RANGE = 1
+const KnockbackMul = 25
+var state_machine
+@onready var player: CharacterBody3D = %Player
+@onready var animation_tree: AnimationTree = $Skeleton_Minion/AnimationTree
+@onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	state_machine = animation_tree.get("parameters/playback")
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	velocity = Vector3.ZERO
+	
+	match state_machine.get_current_node():
+		"Walking_A":
+			navigation_agent_3d.set_target_position(player.global_transform.origin)
+			var next_pt = navigation_agent_3d.get_next_path_position()
+			velocity = (next_pt - global_transform.origin).normalized() * SPEED
+			
+			look_at(Vector3(global_position.x + velocity.x, global_position.y, global_position.z + velocity.z), Vector3.UP)
+		"1H_Melee_Attack_Stab":
+			look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z), Vector3.UP)
+	
+	animation_tree.set("parameters/conditions/attack", _target_in_range())	
+	animation_tree.set("parameters/conditions/run", !_target_in_range())
+	
+	move_and_slide()
+
+func _target_in_range():
+	return global_position.distance_to(player.global_position) < ATTACK_RANGE
+	
+func _hitfinish():
+	if global_position.distance_to(player.global_position) < ATTACK_RANGE + 0.5 :
+		var dir = global_position.direction_to(player.global_position)
+		game_manager.decrease_health()
+		player.velocity += Vector3(dir.x , dir.y * 0.1, dir.z ) * KnockbackMul
+		
