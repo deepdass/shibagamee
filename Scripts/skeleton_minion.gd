@@ -1,17 +1,23 @@
 extends CharacterBody3D
 
-@onready var game_manager: Node = %GameManager
+var player = null
+var game_manager = null
+@onready var game_manager_path := "/root/World/GameManager"
+@onready var player_path := "/root/World/SubViewportContainer/SubViewport/all/NavigationRegion3D/per/Player"
 
 const  SPEED = 3.0
 const ATTACK_RANGE = 1
 const KnockbackMul = 25
 var state_machine
-@onready var player: CharacterBody3D = %Player
+
 @onready var animation_tree: AnimationTree = $Skeleton_Minion/AnimationTree
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	player = get_node(player_path)
+	game_manager = get_node(game_manager_path)
+	
 	state_machine = animation_tree.get("parameters/playback")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,6 +30,7 @@ func _process(delta: float) -> void:
 			var next_pt = navigation_agent_3d.get_next_path_position()
 			velocity = (next_pt - global_transform.origin).normalized() * SPEED
 			
+			rotation.y = lerp_angle(rotation.y, atan2(-velocity.x, -velocity.z), delta * 10)
 			look_at(Vector3(global_position.x + velocity.x, global_position.y, global_position.z + velocity.z), Vector3.UP)
 		"1H_Melee_Attack_Stab":
 			look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z), Vector3.UP)
