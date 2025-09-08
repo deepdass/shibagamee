@@ -35,7 +35,8 @@ import_script/path=""
 _subresources={
 "nodes": {
 "PATH:post_lantern/post_lantern_lantern": {
-"generate/physics": true
+"generate/physics": true,
+"physics/layer": 4
 }
 }
 }

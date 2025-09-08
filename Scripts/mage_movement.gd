@@ -13,12 +13,17 @@ const RUNMULYIPLIER = 1.5
 @onready var stairsahead: RayCast3D = $stairsahead
 @onready var stairsbelow: RayCast3D = $stairsbelow
 
+@onready var wep_manager: Node = $visuals/Mage2/WEP_manager
+@onready var dash_timer: Timer = $"dash timer"
 
+var dashing = false
 
 var walking = false
 var running = false
 
-	
+var look_at_me : Vector3
+
+
 func _ready() -> void:
 	pass
 	
@@ -41,7 +46,15 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("left", "right", "forward", "backward")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		if Input.is_action_pressed("sprint"):
+		#var dot_product := direction.dot(look_at_me.normalized())
+		#print(dot_product)
+		if Input.is_action_just_pressed("dash") and !dashing:
+			dashing = true
+			velocity = direction * SPEED * 17 + velocity
+			velocity.y = 0
+			dash_timer.start()
+			
+		elif Input.is_action_pressed("sprint"):
 			walking = false
 			velocity.x = direction.x * SPEED * RUNMULYIPLIER
 			velocity.z = direction.z * SPEED * RUNMULYIPLIER
@@ -60,8 +73,10 @@ func _physics_process(delta: float) -> void:
 		
 		visuals.look_at(direction + position)
 		
+		
 				
 	else:
+		visuals.look_at(look_at_me, Vector3.UP)
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 		
@@ -71,6 +86,23 @@ func _physics_process(delta: float) -> void:
 			
 	move_and_slide()
 	
+	##pewpew
+	if Input.is_action_pressed("attack"):
+		visuals.look_at(look_at_me, Vector3.UP)
+		wep_manager.shoot()
+		animation_player.play("Spellcasting")
+	
 	##
 	camera_rig.position = lerp(camera_rig.position,position,0.13)
 	##
+	
+#pew#pew
+
+func _rotate(where):
+	look_at_me = where
+		
+		
+
+
+func _on_dash_timer_timeout() -> void:
+	dashing = false

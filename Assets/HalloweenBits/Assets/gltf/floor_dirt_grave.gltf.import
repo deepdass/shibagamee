@@ -35,7 +35,8 @@ import_script/path=""
 _subresources={
 "nodes": {
 "PATH:floor_dirt_grave": {
-"generate/physics": true
+"generate/physics": true,
+"physics/layer": 4
 }
 }
 }

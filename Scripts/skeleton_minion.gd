@@ -4,6 +4,8 @@ var player = null
 var game_manager = null
 @onready var game_manager_path := "/root/World/GameManager"
 @onready var player_path := "/root/World/SubViewportContainer/SubViewport/all/NavigationRegion3D/per/Player"
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+
 
 const  SPEED = 3.0
 const ATTACK_RANGE = 1
@@ -12,6 +14,7 @@ var state_machine
 
 @onready var animation_tree: AnimationTree = $Skeleton_Minion/AnimationTree
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
+@onready var timer: Timer = $Timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -49,3 +52,12 @@ func _hitfinish():
 		game_manager.decrease_health()
 		player.velocity += Vector3(dir.x , dir.y * 0.1, dir.z ) * KnockbackMul
 		
+func taka_damage():
+	animation_tree.set("parameters/conditions/death",true)
+	if !audio_stream_player.playing:
+		audio_stream_player.play()
+	timer.start()
+
+
+func _on_timer_timeout() -> void:
+	animation_tree.set("parameters/conditions/death",false)

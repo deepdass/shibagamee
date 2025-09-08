@@ -1,21 +1,20 @@
-[gd_scene load_steps=28 format=3 uid="uid://dly6jv8oiogek"]
+[gd_scene load_steps=25 format=3 uid="uid://dly6jv8oiogek"]
 
 [ext_resource type="Script" uid="uid://b8tcib7cuxmbg" path="res://Scripts/game_manager.gd" id="1_c00dn"]
 [ext_resource type="MeshLibrary" uid="uid://crol18xh2ltij" path="res://Assets/HalloweenBits/Assets/upperworldtiles.tres" id="5_16mms"]
-[ext_resource type="PackedScene" uid="uid://br483nydnq3u5" path="res://Scenes/Door.tscn" id="5_oakbx"]
+[ext_resource type="PackedScene" uid="uid://br483nydnq3u5" path="res://Scenes/props/Door.tscn" id="5_oakbx"]
 [ext_resource type="PackedScene" uid="uid://buu6tgndshc3j" path="res://Assets/HalloweenBits/Assets/gltf/tree_pine_orange_large.gltf" id="6_0odvr"]
 [ext_resource type="MeshLibrary" uid="uid://b14igan24nl53" path="res://Assets/HalloweenBits/Assets/upperworldtiles1.tres" id="6_hrm0u"]
 [ext_resource type="PackedScene" uid="uid://bfi56748suwnn" path="res://Assets/HalloweenBits/Assets/gltf/tree_pine_orange_small.gltf" id="7_qheq5"]
 [ext_resource type="PackedScene" uid="uid://bi32f8c7ukjt0" path="res://Assets/HalloweenBits/Assets/gltf/tree_pine_orange_medium.gltf" id="8_qheq5"]
 [ext_resource type="PackedScene" uid="uid://clse47yj0wnx" path="res://Assets/HalloweenBits/Assets/gltf/tree_pine_yellow_small.gltf" id="9_8rthi"]
 [ext_resource type="PackedScene" uid="uid://drh2ltlqhskuq" path="res://Assets/HalloweenBits/Assets/gltf/bench_decorated.gltf" id="10_tnj4i"]
-[ext_resource type="PackedScene" uid="uid://blbh1xbrydvng" path="res://Scenes/mage.tscn" id="11_3fbg6"]
+[ext_resource type="PackedScene" uid="uid://blbh1xbrydvng" path="res://Scenes/characters/players/mage.tscn" id="11_3fbg6"]
 [ext_resource type="PackedScene" uid="uid://csqo5mskcofhd" path="res://Assets/HalloweenBits/Assets/gltf/bench.gltf" id="11_cw0pf"]
 [ext_resource type="PackedScene" uid="uid://bwlj8p2kfegk2" path="res://Assets/HalloweenBits/Assets/gltf/floor_dirt_grave.gltf" id="12_cw0pf"]
 [ext_resource type="PackedScene" uid="uid://bgk5rnf8ol2gs" path="res://Assets/HalloweenBits/Assets/gltf/post_lantern.gltf" id="15_h2kxg"]
 [ext_resource type="PackedScene" uid="uid://bwjg2tu6gct73" path="res://Assets/HalloweenBits/Assets/gltf/tree_dead_large_decorated.gltf" id="16_mh7yw"]
 [ext_resource type="PackedScene" uid="uid://deuso4xcfgy4i" path="res://Assets/HalloweenBits/Assets/gltf/coffin_decorated.gltf" id="16_oakbx"]
-[ext_resource type="Script" uid="uid://d07pg1sb8lt1m" path="res://Scripts/edge_detection_compositor.gd" id="17_t7lc4"]
 [ext_resource type="VoxelGIData" uid="uid://ccne5m20fj2j" path="res://Scenes/overWorld.VoxelGI_data.res" id="20_sjwbd"]
 [ext_resource type="Texture2D" uid="uid://dwnmocndg7gk7" path="res://Assets/UI/Heart.png" id="21_ps8ey"]
 
@@ -35,13 +34,13 @@ size = Vector3(0.390198, 3.79114, 0.29837)
 rayleigh_coefficient = 1.29
 ground_color = Color(0.313219, 0.479875, 0.8463, 1)
 
-[sub_resource type="Sky" id="Sky_oakbx"]
+[sub_resource type="Sky" id="Sky_cw0pf"]
 sky_material = SubResource("PhysicalSkyMaterial_idx2o")
 
 [sub_resource type="Environment" id="Environment_n4gow"]
 background_mode = 1
 background_color = Color(0.415686, 0.537255, 0.72549, 1)
-sky = SubResource("Sky_oakbx")
+sky = SubResource("Sky_cw0pf")
 ambient_light_source = 2
 ambient_light_color = Color(0.415686, 0.537255, 0.72549, 1)
 ambient_light_energy = 1.5
@@ -54,19 +53,6 @@ ssil_intensity = 4.0
 ssil_sharpness = 0.43
 ssil_normal_rejection = 0.9
 sdfgi_read_sky_light = false
-
-[sub_resource type="CompositorEffect" id="CompositorEffect_sjwbd"]
-resource_local_to_scene = false
-resource_name = ""
-enabled = true
-effect_callback_type = 4
-needs_motion_vectors = false
-needs_normal_roughness = true
-script = ExtResource("17_t7lc4")
-metadata/_custom_type_script = "uid://d07pg1sb8lt1m"
-
-[sub_resource type="Compositor" id="Compositor_mh7yw"]
-compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_sjwbd")])
 
 [node name="World" type="Node3D"]
 
@@ -145,6 +131,7 @@ shape = SubResource("BoxShape3D_7xp1n")
 [node name="per" type="Node" parent="SubViewportContainer/SubViewport/myy"]
 
 [node name="Player" parent="SubViewportContainer/SubViewport/myy/per" instance=ExtResource("11_3fbg6")]
+unique_name_in_owner = true
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 3, 1, 7)
 
 [node name="camera_rig" type="Node3D" parent="SubViewportContainer/SubViewport/myy/per"]
@@ -152,6 +139,7 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 7)
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/myy/per/camera_rig"]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.766044, 0.642788, 0, -0.642788, 0.766044, 0, 10.5755, 10.1963)
 current = true
 size = 15.0
@@ -175,6 +163,7 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="walls" type="GridMap" parent="SubViewportContainer/SubViewport/myy/env"]
 mesh_library = ExtResource("5_16mms")
+collision_layer = 2
 data = {
 "cells": PackedInt32Array(3, 0, 655376, 65535, 0, 655376, 65533, 0, 655376, 65532, 65535, 1441808, 6, 65533, 1441808, 65532, 65533, 1441809, 65532, 65531, 1441808, 65532, 65529, 1441808, 65532, 65527, 1441808, 65532, 65525, 1441808, 65532, 65523, 1441808, 65533, 65522, 655376, 3, 65522, 655376, 1, 65522, 655376, 6, 65523, 1048593, 5, 65522, 16, 6, 65531, 1441808, 6, 65529, 1441808, 6, 65525, 1441808, 6, 65527, 1441808, 65535, 65522, 17, 5, 0, 655377, 6, 65535, 1441808)
 }
@@ -185,6 +174,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 1)
 
 [node name="props" type="GridMap" parent="SubViewportContainer/SubViewport/myy/env"]
 mesh_library = ExtResource("6_hrm0u")
+collision_layer = 4
 data = {
 "cells": PackedInt32Array(1, 65526, 15, 5, 65531, 1441820, 65533, 65529, 28, 65533, 65531, 1048606, 65533, 65533, 1048607, 65534, 65534, 1048622, 65534, 65533, 1048616, 65533, 65524, 29)
 }
@@ -273,8 +263,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.736984, 1, -15)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(-0.101372, 0.707474, 0.699432, 0.00664804, -0.702556, 0.711598, 0.994826, 0.076786, 0.0665162, 5.85244, 6.7486, 0)
-light_color = Color(1, 0.9895, 0.93, 1)
-light_energy = 1.5
+light_color = Color(0.74, 0.68228, 0.3552, 1)
+light_energy = 1.1
 light_bake_mode = 1
 shadow_enabled = true
 shadow_bias = 0.5
@@ -283,7 +273,6 @@ directional_shadow_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
 environment = SubResource("Environment_n4gow")
-compositor = SubResource("Compositor_mh7yw")
 
 [node name="VoxelGI" type="VoxelGI" parent="SubViewportContainer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.10825, 5.19086, -6.74261)
