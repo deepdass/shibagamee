@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b4fabmrj2augd" path="res://Assets/Adventurers/Characters/gltf/Rogue_Hooded.glb" id="8_cgudk"]
 [ext_resource type="PackedScene" uid="uid://rj7ek4pdhv3i" path="res://Assets/Adventurers/Assets/gltf/mug_full.gltf" id="9_ltixk"]
 [ext_resource type="PackedScene" uid="uid://crp537eg147sg" path="res://Assets/Adventurers/Assets/gltf/arrow.gltf" id="10_x3ocf"]
-[ext_resource type="PackedScene" uid="uid://blbh1xbrydvng" path="res://Scenes/characters/players/mage.tscn" id="11_kseec"]
+[ext_resource type="PackedScene" uid="uid://blbh1xbrydvng" path="res://Scenes/characters/players/mage1.tscn" id="11_kseec"]
 [ext_resource type="PackedScene" uid="uid://do31j1o0fmq83" path="res://Assets/3d scene.glb" id="12_ns34p"]
 [ext_resource type="Shader" uid="uid://16w5u65w2p1m" path="res://Shaders/cel_shading.gdshader" id="13_svbyd"]
 [ext_resource type="PackedScene" uid="uid://ce4ri2215s6ua" path="res://Assets/cloud.glb" id="14_n58n2"]

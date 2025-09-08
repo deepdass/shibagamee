@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bjd6nnkoo61vr" path="res://Scripts/dungeon_logic.gd" id="1_hmakl"]
 [ext_resource type="Texture2D" uid="uid://dwnmocndg7gk7" path="res://Assets/UI/Heart.png" id="2_hmakl"]
 [ext_resource type="MeshLibrary" uid="uid://61gf5acs8qic" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib1.tres" id="4_cc7uj"]
-[ext_resource type="PackedScene" uid="uid://blbh1xbrydvng" path="res://Scenes/characters/players/mage.tscn" id="4_mu2mn"]
+[ext_resource type="PackedScene" uid="uid://c7illv6kf10b2" path="res://Scenes/characters/players/character_base.tscn" id="5_2ulnn"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_idx2o"]
 rayleigh_coefficient = 1.29
@@ -124,10 +124,9 @@ navigation_mesh = SubResource("NavigationMesh_hmakl")
 
 [node name="per" type="Node" parent="SubViewportContainer/SubViewport/all/NavigationRegion3D"]
 
-[node name="Player" parent="SubViewportContainer/SubViewport/all/NavigationRegion3D/per" instance=ExtResource("4_mu2mn")]
+[node name="Player" parent="SubViewportContainer/SubViewport/all/NavigationRegion3D/per" instance=ExtResource("5_2ulnn")]
 unique_name_in_owner = true
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 3, 1, 18)
-safe_margin = 0.1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 18)
 
 [node name="camera_rig" type="Node3D" parent="SubViewportContainer/SubViewport/all/NavigationRegion3D/per"]
 unique_name_in_owner = true

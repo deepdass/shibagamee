@@ -10,9 +10,6 @@ const RUNMULYIPLIER = 1.5
 @onready var camera_rig: Node3D = %camera_rig
 @onready var game_manager: Node = %GameManager  ## game_manager.decrease_health()
 
-@onready var stairsahead: RayCast3D = $stairsahead
-@onready var stairsbelow: RayCast3D = $stairsbelow
-
 @onready var wep_manager: Node = $visuals/Mage2/WEP_manager
 @onready var dash_timer: Timer = $"dash timer"
 
