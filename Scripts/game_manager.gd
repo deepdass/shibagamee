@@ -32,8 +32,10 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("zoomIN"):
 		camera_3d.position = camera_3d.position.move_toward(cam_finalpt.position + Vector3(0,4,4), delta * 25)
+		camera_3d.position = camera_3d.position.move_toward(cam_finalpt.position + Vector3(0,4,4) - Vector3(0,0.01,0.01), delta * 25)
 	if Input.is_action_just_pressed("zoomOUT"):
 		camera_3d.position = camera_3d.position.move_toward(cam_initailpt.position, delta * 25)
+		camera_3d.position = camera_3d.position.move_toward(cam_initailpt.position + Vector3(0,0.01,0.01), delta * 25)
 	##
 	
 	

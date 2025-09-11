@@ -3,7 +3,7 @@ extends CharacterBody3D
 var player = null
 var game_manager = null
 @onready var game_manager_path := "/root/World/GameManager"
-@onready var player_path := "/root/World/SubViewportContainer/SubViewport/all/NavigationRegion3D/per/Player"
+@onready var player_path := "/root/World/SubViewportContainer/SubViewport/myy/per/Player"
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 

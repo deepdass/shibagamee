@@ -1,8 +1,8 @@
 extends Node
 
-@onready var spwans: Node3D = $"../SubViewportContainer/SubViewport/all/spwans"
-@onready var navigation_region_3d: NavigationRegion3D = $"../SubViewportContainer/SubViewport/all/NavigationRegion3D"
-@onready var collision_shape_3d_2: CollisionShape3D = $"../SubViewportContainer/SubViewport/all/door/CollisionShape3D2"
+@onready var spwans: Node3D = $"../SubViewportContainer/SubViewport/myy/spwans"
+@onready var navigation_region_3d: NavigationRegion3D = $"../SubViewportContainer/SubViewport/myy/NavigationRegion3D"
+@onready var collision_shape_3d_2: CollisionShape3D = $"../SubViewportContainer/SubViewport/myy/door/CollisionShape3D2"
 @onready var player: CharacterBody3D = %Player
 
 var skeleton_minion = load("res://Scenes/characters/enemy/skeleton_minion.tscn")

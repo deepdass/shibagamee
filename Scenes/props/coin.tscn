@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6td1ktk5mvgv"]
+
+[ext_resource type="ArrayMesh" uid="uid://bqg6u3pla5aoc" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/obj/coin.obj" id="1_p63sq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uuekt"]
+size = Vector3(0.319798, 0.125916, 0.31781)
+
+[node name="coin" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 7
+mass = 0.1
+
+[node name="Coin" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_p63sq")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00194359, -0.000761747, 9.15527e-05)
+shape = SubResource("BoxShape3D_uuekt")
