@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var animation_player: AnimationPlayer = $CharacterMesh/AnimationPlayer
+@onready var animation_tree: AnimationTree = $CharacterMesh/AnimationTree
 
 func CB_setup():
-		return animation_player
+		return animation_tree

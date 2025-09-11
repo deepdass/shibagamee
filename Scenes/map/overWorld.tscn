@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dly6jv8oiogek"]
+[gd_scene load_steps=25 format=3 uid="uid://dly6jv8oiogek"]
 
 [ext_resource type="Script" uid="uid://b8tcib7cuxmbg" path="res://Scripts/game_manager.gd" id="1_c00dn"]
 [ext_resource type="MeshLibrary" uid="uid://crol18xh2ltij" path="res://Assets/HalloweenBits/Assets/upperworldtiles.tres" id="5_16mms"]
@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://deuso4xcfgy4i" path="res://Assets/HalloweenBits/Assets/gltf/coffin_decorated.gltf" id="16_oakbx"]
 [ext_resource type="PackedScene" uid="uid://c7illv6kf10b2" path="res://Scenes/characters/players/character_base.tscn" id="17_cw0pf"]
 [ext_resource type="Texture2D" uid="uid://dwnmocndg7gk7" path="res://Assets/UI/Heart.png" id="21_ps8ey"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_tnj4i"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7xp1n"]
 size = Vector3(1.58618, 2.54568, 1.125)
@@ -61,7 +63,13 @@ script = ExtResource("1_c00dn")
 hearts = [NodePath("../UI/Panel/Heart1"), NodePath("../UI/Panel/Heart2"), NodePath("../UI/Panel/Heart3")]
 
 [node name="Timer" type="Timer" parent="GameManager"]
-wait_time = 0.5
+wait_time = 0.3
+
+[node name="killzone" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.81879, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="killzone"]
+shape = SubResource("WorldBoundaryShape3D_tnj4i")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -143,6 +151,12 @@ transform = Transform3D(1, 0, 0, 0, 0.766044, 0.642788, 0, -0.642788, 0.766044, 
 current = true
 size = 15.0
 far = 50.0
+
+[node name="cam_Initailpt" type="Node3D" parent="SubViewportContainer/SubViewport/myy/per/camera_rig"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.5755, 10.1963)
+
+[node name="cam_finalpt" type="Node3D" parent="SubViewportContainer/SubViewport/myy/per/camera_rig"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="env" type="Node" parent="SubViewportContainer/SubViewport/myy"]
 
@@ -273,4 +287,6 @@ directional_shadow_mode = 1
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
 environment = SubResource("Environment_n4gow")
 
+[connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
+[connection signal="body_entered" from="killzone" to="GameManager" method="_on_killzone_body_entered"]
 [connection signal="body_entered" from="SubViewportContainer/SubViewport/myy/Area3D" to="GameManager" method="_on_area_3d_body_entered"]

@@ -21,7 +21,7 @@ shape = SubResource("CapsuleShape3D_cvnsp")
 [node name="visuals" type="Node3D" parent="."]
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, -4.37114e-08, 4.37114e-08, 4.37114e-08, -4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, 1.01089e-08, 0.25041, -0.231265)
+transform = Transform3D(1, -4.37114e-08, 4.37114e-08, 4.37114e-08, -4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, 2.56967e-09, 0.422887, -0.231265)
 shape = SubResource("SeparationRayShape3D_0xdm5")
 
 [node name="dash timer" type="Timer" parent="."]

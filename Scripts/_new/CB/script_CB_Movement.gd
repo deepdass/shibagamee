@@ -5,11 +5,10 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 3.5
 const RUNMULYIPLIER = 1.5
 
-@onready var character_mesh = preload("res://Scenes/characters/players/mage.tscn")
+@export var character_mesh = preload("res://Scenes/characters/players/mage.tscn")
 
-@onready var animation_player: AnimationPlayer = null
+@onready var animation_tree: AnimationTree = null
 @onready var visuals: Node3D = $visuals
-@onready var camera_rig: Node3D = %camera_rig
 @onready var game_manager: Node = %GameManager  ## game_manager.decrease_health()
 
 @onready var wep_manager: Node = null
@@ -27,7 +26,8 @@ func _ready() -> void:
 	var character_mesh_inst = character_mesh.instantiate()
 	visuals.add_child(character_mesh_inst)
 	character_mesh_inst.global_transform = visuals.global_transform
-	animation_player = character_mesh_inst.CB_setup()
+	animation_tree = character_mesh_inst.CB_setup()
+	animation_tree.advance_expression_base_node = self.get_path()
 	wep_manager = character_mesh_inst.get_node("WEP_manager")
 	
 func _physics_process(delta: float) -> void:
@@ -41,7 +41,6 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 		walking = false
 		running = false
-		animation_player.play("Jump_Full_Short")
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -62,16 +61,15 @@ func _physics_process(delta: float) -> void:
 			velocity.z = direction.z * SPEED * RUNMULYIPLIER
 			if !running:
 				running = true
-				const RUN_ANIM: Array[String] = ["Running_A"]
-				animation_player.play(RUN_ANIM[0])
+				
 		else:
 			running = false
 			velocity.x = direction.x * SPEED
 			velocity.z = direction.z * SPEED
 			if !walking:
 				walking = true
-				const WALK_ANIM: Array[String] = ["Walking_A","Walking_B","Walking_C"]
-				animation_player.play(WALK_ANIM[randi_range(0,2)])
+				#const WALK_ANIM: Array[String] = ["Walking_A","Walking_B","Walking_C"]
+				#animation_player.play(WALK_ANIM[randi_range(0,2)])
 		
 		visuals.look_at(direction + position)
 		
@@ -84,7 +82,6 @@ func _physics_process(delta: float) -> void:
 		
 		walking = false
 		running = false
-		animation_player.play("Idle")
 			
 	move_and_slide()
 	
@@ -92,18 +89,12 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("attack"):
 		visuals.look_at(look_at_me, Vector3.UP)
 		wep_manager.shoot()
-		animation_player.play("Spellcasting")
-	
-	##
-	camera_rig.position = lerp(camera_rig.position,position,0.13)
-	##
-	
-#pew#pew
+		#animation_player.play("Spellcasting")
+
 
 func _rotate(where):
 	look_at_me = where
-		
-		
+
 
 func _on_dash_timer_timeout() -> void:
 	dashing = false
