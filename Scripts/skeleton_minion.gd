@@ -2,9 +2,19 @@ extends CharacterBody3D
 
 var player = null
 var game_manager = null
+var subViewport = null
 @onready var game_manager_path := "/root/World/GameManager"
-@onready var player_path := "/root/World/SubViewportContainer/SubViewport/myy/per/Player"
+@onready var player_path := "/root/World/SubViewportContainer/SubViewport/myy/NavigationRegion3D/per/Player"
+@onready var sub_viewport_path := "/root/World/SubViewportContainer/SubViewport"
+
+@onready var skeleton_minion_eyes: MeshInstance3D = $Skeleton_Minion/Rig/Skeleton3D/Skeleton_Minion_Eyes
+@onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
+
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+
+var health : int = 3
+@onready var damagepopup: Node3D = $idknode
+
 
 
 const  SPEED = 3.0
@@ -18,14 +28,20 @@ var state_machine
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	timer.wait_time = animation_tree.get_animation("Death_C_Skeletons").length + 0.3
+	
 	player = get_node(player_path)
 	game_manager = get_node(game_manager_path)
+	subViewport = get_node(sub_viewport_path)
 	
 	state_machine = animation_tree.get("parameters/playback")
+	animation_tree.set("parameters/conditions/Resurrect",true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	velocity = Vector3.ZERO
+	damagepopup.look_at(subViewport.get_camera_3d().global_position)
 	
 	match state_machine.get_current_node():
 		"Walking_A":
@@ -53,11 +69,21 @@ func _hitfinish():
 		player.velocity += Vector3(dir.x , dir.y * 0.1, dir.z ) * KnockbackMul
 		
 func taka_damage():
-	animation_tree.set("parameters/conditions/death",true)
-	if !audio_stream_player.playing:
-		audio_stream_player.play()
+	health -= 1
+	health = clamp(health,0 , 5)
+	collision_shape_3d.disabled = true
+	animation_tree.set("parameters/conditions/fall",true)
+	audio_stream_player.play()
+	damagepopup.visible = true
+	if health == 0:
+		collision_shape_3d.disabled = true
+		skeleton_minion_eyes.visible = false
+		animation_tree.set("parameters/conditions/Resurrect",false)
 	timer.start()
 
 
 func _on_timer_timeout() -> void:
-	animation_tree.set("parameters/conditions/death",false)
+	if health != 0:
+		collision_shape_3d.disabled = false
+		animation_tree.set("parameters/conditions/fall",false)
+	damagepopup.visible = false

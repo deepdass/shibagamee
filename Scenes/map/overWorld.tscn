@@ -125,56 +125,58 @@ render_target_update_mode = 4
 
 [node name="myy" type="Node" parent="SubViewportContainer/SubViewport"]
 
-[node name="Label3D" type="Label3D" parent="SubViewportContainer/SubViewport/myy"]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="SubViewportContainer/SubViewport/myy"]
+
+[node name="Label3D" type="Label3D" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D"]
 transform = Transform3D(3, 0, 0, 0, 2.12132, 2.12132, 0, -2.12132, 2.12132, 8.54325, 3.21722, 6.73366)
 text = "Head inside the crypt"
 
-[node name="Area3D" type="Area3D" parent="SubViewportContainer/SubViewport/myy"]
+[node name="Area3D" type="Area3D" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/myy/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0036, 2.71126, -16.2273)
 shape = SubResource("BoxShape3D_7xp1n")
 
-[node name="per" type="Node" parent="SubViewportContainer/SubViewport/myy"]
+[node name="per" type="Node" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D"]
 
-[node name="Player" parent="SubViewportContainer/SubViewport/myy/per" instance=ExtResource("17_cw0pf")]
+[node name="Player" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/per" instance=ExtResource("17_cw0pf")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 3, 1, 7)
 
-[node name="camera_rig" type="Node3D" parent="SubViewportContainer/SubViewport/myy/per"]
+[node name="camera_rig" type="Node3D" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/per"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 7)
 
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/myy/per/camera_rig"]
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/per/camera_rig"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.766044, 0.642788, 0, -0.642788, 0.766044, 0, 10.5755, 10.1963)
 current = true
 size = 15.0
 far = 50.0
 
-[node name="cam_Initailpt" type="Node3D" parent="SubViewportContainer/SubViewport/myy/per/camera_rig"]
+[node name="cam_Initailpt" type="Node3D" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/per/camera_rig"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.5755, 10.1963)
 
-[node name="cam_finalpt" type="Node3D" parent="SubViewportContainer/SubViewport/myy/per/camera_rig"]
+[node name="cam_finalpt" type="Node3D" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/per/camera_rig"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="env" type="Node" parent="SubViewportContainer/SubViewport/myy"]
+[node name="env" type="Node" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D"]
 
-[node name="ground" type="GridMap" parent="SubViewportContainer/SubViewport/myy/env"]
+[node name="ground" type="GridMap" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env"]
 mesh_library = ExtResource("5_16mms")
 data = {
 "cells": PackedInt32Array(1, 3, 655383, 1, 5, 655383, 3, 3, 655383, 65535, 3, 655383, 65533, 3, 655383, 65535, 5, 655383, 3, 5, 655383, 5, 3, 655383, 3, 1, 655383, 1, 1, 655383, 65535, 1, 655383, 65533, 1, 655383, 65531, 1, 655383, 5, 1, 655383, 7, 1, 655383, 7, 65535, 655383, 5, 65535, 655383, 3, 65535, 655383, 1, 65535, 655383, 65535, 65535, 655383, 65533, 65535, 655383, 65531, 65535, 655383, 7, 65533, 655383, 9, 65533, 655383, 5, 65533, 655383, 3, 65533, 655383, 1, 65533, 655383, 65535, 65533, 655383, 65533, 65533, 655383, 65531, 65533, 655383, 65529, 65533, 655383, 65529, 65535, 1441815, 65529, 65531, 1441815, 65531, 65531, 1441815, 9, 65531, 1441815, 7, 65531, 1441815, 5, 65531, 1441815, 3, 65531, 1441815, 1, 65531, 1441815, 65535, 65531, 1441815, 65533, 65531, 1441815, 65533, 65529, 1441815, 65531, 65529, 1441815, 65529, 65529, 1441815, 65529, 1, 1441815, 65531, 3, 1441815, 65533, 5, 1441815, 65535, 7, 1441815, 1, 7, 1441815, 3, 7, 1441815, 5, 5, 1441815, 7, 3, 1441815, 9, 65535, 1441815, 9, 1, 1441815, 9, 3, 1441815, 65529, 3, 1441815, 65531, 5, 1441815, 65533, 7, 1441815, 65535, 9, 1441815, 1, 9, 1441815, 3, 9, 1441815, 5, 7, 1441815, 7, 5, 1441815, 65535, 65529, 1441815, 1, 65529, 1441815, 3, 65529, 1441815, 5, 65529, 1441815, 7, 65529, 1441815, 9, 65529, 1441815, 7, 65527, 1441815, 5, 65527, 1441815, 3, 65527, 1441815, 1, 65527, 1441815, 65535, 65527, 1441815, 65533, 65527, 1441815, 65531, 65527, 1441815, 65529, 65527, 1441815, 65527, 65535, 1441815, 65527, 65533, 1441815, 65527, 65531, 1441815, 65527, 65529, 1441815, 65527, 65527, 1441815, 11, 65535, 1441815, 11, 65533, 1441815, 11, 65531, 1441815, 11, 65529, 1441815, 9, 65527, 1441815, 11, 65527, 1441815, 5, 65525, 1441815, 3, 65525, 1441815, 1, 65525, 1441815, 65535, 65525, 1441815, 65531, 65525, 1441815, 65529, 65525, 1441815, 7, 65525, 1441815, 9, 65525, 1441815, 65531, 65523, 1441815, 65533, 65523, 1441815, 65535, 65523, 1441815, 1, 65523, 1441815, 3, 65523, 1441815, 5, 65523, 1441815, 7, 65523, 1441815, 65533, 65521, 1441815, 65535, 65521, 1441815, 1, 65521, 1441815, 3, 65521, 1441815, 5, 65521, 1441815, 65527, 65525, 23, 65529, 65523, 23, 65531, 65521, 23, 65531, 65519, 23, 65533, 65519, 23, 65535, 65519, 23, 1, 65519, 23, 3, 65519, 23, 5, 65519, 23, 7, 65521, 23, 65529, 65521, 23, 9, 65521, 23, 9, 65523, 23, 11, 65525, 23, 7, 65519, 23)
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="path" type="GridMap" parent="SubViewportContainer/SubViewport/myy/env/ground"]
+[node name="path" type="GridMap" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env/ground"]
 mesh_library = ExtResource("5_16mms")
 data = {
 "cells": PackedInt32Array(1, 3, 37, 1, 5, 655383, 3, 3, 655383, 65535, 3, 655383, 65533, 3, 655383, 65535, 5, 655383, 3, 5, 655383, 5, 3, 655383, 3, 1, 655383, 1, 1, 36, 65535, 1, 655383, 65533, 1, 655383, 65531, 1, 655383, 5, 1, 655383, 7, 1, 655383, 5, 65535, 655383, 3, 65535, 655383, 1, 65535, 1048610, 65535, 65535, 655383, 65533, 65535, 655383, 65531, 65535, 655383, 5, 65533, 655383, 3, 65533, 655383, 1, 65533, 36, 65535, 65533, 655383, 65533, 65533, 655383, 65531, 65533, 655383, 65529, 65533, 655383, 65529, 65535, 1441815, 65529, 65529, 1441815, 65529, 1, 1441815, 65531, 3, 1441815, 65533, 5, 1441815, 65535, 7, 1441815, 1, 7, 1441815, 3, 7, 1441815, 5, 5, 1441815, 7, 3, 1441815, 9, 65535, 1441815, 9, 1, 1441815, 9, 3, 1441815, 65529, 3, 1441815, 65531, 5, 1441815, 65533, 7, 1441815, 65535, 9, 1441815, 1, 9, 1441815, 3, 9, 1441815, 5, 7, 1441815, 7, 5, 1441815, 65535, 65529, 1441815, 3, 65529, 1441815, 5, 65527, 1441815, 65531, 65527, 1441815, 65529, 65527, 1441815, 65527, 65535, 1441815, 65527, 65533, 1441815, 65527, 65531, 1441815, 65527, 65529, 1441815, 65527, 65527, 1441815, 11, 65535, 1441815, 11, 65533, 1441815, 11, 65527, 1441815, 5, 65525, 1441815, 3, 65525, 1441815, 1, 65525, 1441815, 65535, 65525, 1441815, 65531, 65525, 1441815, 65529, 65525, 1441815, 7, 65525, 1441815, 65531, 65523, 1441815, 65533, 65523, 1441815, 65535, 65523, 1441815, 1, 65523, 1441815, 3, 65523, 1441815, 5, 65523, 1441815, 7, 65523, 1441815, 65533, 65521, 1441815, 65535, 65521, 1441815, 1, 65521, 1441815, 3, 65521, 1441815, 5, 65521, 1441815, 3, 65531, 1048613, 65535, 65531, 1441828, 1, 65531, 35, 5, 65531, 1441815, 65533, 65531, 1441815, 65529, 65531, 1441815, 65531, 65531, 1441815, 9, 65529, 1441815, 5, 65529, 1441815, 1, 65529, 34, 65533, 65529, 1441815, 65531, 65529, 1441815, 3, 65527, 1441815, 1, 65527, 1441815, 65535, 65527, 1441815, 65533, 65527, 1441815, 65530, 65535, 60)
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="walls" type="GridMap" parent="SubViewportContainer/SubViewport/myy/env"]
+[node name="walls" type="GridMap" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env"]
 mesh_library = ExtResource("5_16mms")
 collision_layer = 2
 data = {
@@ -182,10 +184,10 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="door" parent="SubViewportContainer/SubViewport/myy/env/walls" instance=ExtResource("5_oakbx")]
+[node name="door" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env/walls" instance=ExtResource("5_oakbx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 1)
 
-[node name="props" type="GridMap" parent="SubViewportContainer/SubViewport/myy/env"]
+[node name="props" type="GridMap" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env"]
 mesh_library = ExtResource("6_hrm0u")
 collision_layer = 4
 data = {
@@ -193,86 +195,101 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="tree_pine_orange_large2" parent="SubViewportContainer/SubViewport/myy/env" instance=ExtResource("6_0odvr")]
+[node name="tree_pine_orange_large2" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env" instance=ExtResource("6_0odvr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.86531, 1.11586, -21.9557)
 
-[node name="tree_pine_orange_large2" parent="SubViewportContainer/SubViewport/myy/env/tree_pine_orange_large2" instance=ExtResource("6_0odvr")]
+[node name="tree_pine_orange_large2" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env/tree_pine_orange_large2" instance=ExtResource("6_0odvr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.2372, 0.478529, 18.892)
 
-[node name="tree_pine_orange_small2" parent="SubViewportContainer/SubViewport/myy/env/tree_pine_orange_large2" instance=ExtResource("7_qheq5")]
+[node name="tree_pine_orange_small2" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env/tree_pine_orange_large2" instance=ExtResource("7_qheq5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.1024, 0.318834, 21.6061)
 
-[node name="tree_pine_orange_medium2" parent="SubViewportContainer/SubViewport/myy/env/tree_pine_orange_large2" instance=ExtResource("8_qheq5")]
+[node name="tree_pine_orange_medium2" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env/tree_pine_orange_large2" instance=ExtResource("8_qheq5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.8694, -0.111339, 20.9559)
 
-[node name="tree_pine_orange_large4" parent="SubViewportContainer/SubViewport/myy/env/tree_pine_orange_large2" instance=ExtResource("6_0odvr")]
+[node name="tree_pine_orange_large4" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env/tree_pine_orange_large2" instance=ExtResource("6_0odvr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6844, 0.233603, 25.2057)
 
-[node name="tree_pine_orange_large5" parent="SubViewportContainer/SubViewport/myy/env/tree_pine_orange_large2" instance=ExtResource("6_0odvr")]
+[node name="tree_pine_orange_large5" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env/tree_pine_orange_large2" instance=ExtResource("6_0odvr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.21195, 0.478529, 20.9306)
 
-[node name="tree_pine_orange_large3" parent="SubViewportContainer/SubViewport/myy/env/tree_pine_orange_large2" instance=ExtResource("6_0odvr")]
+[node name="tree_pine_orange_large3" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env/tree_pine_orange_large2" instance=ExtResource("6_0odvr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.055, 0.478528, 6.94089)
 
-[node name="tree_pine_orange_large6" parent="SubViewportContainer/SubViewport/myy/env/tree_pine_orange_large2" instance=ExtResource("6_0odvr")]
+[node name="tree_pine_orange_large6" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env/tree_pine_orange_large2" instance=ExtResource("6_0odvr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2196, -0.0923015, 8.91441)
 
-[node name="tree_pine_yellow_small2" parent="SubViewportContainer/SubViewport/myy/env/tree_pine_orange_large2" instance=ExtResource("9_8rthi")]
+[node name="tree_pine_yellow_small2" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env/tree_pine_orange_large2" instance=ExtResource("9_8rthi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.13446, -0.0491134, 10.9563)
 
-[node name="bench_decorated2" parent="SubViewportContainer/SubViewport/myy/env" instance=ExtResource("10_tnj4i")]
+[node name="bench_decorated2" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env" instance=ExtResource("10_tnj4i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, -17)
 
-[node name="bench2" parent="SubViewportContainer/SubViewport/myy/env" instance=ExtResource("11_cw0pf")]
+[node name="bench2" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env" instance=ExtResource("11_cw0pf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, -17)
 
-[node name="floor_dirt_grave2" parent="SubViewportContainer/SubViewport/myy/env" instance=ExtResource("12_cw0pf")]
+[node name="floor_dirt_grave2" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env" instance=ExtResource("12_cw0pf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -21)
 
-[node name="coffin_decorated2" parent="SubViewportContainer/SubViewport/myy/env" instance=ExtResource("16_oakbx")]
+[node name="coffin_decorated2" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env" instance=ExtResource("16_oakbx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.96883, 0, -20.9678)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/myy/env/coffin_decorated2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env/coffin_decorated2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/myy/env/coffin_decorated2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env/coffin_decorated2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06252, 0.136108, 0.00497055)
 shape = SubResource("BoxShape3D_cw0pf")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/myy/env/coffin_decorated2/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env/coffin_decorated2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0370851, 2.1745, -2.04191)
 shape = SubResource("BoxShape3D_oakbx")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/myy/env/coffin_decorated2/StaticBody3D"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env/coffin_decorated2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0370851, 1.85598, 7.9878)
 shape = SubResource("BoxShape3D_oakbx")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/myy/env/coffin_decorated2/StaticBody3D"]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env/coffin_decorated2/StaticBody3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0172615, 2.11917, 11.8769)
 shape = SubResource("BoxShape3D_oakbx")
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/myy/env/coffin_decorated2/StaticBody3D"]
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env/coffin_decorated2/StaticBody3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0172615, 2.30236, 16.0187)
 shape = SubResource("BoxShape3D_oakbx")
 
-[node name="CollisionShape3D7" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/myy/env/coffin_decorated2/StaticBody3D"]
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env/coffin_decorated2/StaticBody3D"]
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 1.97601, 1.11604, 15.9879)
 shape = SubResource("BoxShape3D_oakbx")
 
-[node name="CollisionShape3D6" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/myy/env/coffin_decorated2/StaticBody3D"]
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env/coffin_decorated2/StaticBody3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.0285, 1.79012, 11.9729)
 shape = SubResource("BoxShape3D_oakbx")
 
-[node name="post_lantern2" parent="SubViewportContainer/SubViewport/myy/env" instance=ExtResource("15_h2kxg")]
+[node name="post_lantern2" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env" instance=ExtResource("15_h2kxg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5, 1, 5)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/myy/env/post_lantern2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env/post_lantern2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/myy/env/post_lantern2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env/post_lantern2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0159607, 1.39557, -0.033371)
 shape = SubResource("BoxShape3D_h2kxg")
 
-[node name="tree_dead_large_decorated2" parent="SubViewportContainer/SubViewport/myy/env" instance=ExtResource("16_mh7yw")]
+[node name="OmniLight3D" type="OmniLight3D" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env/post_lantern2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.02885, 1.00336)
+light_color = Color(0.85, 0.85, 0.6205, 1)
+light_energy = 0.8
+
+[node name="tree_dead_large_decorated2" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env" instance=ExtResource("16_mh7yw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.736984, 1, -15)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.4248, 1.80199, -17.0124)
+light_color = Color(0.85, 0.85, 0.6205, 1)
+light_energy = 0.5
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.50985, 3.16657, -15.4025)
+light_color = Color(0.85, 0.85, 0.6205, 1)
+light_energy = 0.8
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(-0.101372, 0.707474, 0.699432, 0.00664804, -0.702556, 0.711598, 0.994826, 0.076786, 0.0665162, 5.85244, 6.7486, 0)
@@ -289,4 +306,4 @@ environment = SubResource("Environment_n4gow")
 
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
 [connection signal="body_entered" from="killzone" to="GameManager" method="_on_killzone_body_entered"]
-[connection signal="body_entered" from="SubViewportContainer/SubViewport/myy/Area3D" to="GameManager" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="SubViewportContainer/SubViewport/myy/NavigationRegion3D/Area3D" to="GameManager" method="_on_area_3d_body_entered"]

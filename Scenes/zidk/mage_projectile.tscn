@@ -57,7 +57,7 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iguuu"]
-size = Vector3(0.453178, 1.09418, 0.546387)
+size = Vector3(0.556105, 1.14426, 0.546387)
 
 [node name="mage_projectile" type="Node3D"]
 script = ExtResource("1_modmu")
@@ -114,7 +114,7 @@ color = Color(2, 1.5, 0.5, 1)
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00175863, -0.345795, 0.0070802)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00395478, -0.320756, 0.0070802)
 shape = SubResource("BoxShape3D_iguuu")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]

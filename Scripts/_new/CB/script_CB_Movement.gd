@@ -13,6 +13,7 @@ const RUNMULYIPLIER = 1.5
 
 @onready var wep_manager: Node = null
 @onready var dash_timer: Timer = $"dash timer"
+@onready var dash_sfx: AudioStreamPlayer = $dashSFX
 
 var dashing = false
 
@@ -52,6 +53,7 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("dash") and !dashing:
 			dashing = true
 			velocity = direction * SPEED * 17 + velocity
+			dash_sfx.play()
 			velocity.y = 0
 			dash_timer.start()
 			
@@ -97,7 +99,6 @@ func _physics_process(delta: float) -> void:
 func _push_away_rigid_bodies():
 	for i in get_slide_collision_count():
 		var c := get_slide_collision(i)
-		print(get_slide_collision_count())
 		if c.get_collider() is RigidBody3D:
 			var push_dir = -c.get_normal()
 			# How much velocity the object needs to increase to match player velocity in the push direction

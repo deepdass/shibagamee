@@ -1,8 +1,7 @@
 extends Node
 
-@onready var spwans: Node3D = $"../SubViewportContainer/SubViewport/myy/spwans"
+@onready var spwans: Node3D = $"../SubViewportContainer/SubViewport/myy/NavigationRegion3D/spwans"
 @onready var navigation_region_3d: NavigationRegion3D = $"../SubViewportContainer/SubViewport/myy/NavigationRegion3D"
-@onready var collision_shape_3d_2: CollisionShape3D = $"../SubViewportContainer/SubViewport/myy/door/CollisionShape3D2"
 @onready var player: CharacterBody3D = %Player
 
 var skeleton_minion = load("res://Scenes/characters/enemy/skeleton_minion.tscn")
@@ -24,7 +23,4 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 			inst_skeleton_minion = skeleton_minion.instantiate()
 			inst_skeleton_minion.position = spawn_pt
 			navigation_region_3d.add_child(inst_skeleton_minion)
-		
-		collision_shape_3d_2.disabled = false
-	
 	

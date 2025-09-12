@@ -1,13 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7illv6kf10b2"]
+[gd_scene load_steps=5 format=3 uid="uid://c7illv6kf10b2"]
 
 [ext_resource type="Script" uid="uid://bmeh00xj7xllb" path="res://Scripts/_new/CB/script_CB_Movement.gd" id="1_w62f0"]
+[ext_resource type="AudioStream" uid="uid://bxlgcgerw0us0" path="res://Assets/Audio/714258__qubodup__cloud-poof.wav" id="2_psa3d"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cvnsp"]
-radius = 0.244259
-height = 1.26626
+radius = 0.276161
+height = 1.50664
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_0xdm5"]
-length = 0.523312
+length = 0.7
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
@@ -15,15 +16,20 @@ collision_mask = 7
 script = ExtResource("1_w62f0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.84, 0, 0, 0, 0.84, 0, 0, 0, 0.84, 0, 0.534483, 0)
+transform = Transform3D(0.84, 0, 0, 0, 0.84, 0, 0, 0, 0.84, 0, 0.64026, 0)
 shape = SubResource("CapsuleShape3D_cvnsp")
 
 [node name="visuals" type="Node3D" parent="."]
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, -4.37114e-08, 4.37114e-08, 4.37114e-08, -4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, 2.56967e-09, 0.422887, -0.231265)
+transform = Transform3D(1, -4.37114e-08, 4.37114e-08, 4.37114e-08, -4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, 3.08924e-09, 0.422887, -0.243151)
 shape = SubResource("SeparationRayShape3D_0xdm5")
 
 [node name="dash timer" type="Timer" parent="."]
+
+[node name="dashSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_psa3d")
+volume_db = -10.0
+bus = &"SFX"
 
 [connection signal="timeout" from="dash timer" to="." method="_on_dash_timer_timeout"]

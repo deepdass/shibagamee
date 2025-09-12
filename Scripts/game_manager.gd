@@ -2,8 +2,8 @@ extends Node
 
 @onready var camera_3d: Camera3D = %Camera3D
 @onready var camera_rig: Node3D = %camera_rig
-@onready var cam_initailpt: Node3D = $"../SubViewportContainer/SubViewport/myy/per/camera_rig/cam_Initailpt"
-@onready var cam_finalpt: Node3D = $"../SubViewportContainer/SubViewport/myy/per/camera_rig/cam_finalpt"
+@onready var cam_initailpt: Node3D = $"../SubViewportContainer/SubViewport/myy/NavigationRegion3D/per/camera_rig/cam_Initailpt"
+@onready var cam_finalpt: Node3D = $"../SubViewportContainer/SubViewport/myy/NavigationRegion3D/per/camera_rig/cam_finalpt"
 
 
 @onready var world: Node3D = $".."
