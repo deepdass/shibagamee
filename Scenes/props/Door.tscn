@@ -132,7 +132,7 @@ skeleton = NodePath("")
 [node name="RigidBody3D" type="RigidBody3D" parent="arch_gate"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
 collision_layer = 8
-collision_mask = 15
+collision_mask = 7
 
 [node name="arch_gate_left" type="MeshInstance3D" parent="arch_gate/RigidBody3D"]
 mesh = SubResource("ArrayMesh_vyc8f")
@@ -144,7 +144,7 @@ shape = SubResource("ConvexPolygonShape3D_mw28t")
 [node name="RigidBody3D2" type="RigidBody3D" parent="arch_gate"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0)
 collision_layer = 8
-collision_mask = 15
+collision_mask = 7
 
 [node name="arch_gate_right" type="MeshInstance3D" parent="arch_gate/RigidBody3D2"]
 mesh = SubResource("ArrayMesh_7movu")

@@ -89,10 +89,10 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
-	##pewpew
+##pewpew
 	if Input.is_action_pressed("attack"):
 		visuals.look_at(look_at_me, Vector3.UP)
-		wep_manager.shoot()
+		wep_manager.attack_basic()
 		#animation_player.play("Spellcasting")
 
 
