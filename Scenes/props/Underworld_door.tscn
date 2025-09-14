@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://wuec1hjo8y1f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cc7uj"]
+size = Vector3(0.515076, 2.84016, 3.36475)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fjuxy"]
+size = Vector3(0.515076, 2.84016, 3.36475)
+
+[node name="door" type="StaticBody3D"]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="detect" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.47843, 0.449043, 0.0588379)
+shape = SubResource("BoxShape3D_cc7uj")
+debug_color = Color(0, 0.631738, 0.743059, 1)
+
+[node name="close" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.035553, 0.449043, 0.0136719)
+shape = SubResource("BoxShape3D_fjuxy")
+debug_color = Color(1, 0.42, 0.816333, 0.698039)

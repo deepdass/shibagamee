@@ -31512,7 +31512,7 @@ bones/46/rotation = Quaternion(-0.758253, -1.82539e-07, 0.651961, -1.11759e-08)
 bones/46/scale = Vector3(1, 1, 1)
 
 [node name="Knife_Offhand" type="BoneAttachment3D" parent="CharacterMesh/Rig/Skeleton3D"]
-transform = Transform3D(2.32527e-09, 0.262864, 0.964832, 0.999999, -3.69554e-07, 4.15249e-07, 8.38484e-07, 0.964832, -0.262864, 0.304658, 0.382023, -0.0111218)
+transform = Transform3D(2.40744e-07, 0.262865, 0.964832, 0.999999, -3.09948e-07, 8.02678e-07, 8.08681e-07, 0.964832, -0.262864, 0.304658, 0.382024, -0.0111217)
 bone_name = "Knife_Offhand"
 bone_idx = 9
 
@@ -31521,7 +31521,8 @@ mesh = SubResource("ArrayMesh_u8jha")
 skeleton = NodePath("")
 
 [node name="1H_Crossbow" type="BoneAttachment3D" parent="CharacterMesh/Rig/Skeleton3D"]
-transform = Transform3D(0.988701, -0.149894, -2.68122e-07, -8.39018e-07, -1.233e-06, -0.999999, 0.149894, 0.988701, -1.70568e-06, -0.293703, 0.447394, 0.0578033)
+transform = Transform3D(0.988701, -0.149894, 2.99009e-08, -1.13704e-06, -1.11379e-06, -0.999999, 0.149894, 0.988701, -1.58647e-06, -0.293703, 0.447395, 0.0578033)
+visible = false
 bone_name = "1H_Crossbow"
 bone_idx = 15
 
@@ -31530,7 +31531,8 @@ mesh = SubResource("ArrayMesh_el28q")
 skeleton = NodePath("")
 
 [node name="2H_Crossbow" type="BoneAttachment3D" parent="CharacterMesh/Rig/Skeleton3D"]
-transform = Transform3D(0.988701, -0.149894, -2.68122e-07, -8.39018e-07, -1.233e-06, -0.999999, 0.149894, 0.988701, -1.70568e-06, -0.293703, 0.447394, 0.0578033)
+transform = Transform3D(0.988701, -0.149894, 2.99009e-08, -1.13704e-06, -1.11379e-06, -0.999999, 0.149894, 0.988701, -1.58647e-06, -0.293703, 0.447395, 0.0578033)
+visible = false
 bone_name = "2H_Crossbow"
 bone_idx = 16
 
@@ -31539,7 +31541,7 @@ mesh = SubResource("ArrayMesh_qrcet")
 skeleton = NodePath("")
 
 [node name="Knife" type="BoneAttachment3D" parent="CharacterMesh/Rig/Skeleton3D"]
-transform = Transform3D(2.72302e-07, -0.149894, 0.988701, 0.999999, -1.08481e-06, -8.20779e-07, 1.55643e-06, 0.988701, 0.149894, -0.294635, 0.384617, 0.0639481)
+transform = Transform3D(-2.57213e-08, -0.149894, 0.988702, 0.999999, -9.65599e-07, -1.1188e-06, 1.43722e-06, 0.988701, 0.149893, -0.294634, 0.384618, 0.0639481)
 bone_name = "Knife"
 bone_idx = 17
 
@@ -31548,7 +31550,8 @@ mesh = SubResource("ArrayMesh_l66gf")
 skeleton = NodePath("")
 
 [node name="Throwable" type="BoneAttachment3D" parent="CharacterMesh/Rig/Skeleton3D"]
-transform = Transform3D(2.88042e-07, -0.149894, 0.988701, 0.999999, -1.07008e-06, -8.34465e-07, 1.54391e-06, 0.988701, 0.149894, -0.310845, 0.384617, 0.170874)
+transform = Transform3D(-9.98167e-09, -0.149894, 0.988701, 0.999999, -9.50867e-07, -1.13249e-06, 1.42471e-06, 0.988701, 0.149893, -0.310845, 0.384618, 0.170873)
+visible = false
 bone_name = "Throwable"
 bone_idx = 18
 
@@ -31557,7 +31560,7 @@ mesh = SubResource("ArrayMesh_sx1d5")
 skeleton = NodePath("")
 
 [node name="Rogue_Cape" type="BoneAttachment3D" parent="CharacterMesh/Rig/Skeleton3D"]
-transform = Transform3D(0.996275, -5.14962e-09, 0.0862354, 5.13044e-09, 1, 4.44078e-10, -0.0862354, 1.46374e-15, 0.996275, -2.50336e-09, 0.721364, 7.13153e-16)
+transform = Transform3D(0.996275, -5.14962e-09, 0.0862354, 5.13044e-09, 1, 4.44078e-10, -0.0862354, 1.46374e-15, 0.996275, -2.50337e-09, 0.721365, 7.13154e-16)
 bone_name = "Rogue_Cape"
 bone_idx = 20
 

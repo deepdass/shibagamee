@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b8tcib7cuxmbg" path="res://Scripts/game_manager.gd" id="1_c00dn"]
 [ext_resource type="MeshLibrary" uid="uid://crol18xh2ltij" path="res://Assets/HalloweenBits/Assets/upperworldtiles.tres" id="5_16mms"]
-[ext_resource type="PackedScene" uid="uid://br483nydnq3u5" path="res://Scenes/props/Door.tscn" id="5_oakbx"]
+[ext_resource type="PackedScene" uid="uid://br483nydnq3u5" path="res://Scenes/props/overworldgate.tscn" id="5_oakbx"]
 [ext_resource type="PackedScene" uid="uid://buu6tgndshc3j" path="res://Assets/HalloweenBits/Assets/gltf/tree_pine_orange_large.gltf" id="6_0odvr"]
 [ext_resource type="MeshLibrary" uid="uid://b14igan24nl53" path="res://Assets/HalloweenBits/Assets/upperworldtiles1.tres" id="6_hrm0u"]
 [ext_resource type="PackedScene" uid="uid://bfi56748suwnn" path="res://Assets/HalloweenBits/Assets/gltf/tree_pine_orange_small.gltf" id="7_qheq5"]

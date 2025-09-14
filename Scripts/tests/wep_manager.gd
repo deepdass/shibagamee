@@ -5,6 +5,7 @@ extends Node
 @onready var fireposnode: Node3D = $"../fireposnode"
 @export var projectile_speed = 15
 @export var milli_per_shots = 667
+
 ##
 
 

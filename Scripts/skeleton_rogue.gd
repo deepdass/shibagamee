@@ -7,22 +7,23 @@ var subViewport = null
 @onready var player_path := "/root/World/SubViewportContainer/SubViewport/myy/NavigationRegion3D/per/Player"
 @onready var sub_viewport_path := "/root/World/SubViewportContainer/SubViewport"
 
-@onready var skeleton_minion_eyes: MeshInstance3D = $Skeleton_Minion/Rig/Skeleton3D/Skeleton_Minion_Eyes
+@onready var skeleton_rogue_eyes: MeshInstance3D = $Skeleton_Rogue/Rig/Skeleton3D/Skeleton_Rogue_Eyes
 @onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
 
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 var health : int = 3
+@export var projectile : PackedScene
+@onready var fireposnode : Node3D = $fireposnode
+
 @onready var damagepopup: Node3D = $idknode
-
-
+@export var projectile_speed = 15
 
 const  SPEED = 3.0
-const ATTACK_RANGE = 1
-const KnockbackMul = 25
+const ATTACK_RANGE = 15
 var state_machine
 
-@onready var animation_tree: AnimationTree = $Skeleton_Minion/AnimationTree
+@onready var animation_tree: AnimationTree = $Skeleton_Rogue/AnimationTree
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var timer: Timer = $Timer
 
@@ -54,8 +55,9 @@ func _process(delta: float) -> void:
 		"1H_Melee_Attack_Stab":
 			look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z), Vector3.UP)
 	
+	
 	animation_tree.set("parameters/conditions/attack", _target_in_range())
-	animation_tree.set("parameters/conditions/run", !_target_in_range())
+	
 	
 	move_and_slide()
 
@@ -64,9 +66,11 @@ func _target_in_range():
 	
 func _hitfinish():
 	if global_position.distance_to(player.global_position) < ATTACK_RANGE + 0.5 :
+		var new_projectile = projectile.instantiate()
+		new_projectile.global_transform = fireposnode.global_transform
+		new_projectile.projectile_speed = projectile_speed
+		get_tree().root.add_child(new_projectile)
 		var dir = global_position.direction_to(player.global_position)
-		game_manager.decrease_health()
-		player.velocity += Vector3(dir.x , dir.y * 0.1, dir.z ) * KnockbackMul
 		
 func taka_damage():
 	health -= 1
@@ -77,7 +81,7 @@ func taka_damage():
 	damagepopup.visible = true
 	if health == 0:
 		collision_shape_3d.disabled = true
-		skeleton_minion_eyes.visible = false
+		skeleton_rogue_eyes.visible = false
 		animation_tree.set("parameters/conditions/Resurrect",false)
 	timer.start()
 
