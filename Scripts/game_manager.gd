@@ -55,6 +55,7 @@ func _physics_process(delta: float) -> void:
 
 func decrease_health():
 	lives -= 1
+	player.play_hurt()
 	for i in hearts.size():
 		if (i < lives):
 			hearts[i].show()

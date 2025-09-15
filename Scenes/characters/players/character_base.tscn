@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7illv6kf10b2"]
+[gd_scene load_steps=6 format=3 uid="uid://c7illv6kf10b2"]
 
 [ext_resource type="Script" uid="uid://bmeh00xj7xllb" path="res://Scripts/_new/CB/script_CB_Movement.gd" id="1_w62f0"]
 [ext_resource type="AudioStream" uid="uid://bxlgcgerw0us0" path="res://Assets/Audio/714258__qubodup__cloud-poof.wav" id="2_psa3d"]
+[ext_resource type="AudioStream" uid="uid://btg4ysar7vwcr" path="res://Assets/Audio/hurt_edited.mp3" id="3_7ogu5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cvnsp"]
 radius = 0.276161
@@ -29,6 +30,11 @@ shape = SubResource("SeparationRayShape3D_0xdm5")
 
 [node name="dashSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_psa3d")
+volume_db = -15.0
+bus = &"SFX"
+
+[node name="hurtSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7ogu5")
 volume_db = -10.0
 bus = &"SFX"
 

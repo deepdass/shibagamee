@@ -274,7 +274,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0159607, 1.39557, -0.033371
 shape = SubResource("BoxShape3D_h2kxg")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env/post_lantern2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.02885, 1.00336)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.10369, 1.00336)
 light_color = Color(0.85, 0.85, 0.6205, 1)
 light_energy = 0.8
 

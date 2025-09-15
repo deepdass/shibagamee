@@ -17,10 +17,10 @@ var health : int = 3
 @onready var fireposnode : Node3D = $fireposnode
 
 @onready var damagepopup: Node3D = $idknode
-@export var projectile_speed = 15
+@export var projectile_speed = 13
 
 const  SPEED = 3.0
-const ATTACK_RANGE = 15
+const ATTACK_RANGE = 10
 var state_machine
 
 @onready var animation_tree: AnimationTree = $Skeleton_Rogue/AnimationTree
@@ -57,7 +57,7 @@ func _process(delta: float) -> void:
 	
 	
 	animation_tree.set("parameters/conditions/attack", _target_in_range())
-	
+	animation_tree.set("parameters/conditions/run", !_target_in_range())
 	
 	move_and_slide()
 
@@ -72,7 +72,7 @@ func _hitfinish():
 		get_tree().root.add_child(new_projectile)
 		var dir = global_position.direction_to(player.global_position)
 		
-func taka_damage():
+func take_damage():
 	health -= 1
 	health = clamp(health,0 , 5)
 	collision_shape_3d.disabled = true

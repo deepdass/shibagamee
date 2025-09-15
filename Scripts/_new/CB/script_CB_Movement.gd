@@ -13,7 +13,10 @@ const RUNMULYIPLIER = 1.5
 
 @onready var wep_manager: Node = null
 @onready var dash_timer: Timer = $"dash timer"
+
 @onready var dash_sfx: AudioStreamPlayer = $dashSFX
+@onready var hurt_sfx: AudioStreamPlayer = $hurtSFX
+
 
 var dashing = false
 
@@ -117,7 +120,11 @@ func _push_away_rigid_bodies():
 			var push_force = mass_ratio * 5.0
 			c.get_collider().apply_impulse(push_dir * velocity_diff_in_push_dir * push_force, c.get_position() - c.get_collider().global_position)
 
+func play_hurt():
+	hurt_sfx.play()
 
+func player_take_damage():
+	game_manager.decrease_health()
 
 func _rotate(where):
 	look_at_me = where

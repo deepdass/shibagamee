@@ -17,8 +17,8 @@ var health : int = 3
 
 
 
-const  SPEED = 3.0
-const ATTACK_RANGE = 1
+const  SPEED = 4.2
+const ATTACK_RANGE = 1.5
 const KnockbackMul = 25
 var state_machine
 
@@ -68,7 +68,7 @@ func _hitfinish():
 		game_manager.decrease_health()
 		player.velocity += Vector3(dir.x , dir.y * 0.1, dir.z ) * KnockbackMul
 		
-func taka_damage():
+func take_damage():
 	health -= 1
 	health = clamp(health,0 , 5)
 	collision_shape_3d.disabled = true
