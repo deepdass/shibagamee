@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c7illv6kf10b2"]
 
-[ext_resource type="Script" uid="uid://bmeh00xj7xllb" path="res://Scripts/_new/CB/script_CB_Movement.gd" id="1_w62f0"]
+[ext_resource type="Script" uid="uid://bmeh00xj7xllb" path="res://Scripts/1players/CB_base/script_CB_Movement.gd" id="1_w62f0"]
 [ext_resource type="AudioStream" uid="uid://bxlgcgerw0us0" path="res://Assets/Audio/714258__qubodup__cloud-poof.wav" id="2_psa3d"]
 [ext_resource type="AudioStream" uid="uid://btg4ysar7vwcr" path="res://Assets/Audio/hurt_edited.mp3" id="3_7ogu5"]
 
@@ -16,13 +16,13 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 collision_mask = 7
 script = ExtResource("1_w62f0")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="visuals" type="Node3D" parent="."]
+
+[node name="Player Capsule" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.84, 0, 0, 0, 0.84, 0, 0, 0, 0.84, 0, 0.64026, 0)
 shape = SubResource("CapsuleShape3D_cvnsp")
 
-[node name="visuals" type="Node3D" parent="."]
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+[node name="StairCollision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, -4.37114e-08, 4.37114e-08, 4.37114e-08, -4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, 3.08924e-09, 0.422887, -0.243151)
 shape = SubResource("SeparationRayShape3D_0xdm5")
 

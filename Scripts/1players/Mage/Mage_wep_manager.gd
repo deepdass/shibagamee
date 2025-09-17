@@ -1,5 +1,8 @@
 extends Node
 
+
+@onready var the_base_character = get_parent().get_parent().get_parent()
+
 ## attack basic
 @export var projectile : PackedScene
 @onready var fireposnode: Node3D = $"../fireposnode"
@@ -20,16 +23,22 @@ var can_attack_basic = true
 func _ready() -> void:
 	attack_bacis__timer.wait_time = milli_per_shots / 1000.0
 
+
 func _physics_process(delta: float) -> void:
-	pass
 	
+	##pewpew
+	if Input.is_action_pressed("attack"):
+		the_base_character.get_node("visuals").look_at(the_base_character.look_at_me, Vector3.UP)
+		attack_basic()
+
+
 func attack_basic():
 	if can_attack_basic:
 		animation_tree.set("parameters/attack_basic/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 		var new_projectile = projectile.instantiate()
 		new_projectile.global_transform = fireposnode.global_transform
 		new_projectile.projectile_speed = projectile_speed
-		get_tree().root.add_child(new_projectile)
+		get_tree().get_current_scene().add_child(new_projectile)
 		can_attack_basic = false
 		attack_bacis__timer.start()
 

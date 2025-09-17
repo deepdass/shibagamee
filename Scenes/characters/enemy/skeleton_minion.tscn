@@ -1,6 +1,6 @@
 [gd_scene load_steps=128 format=4 uid="uid://bk5hwr4jhhwv8"]
 
-[ext_resource type="Script" uid="uid://c02wxhywy4unp" path="res://Scripts/skeleton_minion.gd" id="1_30840"]
+[ext_resource type="Script" uid="uid://c02wxhywy4unp" path="res://Scripts/2enemy/minion/skeleton_minion.gd" id="1_30840"]
 [ext_resource type="Texture2D" uid="uid://bd3crbr05gvkm" path="res://Assets/Skeletons/characters/gltf/Skeleton_Minion_skeleton_texture.png" id="2_s3jc2"]
 [ext_resource type="PackedScene" uid="uid://d1lctnf0vi70u" path="res://Assets/Skeletons/assets/gltf/Skeleton_Blade.gltf" id="3_hm3wj"]
 [ext_resource type="AudioStream" uid="uid://dbvac6oe2ppgt" path="res://Assets/Audio/SkeletonDeath_AUD.mp3" id="4_s3jc2"]

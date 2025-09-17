@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://dly6jv8oiogek"]
 
-[ext_resource type="Script" uid="uid://b8tcib7cuxmbg" path="res://Scripts/game_manager.gd" id="1_c00dn"]
+[ext_resource type="Script" uid="uid://b8tcib7cuxmbg" path="res://Scripts/0Managers/game_manager.gd" id="1_c00dn"]
 [ext_resource type="MeshLibrary" uid="uid://crol18xh2ltij" path="res://Assets/HalloweenBits/Assets/upperworldtiles.tres" id="5_16mms"]
 [ext_resource type="PackedScene" uid="uid://br483nydnq3u5" path="res://Scenes/props/overworldgate.tscn" id="5_oakbx"]
 [ext_resource type="PackedScene" uid="uid://buu6tgndshc3j" path="res://Assets/HalloweenBits/Assets/gltf/tree_pine_orange_large.gltf" id="6_0odvr"]
@@ -77,77 +77,77 @@ shape = SubResource("WorldBoundaryShape3D_tnj4i")
 
 [node name="Heart1" type="TextureRect" parent="UI/Panel"]
 texture_filter = 1
-layout_mode = 2
-offset_left = 20.0
-offset_top = 25.0
-offset_right = 192.775
-offset_bottom = 184.0
+layout_mode = 0
+offset_left = 18.0
+offset_top = 19.0
+offset_right = 200.0
+offset_bottom = 187.0
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("21_ps8ey")
 expand_mode = 3
 
 [node name="Heart2" type="TextureRect" parent="UI/Panel"]
 texture_filter = 1
-layout_mode = 2
-offset_left = 105.0
-offset_top = 25.0
-offset_right = 277.25
-offset_bottom = 184.0
+layout_mode = 0
+offset_left = 108.0
+offset_top = 19.0
+offset_right = 290.0
+offset_bottom = 187.0
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("21_ps8ey")
 expand_mode = 3
 
 [node name="Heart3" type="TextureRect" parent="UI/Panel"]
 texture_filter = 1
-layout_mode = 2
-offset_left = 190.0
-offset_top = 25.0
-offset_right = 362.25
-offset_bottom = 184.0
+layout_mode = 0
+offset_left = 198.0
+offset_top = 19.0
+offset_right = 380.0
+offset_bottom = 187.0
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("21_ps8ey")
 expand_mode = 3
 
 [node name="Heart4" type="TextureRect" parent="UI/Panel"]
 texture_filter = 1
-layout_mode = 2
-offset_left = 275.0
-offset_top = 25.0
-offset_right = 447.25
-offset_bottom = 184.0
+layout_mode = 0
+offset_left = 288.0
+offset_top = 19.0
+offset_right = 470.0
+offset_bottom = 187.0
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("21_ps8ey")
 expand_mode = 3
 
 [node name="Heart5" type="TextureRect" parent="UI/Panel"]
 texture_filter = 1
-layout_mode = 2
-offset_left = 360.0
-offset_top = 25.0
-offset_right = 532.25
-offset_bottom = 184.0
+layout_mode = 0
+offset_left = 378.0
+offset_top = 19.0
+offset_right = 560.0
+offset_bottom = 187.0
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("21_ps8ey")
 expand_mode = 3
 
 [node name="Heart6" type="TextureRect" parent="UI/Panel"]
 texture_filter = 1
-layout_mode = 2
-offset_left = 445.0
-offset_top = 25.0
-offset_right = 617.25
-offset_bottom = 184.0
+layout_mode = 0
+offset_left = 468.0
+offset_top = 19.0
+offset_right = 650.0
+offset_bottom = 187.0
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("21_ps8ey")
 expand_mode = 3
 
 [node name="Heart7" type="TextureRect" parent="UI/Panel"]
 texture_filter = 1
-layout_mode = 2
-offset_left = 530.0
-offset_top = 25.0
-offset_right = 702.25
-offset_bottom = 184.0
+layout_mode = 0
+offset_left = 558.0
+offset_top = 19.0
+offset_right = 740.0
+offset_bottom = 187.0
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("21_ps8ey")
 expand_mode = 3

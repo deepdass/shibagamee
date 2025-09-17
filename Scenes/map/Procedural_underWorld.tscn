@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://bcncd8l135l6r"]
 
-[ext_resource type="Script" uid="uid://b8tcib7cuxmbg" path="res://Scripts/game_manager.gd" id="1_sybx7"]
-[ext_resource type="Script" uid="uid://bjd6nnkoo61vr" path="res://Scripts/dungeon_logic.gd" id="2_6mqte"]
+[ext_resource type="Script" uid="uid://b8tcib7cuxmbg" path="res://Scripts/0Managers/game_manager.gd" id="1_sybx7"]
+[ext_resource type="Script" uid="uid://bjd6nnkoo61vr" path="res://Scripts/0Managers/dungeon_logic.gd" id="2_6mqte"]
 [ext_resource type="Texture2D" uid="uid://dwnmocndg7gk7" path="res://Assets/UI/Heart.png" id="3_pgxp7"]
 [ext_resource type="PackedScene" uid="uid://c7illv6kf10b2" path="res://Scenes/characters/players/character_base.tscn" id="4_yx7v0"]
 [ext_resource type="MeshLibrary" uid="uid://61gf5acs8qic" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib1.tres" id="5_1djnt"]

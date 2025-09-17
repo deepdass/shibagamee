@@ -75,7 +75,7 @@ func _hitfinish():
 		var new_projectile = projectile.instantiate()
 		new_projectile.global_transform = fireposnode.global_transform
 		new_projectile.projectile_speed = projectile_speed
-		get_tree().root.add_child(new_projectile)
+		get_tree().get_current_scene().add_child(new_projectile)
 		
 		
 func take_damage():

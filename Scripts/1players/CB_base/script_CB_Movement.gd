@@ -122,12 +122,6 @@ func _push_away_rigid_bodies():
 			var push_force = mass_ratio * 5.0 #magic number
 			c.get_collider().apply_impulse(push_dir * velocity_diff_in_push_dir * push_force, c.get_position() - c.get_collider().global_position)
 
-
-##pewpew
-	if Input.is_action_pressed("attack"):
-		visuals.look_at(look_at_me, Vector3.UP)
-		wep_manager.attack_basic()
-
 func _rotate(where):
 	look_at_me = where
 

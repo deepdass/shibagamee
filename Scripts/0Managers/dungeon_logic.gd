@@ -4,6 +4,8 @@ extends Node
 @onready var navigation_region_3d: NavigationRegion3D = $"../SubViewportContainer/SubViewport/myy/NavigationRegion3D"
 @onready var player: CharacterBody3D = %Player
 
+var power_up_Chest = load("res://Scenes/powerUPs/PowerUp_chest.tscn")
+
 var skeleton_minion = load("res://Scenes/characters/enemy/skeleton_minion.tscn")
 var skeleton_rogue = load("res://Scenes/characters/enemy/skeleton_rogue.tscn")
 var inst_skeleton_minion
@@ -22,6 +24,10 @@ func _get_random_child(parent_node):
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body == player:
+		var power_up_Chest_inst = power_up_Chest.instantiate()
+		power_up_Chest_inst.position = Vector3(player.position.x, player.position.y + 10, player.position.z)
+		power_up_Chest_inst.mass = 120
+		get_tree().get_current_scene().add_child(power_up_Chest_inst)
 		for i in 5:
 			var spawn_pt = _get_random_child(spwans).global_position + Vector3(randi_range(1,5),0,randi_range(1,5))
 			var choice = randi_range(0,1)

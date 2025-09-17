@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://cixblde5ubic8"]
 
-[ext_resource type="Script" uid="uid://br651da36kxjy" path="res://Scripts/tests/skeleton_projectiles.gd" id="1_jgnx1"]
+[ext_resource type="Script" uid="uid://br651da36kxjy" path="res://Scripts/2enemy/Rogue/skeleton_projectiles.gd" id="1_jgnx1"]
 [ext_resource type="PackedScene" uid="uid://b6l50wikbqmes" path="res://Assets/Skeletons/assets/gltf/Skeleton_Arrow.gltf" id="2_slwbb"]
 [ext_resource type="Shader" uid="uid://dna72u8nellpt" path="res://Shaders/pojectile/mage_projectile.tres" id="3_ux6ju"]
 [ext_resource type="Shader" uid="uid://dey5l5ng5n1mv" path="res://Shaders/pojectile/mage_projectile_trail.tres" id="5_1f5eq"]

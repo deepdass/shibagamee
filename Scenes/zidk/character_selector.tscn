@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://44sm5kpltwcy"]
 
-[ext_resource type="Script" uid="uid://b1ymp4f5bkdj6" path="res://Scripts/character_selector.gd" id="1_6gwj0"]
+[ext_resource type="Script" uid="uid://b1ymp4f5bkdj6" path="res://Scripts/0Managers/character_selector.gd" id="1_6gwj0"]
 [ext_resource type="Texture2D" uid="uid://bv5lmlnikslge" path="res://Assets/character_banner/highres.jpg" id="2_0x172"]
 
 [node name="Character_selector" type="Panel"]

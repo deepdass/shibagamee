@@ -67,8 +67,8 @@ func update_UI():
 		Engine.time_scale = 0.3
 
 func _on_timer_timeout() -> void:  ## kill timeout
-	get_tree().reload_current_scene()
 	Engine.time_scale = 1
+	get_tree().reload_current_scene()
 
 func _on_area_3d_body_entered(body: Node3D) -> void: ##inside crypt
 	if body == player:

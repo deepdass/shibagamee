@@ -1,11 +1,12 @@
-[gd_scene load_steps=32 format=3 uid="uid://dnusa7yud0k00"]
+[gd_scene load_steps=33 format=3 uid="uid://dnusa7yud0k00"]
 
-[ext_resource type="Script" uid="uid://b8tcib7cuxmbg" path="res://Scripts/game_manager.gd" id="1_cc7uj"]
-[ext_resource type="Script" uid="uid://bjd6nnkoo61vr" path="res://Scripts/dungeon_logic.gd" id="1_hmakl"]
+[ext_resource type="Script" uid="uid://b8tcib7cuxmbg" path="res://Scripts/0Managers/game_manager.gd" id="1_cc7uj"]
+[ext_resource type="Script" uid="uid://bjd6nnkoo61vr" path="res://Scripts/0Managers/dungeon_logic.gd" id="1_hmakl"]
 [ext_resource type="Texture2D" uid="uid://dwnmocndg7gk7" path="res://Assets/UI/Heart.png" id="2_hmakl"]
 [ext_resource type="MeshLibrary" uid="uid://61gf5acs8qic" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib1.tres" id="4_cc7uj"]
 [ext_resource type="PackedScene" uid="uid://c7illv6kf10b2" path="res://Scenes/characters/players/character_base.tscn" id="5_2ulnn"]
 [ext_resource type="ArrayMesh" uid="uid://dwvhthktir4xx" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/obj/bottle_A_brown.obj" id="5_7bm7t"]
+[ext_resource type="PackedScene" uid="uid://7wuf3nd758mc" path="res://Scenes/powerUPs/PowerUp_chest.tscn" id="5_aq7sw"]
 [ext_resource type="MeshLibrary" uid="uid://itk8p671mpm7" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Propslib.tres" id="6_moq3e"]
 [ext_resource type="ArrayMesh" uid="uid://c0m5np7dt27n4" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/obj/box_small.obj" id="7_7ecmq"]
 [ext_resource type="ArrayMesh" uid="uid://da70bkccr2th1" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/obj/box_large.obj" id="8_4m062"]
@@ -110,10 +111,10 @@ script = ExtResource("1_hmakl")
 [node name="Heart1" type="TextureRect" parent="UI/Panel"]
 texture_filter = 1
 layout_mode = 2
-offset_left = 20.0
-offset_top = 25.0
-offset_right = 192.775
-offset_bottom = 184.0
+offset_left = 18.0
+offset_top = 19.0
+offset_right = 200.0
+offset_bottom = 187.0
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("2_hmakl")
 expand_mode = 3
@@ -121,10 +122,10 @@ expand_mode = 3
 [node name="Heart2" type="TextureRect" parent="UI/Panel"]
 texture_filter = 1
 layout_mode = 2
-offset_left = 105.0
-offset_top = 25.0
-offset_right = 277.25
-offset_bottom = 184.0
+offset_left = 108.0
+offset_top = 19.0
+offset_right = 290.0
+offset_bottom = 187.0
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("2_hmakl")
 expand_mode = 3
@@ -132,10 +133,10 @@ expand_mode = 3
 [node name="Heart3" type="TextureRect" parent="UI/Panel"]
 texture_filter = 1
 layout_mode = 2
-offset_left = 190.0
-offset_top = 25.0
-offset_right = 362.25
-offset_bottom = 184.0
+offset_left = 198.0
+offset_top = 19.0
+offset_right = 380.0
+offset_bottom = 187.0
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("2_hmakl")
 expand_mode = 3
@@ -143,10 +144,10 @@ expand_mode = 3
 [node name="Heart4" type="TextureRect" parent="UI/Panel"]
 texture_filter = 1
 layout_mode = 2
-offset_left = 275.0
-offset_top = 25.0
-offset_right = 447.25
-offset_bottom = 184.0
+offset_left = 288.0
+offset_top = 19.0
+offset_right = 470.0
+offset_bottom = 187.0
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("2_hmakl")
 expand_mode = 3
@@ -154,10 +155,10 @@ expand_mode = 3
 [node name="Heart5" type="TextureRect" parent="UI/Panel"]
 texture_filter = 1
 layout_mode = 2
-offset_left = 360.0
-offset_top = 25.0
-offset_right = 532.25
-offset_bottom = 184.0
+offset_left = 378.0
+offset_top = 19.0
+offset_right = 560.0
+offset_bottom = 187.0
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("2_hmakl")
 expand_mode = 3
@@ -165,10 +166,10 @@ expand_mode = 3
 [node name="Heart6" type="TextureRect" parent="UI/Panel"]
 texture_filter = 1
 layout_mode = 2
-offset_left = 445.0
-offset_top = 25.0
-offset_right = 617.25
-offset_bottom = 184.0
+offset_left = 468.0
+offset_top = 19.0
+offset_right = 650.0
+offset_bottom = 187.0
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("2_hmakl")
 expand_mode = 3
@@ -176,10 +177,10 @@ expand_mode = 3
 [node name="Heart7" type="TextureRect" parent="UI/Panel"]
 texture_filter = 1
 layout_mode = 2
-offset_left = 530.0
-offset_top = 25.0
-offset_right = 702.25
-offset_bottom = 184.0
+offset_left = 558.0
+offset_top = 19.0
+offset_right = 740.0
+offset_bottom = 187.0
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("2_hmakl")
 expand_mode = 3
@@ -327,6 +328,9 @@ data = {
 "cells": PackedInt32Array(1, 0, 34, 196607, 65533, 60, 131075, 65532, 92, 131082, 4, 1441884)
 }
 metadata/_editor_floor_ = Vector3(0, 2, 0)
+
+[node name="PowerUp chest" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/env" instance=ExtResource("5_aq7sw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 6, 18)
 
 [node name="props" type="Node" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D"]
 
