@@ -15,6 +15,7 @@ var subViewport = null
 var health : int = 3
 @onready var damagepopup: Node3D = $idknode
 
+@onready var destroyaftertime: Timer = $destroyaftertime
 
 
 const  SPEED = 4.2
@@ -65,7 +66,7 @@ func _target_in_range():
 func _hitfinish():
 	if global_position.distance_to(player.global_position) < ATTACK_RANGE + 0.5 :
 		var dir = global_position.direction_to(player.global_position)
-		game_manager.decrease_health()
+		player.decrease_health()
 		player.velocity += Vector3(dir.x , dir.y * 0.1, dir.z ) * KnockbackMul
 		
 func take_damage():
@@ -79,6 +80,7 @@ func take_damage():
 		collision_shape_3d.disabled = true
 		skeleton_minion_eyes.visible = false
 		animation_tree.set("parameters/conditions/Resurrect",false)
+		destroyaftertime.start()
 	timer.start()
 
 
@@ -87,3 +89,7 @@ func _on_timer_timeout() -> void:
 		collision_shape_3d.disabled = false
 		animation_tree.set("parameters/conditions/fall",false)
 	damagepopup.visible = false
+
+
+func _on_destroyaftertime_timeout() -> void:
+	queue_free()

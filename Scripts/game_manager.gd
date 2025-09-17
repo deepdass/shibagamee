@@ -9,22 +9,24 @@ extends Node
 @onready var world: Node3D = $".."
 @onready var player: CharacterBody3D = %Player
 
-@onready var heart_1: TextureRect = $"../UI/Panel/Heart1"
-@onready var heart_2: TextureRect = $"../UI/Panel/Heart2"
-@onready var heart_3: TextureRect = $"../UI/Panel/Heart3"
+
 @onready var timer: Timer = $Timer
 @onready var sub_viewport: SubViewport = $"../SubViewportContainer/SubViewport"
 
 
-
-var score = 0
-var lives = 3
-
 var ray_origin = Vector3()
 var ray_target_pt = Vector3()
 
+########################################
 @export var hearts : Array[Node]
 
+########################################
+func  _ready() -> void:
+	for i in hearts.size():
+		if i < player.health:
+			hearts[i].show()
+		else:
+			hearts[i].hide()
 func _physics_process(delta: float) -> void:
 	
 	##
@@ -53,15 +55,14 @@ func _physics_process(delta: float) -> void:
 		var look_at_me = Vector3(pos.x, player.position.y, pos.z)
 		player._rotate(look_at_me)
 
-func decrease_health():
-	lives -= 1
-	player.play_hurt()
+func update_UI():
+	
 	for i in hearts.size():
-		if (i < lives):
+		if (i < player.health):
 			hearts[i].show()
 		else:
 			hearts[i].hide()
-	if lives == 0:
+	if player.health == 0:
 		timer.start()
 		Engine.time_scale = 0.3
 
@@ -76,5 +77,5 @@ func _on_area_3d_body_entered(body: Node3D) -> void: ##inside crypt
 
 func _on_killzone_body_entered(body: Node3D) -> void:
 	if body == player:
-		for i in lives:
-			decrease_health()
+		for i in player.health:
+			player.decrease_health()

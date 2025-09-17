@@ -27,6 +27,12 @@ var state_machine
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var timer: Timer = $Timer
 
+
+@onready var destroyaftertime: Timer = $destroyaftertime
+
+
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
@@ -70,7 +76,7 @@ func _hitfinish():
 		new_projectile.global_transform = fireposnode.global_transform
 		new_projectile.projectile_speed = projectile_speed
 		get_tree().root.add_child(new_projectile)
-		var dir = global_position.direction_to(player.global_position)
+		
 		
 func take_damage():
 	health -= 1
@@ -83,6 +89,7 @@ func take_damage():
 		collision_shape_3d.disabled = true
 		skeleton_rogue_eyes.visible = false
 		animation_tree.set("parameters/conditions/Resurrect",false)
+		destroyaftertime.start()
 	timer.start()
 
 
@@ -91,3 +98,7 @@ func _on_timer_timeout() -> void:
 		collision_shape_3d.disabled = false
 		animation_tree.set("parameters/conditions/fall",false)
 	damagepopup.visible = false
+
+
+func _on_destroyaftertime_timeout() -> void:
+	queue_free()

@@ -1,40 +1,63 @@
 extends CharacterBody3D
 
-
-const SPEED = 5.0
-const JUMP_VELOCITY = 3.5
-const RUNMULYIPLIER = 1.5
-
+##refs
+@onready var game_manager: Node = %GameManager  ## game_manager.decrease_health()
 @export var character_mesh = preload("res://Scenes/characters/players/mage.tscn")
 
+##visuals
 @onready var animation_tree: AnimationTree = null
 @onready var visuals: Node3D = $visuals
-@onready var game_manager: Node = %GameManager  ## game_manager.decrease_health()
 
+##attackrefs
 @onready var wep_manager: Node = null
 @onready var dash_timer: Timer = $"dash timer"
 
+##audio
 @onready var dash_sfx: AudioStreamPlayer = $dashSFX
 @onready var hurt_sfx: AudioStreamPlayer = $hurtSFX
 
 
 var dashing = false
-
-var walking = false
 var running = false
-
 var look_at_me : Vector3
+
+## stats
+var health : int = 5
+var defence : float
+var sp_Meter : int
+
+#combat
+var attack : float
+var attack_range : float
+var crit_rate : float
+var crit_damage : float
+
+var can_crit : bool = false
+
+
+var movement_speed : float = 7.5
+var stamina : int
+
+##
+
+const JUMP_VELOCITY = 3.5
 
 
 func _ready() -> void:
+	# setup
 	var character_mesh_inst = character_mesh.instantiate()
 	visuals.add_child(character_mesh_inst)
 	character_mesh_inst.global_transform = visuals.global_transform
 	animation_tree = character_mesh_inst.CB_setup()
 	animation_tree.advance_expression_base_node = self.get_path()
 	wep_manager = character_mesh_inst.get_node("WEP_manager")
+	#
 	
+	#combat
+	randomize()
 func _physics_process(delta: float) -> void:
+	
+	## movement - start ##
 	
 	# Add the gravity.
 	if not is_on_floor():
@@ -43,7 +66,6 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		walking = false
 		running = false
 
 	# Get the input direction and handle the movement/deceleration.
@@ -54,49 +76,35 @@ func _physics_process(delta: float) -> void:
 		#var dot_product := direction.dot(look_at_me.normalized())
 		#print(dot_product)
 		if Input.is_action_just_pressed("dash") and !dashing:
+			animation_tree.set("parameters/dash/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 			dashing = true
-			velocity = direction * SPEED * 17 + velocity
-			dash_sfx.play()
+			velocity = direction * movement_speed * 15 + velocity
 			velocity.y = 0
-			dash_timer.start()
 			
-		elif Input.is_action_pressed("sprint"):
-			walking = false
-			velocity.x = direction.x * SPEED * RUNMULYIPLIER
-			velocity.z = direction.z * SPEED * RUNMULYIPLIER
+			dash_sfx.play()
+			dash_timer.start()
+		else:
+			velocity.x = direction.x * movement_speed
+			velocity.z = direction.z * movement_speed
 			if !running:
 				running = true
-				
-		else:
-			running = false
-			velocity.x = direction.x * SPEED
-			velocity.z = direction.z * SPEED
-			if !walking:
-				walking = true
-				#const WALK_ANIM: Array[String] = ["Walking_A","Walking_B","Walking_C"]
-				#animation_player.play(WALK_ANIM[randi_range(0,2)])
-		
+			
 		visuals.look_at(direction + position)
 		
-		
-				
 	else:
 		visuals.look_at(look_at_me, Vector3.UP)
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, movement_speed)
+		velocity.z = move_toward(velocity.z, 0, movement_speed)
 		
-		walking = false
 		running = false
 	
 	_push_away_rigid_bodies()
-	
 	move_and_slide()
-	
-##pewpew
-	if Input.is_action_pressed("attack"):
-		visuals.look_at(look_at_me, Vector3.UP)
-		wep_manager.attack_basic()
-		#animation_player.play("Spellcasting")
+
+func _on_dash_timer_timeout() -> void:
+	dashing = false
+
+## movement - end ##
 
 
 func _push_away_rigid_bodies():
@@ -104,31 +112,50 @@ func _push_away_rigid_bodies():
 		var c := get_slide_collision(i)
 		if c.get_collider() is RigidBody3D:
 			var push_dir = -c.get_normal()
-			# How much velocity the object needs to increase to match player velocity in the push direction
 			var velocity_diff_in_push_dir = self.velocity.dot(push_dir) - c.get_collider().linear_velocity.dot(push_dir)
-			# Only count velocity towards push dir, away from character
 			velocity_diff_in_push_dir = max(0., velocity_diff_in_push_dir)
-			# Objects with more mass than us should be harder to push. But doesn't really make sense to push faster than we are going
 			const MY_APPROX_MASS_KG = 80.0
 			var mass_ratio = min(1., MY_APPROX_MASS_KG / c.get_collider().mass)
-			# Optional add: Don't push object at all if it's 4x heavier or more
 			if mass_ratio < 0.25:
 				continue
-			# Don't push object from above/below
 			push_dir.y = 0
-			# 5.0 is a magic number, adjust to your needs
-			var push_force = mass_ratio * 5.0
+			var push_force = mass_ratio * 5.0 #magic number
 			c.get_collider().apply_impulse(push_dir * velocity_diff_in_push_dir * push_force, c.get_position() - c.get_collider().global_position)
 
-func play_hurt():
-	hurt_sfx.play()
 
-func player_take_damage():
-	game_manager.decrease_health()
+##pewpew
+	if Input.is_action_pressed("attack"):
+		visuals.look_at(look_at_me, Vector3.UP)
+		wep_manager.attack_basic()
 
 func _rotate(where):
 	look_at_me = where
 
 
-func _on_dash_timer_timeout() -> void:
-	dashing = false
+func decrease_health():
+	health -= 1
+	game_manager.update_UI()
+	hurt_sfx.play()
+
+
+func CAL_defence():
+	if attack == 0 and defence == 0:
+		return 0.0
+	return (attack/(attack + defence))
+
+
+func crit(rate):
+	var num = randf_range(0,1)
+	
+	if num < rate:
+		can_crit = true
+		return crit_damage / 100.0
+	else:
+		can_crit = false
+		return 1.0 
+
+func randomnessFactor():
+	return randf_range(0.9,1.1)
+	
+func effective_damage():
+	var damage: float = attack * CAL_defence() * crit(crit_rate) * randomnessFactor()

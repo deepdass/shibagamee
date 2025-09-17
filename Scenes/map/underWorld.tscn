@@ -89,7 +89,7 @@ points = PackedVector3Array(-0.476895, 0.785634, -0.508137, 0.49281, 0.978245, 0
 [node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
 unique_name_in_owner = true
 script = ExtResource("1_cc7uj")
-hearts = [NodePath("../UI/Panel/Heart1"), NodePath("../UI/Panel/Heart2"), NodePath("../UI/Panel/Heart3")]
+hearts = [NodePath("../UI/Panel/Heart1"), NodePath("../UI/Panel/Heart2"), NodePath("../UI/Panel/Heart3"), NodePath("../UI/Panel/Heart4"), NodePath("../UI/Panel/Heart5"), NodePath("../UI/Panel/Heart6"), NodePath("../UI/Panel/Heart7")]
 
 [node name="Timer" type="Timer" parent="GameManager"]
 wait_time = 0.5
@@ -110,9 +110,9 @@ script = ExtResource("1_hmakl")
 [node name="Heart1" type="TextureRect" parent="UI/Panel"]
 texture_filter = 1
 layout_mode = 2
-offset_left = 24.0
+offset_left = 20.0
 offset_top = 25.0
-offset_right = 196.25
+offset_right = 192.775
 offset_bottom = 184.0
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("2_hmakl")
@@ -121,9 +121,9 @@ expand_mode = 3
 [node name="Heart2" type="TextureRect" parent="UI/Panel"]
 texture_filter = 1
 layout_mode = 2
-offset_left = 114.0
+offset_left = 105.0
 offset_top = 25.0
-offset_right = 286.25
+offset_right = 277.25
 offset_bottom = 184.0
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("2_hmakl")
@@ -132,9 +132,53 @@ expand_mode = 3
 [node name="Heart3" type="TextureRect" parent="UI/Panel"]
 texture_filter = 1
 layout_mode = 2
-offset_left = 201.0
+offset_left = 190.0
 offset_top = 25.0
-offset_right = 373.25
+offset_right = 362.25
+offset_bottom = 184.0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_hmakl")
+expand_mode = 3
+
+[node name="Heart4" type="TextureRect" parent="UI/Panel"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 275.0
+offset_top = 25.0
+offset_right = 447.25
+offset_bottom = 184.0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_hmakl")
+expand_mode = 3
+
+[node name="Heart5" type="TextureRect" parent="UI/Panel"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 360.0
+offset_top = 25.0
+offset_right = 532.25
+offset_bottom = 184.0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_hmakl")
+expand_mode = 3
+
+[node name="Heart6" type="TextureRect" parent="UI/Panel"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 445.0
+offset_top = 25.0
+offset_right = 617.25
+offset_bottom = 184.0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_hmakl")
+expand_mode = 3
+
+[node name="Heart7" type="TextureRect" parent="UI/Panel"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 530.0
+offset_top = 25.0
+offset_right = 702.25
 offset_bottom = 184.0
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("2_hmakl")
@@ -152,7 +196,7 @@ stretch_shrink = 4
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(320, 180)
+size = Vector2i(240, 135)
 render_target_update_mode = 4
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
