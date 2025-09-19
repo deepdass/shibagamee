@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="PowerUps" load_steps=3 format=3 uid="uid://dcrqiov4500yq"]
+
+[ext_resource type="PackedScene" uid="uid://kdxsghwc5mba" path="res://Assets/_my/WitchHat.fbx" id="1_gi8ak"]
+[ext_resource type="Script" uid="uid://ctxk67plu8g8l" path="res://Scripts/3PowerUps/RES_PowerUp.gd" id="2_llksk"]
+
+[resource]
+script = ExtResource("2_llksk")
+mesh = ExtResource("1_gi8ak")
+name = "hat"
+descriptionofpowerup = ""
+rarity = "Mythic"
+description = "hello"
+health = 0
+defence = 0.0
+sp_Meter = 0
+attack = 0.0
+attack_range = 0.0
+crit_rate = 0.0
+crit_damage = 0.0
+movement_speed = 0.0
+stamina = 0
+metadata/_custom_type_script = "uid://ctxk67plu8g8l"

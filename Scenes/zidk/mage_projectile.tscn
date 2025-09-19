@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bbco0ihgwlru1"]
+[gd_scene load_steps=19 format=3 uid="uid://bbco0ihgwlru1"]
 
 [ext_resource type="Script" uid="uid://bcih858s23f8s" path="res://Scripts/1players/Mage/mage_projectile.gd" id="1_modmu"]
 [ext_resource type="ArrayMesh" uid="uid://d11xfp7ihys5v" path="res://Assets/_my/fireball_head_mesh.obj" id="2_0gr0s"]
@@ -14,8 +14,6 @@ shader = ExtResource("2_wmgsc")
 shader_parameter/ball_color = Color(1, 0.517647, 0.14902, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_modmu"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_0gr0s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3b7pp"]
 render_priority = 0
@@ -67,13 +65,6 @@ transform = Transform3D(-1.04907e-08, 0, -0.24, 0, 0.24, 0, 0.24, 0, -1.04907e-0
 material_override = SubResource("ShaderMaterial_iguuu")
 mesh = SubResource("SphereMesh_modmu")
 
-[node name="RigidBody3D" type="RigidBody3D" parent="MeshInstance3D"]
-transform = Transform3D(1, 0, -8.88178e-16, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/RigidBody3D"]
-transform = Transform3D(1, 0, -3.55271e-14, 0, 0.999997, 0, 0, 0, 0.999997, 0, 0, 0)
-shape = SubResource("SphereShape3D_0gr0s")
-
 [node name="FireballHeadMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1.1164e-08, 0, 0.2, 0, 0.183121, 0, -0.255403, 0, -8.74228e-09, 1.2815e-09, 1.11641e-24, 0.0242428)
 material_override = SubResource("ShaderMaterial_3b7pp")
@@ -112,6 +103,7 @@ scale_amount_curve = SubResource("Curve_8lck6")
 color = Color(2, 1.5, 0.5, 1)
 
 [node name="Area3D" type="Area3D" parent="."]
+collision_mask = 15
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00395478, -0.320756, 0.0070802)

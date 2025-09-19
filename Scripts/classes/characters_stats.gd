@@ -2,6 +2,7 @@ extends Resource
 
 class_name  Stats
 
+
 @export_multiline var description : String
 
 @export var health : int

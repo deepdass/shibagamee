@@ -1,18 +1,7 @@
-[gd_scene load_steps=21 format=4 uid="uid://7wuf3nd758mc"]
+[gd_scene load_steps=16 format=4 uid="uid://7wuf3nd758mc"]
 
 [ext_resource type="Texture2D" uid="uid://e08etccomcp2" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="1_lbilg"]
 [ext_resource type="Script" uid="uid://dki57qs1yif3i" path="res://Scripts/3PowerUps/power_up_chest.gd" id="1_ox5j7"]
-[ext_resource type="Script" uid="uid://ctxk67plu8g8l" path="res://Scripts/3PowerUps/RES_PowerUp.gd" id="2_4rqlq"]
-[ext_resource type="PackedScene" uid="uid://ceksbhui2hbdr" path="res://Assets/Adventurers/Assets/gltf/staff.gltf" id="3_wjarf"]
-[ext_resource type="PackedScene" uid="uid://rj7ek4pdhv3i" path="res://Assets/Adventurers/Assets/gltf/mug_full.gltf" id="4_4rqlq"]
-[ext_resource type="PackedScene" uid="uid://cx6uuncaigul2" path="res://Assets/Adventurers/Assets/gltf/spellbook_closed.gltf" id="4_wjarf"]
-
-[sub_resource type="Resource" id="Resource_rdxwg"]
-script = ExtResource("2_4rqlq")
-name = ""
-description = ""
-rarity = ""
-metadata/_custom_type_script = "uid://ctxk67plu8g8l"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lbilg"]
 size = Vector3(1.70789, 1.19222, 1.19873)
@@ -89,36 +78,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_f4mh3")
 
-[sub_resource type="Animation" id="Animation_lbilg"]
-resource_name = "chest_open"
-length = 1.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("chest_mesh/chest/chest_lid:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.75, 1.1),
-"transitions": PackedFloat32Array(1, 4.75682, 0.466517, -0.5),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-2.35619, 0, 0), Vector3(-2.35619, 0, 0), Vector3(0, 0, 0)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.5),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"_showPowerUps"
-}]
-}
-
 [sub_resource type="Animation" id="Animation_ox5j7"]
 length = 0.001
 tracks/0/type = "value"
@@ -170,10 +129,115 @@ tracks/3/keys = {
 "values": [Vector3(1.5, 0.522647, 1.77904)]
 }
 
+[sub_resource type="Animation" id="Animation_lbilg"]
+resource_name = "chest_open"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("chest_mesh/chest/chest_lid:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.75, 1.1),
+"transitions": PackedFloat32Array(1, 4.75682, 0.466517, -0.5),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-2.35619, 0, 0), Vector3(-2.35619, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_showPowerUps"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ox5j7"]
 _data = {
 &"RESET": SubResource("Animation_ox5j7"),
 &"chest_open": SubResource("Animation_lbilg")
+}
+
+[sub_resource type="Animation" id="Animation_a63b1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pt1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.772945, -2.22096)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pt2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5, 0.772945, 1.77904)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("pt3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5, 0.772945, 1.77904)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("pt1:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("pt2:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("pt3:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_wjarf"]
@@ -253,81 +317,6 @@ tracks/5/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, 6.28319, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_a63b1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("pt1:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0.772945, -2.22096)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("pt2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-1.5, 0.772945, 1.77904)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("pt3:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(1.5, 0.772945, 1.77904)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("pt1:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("pt2:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("pt3:rotation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4rqlq"]
 _data = {
 &"RESET": SubResource("Animation_a63b1"),
@@ -337,8 +326,8 @@ _data = {
 [node name="PowerUp chest" type="RigidBody3D"]
 collision_mask = 7
 mass = 120.0
+gravity_scale = 3.0
 script = ExtResource("1_ox5j7")
-PowerUp = SubResource("Resource_rdxwg")
 
 [node name="Collision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000183105, 0.602847, -0.00415039)
@@ -373,21 +362,14 @@ visible = false
 [node name="pt1" type="Node3D" parent="pts"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.772945, -2.22096)
 
-[node name="staff2" parent="pts/pt1" instance=ExtResource("3_wjarf")]
-transform = Transform3D(-0.797999, 0.511193, 0.319185, 0.601597, 0.707107, 0.371592, -0.0357428, 0.488551, -0.871803, 0, 0, 0)
-
 [node name="pt2" type="Node3D" parent="pts"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.772945, 1.77904)
-
-[node name="spellbook_closed2" parent="pts/pt2" instance=ExtResource("4_wjarf")]
-transform = Transform3D(0.534114, 0.577171, 0.617734, -0.0589637, 0.754343, -0.653827, -0.843354, 0.312794, 0.436937, 0, 0.090133, 0)
 
 [node name="pt3" type="Node3D" parent="pts"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.772945, 1.77904)
 
-[node name="mug_full2" parent="pts/pt3" instance=ExtResource("4_4rqlq")]
-
-[node name="ptsAnim" type="AnimationPlayer" parent="pts"]
+[node name="ptsAnim" type="AnimationPlayer" parent="."]
+root_node = NodePath("../pts")
 libraries = {
 &"": SubResource("AnimationLibrary_4rqlq")
 }

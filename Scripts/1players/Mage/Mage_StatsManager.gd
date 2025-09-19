@@ -1,7 +1,17 @@
 extends Node
 
 
+
 @onready var the_base_character = get_parent().get_parent().get_parent()
+
+@export var stats : Stats
+var RES := load("res://Res/character/RES_mage.tres")
+
+var can_crit : bool = false
+
+
+@onready var mage_hat: BoneAttachment3D = $"../CharacterMesh/Rig/Skeleton3D/Mage_Hat"
+
 
 ## attack basic
 @export var projectile : PackedScene
@@ -21,6 +31,7 @@ var can_attack_basic = true
 
 
 func _ready() -> void:
+	stats = RES.duplicate()
 	attack_bacis__timer.wait_time = milli_per_shots / 1000.0
 
 
@@ -45,4 +56,37 @@ func attack_basic():
 
 func _on_timer_timeout() -> void: ##  attack basic timer
 	can_attack_basic = true
+
+
+
+func CAL_defence():
+	if stats.attack == 0 and stats.defence == 0:
+		return 0.0
+	return (stats.attack/(stats.attack + stats.defence))
+
+
+func crit(rate):
+	var num = randf_range(0,1)
 	
+	if num < rate:
+		can_crit = true
+		return stats.crit_damage / 100.0
+	else:
+		can_crit = false
+		return 1.0 
+
+func randomnessFactor():
+	return randf_range(0.9,1.1)
+	
+func effective_damage():
+	var damage: float = stats.attack * CAL_defence() * crit(stats.crit_rate) * randomnessFactor()
+
+
+
+
+func apply(health, movement_speed, names):
+	stats.health += health
+	stats.movement_speed += movement_speed
+	if names == "hat":
+		mage_hat.visible = true
+	the_base_character.ui()

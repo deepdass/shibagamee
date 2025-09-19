@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dho46bkvgwuws" path="res://Scenes/characters/players/scriptSetup_CB.gd" id="1_6jehf"]
 [ext_resource type="Texture2D" uid="uid://bqlpv1etvyi1" path="res://Assets/Adventurers/Characters/gltf/Rogue_Hooded_rogue_texture.png" id="1_h0jvc"]
-[ext_resource type="Script" uid="uid://ciotuu3ij1svi" path="res://Scripts/1players/Mage/Mage_wep_manager.gd" id="3_mr78n"]
+[ext_resource type="Script" uid="uid://ciotuu3ij1svi" path="res://Scripts/1players/Mage/Mage_StatsManager.gd" id="3_mr78n"]
 [ext_resource type="PackedScene" uid="uid://bbco0ihgwlru1" path="res://Scenes/zidk/mage_projectile.tscn" id="4_4fyio"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7o334"]

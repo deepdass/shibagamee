@@ -15,3 +15,5 @@ func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.has_method("decrease_health"):
 		body.decrease_health()
+	else:
+		queue_free()

@@ -22,11 +22,9 @@ var ray_target_pt = Vector3()
 
 ########################################
 func  _ready() -> void:
-	for i in hearts.size():
-		if i < player.health:
-			hearts[i].show()
-		else:
-			hearts[i].hide()
+	pass
+	
+
 func _physics_process(delta: float) -> void:
 	
 	##
@@ -55,14 +53,15 @@ func _physics_process(delta: float) -> void:
 		var look_at_me = Vector3(pos.x, player.position.y, pos.z)
 		player._rotate(look_at_me)
 
+
 func update_UI():
 	
 	for i in hearts.size():
-		if (i < player.health):
+		if (i < player.StatsManager.stats.health):
 			hearts[i].show()
 		else:
 			hearts[i].hide()
-	if player.health == 0:
+	if player.StatsManager.stats.health == 0:
 		timer.start()
 		Engine.time_scale = 0.3
 
@@ -77,5 +76,5 @@ func _on_area_3d_body_entered(body: Node3D) -> void: ##inside crypt
 
 func _on_killzone_body_entered(body: Node3D) -> void:
 	if body == player:
-		for i in player.health:
+		for i in player.StatsManager.stats.health:
 			player.decrease_health()

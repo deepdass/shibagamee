@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3 uid="uid://bo1ndft2mbkrx"]
+
+[ext_resource type="Script" uid="uid://be76riygqspue" path="res://Scripts/classes/characters_stats.gd" id="1_11ken"]
+
+[resource]
+script = ExtResource("1_11ken")
+description = "Yeep"
+health = 1
+defence = 0.0
+sp_Meter = 0
+attack = 0.0
+attack_range = 0.0
+crit_rate = 0.0
+crit_damage = 0.0
+movement_speed = 7.5
+stamina = 0
+metadata/_custom_type_script = "uid://be76riygqspue"

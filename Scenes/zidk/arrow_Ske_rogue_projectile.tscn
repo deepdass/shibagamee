@@ -1,108 +1,22 @@
-[gd_scene load_steps=17 format=3 uid="uid://cixblde5ubic8"]
+[gd_scene load_steps=5 format=3 uid="uid://cixblde5ubic8"]
 
 [ext_resource type="Script" uid="uid://br651da36kxjy" path="res://Scripts/2enemy/Rogue/skeleton_projectiles.gd" id="1_jgnx1"]
 [ext_resource type="PackedScene" uid="uid://b6l50wikbqmes" path="res://Assets/Skeletons/assets/gltf/Skeleton_Arrow.gltf" id="2_slwbb"]
-[ext_resource type="Shader" uid="uid://dna72u8nellpt" path="res://Shaders/pojectile/mage_projectile.tres" id="3_ux6ju"]
-[ext_resource type="Shader" uid="uid://dey5l5ng5n1mv" path="res://Shaders/pojectile/mage_projectile_trail.tres" id="5_1f5eq"]
 [ext_resource type="AudioStream" uid="uid://dc7ih71yirsl" path="res://Assets/Audio/205563__everheat__arrow.wav" id="6_jgnx1"]
-[ext_resource type="Texture2D" uid="uid://ds4nwe17k3hwt" path="res://Assets/_my/T_VFX_basic1.PNG" id="6_pm7yx"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jgnx1"]
-render_priority = 0
-shader = ExtResource("3_ux6ju")
-shader_parameter/firecolor = Color(0.505947, 0.324963, 1, 1)
-shader_parameter/head_movespeed = Vector2(3, 0.2)
-
-[sub_resource type="PrismMesh" id="PrismMesh_4b5vd"]
-size = Vector3(0.7, 0.7, 1)
-
-[sub_resource type="Gradient" id="Gradient_36bjb"]
-offsets = PackedFloat32Array(0, 0.24898, 0.620408)
-colors = PackedColorArray(0.505882, 0.32549, 1, 1, 0.44, 0.496, 1, 1, 0, 0.55, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_iguuu"]
-gradient = SubResource("Gradient_36bjb")
-width = 8
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8lck6"]
-render_priority = 0
-shader = ExtResource("5_1f5eq")
-shader_parameter/colortexture = SubResource("GradientTexture1D_iguuu")
-shader_parameter/head_movespeed = Vector2(-2, 0)
-
-[sub_resource type="QuadMesh" id="QuadMesh_8ppnm"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3b7pp"]
-blend_mode = 1
-cull_mode = 2
-shading_mode = 0
-disable_ambient_light = true
-disable_fog = true
-vertex_color_use_as_albedo = true
-vertex_color_is_srgb = true
-albedo_texture = ExtResource("6_pm7yx")
-
-[sub_resource type="QuadMesh" id="QuadMesh_iguuu"]
-size = Vector2(0.1, 0.5)
-
-[sub_resource type="Curve" id="Curve_8lck6"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iguuu"]
-size = Vector3(0.423557, 1.00064, 0.804337)
+size = Vector3(0.423557, 1, 0.804337)
 
 [node name="mage_projectile" type="Node3D"]
 script = ExtResource("1_jgnx1")
 
-[node name="FireballHeadMesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.255403, 0, -1.74846e-08, 0, 0.183121, 0, 2.2328e-08, 0, -0.2, 0.00059268, 0.0185447, 0.442163)
-visible = false
-material_override = SubResource("ShaderMaterial_jgnx1")
-cast_shadow = 0
-mesh = SubResource("PrismMesh_4b5vd")
-
 [node name="FireballHeadMesh2" parent="." instance=ExtResource("2_slwbb")]
 transform = Transform3D(1.4, 0, 0, 0, -6.11959e-08, 1.4, 0, -1.4, -6.11959e-08, 0, 0, 0)
-
-[node name="trailmesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(-7.80794e-08, -0.579096, -4.77215e-08, 0, -2.53131e-08, 1.09174, -1.78625, 2.53131e-08, 2.08597e-15, -4.82254e-08, -1.8979e-23, -0.48735)
-visible = false
-material_override = SubResource("ShaderMaterial_8lck6")
-mesh = SubResource("QuadMesh_8ppnm")
-
-[node name="trailmesh2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-8.0984e-08, -9.52824e-16, 0.998025, 0, 0.626375, 1.51817e-15, -1.8527, 4.16493e-23, -4.3625e-08, -0.0017675, 0.00168836, -0.459085)
-visible = false
-material_override = SubResource("ShaderMaterial_8lck6")
-mesh = SubResource("QuadMesh_8ppnm")
-
-[node name="GPUParticles3D" type="CPUParticles3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.00308625, 1.49012e-08, -0.285122)
-visible = false
-material_override = SubResource("StandardMaterial3D_3b7pp")
-amount = 7
-lifetime = 0.3
-explosiveness = 0.4
-fixed_fps = 30
-visibility_aabb = AABB(-4, -4, -4, 8, 8, 8)
-mesh = SubResource("QuadMesh_iguuu")
-emission_shape = 2
-emission_sphere_radius = 0.5
-particle_flag_align_y = true
-spread = 0.0
-gravity = Vector3(0, 0, 0)
-initial_velocity_min = 3.0
-initial_velocity_max = 8.0
-scale_amount_min = 1.2
-scale_amount_max = 1.2
-scale_amount_curve = SubResource("Curve_8lck6")
-color = Color(2, 1.5, 0.5, 1)
 
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0.000767945, 0, -0.000767945, 1, 0, 0, 0, 1, 1.58791e-05, -0.392323, 0.163)
+transform = Transform3D(1, 0.000767945, 0, -0.000767945, 1, 0, 0, 0, 1, 1.61249e-05, -0.392003, 0.163)
 shape = SubResource("BoxShape3D_iguuu")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]

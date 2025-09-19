@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="PowerUps" load_steps=3 format=3 uid="uid://cnga46qvlfqah"]
+
+[ext_resource type="Script" uid="uid://ctxk67plu8g8l" path="res://Scripts/3PowerUps/RES_PowerUp.gd" id="1_7pnvs"]
+[ext_resource type="PackedScene" uid="uid://ceksbhui2hbdr" path="res://Assets/Adventurers/Assets/gltf/staff.gltf" id="1_f8lv0"]
+
+[resource]
+script = ExtResource("1_7pnvs")
+mesh = ExtResource("1_f8lv0")
+name = "hii"
+descriptionofpowerup = ""
+rarity = "Mythic"
+description = "hello"
+health = 0
+defence = 0.0
+sp_Meter = 0
+attack = 0.0
+attack_range = 0.0
+crit_rate = 0.0
+crit_damage = 0.0
+movement_speed = 20.0
+stamina = 0
+metadata/_custom_type_script = "uid://ctxk67plu8g8l"

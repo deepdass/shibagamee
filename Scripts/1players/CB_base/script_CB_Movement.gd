@@ -9,7 +9,7 @@ extends CharacterBody3D
 @onready var visuals: Node3D = $visuals
 
 ##attackrefs
-@onready var wep_manager: Node = null
+@onready var StatsManager: Node = null
 @onready var dash_timer: Timer = $"dash timer"
 
 ##audio
@@ -21,22 +21,6 @@ var dashing = false
 var running = false
 var look_at_me : Vector3
 
-## stats
-var health : int = 5
-var defence : float
-var sp_Meter : int
-
-#combat
-var attack : float
-var attack_range : float
-var crit_rate : float
-var crit_damage : float
-
-var can_crit : bool = false
-
-
-var movement_speed : float = 7.5
-var stamina : int
 
 ##
 
@@ -48,9 +32,14 @@ func _ready() -> void:
 	var character_mesh_inst = character_mesh.instantiate()
 	visuals.add_child(character_mesh_inst)
 	character_mesh_inst.global_transform = visuals.global_transform
-	animation_tree = character_mesh_inst.CB_setup()
-	animation_tree.advance_expression_base_node = self.get_path()
-	wep_manager = character_mesh_inst.get_node("WEP_manager")
+	
+	animation_tree = character_mesh_inst.get_node("CharacterMesh/AnimationTree")
+	animation_tree.advance_expression_base_node = animation_tree.get_path()
+	
+	StatsManager = character_mesh_inst.get_node("StatsManager")
+	
+	
+	game_manager.update_UI()
 	#
 	
 	#combat
@@ -78,14 +67,14 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("dash") and !dashing:
 			animation_tree.set("parameters/dash/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 			dashing = true
-			velocity = direction * movement_speed * 15 + velocity
+			velocity = direction * StatsManager.stats.movement_speed * 15 + velocity
 			velocity.y = 0
 			
 			dash_sfx.play()
 			dash_timer.start()
 		else:
-			velocity.x = direction.x * movement_speed
-			velocity.z = direction.z * movement_speed
+			velocity.x = direction.x * StatsManager.stats.movement_speed
+			velocity.z = direction.z * StatsManager.stats.movement_speed
 			if !running:
 				running = true
 			
@@ -93,8 +82,8 @@ func _physics_process(delta: float) -> void:
 		
 	else:
 		visuals.look_at(look_at_me, Vector3.UP)
-		velocity.x = move_toward(velocity.x, 0, movement_speed)
-		velocity.z = move_toward(velocity.z, 0, movement_speed)
+		velocity.x = move_toward(velocity.x, 0, StatsManager.stats.movement_speed)
+		velocity.z = move_toward(velocity.z, 0, StatsManager.stats.movement_speed)
 		
 		running = false
 	
@@ -127,29 +116,17 @@ func _rotate(where):
 
 
 func decrease_health():
-	health -= 1
+	StatsManager.stats.health -= 1
 	game_manager.update_UI()
 	hurt_sfx.play()
 
 
-func CAL_defence():
-	if attack == 0 and defence == 0:
-		return 0.0
-	return (attack/(attack + defence))
-
-
-func crit(rate):
-	var num = randf_range(0,1)
+func ApplyUpgrades(health, movement_speed, names):
+	StatsManager.apply(health, movement_speed, names)
 	
-	if num < rate:
-		can_crit = true
-		return crit_damage / 100.0
-	else:
-		can_crit = false
-		return 1.0 
+func ui():
+	game_manager.update_UI()
 
-func randomnessFactor():
-	return randf_range(0.9,1.1)
-	
-func effective_damage():
-	var damage: float = attack * CAL_defence() * crit(crit_rate) * randomnessFactor()
+
+func _callCharactertype():
+	pass
