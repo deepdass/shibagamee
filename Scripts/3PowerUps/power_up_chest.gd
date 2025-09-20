@@ -15,9 +15,7 @@ extends RigidBody3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	for i in pts_parent.get_children():
-		var powerup_inst = powerUp.instantiate()
-		i.add_child(powerup_inst)
+	pass
 		
 
 
@@ -26,6 +24,9 @@ func _process(delta: float) -> void:
 	if player_entered:
 		if Input.is_action_just_pressed("interact"):
 			animation_player.play("chest_open")
+			for i in pts_parent.get_children():
+				var powerup_inst = powerUp.instantiate()
+				i.add_child(powerup_inst)
 
 
 func _showPowerUps():

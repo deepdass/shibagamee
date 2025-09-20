@@ -87,6 +87,9 @@ func _physics_process(delta: float) -> void:
 		
 		running = false
 	
+	animation_tree.set("parameters/AnimationNodeStateMachine/conditions/running", running)
+	animation_tree.set("parameters/AnimationNodeStateMachine/conditions/idle", !running)
+	
 	_push_away_rigid_bodies()
 	move_and_slide()
 
@@ -117,13 +120,10 @@ func _rotate(where):
 
 func decrease_health():
 	StatsManager.stats.health -= 1
-	game_manager.update_UI()
+	ui()
 	hurt_sfx.play()
 
 
-func ApplyUpgrades(health, movement_speed, names):
-	StatsManager.apply(health, movement_speed, names)
-	
 func ui():
 	game_manager.update_UI()
 

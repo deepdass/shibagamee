@@ -3,9 +3,7 @@ extends Resource
 class_name  Stats
 
 
-@export_multiline var description : String
-
-@export var health : int
+@export_range(0, 7) var health : int
 @export var defence : float
 @export var sp_Meter : int
 

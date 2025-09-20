@@ -1,16 +1,17 @@
 [gd_resource type="Resource" script_class="PowerUps" load_steps=3 format=3 uid="uid://djik0mx35ssfy"]
 
-[ext_resource type="PackedScene" uid="uid://04x64mlbyiit" path="res://Assets/Adventurers/Assets/gltf/wand.gltf" id="1_7m0o6"]
+[ext_resource type="PackedScene" uid="uid://d3x3x3tiiyhn4" path="res://Scenes/powerUPs/5_Common/heartup_INST.tscn" id="1_7m0o6"]
 [ext_resource type="Script" uid="uid://ctxk67plu8g8l" path="res://Scripts/3PowerUps/RES_PowerUp.gd" id="1_dqnis"]
 
 [resource]
 script = ExtResource("1_dqnis")
 mesh = ExtResource("1_7m0o6")
 name = "bro "
-descriptionofpowerup = ""
+description = ""
 rarity = "Mythic"
-description = "hello"
-health = 5
+type = "justUpgrades"
+equip_path = ""
+health = 2
 defence = 0.0
 sp_Meter = 0
 attack = 0.0

@@ -10,8 +10,6 @@ var RES := load("res://Res/character/RES_mage.tres")
 var can_crit : bool = false
 
 
-@onready var mage_hat: BoneAttachment3D = $"../CharacterMesh/Rig/Skeleton3D/Mage_Hat"
-
 
 ## attack basic
 @export var projectile : PackedScene
@@ -84,9 +82,22 @@ func effective_damage():
 
 
 
-func apply(health, movement_speed, names):
-	stats.health += health
-	stats.movement_speed += movement_speed
-	if names == "hat":
-		mage_hat.visible = true
+func applyUpgrades(receivedPowerups):
+	stats.health += receivedPowerups.health
+	stats.health = clampi(stats.health, 0, 7)
+	
+	stats.movement_speed += receivedPowerups.movement_speed
+	stats.sp_Meter += receivedPowerups.sp_Meter
+	stats.attack += receivedPowerups.attack
+	stats.attack_range += receivedPowerups.attack_range
+	stats.crit_rate += receivedPowerups.crit_rate
+	stats.crit_damage += receivedPowerups.crit_damage
+	stats.movement_speed += receivedPowerups.movement_speed
+	stats.stamina += receivedPowerups.stamina
+	
+	
+	if receivedPowerups.type == "equip_prop":
+		var equip_prop_path : BoneAttachment3D = get_node(receivedPowerups.equip_path)
+		equip_prop_path.visible = true
+	
 	the_base_character.ui()

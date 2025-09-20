@@ -11,18 +11,18 @@ const allRES := ["res://Scenes/powerUPs/hihello.tres","res://Scenes/powerUPs/hih
 func _ready() -> void:
 	var RESstring = allRES[randi_range(0,(allRES.size()-1))]
 	PowerUp = load(RESstring)
-	var powerup_inst = PowerUp.mesh.instantiate()
-	powerup_inst.position = meshspawn.position
-	meshspawn.add_child(powerup_inst)
+	var powerup_mesh_inst = PowerUp.mesh.instantiate()
+	powerup_mesh_inst.position = meshspawn.position
+	meshspawn.add_child(powerup_mesh_inst)
 
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and entered == true:
-		player.ApplyUpgrades(PowerUp.health, PowerUp.movement_speed , PowerUp.name)
+		player.StatsManager.applyUpgrades(PowerUp)
 		queue_free()
 
 func _on_body_entered(body: Node3D) -> void:
-	if body.has_method("ApplyUpgrades"):
+	if body.has_method("ui"):
 		player = body
 		entered = true
 

@@ -7,9 +7,10 @@
 script = ExtResource("2_llksk")
 mesh = ExtResource("1_gi8ak")
 name = "hat"
-descriptionofpowerup = ""
-rarity = "Mythic"
 description = "hello"
+rarity = "Mythic"
+type = "equip_prop"
+equip_path = "../CharacterMesh/Rig/Skeleton3D/Mage_Hat"
 health = 0
 defence = 0.0
 sp_Meter = 0
