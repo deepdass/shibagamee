@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://oyrlg3nupsps"]
+
+[ext_resource type="Script" uid="uid://icev4n0ic3b6" path="res://Scripts/pop_up.gd" id="1_tauqp"]
+
+[node name="popUp" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tauqp")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PowerUp_popUP" type="PopupPanel" parent="CanvasLayer"]
+unique_name_in_owner = true
+position = Vector2i(440, 215)
+size = Vector2i(108, 92)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PowerUp_popUP"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 104.0
+offset_bottom = 88.0
+
+[node name="Label" type="Label" parent="CanvasLayer/PowerUp_popUP/VBoxContainer"]
+layout_mode = 2
+text = "LiveBloom"
+
+[node name="Label2" type="Label" parent="CanvasLayer/PowerUp_popUP/VBoxContainer"]
+layout_mode = 2
+text = "Stats, Mythic"
+
+[node name="Label3" type="Label" parent="CanvasLayer/PowerUp_popUP/VBoxContainer"]
+layout_mode = 2
+text = "Info"

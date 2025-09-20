@@ -13,5 +13,44 @@ shape = SubResource("SphereShape3D_52n0j")
 
 [node name="meshspawn" type="Node3D" parent="."]
 
+[node name="popUp" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="popUp"]
+
+[node name="PowerUp_popUP" type="PopupPanel" parent="popUp/CanvasLayer2"]
+unique_name_in_owner = true
+auto_translate_mode = 1
+position = Vector2i(832, 412)
+size = Vector2i(128, 128)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="popUp/CanvasLayer2/PowerUp_popUP"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 124.0
+offset_bottom = 124.0
+
+[node name="Label" type="Label" parent="popUp/CanvasLayer2/PowerUp_popUP/VBoxContainer"]
+layout_mode = 2
+text = "LiveBloom"
+
+[node name="Label2" type="Label" parent="popUp/CanvasLayer2/PowerUp_popUP/VBoxContainer"]
+layout_mode = 2
+text = "Stats, Mythic"
+
+[node name="Label3" type="Label" parent="popUp/CanvasLayer2/PowerUp_popUP/VBoxContainer"]
+layout_mode = 2
+text = "Info"
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

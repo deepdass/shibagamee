@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+@export var stat : Stats 
+
 var player = null
 var game_manager = null
 var subViewport = null
