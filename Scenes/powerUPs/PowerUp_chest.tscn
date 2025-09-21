@@ -325,7 +325,7 @@ _data = {
 
 [node name="PowerUp chest" type="RigidBody3D"]
 collision_mask = 7
-mass = 120.0
+mass = 50.0
 gravity_scale = 3.0
 script = ExtResource("1_ox5j7")
 
@@ -357,7 +357,6 @@ libraries = {
 }
 
 [node name="pts" type="Node3D" parent="."]
-visible = false
 
 [node name="pt1" type="Node3D" parent="pts"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.772945, -2.22096)

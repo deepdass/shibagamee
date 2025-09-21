@@ -14,7 +14,7 @@ var subViewport = null
 
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
-var health : int = 3
+var health : int = 2
 @onready var damagepopup: Node3D = $idknode
 
 @onready var destroyaftertime: Timer = $destroyaftertime
@@ -28,6 +28,8 @@ var state_machine
 @onready var animation_tree: AnimationTree = $Skeleton_Minion/AnimationTree
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var timer: Timer = $Timer
+
+signal died
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -79,6 +81,7 @@ func take_damage():
 	audio_stream_player.play()
 	damagepopup.visible = true
 	if health == 0:
+		emit_signal("died")
 		collision_shape_3d.disabled = true
 		skeleton_minion_eyes.visible = false
 		animation_tree.set("parameters/conditions/Resurrect",false)

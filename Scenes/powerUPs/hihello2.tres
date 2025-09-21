@@ -12,6 +12,7 @@ rarity = "Mythic"
 type = "equip_prop"
 equip_path = "../CharacterMesh/Rig/Skeleton3D/Mage_Hat"
 health = 0
+enemy_health = 0.0
 defence = 0.0
 sp_Meter = 0
 attack = 0.0

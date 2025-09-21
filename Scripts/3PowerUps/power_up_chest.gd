@@ -18,7 +18,11 @@ func _ready() -> void:
 	pass
 		
 
-
+func _physics_process(delta):
+	var up = global_transform.basis.y
+	var upright = Vector3.UP
+	var tilt = up.cross(upright) * 100  # strength factor
+	apply_torque_impulse(tilt)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if player_entered:

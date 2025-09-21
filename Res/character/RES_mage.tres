@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_11ken")
-description = "Yeep"
-health = 1
+health = 3
+enemy_health = 0.0
 defence = 0.0
 sp_Meter = 0
 attack = 0.0
