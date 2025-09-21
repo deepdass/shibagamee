@@ -2,11 +2,9 @@ extends CharacterBody3D
 
 @export var stat : Stats 
 
-var player = null
-var game_manager = null
 var subViewport = null
-@onready var game_manager_path := "/root/World/GameManager"
-@onready var player_path := "/root/World/SubViewportContainer/SubViewport/myy/NavigationRegion3D/per/Player"
+var player = null
+@onready var player_path := "/root/World/SubViewportContainer/SubViewport/myy/per/Player"
 @onready var sub_viewport_path := "/root/World/SubViewportContainer/SubViewport"
 
 @onready var skeleton_minion_eyes: MeshInstance3D = $Skeleton_Minion/Rig/Skeleton3D/Skeleton_Minion_Eyes
@@ -37,7 +35,6 @@ func _ready() -> void:
 	timer.wait_time = animation_tree.get_animation("Death_C_Skeletons").length + 0.3
 	
 	player = get_node(player_path)
-	game_manager = get_node(game_manager_path)
 	subViewport = get_node(sub_viewport_path)
 	
 	state_machine = animation_tree.get("parameters/playback")

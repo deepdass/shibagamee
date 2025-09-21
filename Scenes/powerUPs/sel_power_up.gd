@@ -10,7 +10,7 @@ const allRES := ["res://Scenes/powerUPs/Boots_of_swiftness.tres","res://Scenes/p
 @onready var meshspawn: Node3D = $meshspawn
 @onready var player = null
 @onready var entered : bool = false
-@onready var sprite_3d: Sprite3D = $Sprite3D
+#@onready var sprite_3d: Sprite3D = $Sprite3D
 
 func _ready() -> void:
 	var RESstring = allRES[randi_range(0,(allRES.size()-1))]
