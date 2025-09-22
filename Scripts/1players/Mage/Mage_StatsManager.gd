@@ -77,7 +77,7 @@ func randomnessFactor():
 	return randf_range(0.9,1.1)
 	
 func effective_damage():
-	var damage: float = stats.attack * CAL_defence() * crit(stats.crit_rate) * randomnessFactor()
+	return stats.attack * CAL_defence() * crit(stats.crit_rate/100) * randomnessFactor()
 
 
 

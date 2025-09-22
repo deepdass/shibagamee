@@ -12,7 +12,7 @@ var player = null
 
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
-var health : int = 2
+var health : float = 350
 @onready var damagepopup: Node3D = $idknode
 
 @onready var destroyaftertime: Timer = $destroyaftertime
@@ -71,13 +71,20 @@ func _hitfinish():
 		player.velocity += Vector3(dir.x , dir.y * 0.1, dir.z ) * KnockbackMul
 		
 func take_damage():
-	health -= 1
-	health = clamp(health,0 , 5)
+	var damageRec = player.StatsManager.effective_damage()
+	health -= damageRec
 	collision_shape_3d.disabled = true
 	animation_tree.set("parameters/conditions/fall",true)
 	audio_stream_player.play()
+	damagepopup.get_node("damagepopup").text = "%.1f" % damageRec
+	if player.StatsManager.can_crit:
+		damagepopup.get_node("damagepopup").set_modulate(Color(0.7, 0.14, 0.14, 1))
+		damagepopup.get_node("damagepopup").set_outline_modulate(Color(0.11, 0, 0, 1))
+	else:
+		damagepopup.get_node("damagepopup").set_modulate(Color(1, 1, 1, 1))
+		damagepopup.get_node("damagepopup").set_outline_modulate(Color(1, 1, 1, 1))
 	damagepopup.visible = true
-	if health == 0:
+	if health <= 0:
 		emit_signal("died")
 		collision_shape_3d.disabled = true
 		skeleton_minion_eyes.visible = false
@@ -87,7 +94,7 @@ func take_damage():
 
 
 func _on_timer_timeout() -> void:
-	if health != 0:
+	if health >= 0:
 		collision_shape_3d.disabled = false
 		animation_tree.set("parameters/conditions/fall",false)
 	damagepopup.visible = false

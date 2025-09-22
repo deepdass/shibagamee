@@ -26,7 +26,7 @@ func  _ready() -> void:
 	
 
 func _physics_process(delta: float) -> void:
-	
+	print(sub_viewport.get_camera_3d().unproject_position(player.global_position))
 	##
 	camera_rig.position = lerp(camera_rig.position,player.position,0.13)
 	
