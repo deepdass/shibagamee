@@ -10,7 +10,7 @@ extends RigidBody3D
 
 
 @onready var pts_parent: Node3D = $pts
-@onready var powerUp : PackedScene = load("res://Scenes/powerUPs/power_up_base.tscn") 
+@onready var powerUp : PackedScene = preload("res://Scenes/powerUPs/power_up_base.tscn") 
 
 
 # Called when the node enters the scene tree for the first time.
