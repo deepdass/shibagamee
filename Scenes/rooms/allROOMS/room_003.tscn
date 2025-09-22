@@ -68,4 +68,7 @@ disabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35204, 0, 0)
 shape = SubResource("BoxShape3D_he860")
 
+[node name="PlayerSpawnPos" type="Marker3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.246, 6)
+
 [connection signal="body_entered" from="NavigationRegion3D/env/door_Container/door3/Area3D" to="." method="_on_area_3d_body_entered"]

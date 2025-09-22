@@ -1,8 +1,6 @@
 extends Node3D
 
 
-
-
 var power_up_Chest : PackedScene = load("res://Scenes/powerUPs/PowerUp_chest.tscn")
 
 var player : CharacterBody3D = null

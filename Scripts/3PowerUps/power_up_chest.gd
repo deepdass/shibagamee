@@ -28,6 +28,7 @@ func _process(delta: float) -> void:
 	if player_entered:
 		if Input.is_action_just_pressed("interact"):
 			animation_player.play("chest_open")
+			pts_anim.play("powerUp_upanddown")
 			for i in pts_parent.get_children():
 				var powerup_inst = powerUp.instantiate()
 				i.add_child(powerup_inst)
@@ -35,7 +36,6 @@ func _process(delta: float) -> void:
 
 func _showPowerUps():
 	pts_parent.visible = true
-	pts_anim.play("powerUp_upanddown")
 	interact_area.queue_free()
 
 

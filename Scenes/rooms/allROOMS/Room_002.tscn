@@ -95,3 +95,6 @@ disabled = true
 [node name="detectPlayer" type="CollisionShape3D" parent="NavigationRegion3D/env/door_Container/door2/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29134, 0.449, 0)
 shape = SubResource("BoxShape3D_y5p10")
+
+[node name="PlayerSpawnPos" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2.246, -4.79)

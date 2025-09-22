@@ -21,12 +21,16 @@ var ray_target_pt = Vector3()
 @export var hearts : Array[Node]
 
 ########################################
+
+func _init() -> void:
+	randomize()
+
 func  _ready() -> void:
 	pass
 	
 
 func _physics_process(delta: float) -> void:
-	print(sub_viewport.get_camera_3d().unproject_position(player.global_position))
+	#####print(sub_viewport.get_camera_3d().unproject_position(player.global_position))
 	##
 	camera_rig.position = lerp(camera_rig.position,player.position,0.13)
 	
