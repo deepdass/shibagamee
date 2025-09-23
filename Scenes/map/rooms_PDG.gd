@@ -1,73 +1,164 @@
-@tool
 extends Node3D
+
 
 const  SPAWN_ROOMS : Array = [preload("res://Scenes/rooms/allROOMS/Room_001.tscn")]
 const INTERMEDIATE_ROOMS : Array = [ preload("res://Scenes/rooms/allROOMS/room_003.tscn")]
 const  END_ROOMS : Array = [preload("res://Scenes/rooms/allROOMS/Room_002.tscn")]
 
-const TILE_SIZE : int = 2
-const FLOOR_TILE_INDEX : int = 29
-const WALL_TILE_INDEX = 59
-
-@export var num_levels: int = 6
-
 @onready var player_parent : Node = get_parent().get_node("per")
 
 
-@export var start : bool = false : set = set_start
+@export var num_levels: int = 6
 
-@export var room_number : int = 4
-@export var room_margin : int = 1
-@export var room_recursion : int = 15
-@export var min_room_size : int = 2
-@export var max_room_size : int = 4
 
-func set_start(val:bool)->void:
-	if Engine.is_editor_hint():
-		generate()
+@export var minRoomCount = 5
+@export var maxRoomCount = 10
 
-@export var border_size : int = 20 : set = set_border_size
+@onready var rooms: Node3D = $rooms
 
-func set_border_size(val : int):
-	border_size = val
-	visualize_border()
+
+func _create_dungeon():
+	_reset_rooms()
 	
-func visualize_border():
-	print(border_size)
+	await get_tree().create_timer(0.1).timeout
 	
+	var roomCount := randi_range(minRoomCount, maxRoomCount)
 
-func generate():
-	for i in range(num_levels):
-		spawn_room(i)
-
-
-
-func spawn_room(i):
+	for room in roomCount: 
+		await _create_room()
 	
-	var width : int = (randi() % (max_room_size - min_room_size)) + min_room_size
-	var height : int = (randi() % (max_room_size - min_room_size)) + min_room_size
+func _reset_rooms():
+	for room in rooms.get_children():
+		room.queue_free()
+
+func _create_room():
+	var existingRooms = rooms.get_children()
 	
-	var start_pos : Vector3i 
-	start_pos.x = randi() % (border_size - width + 1)
-	start_pos.z = randi() % (border_size - height + 1)
+	var newRoom = INTERMEDIATE_ROOMS.pick_random().instantiate()
+	rooms.add_child(newRoom)
 	
+	var isFirstRoom = existingRooms.is_empty()
+	if isFirstRoom: return
+	
+	var possibleRooms = []
+	for room in existingRooms:
+		if room == newRoom: continue
+		possibleRooms.append(room)
+	
+	var selectedRoom
+	var success
+	var tries = 10
+	
+	while not success and tries > 0:
+		selectedRoom = possibleRooms.pick_random()
+		success = await newRoom.connect_with(selectedRoom)
+		tries -= 1
+	
+	if not success:
+		newRoom.queue_free()
+		
+
+
+
+func _ready() -> void:
+	_create_dungeon()
+	
+###########################################
+func generate_room():
 	var previous_room: Node3D
 	
 	var room: Node3D
-
-	if i == 0:
-		room = SPAWN_ROOMS.pick_random().instantiate()
-		player_parent.get_node("Player").position = room.get_node("PlayerSpawnPos").position
-		player_parent.get_node("camera_rig").position = room.get_node("PlayerSpawnPos").position
-	else:
-		if i == num_levels - 1:
-			room = END_ROOMS.pick_random().instantiate()
+	for i in range(num_levels):
+		if i == 0:
+			room = SPAWN_ROOMS.pick_random().instantiate()
+			player_parent.get_node("Player").position = room.get_node("PlayerSpawnPos").position
+			player_parent.get_node("camera_rig").position = room.get_node("PlayerSpawnPos").position
 		else:
-			room = INTERMEDIATE_ROOMS.pick_random().instantiate()
-			
-			
+			if i == num_levels - 1:
+				room = END_ROOMS.pick_random().instantiate()
+			else:
+				room = INTERMEDIATE_ROOMS.pick_random().instantiate()
 
 
+
+
+
+
+
+
+
+
+
+
+################################################################################################################
+#
+#const  SPAWN_ROOMS : Array = [preload("res://Scenes/rooms/allROOMS/Room_001.tscn")]
+#const INTERMEDIATE_ROOMS : Array = [ preload("res://Scenes/rooms/allROOMS/room_003.tscn")]
+#const  END_ROOMS : Array = [preload("res://Scenes/rooms/allROOMS/Room_002.tscn")]
+#
+#const TILE_SIZE : int = 2
+#const FLOOR_TILE_INDEX : int = 29
+#const WALL_TILE_INDEX = 59
+#
+#@export var num_levels: int = 6
+#
+#@onready var player_parent : Node = get_parent().get_node("per")
+#
+#
+#@export var start : bool = false : set = set_start
+#
+#@export var room_number : int = 4
+#@export var room_margin : int = 1
+#@export var room_recursion : int = 15
+#@export var min_room_size : int = 2
+#@export var max_room_size : int = 4
+#
+#func set_start(val:bool)->void:
+	#if Engine.is_editor_hint():
+		#generate()
+#
+#@export var border_size : int = 20 : set = set_border_size
+#
+#func set_border_size(val : int):
+	#border_size = val
+	#visualize_border()
+	#
+#func visualize_border():
+	#print(border_size)
+	#
+#
+#func generate():
+	#for i in range(num_levels):
+		#spawn_room(i)
+#
+#
+#
+#func spawn_room(i):
+	#
+	#var width : int = (randi() % (max_room_size - min_room_size)) + min_room_size
+	#var height : int = (randi() % (max_room_size - min_room_size)) + min_room_size
+	#
+	#var start_pos : Vector3i 
+	#start_pos.x = randi() % (border_size - width + 1)
+	#start_pos.z = randi() % (border_size - height + 1)
+	#
+	#var previous_room: Node3D
+	#
+	#var room: Node3D
+#
+	#if i == 0:
+		#room = SPAWN_ROOMS.pick_random().instantiate()
+		#player_parent.get_node("Player").position = room.get_node("PlayerSpawnPos").position
+		#player_parent.get_node("camera_rig").position = room.get_node("PlayerSpawnPos").position
+	#else:
+		#if i == num_levels - 1:
+			#room = END_ROOMS.pick_random().instantiate()
+		#else:
+			#room = INTERMEDIATE_ROOMS.pick_random().instantiate()
+			#
+			#
+
+###########################################################################################################
 
 #func _ready() -> void:
 	#_spawn_room()
