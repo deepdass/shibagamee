@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://uhfy5urmmqxb"]
+[gd_scene load_steps=6 format=3 uid="uid://uhfy5urmmqxb"]
 
 [ext_resource type="Script" uid="uid://wweet4cu7kft" path="res://Scenes/rooms/roomSCRIPT.gd" id="1_he860"]
+[ext_resource type="Script" uid="uid://eqgp7no52l1i" path="res://addons/SimpleDungeons/DungeonRoom3D.gd" id="1_jg48x"]
 [ext_resource type="MeshLibrary" uid="uid://61gf5acs8qic" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib1.tres" id="5_ycev7"]
 [ext_resource type="MeshLibrary" uid="uid://itk8p671mpm7" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Propslib.tres" id="6_2vmhu"]
 
@@ -9,16 +10,16 @@ agent_height = 1.0
 agent_radius = 0.55
 agent_max_climb = 0.5
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_p7ifo"]
-size = Vector3(0.515076, 1.99648, 1.90307)
+[node name="DungeonRoom3D" type="Node3D"]
+script = ExtResource("1_jg48x")
+voxel_scale = Vector3(4, 4, 4)
+metadata/_custom_type_script = "uid://eqgp7no52l1i"
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_he860"]
-size = Vector3(1.18443, 2.84016, 3.21678)
-
-[node name="room" type="Node3D"]
+[node name="room" type="Node" parent="."]
 script = ExtResource("1_he860")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 navigation_mesh = SubResource("NavigationMesh_hmakl")
 
 [node name="spwans" type="Node3D" parent="NavigationRegion3D"]
@@ -30,46 +31,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.463, 0, -16.6281)
 [node name="env" type="Node" parent="NavigationRegion3D"]
 
 [node name="floor" type="GridMap" parent="NavigationRegion3D/env"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -3, 1)
 mesh_library = ExtResource("5_ycev7")
 collision_mask = 7
+metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="walls" type="GridMap" parent="NavigationRegion3D/env"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -3, 1)
 mesh_library = ExtResource("5_ycev7")
 collision_layer = 2
 collision_mask = 7
 
 [node name="props" type="GridMap" parent="NavigationRegion3D/env"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -3, 1)
 mesh_library = ExtResource("6_2vmhu")
 collision_layer = 4
 collision_mask = 7
 
 [node name="door_Container" type="Node" parent="NavigationRegion3D/env"]
-
-[node name="door" type="StaticBody3D" parent="NavigationRegion3D/env/door_Container"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.02, 2.268, 6.987)
-
-[node name="doorBlock" type="CollisionShape3D" parent="NavigationRegion3D/env/door_Container/door"]
-shape = SubResource("BoxShape3D_p7ifo")
-disabled = true
-
-[node name="Area3D" type="Area3D" parent="NavigationRegion3D/env/door_Container/door"]
-
-[node name="detectPlayer" type="CollisionShape3D" parent="NavigationRegion3D/env/door_Container/door/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29134, 0.449, 0)
-shape = SubResource("BoxShape3D_he860")
-
-[node name="door2" type="StaticBody3D" parent="NavigationRegion3D/env/door_Container"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.390985, 2.268, 6.987)
-
-[node name="doorBlock" type="CollisionShape3D" parent="NavigationRegion3D/env/door_Container/door2"]
-shape = SubResource("BoxShape3D_p7ifo")
-disabled = true
-
-[node name="Area3D" type="Area3D" parent="NavigationRegion3D/env/door_Container/door2"]
-
-[node name="detectPlayer" type="CollisionShape3D" parent="NavigationRegion3D/env/door_Container/door2/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29134, 0.449, 0)
-shape = SubResource("BoxShape3D_he860")
-
-[connection signal="body_entered" from="NavigationRegion3D/env/door_Container/door/Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="body_entered" from="NavigationRegion3D/env/door_Container/door2/Area3D" to="." method="_on_area_3d_body_entered"]

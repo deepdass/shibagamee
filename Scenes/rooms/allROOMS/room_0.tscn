@@ -1,0 +1,81 @@
+[gd_scene load_steps=4 format=3 uid="uid://5xfaxo5v1tkr"]
+
+[ext_resource type="PackedScene" uid="uid://uhfy5urmmqxb" path="res://Scenes/rooms/RoomTemplate.tscn" id="1_tx31s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_he860"]
+size = Vector3(1.18443, 2.84016, 3.21678)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p7ifo"]
+size = Vector3(0.515076, 1.99648, 1.90307)
+
+[node name="room" instance=ExtResource("1_tx31s")]
+size_in_voxels = Vector3i(7, 1, 7)
+
+[node name="room_NavigationRegion3D_env_door_Container_DOOR?_RIGHT_door_Area3D#detectPlayer" type="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29134, 0.449, 0)
+shape = SubResource("BoxShape3D_he860")
+debug_color = Color(0, 0.6, 0.7, 0.641)
+
+[node name="PlayerSpawnPos" type="Marker3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.754, 5)
+
+[node name="room_NavigationRegion3D_env_door_Container_DOOR?_RIGHT_door#doorBlock" type="CollisionShape3D" parent="." index="2"]
+shape = SubResource("BoxShape3D_p7ifo")
+disabled = true
+debug_color = Color(1, 1, 1, 0.746)
+
+[node name="room_NavigationRegion3D_env_door_Container_DOOR?_RIGHT_door#Area3D" type="Area3D" parent="." index="3"]
+
+[node name="room_NavigationRegion3D_env_door_Container_DOOR?_RIGHT#door" type="StaticBody3D" parent="." index="4"]
+
+[node name="room_NavigationRegion3D_env_door_Container_DOOR?_LEFT_door_Area3D#detectPlayer" type="CollisionShape3D" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29134, 0.449, 0)
+shape = SubResource("BoxShape3D_he860")
+debug_color = Color(0, 0.6, 0.7, 0.641)
+
+[node name="room_NavigationRegion3D_env_door_Container_DOOR?_LEFT_door#doorBlock" type="CollisionShape3D" parent="." index="6"]
+shape = SubResource("BoxShape3D_p7ifo")
+disabled = true
+debug_color = Color(1, 1, 1, 0.746)
+
+[node name="room_NavigationRegion3D_env_door_Container#DOOR?_RIGHT" type="Marker3D" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, -1, -4)
+
+[node name="room_NavigationRegion3D_env_door_Container_DOOR?_LEFT_door#Area3D" type="Area3D" parent="." index="8"]
+
+[node name="room_NavigationRegion3D_env_door_Container_DOOR?_LEFT#door" type="StaticBody3D" parent="." index="9"]
+
+[node name="room_NavigationRegion3D_env_door_Container_DOOR?_FRONT_door_Area3D#detectPlayer" type="CollisionShape3D" parent="." index="10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29134, 0.449, 0)
+shape = SubResource("BoxShape3D_he860")
+debug_color = Color(0, 0.6, 0.7, 0.641)
+
+[node name="room_NavigationRegion3D_env_door_Container#DOOR?_LEFT" type="Marker3D" parent="." index="11"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -14, -1, -4)
+
+[node name="room_NavigationRegion3D_env_door_Container_DOOR?_FRONT_door#doorBlock" type="CollisionShape3D" parent="." index="12"]
+shape = SubResource("BoxShape3D_p7ifo")
+disabled = true
+debug_color = Color(1, 1, 1, 0.746)
+
+[node name="room_NavigationRegion3D_env_door_Container_DOOR?_FRONT_door#Area3D" type="Area3D" parent="." index="13"]
+
+[node name="room_NavigationRegion3D_env_door_Container_DOOR?_FRONT#door" type="StaticBody3D" parent="." index="14"]
+
+[node name="room_NavigationRegion3D_env_door_Container#DOOR?_FRONT" type="Marker3D" parent="." index="15"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -1, 14)
+
+[node name="room_NavigationRegion3D_spwans#NavigationRegion3D_spwans#Node3D2" type="Node3D" parent="." index="17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47569, -1.73615, -23.4933)
+
+[node name="room_NavigationRegion3D_spwans#NavigationRegion3D_spwans#Node3D3" type="Node3D" parent="." index="18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.91254, -1.73615, -9.17449)
+
+[node name="room_NavigationRegion3D_spwans#NavigationRegion3D_spwans#Node3D4" type="Node3D" parent="." index="19"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.3292, -1.73615, -11.136)
+
+[node name="room_NavigationRegion3D_spwans#NavigationRegion3D_spwans#Node3D5" type="Node3D" parent="." index="20"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96023, -1.73615, -14.8628)
+
+[node name="room_NavigationRegion3D_spwans#NavigationRegion3D_spwans#Node3D6" type="Node3D" parent="." index="21"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96023, -1.73615, -6.7001)

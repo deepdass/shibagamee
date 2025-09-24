@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci6rexxeclw8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p7ifo"]
+size = Vector3(0.515076, 1.99648, 1.90307)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_he860"]
+size = Vector3(1.18443, 2.84016, 3.21678)
+
+[node name="DOOR?" type="Marker3D"]
+
+[node name="door" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="doorBlock" type="CollisionShape3D" parent="door"]
+shape = SubResource("BoxShape3D_p7ifo")
+disabled = true
+debug_color = Color(1, 1, 1, 0.746)
+
+[node name="Area3D" type="Area3D" parent="door"]
+
+[node name="detectPlayer" type="CollisionShape3D" parent="door/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29134, 0.449, 0)
+shape = SubResource("BoxShape3D_he860")
+debug_color = Color(0, 0.6, 0.7, 0.641)

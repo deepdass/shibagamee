@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://ch1xlwhtvkar0"]
+
+[ext_resource type="PackedScene" uid="uid://uhfy5urmmqxb" path="res://Scenes/rooms/RoomTemplate.tscn" id="1_8yl7m"]
+
+[node name="DungeonRoom3D" instance=ExtResource("1_8yl7m")]
+
+[node name="floor" parent="NavigationRegion3D/env" index="0"]
+data = {
+"cells": PackedInt32Array(0, 65535, 29)
+}
+
+[node name="walls" parent="NavigationRegion3D/env" index="1"]
+data = {
+"cells": PackedInt32Array(0, 0, 82, 0, 65534, 82, 65535, 65535, 1441874, 1, 65535, 1441874)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="DOOR?_FRONT" type="Marker3D" parent="NavigationRegion3D/env/door_Container" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="DOOR?_LEFT" type="Marker3D" parent="NavigationRegion3D/env/door_Container" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="DOOR?_BACK" type="Marker3D" parent="NavigationRegion3D/env/door_Container" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="DOOR?_RIGHT" type="Marker3D" parent="NavigationRegion3D/env/door_Container" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
