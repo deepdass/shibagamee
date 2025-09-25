@@ -12,7 +12,7 @@ var player = null
 
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
-var health : float = 250
+var health : float = 100
 @export var projectile : PackedScene
 @onready var fireposnode : Node3D = $fireposnode
 
@@ -56,7 +56,6 @@ func _process(delta: float) -> void:
 			velocity = (next_pt - global_transform.origin).normalized() * SPEED
 			
 			rotation.y = lerp_angle(rotation.y, atan2(-velocity.x, -velocity.z), delta * 10)
-			look_at(Vector3(global_position.x + velocity.x, global_position.y, global_position.z + velocity.z), Vector3.UP)
 		"1H_Melee_Attack_Stab":
 			look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z), Vector3.UP)
 	

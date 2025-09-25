@@ -18,13 +18,13 @@ func _ready() -> void:
 	pass
 		
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var up = global_transform.basis.y
 	var upright = Vector3.UP
 	var tilt = up.cross(upright) * 100  # strength factor
 	apply_torque_impulse(tilt)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if player_entered:
 		if Input.is_action_just_pressed("interact"):
 			animation_player.play("chest_open")
@@ -39,8 +39,8 @@ func _showPowerUps():
 	interact_area.queue_free()
 
 
-func _on_interact_area_body_entered(body: Node3D) -> void:
+func _on_interact_area_body_entered(_body: Node3D) -> void:
 	player_entered = true
 
-func _on_interact_area_body_exited(body: Node3D) -> void:
+func _on_interact_area_body_exited(_body: Node3D) -> void:
 	player_entered = false

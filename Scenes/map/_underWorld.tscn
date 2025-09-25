@@ -1,0 +1,187 @@
+[gd_scene load_steps=8 format=3 uid="uid://c00al5fmk26dw"]
+
+[ext_resource type="Script" uid="uid://b8tcib7cuxmbg" path="res://Scripts/0Managers/0_game_manager.gd" id="1_ackk5"]
+[ext_resource type="Texture2D" uid="uid://dwnmocndg7gk7" path="res://Assets/UI/Heart.png" id="2_02l3a"]
+[ext_resource type="PackedScene" uid="uid://c7illv6kf10b2" path="res://Scenes/characters/players/character_base.tscn" id="3_0m4px"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2ulnn"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_idx2o"]
+rayleigh_coefficient = 1.29
+ground_color = Color(0.313219, 0.479875, 0.8463, 1)
+
+[sub_resource type="Sky" id="Sky_2ulnn"]
+sky_material = SubResource("PhysicalSkyMaterial_idx2o")
+
+[sub_resource type="Environment" id="Environment_n4gow"]
+background_mode = 1
+background_color = Color(0.147604, 0.21763, 0.326386, 1)
+sky = SubResource("Sky_2ulnn")
+ambient_light_source = 2
+ambient_light_color = Color(0.415686, 0.537255, 0.72549, 1)
+ambient_light_energy = 1.5
+ssao_radius = 1.41
+ssao_intensity = 3.39
+ssao_detail = 2.0
+ssao_sharpness = 0.26
+ssil_radius = 3.65
+ssil_intensity = 4.0
+ssil_sharpness = 0.43
+ssil_normal_rejection = 0.9
+sdfgi_read_sky_light = false
+
+[node name="World" type="Node3D"]
+
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
+unique_name_in_owner = true
+script = ExtResource("1_ackk5")
+hearts = [NodePath("../UI/Panel/Heart1"), NodePath("../UI/Panel/Heart2"), NodePath("../UI/Panel/Heart3"), NodePath("../UI/Panel/Heart4"), NodePath("../UI/Panel/Heart5"), NodePath("../UI/Panel/Heart6"), NodePath("../UI/Panel/Heart7")]
+
+[node name="Timer" type="Timer" parent="GameManager"]
+wait_time = 0.5
+
+[node name="killzone" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.81879, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="killzone"]
+shape = SubResource("WorldBoundaryShape3D_2ulnn")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="UI"]
+
+[node name="Heart1" type="TextureRect" parent="UI/Panel"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 18.0
+offset_top = 19.0
+offset_right = 200.0
+offset_bottom = 187.0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_02l3a")
+expand_mode = 3
+
+[node name="Heart2" type="TextureRect" parent="UI/Panel"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 108.0
+offset_top = 19.0
+offset_right = 290.0
+offset_bottom = 187.0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_02l3a")
+expand_mode = 3
+
+[node name="Heart3" type="TextureRect" parent="UI/Panel"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 198.0
+offset_top = 19.0
+offset_right = 380.0
+offset_bottom = 187.0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_02l3a")
+expand_mode = 3
+
+[node name="Heart4" type="TextureRect" parent="UI/Panel"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 288.0
+offset_top = 19.0
+offset_right = 470.0
+offset_bottom = 187.0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_02l3a")
+expand_mode = 3
+
+[node name="Heart5" type="TextureRect" parent="UI/Panel"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 378.0
+offset_top = 19.0
+offset_right = 560.0
+offset_bottom = 187.0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_02l3a")
+expand_mode = 3
+
+[node name="Heart6" type="TextureRect" parent="UI/Panel"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 468.0
+offset_top = 19.0
+offset_right = 650.0
+offset_bottom = 187.0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_02l3a")
+expand_mode = 3
+
+[node name="Heart7" type="TextureRect" parent="UI/Panel"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 558.0
+offset_top = 19.0
+offset_right = 740.0
+offset_bottom = 187.0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_02l3a")
+expand_mode = 3
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 4
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(240, 135)
+render_target_update_mode = 4
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(-0.101372, 0.707474, 0.699432, 0.00664804, -0.702556, 0.711598, 0.994826, 0.076786, 0.0665162, 5.85244, 6.7486, 0)
+light_color = Color(0.636053, 0.67, 0.6164, 1)
+light_bake_mode = 1
+shadow_enabled = true
+shadow_bias = 0.5
+shadow_blur = 0.1
+directional_shadow_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
+environment = SubResource("Environment_n4gow")
+
+[node name="myy" type="Node" parent="SubViewportContainer/SubViewport"]
+
+[node name="per" type="Node" parent="SubViewportContainer/SubViewport/myy"]
+
+[node name="Player" parent="SubViewportContainer/SubViewport/myy/per" instance=ExtResource("3_0m4px")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.000190672)
+platform_on_leave = 2
+
+[node name="camera_rig" type="Node3D" parent="SubViewportContainer/SubViewport/myy/per"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.000190672)
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/myy/per/camera_rig"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.766044, 0.642788, 0, -0.642788, 0.766044, 0, 10.5755, 10.1963)
+current = true
+fov = 60.0
+size = 15.0
+far = 50.0
+
+[node name="cam_Initailpt" type="Node3D" parent="SubViewportContainer/SubViewport/myy/per/camera_rig"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.5755, 10.1963)
+
+[node name="cam_finalpt" type="Node3D" parent="SubViewportContainer/SubViewport/myy/per/camera_rig"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="rooms" type="Node3D" parent="SubViewportContainer/SubViewport/myy"]
+
+[connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
+[connection signal="body_entered" from="killzone" to="GameManager" method="_on_killzone_body_entered"]

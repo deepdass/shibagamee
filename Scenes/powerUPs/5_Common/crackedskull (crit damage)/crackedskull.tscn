@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbv1qrxrs4y7w"]
+
+[ext_resource type="PackedScene" uid="uid://dl5kj6onuwrcv" path="res://Assets/HalloweenBits/Assets/gltf/skull.gltf" id="1_7bp75"]
+[ext_resource type="PackedScene" uid="uid://d3qymr87utloi" path="res://Assets/Adventurers/Assets/gltf/sword_1handed.gltf" id="2_wtnk3"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="skull2" parent="." instance=ExtResource("1_7bp75")]
+
+[node name="sword_1handed2" parent="." instance=ExtResource("2_wtnk3")]
+transform = Transform3D(-0.806797, -0.503105, 0.30978, 0.529135, -0.848538, 1.54268e-08, 0.26286, 0.163916, 0.950808, 0.550103, 1.35877, -0.16527)

@@ -6,7 +6,13 @@ extends Area3D
 var sub_viewport = null
 @onready var sub_viewport_path := "/root/World/SubViewportContainer/SubViewport"
 
-const allRES := ["res://Scenes/powerUPs/Boots_of_swiftness.tres","res://Scenes/powerUPs/Lifebloom.tres", "res://Scenes/powerUPs/hihello2.tres"]
+const allRES := ["res://Scenes/powerUPs/Boots_of_swiftness.tres",
+"res://Scenes/powerUPs/Lifebloom.tres",
+"res://Scenes/powerUPs/hihello2.tres",
+"res://Scenes/powerUPs/5_Common/st pat (crit rate)/St. Patricks.tres",
+"res://Scenes/powerUPs/5_Common/attack/attack.tres"]
+
+
 @onready var meshspawn: Node3D = $meshspawn
 @onready var player = null
 @onready var entered : bool = false
@@ -21,7 +27,7 @@ func _ready() -> void:
 	sub_viewport = get_node(sub_viewport_path)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and entered == true:
 		player.StatsManager.applyUpgrades(PowerUp)
 		queue_free()

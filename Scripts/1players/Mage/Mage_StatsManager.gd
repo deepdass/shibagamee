@@ -33,7 +33,7 @@ func _ready() -> void:
 	attack_bacis__timer.wait_time = milli_per_shots / 1000.0
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	
 	##pewpew
 	if Input.is_action_pressed("attack"):
