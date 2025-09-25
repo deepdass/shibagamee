@@ -75,7 +75,7 @@ func _on_timer_timeout() -> void:  ## kill timeout
 
 func _on_area_3d_body_entered(body: Node3D) -> void: ##inside crypt
 	if body == player:
-		get_tree().change_scene_to_file("res://Scenes/map/underWorld.tscn")
+		get_tree().change_scene_to_file("res://Scenes/map/underWorldPro.tscn")
 
 
 func _on_killzone_body_entered(body: Node3D) -> void:

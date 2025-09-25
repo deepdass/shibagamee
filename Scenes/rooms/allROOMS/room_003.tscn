@@ -92,3 +92,7 @@ debug_color = Color(0, 0.6, 0.7, 0.641)
 
 [node name="PlayerSpawnPos" type="Marker3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.754, 5)
+
+[connection signal="body_entered" from="NavigationRegion3D/env/door_Container/DOOR?_FRONT/door/Area3D" to="room" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="NavigationRegion3D/env/door_Container/DOOR?_RIGHT/door/Area3D" to="room" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="NavigationRegion3D/env/door_Container/DOOR?_LEFT/door/Area3D" to="room" method="_on_area_3d_body_entered"]

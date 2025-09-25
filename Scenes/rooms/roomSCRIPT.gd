@@ -25,14 +25,6 @@ func _ready() -> void:
 
 
 
-func _on_area_3d_body_entered(body: CharacterBody3D) -> void:
-	if body == player:
-		for door in doors.get_children():
-			door.get_node("Area3D").queue_free()
-		closeDoors()
-		spawnEnemy()
-
-
 func spawnEnemy():
 	for whichpt in enemy_spawns.get_children():
 		num_enemyCount += 1
@@ -104,3 +96,12 @@ func convert_gridmap_to_meshes(grid_map: GridMap) -> void:
 			mesh_instance.add_child(body)
 
 	grid_map.queue_free()
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body == player:
+		print("yess")
+		for door in doors.get_children():
+			door.get_node("Area3D").queue_free()
+		closeDoors()
+		spawnEnemy()
