@@ -33,7 +33,7 @@ func _on_body_entered(body: Node3D) -> void:
 		#popup(Rect2i(sub_viewport.get_camera_3d().unproject_position(global_position), Vector2i(960,540)),null)
 
 
-func _on_body_exited(body: Node3D) -> void:
+func _on_body_exited(_body: Node3D) -> void:
 	entered = false
 	#hidepopup() 
 	

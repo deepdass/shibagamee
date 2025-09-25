@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://j015ucyem0nw"]
+[gd_scene load_steps=4 format=3 uid="uid://dywesumpuns63"]
 
-[ext_resource type="PackedScene" uid="uid://uhfy5urmmqxb" path="res://Scenes/rooms/RoomTemplate.tscn" id="1_b25dl"]
+[ext_resource type="PackedScene" uid="uid://uhfy5urmmqxb" path="res://Scenes/rooms/RoomTemplate.tscn" id="1_xfpuh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p7ifo"]
 size = Vector3(0.515076, 1.99648, 1.90307)
@@ -8,7 +8,7 @@ size = Vector3(0.515076, 1.99648, 1.90307)
 [sub_resource type="BoxShape3D" id="BoxShape3D_he860"]
 size = Vector3(1.18443, 2.84016, 3.21678)
 
-[node name="room" instance=ExtResource("1_b25dl")]
+[node name="room" instance=ExtResource("1_xfpuh")]
 size_in_voxels = Vector3i(7, 1, 7)
 
 [node name="Node3D" parent="NavigationRegion3D/spwans" index="0"]

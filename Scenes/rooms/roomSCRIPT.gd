@@ -1,9 +1,5 @@
 extends Node
 
-@export var grid_map_node: GridMap
-@export var parent_for_meshes: Node3D # Where the new MeshInstance3D nodes will be added
-
-
 var power_up_Chest : PackedScene = load("res://Scenes/powerUPs/PowerUp_chest.tscn")
 
 var player : CharacterBody3D = null
@@ -14,51 +10,25 @@ var enemySCENEs : Dictionary = {"minion" : preload("res://Scenes/characters/enem
 								}
 
 var num_enemyCount : int
-@onready var enemy_spawns : Node3D = $NavigationRegion3D/spwans
+@onready var enemy_spawns : Node3D = $"../NavigationRegion3D/spwans"
 
-@onready var doors : Node = $NavigationRegion3D/env/door_Container
+@onready var doors : Node = $"../NavigationRegion3D/env/door_Container"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if grid_map_node and parent_for_meshes:
-		convert_gridmap_to_meshes()
-
-
-func convert_gridmap_to_meshes():
-	if not grid_map_node.mesh_library:
-		print("GridMap has no MeshLibrary assigned.")
-		return
-
-	var mesh_library = grid_map_node.mesh_library
-	var cell_size = grid_map_node.cell_size
-
-	for x in range(grid_map_node.get_used_rect().position.x, grid_map_node.get_used_rect().end.x):
-		for y in range(grid_map_node.get_used_rect().position.y, grid_map_node.get_used_rect().end.y):
-			for z in range(grid_map_node.get_used_rect().position.z, grid_map_node.get_used_rect().end.z):
-				var item_index = grid_map_node.get_cell_item(x, y, z)
-				if item_index != GridMap.INVALID_CELL_ITEM:
-					var mesh = mesh_library.get_item_mesh(item_index)
-					if mesh:
-						var new_mesh_instance = MeshInstance3D.new()
-						new_mesh_instance.mesh = mesh
-
-						var cell_world_pos = grid_map_node.map_to_world(Vector3i(x, y, z))
-						new_mesh_instance.global_transform.origin = cell_world_pos
-
-						var orientation_index = grid_map_node.get_cell_item_orientation(x, y, z)
-						var rotation_basis = grid_map_node.get_basis_from_orientation(orientation_index)
-						new_mesh_instance.global_transform.basis = rotation_basis
-
-						parent_for_meshes.add_child(new_mesh_instance)
-
-	grid_map_node.queue_free() # Optional: Remove the GridMap after conversion
 	player = get_node(player_path)
+	convert_gridmap_to_meshes(grid_map_walls)
+	convert_gridmap_to_meshes(grid_map_floor)
+	convert_gridmap_to_meshes(grid_map_props)
+
+
+
 
 
 func _on_area_3d_body_entered(body: CharacterBody3D) -> void:
-	for door in doors.get_children():
-		door.get_node("Area3D").queue_free()
 	if body == player:
+		for door in doors.get_children():
+			door.get_node("Area3D").queue_free()
 		closeDoors()
 		spawnEnemy()
 
@@ -88,3 +58,49 @@ func openDoors():
 func closeDoors():
 	for door in doors.get_children():
 		door.get_node("doorBlock").disabled = false
+		
+		
+
+@onready var grid_map_walls: GridMap = $"../NavigationRegion3D/env/walls"
+@onready var grid_map_floor: GridMap = $"../NavigationRegion3D/env/floor"
+@onready var grid_map_props: GridMap = $"../NavigationRegion3D/env/props"
+
+@onready var mesh_parent: Node3D = $"../allmesh"
+
+func convert_gridmap_to_meshes(grid_map: GridMap) -> void:
+	if not grid_map or not grid_map.mesh_library:
+		push_warning("GridMap invalid or has no MeshLibrary: %s" % str(grid_map))
+		return
+
+	var mesh_library: MeshLibrary = grid_map.mesh_library
+
+	for cell: Vector3i in grid_map.get_used_cells():
+		var item_index: int = grid_map.get_cell_item(cell)
+		if item_index == GridMap.INVALID_CELL_ITEM:
+			continue
+
+		var mesh: Mesh = mesh_library.get_item_mesh(item_index)
+		if mesh == null:
+			continue
+
+		var mesh_instance := MeshInstance3D.new()
+		mesh_instance.mesh = mesh
+
+		# Position & orientation
+		var basis: Basis = grid_map.get_cell_item_basis(cell)
+		var local_pos: Vector3 = grid_map.map_to_local(cell)
+		var local_transform := Transform3D(basis, local_pos)
+
+		mesh_instance.global_transform = grid_map.global_transform * local_transform
+		mesh_parent.add_child(mesh_instance)
+
+		# --- COLLISION GENERATION ---
+		var shape := mesh.create_trimesh_shape()
+		if shape:
+			var body := StaticBody3D.new()
+			var collider := CollisionShape3D.new()
+			collider.shape = shape
+			body.add_child(collider)
+			mesh_instance.add_child(body)
+
+	grid_map.queue_free()
