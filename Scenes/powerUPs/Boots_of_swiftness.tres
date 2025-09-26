@@ -19,6 +19,6 @@ attack = 0.0
 attack_range = 0.0
 crit_rate = 0.0
 crit_damage = 0.0
-movement_speed = 0.7
+movement_speed = 0.5
 stamina = 0
 metadata/_custom_type_script = "uid://ctxk67plu8g8l"

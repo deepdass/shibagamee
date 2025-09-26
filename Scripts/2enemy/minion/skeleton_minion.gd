@@ -12,7 +12,7 @@ var player = null
 
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
-var health : float = 150
+var health : float = 200
 @onready var damagepopup: Node3D = $idknode
 
 @onready var destroyaftertime: Timer = $destroyaftertime
@@ -21,6 +21,8 @@ var health : float = 150
 const  SPEED = 4.2
 const ATTACK_RANGE = 1.5
 const KnockbackMul = 25
+
+const enem_KnockbackMul = 40
 var state_machine
 
 @onready var animation_tree: AnimationTree = $Skeleton_Minion/AnimationTree
@@ -31,7 +33,7 @@ signal died
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	randomize()
 	timer.wait_time = animation_tree.get_animation("Death_C_Skeletons").length + 0.3
 	
 	player = get_node(player_path)
@@ -52,7 +54,7 @@ func _process(delta: float) -> void:
 			velocity = (next_pt - global_transform.origin).normalized() * SPEED
 			
 			look_at(Vector3(global_position.x + velocity.x, global_position.y, global_position.z + velocity.z), Vector3.UP)
-			rotation.y = lerp_angle(rotation.y, atan2(-velocity.x, -velocity.z), delta * 10)
+			global_rotation.y = lerp_angle(global_rotation.y, atan2(-global_rotation.x, -global_rotation.z), delta * 10)
 		"1H_Melee_Attack_Stab":
 			look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z), Vector3.UP)
 	
@@ -69,22 +71,33 @@ func _hitfinish():
 		var dir = global_position.direction_to(player.global_position)
 		player.decrease_health()
 		player.velocity += Vector3(dir.x , dir.y * 0.1, dir.z ) * KnockbackMul
-		
+	
+
 func take_damage():
 	var damageRec = player.StatsManager.effective_damage()
 	health -= damageRec
-	collision_shape_3d.disabled = true
-	animation_tree.set("parameters/conditions/fall",true)
-	audio_stream_player.play()
+	
+	var fallChance = randi_range(0,100)
+	if fallChance < 15:
+		collision_shape_3d.disabled = true
+		timer.start()
+		animation_tree.set("parameters/conditions/fall",true)
+		audio_stream_player.play()
+	else:
+		var dir = -global_position.direction_to(player.global_position)
+		velocity = Vector3.ZERO
+		velocity += Vector3(dir.x , dir.y * 0.1, dir.z ) * enem_KnockbackMul
+		move_and_slide()
 	damagepopup.get_node("damagepopup").text = "%.1f" % damageRec
 	showDmg()
 	if health <= 0:
 		emit_signal("died")
 		collision_shape_3d.disabled = true
 		skeleton_minion_eyes.visible = false
+		audio_stream_player.play()
+		animation_tree.set("parameters/conditions/fall",true)
 		animation_tree.set("parameters/conditions/Resurrect",false)
 		destroyaftertime.start()
-	timer.start()
 
 func showDmg():
 	if player.StatsManager.can_crit:
@@ -94,12 +107,13 @@ func showDmg():
 		damagepopup.get_node("damagepopup").set_modulate(Color(1, 1, 1, 1))
 		damagepopup.get_node("damagepopup").set_outline_modulate(Color(1, 1, 1, 1))
 	damagepopup.visible = true
+	await get_tree().create_timer(0.6).timeout
+	damagepopup.visible = false
 
 func _on_timer_timeout() -> void:
 	if health >= 0:
 		collision_shape_3d.disabled = false
 		animation_tree.set("parameters/conditions/fall",false)
-	damagepopup.visible = false
 
 
 func _on_destroyaftertime_timeout() -> void:

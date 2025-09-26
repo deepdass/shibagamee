@@ -29,7 +29,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 func spawnEnemy():
 	for whichpt in enemy_spawns.get_children():
 		num_enemyCount += 1
-		var enemy = enemySCENEs[ enemySCENEs.keys().pick_random()].instantiate()
+		var enemy = enemySCENEs[enemySCENEs.keys().pick_random()].instantiate()
 		enemy.position = whichpt.position
 		get_node("NavigationRegion3D").add_child(enemy)
 			

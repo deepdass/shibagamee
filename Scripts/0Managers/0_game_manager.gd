@@ -18,6 +18,10 @@ var ray_target_pt = Vector3()
 
 ########################################
 @export var hearts : Array[Node]
+@onready var hearts_overload: Label = $"../UI/Panel/heartsOverload"
+
+@onready var panel_2: Panel = $"../UI/Panel2"
+
 
 ########################################
 
@@ -55,15 +59,24 @@ func _physics_process(delta: float) -> void:
 		var pos = intersection.position
 		var look_at_me = Vector3(pos.x, player.position.y, pos.z)
 		player._rotate(look_at_me)
-
+	if panel_2 != null:
+		panel_2.get_node("score").text = "Score - " + str(player.StatsManager.stats.score)
+		if player.StatsManager.stats.score == 0:
+			panel_2.get_node("tip").visible = true
+		else:
+			panel_2.get_node("tip").visible = false
+		
 
 func update_UI():
-	
-	for i in hearts.size():
-		if (i < player.StatsManager.stats.health):
-			hearts[i].show()
-		else:
-			hearts[i].hide()
+	if hearts.size() >= player.StatsManager.stats.health:
+		for i in hearts.size():
+			if (i < player.StatsManager.stats.health):
+				hearts[i].show()
+			else:
+				hearts[i].hide()
+	else:
+		hearts_overload.text = "+" + str(player.StatsManager.stats.health - hearts.size())
+		hearts_overload.visible = true
 	if player.StatsManager.stats.health == 0:
 		get_tree().set_meta("saved_stats", null)
 		timer.start()

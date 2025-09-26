@@ -20,8 +20,9 @@ func spawnPortal():
 		
 	if winpt != null:
 		var portal_inst = portal.instantiate()
-		room.call_deferred("add_child", portal_inst)
+		room.add_child(portal_inst)
 		portal_inst.position = winpt.position
+		portal_inst.global_rotation = winpt.rotation
 		PortalSpawned = false
 func ChangeroomCount():
 	roomsCount -= 1

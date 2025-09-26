@@ -6,7 +6,8 @@ extends RigidBody3D
 @onready var interact_area: Area3D = $interact_area
 
 
-@onready var player_entered : bool = false
+var player_entered : bool = false
+var already_opened : bool = false
 
 
 @onready var pts_parent: Node3D = $pts
@@ -25,8 +26,9 @@ func _physics_process(_delta):
 	apply_torque_impulse(tilt)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if player_entered:
+	if player_entered and !already_opened:
 		if Input.is_action_just_pressed("interact"):
+			already_opened = true
 			animation_player.play("chest_open")
 			pts_anim.play("powerUp_upanddown")
 			for i in pts_parent.get_children():
