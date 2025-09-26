@@ -488,7 +488,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -32)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -36)
 
 [node name="room9" parent="SubViewportContainer/SubViewport/myy/rooms" instance=ExtResource("11_va1cp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -12.2513)
 
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
 [connection signal="body_entered" from="killzone" to="GameManager" method="_on_killzone_body_entered"]

@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://c8v0e26jv4kht" path="res://Scenes/rooms/portal.gd" id="1_q8f08"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_q8f08"]
-height = 0.849609
-radius = 1.07959
+height = 1.21198
+radius = 1.20068
 
 [node name="portal" type="Node3D"]
 script = ExtResource("1_q8f08")
@@ -15,7 +15,7 @@ script = ExtResource("1_q8f08")
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.38166, -0.169019)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.38166, -0.165266)
 shape = SubResource("CylinderShape3D_q8f08")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

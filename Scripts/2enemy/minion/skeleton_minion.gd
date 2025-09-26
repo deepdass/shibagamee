@@ -77,13 +77,7 @@ func take_damage():
 	animation_tree.set("parameters/conditions/fall",true)
 	audio_stream_player.play()
 	damagepopup.get_node("damagepopup").text = "%.1f" % damageRec
-	if player.StatsManager.can_crit:
-		damagepopup.get_node("damagepopup").set_modulate(Color(0.7, 0.14, 0.14, 1))
-		damagepopup.get_node("damagepopup").set_outline_modulate(Color(0.11, 0, 0, 1))
-	else:
-		damagepopup.get_node("damagepopup").set_modulate(Color(1, 1, 1, 1))
-		damagepopup.get_node("damagepopup").set_outline_modulate(Color(1, 1, 1, 1))
-	damagepopup.visible = true
+	showDmg()
 	if health <= 0:
 		emit_signal("died")
 		collision_shape_3d.disabled = true
@@ -92,6 +86,14 @@ func take_damage():
 		destroyaftertime.start()
 	timer.start()
 
+func showDmg():
+	if player.StatsManager.can_crit:
+		damagepopup.get_node("damagepopup").set_modulate(Color(0.7, 0.14, 0.14, 1))
+		damagepopup.get_node("damagepopup").set_outline_modulate(Color(0.11, 0, 0, 1))
+	else:
+		damagepopup.get_node("damagepopup").set_modulate(Color(1, 1, 1, 1))
+		damagepopup.get_node("damagepopup").set_outline_modulate(Color(1, 1, 1, 1))
+	damagepopup.visible = true
 
 func _on_timer_timeout() -> void:
 	if health >= 0:

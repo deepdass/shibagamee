@@ -18,7 +18,13 @@ var num_enemyCount : int
 func _ready() -> void:
 	player = get_node(player_path)
 	get_parent().ChangeroomCount()
-
+	
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body == player:
+		for door in doors.get_children():
+			door.get_node("Area3D").queue_free()
+		closeDoors()
+		spawnEnemy()
 
 func spawnEnemy():
 	for whichpt in enemy_spawns.get_children():
@@ -40,20 +46,19 @@ func _on_enemy_killed():
 func openDoors():
 	for door in doors.get_children():
 		door.get_node("doorBlock").disabled = true
-		door.get_node("wall_doorway_door").visible = false
-		door.get_node("AnimationPlayer").play("door_open")
+		var anim : AnimationPlayer = door.get_node("AnimationPlayer")
+		anim.play("door_open")
+		setmesh(door, anim)
+		
+
+func setmesh(door, anim):
+	await get_tree().create_timer(anim.current_animation_length).timeout
+	door.get_node("wall_doorway_door").visible = false
 
 func closeDoors():
 	for door in doors.get_children():
 		door.get_node("doorBlock").disabled = false
+		door.get_node("wall_doorway_door").visible = true
 		door.get_node("AnimationPlayer").play("door_close")
 		
-		
-
-
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body == player:
-		for door in doors.get_children():
-			door.get_node("Area3D").queue_free()
-		closeDoors()
-		spawnEnemy()
+	

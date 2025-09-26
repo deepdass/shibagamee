@@ -65,8 +65,10 @@ func update_UI():
 		else:
 			hearts[i].hide()
 	if player.StatsManager.stats.health == 0:
+		get_tree().set_meta("saved_stats", null)
 		timer.start()
 		Engine.time_scale = 0.3
+		
 
 func _on_timer_timeout() -> void:  ## kill timeout
 	Engine.time_scale = 1

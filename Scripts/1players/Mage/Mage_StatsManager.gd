@@ -88,7 +88,7 @@ func won():
 	get_tree().reload_current_scene()
 	
 
-
+###############################################################################
 func applyUpgrades(receivedPowerups):
 	stats.health += receivedPowerups.health
 	stats.health = clampi(stats.health, 0, 7)
