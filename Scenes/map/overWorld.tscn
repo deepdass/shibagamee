@@ -74,6 +74,7 @@ shape = SubResource("WorldBoundaryShape3D_tnj4i")
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="UI"]
+scale = Vector2(1.6, 1.6)
 
 [node name="Heart1" type="TextureRect" parent="UI/Panel"]
 texture_filter = 1
@@ -160,11 +161,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 stretch = true
-stretch_shrink = 4
+stretch_shrink = 6
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(240, 135)
+size = Vector2i(320, 180)
 render_target_update_mode = 4
 
 [node name="myy" type="Node" parent="SubViewportContainer/SubViewport"]
