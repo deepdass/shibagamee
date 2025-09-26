@@ -5,7 +5,6 @@ extends Node
 @onready var cam_initailpt: Node3D = $"../SubViewportContainer/SubViewport/myy/per/camera_rig/cam_Initailpt"
 @onready var cam_finalpt: Node3D = $"../SubViewportContainer/SubViewport/myy/per/camera_rig/cam_finalpt"
 
-
 @onready var world: Node3D = $".."
 @onready var player: CharacterBody3D = %Player
 
@@ -72,6 +71,9 @@ func update_UI():
 func _on_timer_timeout() -> void:  ## kill timeout
 	Engine.time_scale = 1
 	get_tree().reload_current_scene()
+
+func won():
+	player.StatsManager.won()
 
 func _on_area_3d_body_entered(body: Node3D) -> void: ##inside crypt
 	if body == player:

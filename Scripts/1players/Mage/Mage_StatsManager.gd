@@ -29,7 +29,11 @@ var can_attack_basic = true
 
 
 func _ready() -> void:
-	stats = RES.duplicate()
+	if get_tree().has_meta("saved_stats"):
+		stats = get_tree().get_meta("saved_stats").duplicate()
+	else:
+		stats = RES.duplicate()
+	
 	attack_bacis__timer.wait_time = milli_per_shots / 1000.0
 
 
@@ -79,7 +83,10 @@ func randomnessFactor():
 func effective_damage():
 	return stats.attack * CAL_defence() * crit(stats.crit_rate/100) * randomnessFactor()
 
-
+func won():
+	get_tree().set_meta("saved_stats", stats)
+	get_tree().reload_current_scene()
+	
 
 
 func applyUpgrades(receivedPowerups):

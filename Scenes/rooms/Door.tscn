@@ -8,6 +8,21 @@ size = Vector3(0.515076, 1.99648, 1.90307)
 [sub_resource type="BoxShape3D" id="BoxShape3D_he860"]
 size = Vector3(1.18443, 2.84016, 3.21678)
 
+[sub_resource type="Animation" id="Animation_ax0pi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wall_doorway_door:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.0128989, -2.84387, 0.812118)]
+}
+
 [sub_resource type="Animation" id="Animation_cmng2"]
 resource_name = "door_close"
 length = 0.5
@@ -22,21 +37,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 0.287174),
 "update": 0,
 "values": [Vector3(-0.0128989, -2.84387, 0.812118), Vector3(-0.0128989, 0.00263527, 0.812118)]
-}
-
-[sub_resource type="Animation" id="Animation_ax0pi"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("wall_doorway_door:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.0128989, -2.84387, 0.812118)]
 }
 
 [sub_resource type="Animation" id="Animation_2rkpr"]
@@ -124,5 +124,6 @@ libraries = {
 
 [node name="wall_doorway_door" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0128989, -2.84387, 0.812118)
+visible = false
 mesh = SubResource("ArrayMesh_aa4if")
 skeleton = NodePath("")

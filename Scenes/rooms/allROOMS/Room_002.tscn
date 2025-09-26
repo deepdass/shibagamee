@@ -121,19 +121,19 @@ navigation_mesh = SubResource("NavigationMesh_hmakl")
 [node name="spwans" type="Marker3D" parent="NavigationRegion3D"]
 
 [node name="Node3D" type="Marker3D" parent="NavigationRegion3D/spwans"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.3848, 3, -18.0158)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5404, 3, -14.94)
 
 [node name="Node3D2" type="Marker3D" parent="NavigationRegion3D/spwans"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1671, 3, -23.5443)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3698, 3, -21.161)
 
 [node name="Node3D3" type="Marker3D" parent="NavigationRegion3D/spwans"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.511045, 3, -18.4066)
 
 [node name="Node3D4" type="Marker3D" parent="NavigationRegion3D/spwans"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.82024, 3, -15.3903)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.69514, 3, -14.969)
 
 [node name="Node3D5" type="Marker3D" parent="NavigationRegion3D/spwans"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.13059, 3, -7.16749)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.82951, 3, -7.06509)
 
 [node name="env" type="Marker3D" parent="NavigationRegion3D"]
 
@@ -142,7 +142,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -1)
 mesh_library = ExtResource("2_revnv")
 collision_mask = 7
 data = {
-"cells": PackedInt32Array(0, 65535, 1048605, 2, 65535, 1048605, 4, 65535, 1048605, 6, 65533, 1048605, 65534, 65533, 1048605, 8, 65533, 1048605, 10, 65533, 1048605, 12, 65531, 1048605, 12, 65529, 1048605, 12, 65527, 1048605, 65533, 65531, 1048605, 65533, 65529, 1048605, 65533, 65527, 1048605, 65535, 65525, 1048605, 65534, 65525, 1048605, 0, 65524, 1048605, 0, 65523, 1048605, 2, 65523, 1048605, 4, 65523, 1048605, 6, 65523, 1048605, 8, 65523, 1048605, 10, 65525, 1048605, 2, 65525, 1048605, 4, 65525, 1048605, 6, 65525, 1048605, 8, 65525, 1048605, 8, 65527, 1048605, 10, 65527, 1048605, 10, 65529, 1048605, 10, 65531, 1048605, 8, 65531, 1048605, 8, 65529, 1048605, 6, 65529, 1048605, 6, 65527, 1048605, 6, 65531, 1048605, 4, 65531, 1048605, 4, 65529, 1048605, 4, 65527, 1048605, 2, 65527, 1048605, 65535, 65527, 1048605, 0, 65526, 1048605, 2, 65529, 1048605, 2, 65531, 1048605, 2, 65533, 1048605, 4, 65533, 1048605, 0, 65533, 1048605, 0, 65531, 1048605, 0, 65529, 1048605, 65534, 65529, 1048605, 65534, 65531, 1048605, 1, 65528, 1048605, 65531, 65529, 29, 65531, 65531, 29, 65531, 65527, 29, 6, 65535, 29, 8, 65535, 29, 10, 65535, 29, 14, 65527, 29, 14, 65529, 29, 14, 65531, 29, 8, 0, 29, 15, 65529, 29, 65530, 65529, 29)
+"cells": PackedInt32Array(0, 65535, 1048605, 2, 65535, 1048605, 4, 65535, 1048605, 6, 65533, 1048605, 65534, 65533, 1048605, 8, 65533, 1048605, 10, 65533, 1048605, 12, 65531, 1048605, 12, 65529, 1048605, 12, 65527, 1048605, 65533, 65531, 1048605, 65533, 65529, 1048605, 65533, 65527, 1048605, 65535, 65525, 1048605, 65534, 65525, 1048605, 0, 65524, 1048605, 0, 65523, 1048605, 2, 65523, 1048605, 4, 65523, 1048605, 6, 65523, 1048605, 8, 65523, 1048605, 10, 65525, 1048605, 2, 65525, 1048605, 4, 65525, 1048605, 6, 65525, 1048605, 8, 65525, 1048605, 8, 65527, 1048605, 10, 65527, 1048605, 10, 65529, 1048605, 10, 65531, 1048605, 8, 65531, 1048605, 8, 65529, 1048605, 6, 65529, 1048605, 6, 65527, 1048605, 6, 65531, 1048605, 4, 65529, 1048605, 4, 65527, 1048605, 2, 65527, 1048605, 65535, 65527, 1048605, 0, 65526, 1048605, 2, 65533, 1048605, 4, 65533, 1048605, 0, 65533, 1048605, 65534, 65529, 1048605, 65534, 65531, 1048605, 65531, 65529, 29, 65531, 65531, 29, 65531, 65527, 29, 6, 65535, 29, 8, 65535, 29, 10, 65535, 29, 14, 65527, 29, 14, 65529, 29, 14, 65531, 29, 8, 0, 29, 15, 65529, 29, 65530, 65529, 29, 8, 65524, 35, 65535, 65532, 37, 0, 65532, 36, 9, 65531, 14, 0, 65531, 1048605, 0, 65529, 1048605, 1, 65528, 1048605, 3, 65528, 36, 2, 65529, 1048605, 3, 65529, 37, 4, 65531, 1048605, 2, 65531, 1048605)
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
@@ -187,6 +187,7 @@ libraries = {
 
 [node name="wall_doorway_door" type="MeshInstance3D" parent="NavigationRegion3D/env/door_Container/door"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0128989, -2.84387, 0.812118)
+visible = false
 mesh = SubResource("ArrayMesh_pmmkw")
 skeleton = NodePath("")
 
@@ -214,6 +215,7 @@ libraries = {
 
 [node name="wall_doorway_door" type="MeshInstance3D" parent="NavigationRegion3D/env/door_Container/door2"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0128989, -2.84387, 0.812118)
+visible = false
 mesh = SubResource("ArrayMesh_pmmkw")
 skeleton = NodePath("")
 
@@ -241,8 +243,12 @@ libraries = {
 
 [node name="wall_doorway_door" type="MeshInstance3D" parent="NavigationRegion3D/env/door_Container/door3"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0128989, -2.84387, 0.812118)
+visible = false
 mesh = SubResource("ArrayMesh_pmmkw")
 skeleton = NodePath("")
+
+[node name="winPortal" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.7, 0.415, -15.16)
 
 [connection signal="body_entered" from="NavigationRegion3D/env/door_Container/door/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="NavigationRegion3D/env/door_Container/door2/Area3D" to="." method="_on_area_3d_body_entered"]

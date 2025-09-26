@@ -6,11 +6,12 @@
 [resource]
 script = ExtResource("2_e8cwf")
 mesh = ExtResource("1_c3ncr")
-name = "attack"
+name = "critDmg"
 description = ""
 rarity = "Common"
 type = "justUpgrades"
 equip_path = ""
+max_health = 3
 health = 0
 enemy_health = 0.0
 defence = 0.0

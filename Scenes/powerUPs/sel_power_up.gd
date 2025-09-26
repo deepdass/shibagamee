@@ -8,9 +8,9 @@ var sub_viewport = null
 
 const allRES := ["res://Scenes/powerUPs/Boots_of_swiftness.tres",
 "res://Scenes/powerUPs/Lifebloom.tres",
-"res://Scenes/powerUPs/hihello2.tres",
 "res://Scenes/powerUPs/5_Common/st pat (crit rate)/St. Patricks.tres",
-"res://Scenes/powerUPs/5_Common/attack/attack.tres"]
+"res://Scenes/powerUPs/5_Common/attack/attack.tres",
+"res://Scenes/powerUPs/5_Common/crackedskull (crit damage)/crackedskull.tres"]
 
 
 @onready var meshspawn: Node3D = $meshspawn

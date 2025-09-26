@@ -2,7 +2,6 @@ extends Resource
 
 class_name  Stats
 
-
 @export_range(0, 7) var health : int
 @export var enemy_health : float
 

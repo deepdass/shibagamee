@@ -17,6 +17,7 @@ var num_enemyCount : int
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player = get_node(player_path)
+	get_parent().ChangeroomCount()
 
 
 func spawnEnemy():
@@ -39,6 +40,7 @@ func _on_enemy_killed():
 func openDoors():
 	for door in doors.get_children():
 		door.get_node("doorBlock").disabled = true
+		door.get_node("wall_doorway_door").visible = false
 		door.get_node("AnimationPlayer").play("door_open")
 
 func closeDoors():

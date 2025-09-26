@@ -332,6 +332,8 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.509
 light_color = Color(0.85, 0.85, 0.6205, 1)
 light_energy = 0.8
 
+[node name="rooms" type="Marker3D" parent="SubViewportContainer/SubViewport/myy"]
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(-0.101372, 0.707474, 0.699432, 0.00664804, -0.702556, 0.711598, 0.994826, 0.076786, 0.0665162, 5.85244, 6.7486, 0)
 light_color = Color(0.74, 0.68228, 0.3552, 1)
