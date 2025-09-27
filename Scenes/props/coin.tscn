@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b6td1ktk5mvgv"]
 
-[ext_resource type="ArrayMesh" uid="uid://bqg6u3pla5aoc" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/obj/coin.obj" id="1_p63sq"]
+[ext_resource type="ArrayMesh" uid="uid://bqg6u3pla5aoc" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj/coin.obj" id="1_p63sq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uuekt"]
 size = Vector3(0.319798, 0.125916, 0.31781)

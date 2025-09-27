@@ -3,12 +3,12 @@
 [ext_resource type="Shader" uid="uid://c6qhkhar3xobg" path="res://Shaders/edge_detection.gdshader" id="1_o51wa"]
 [ext_resource type="Texture2D" uid="uid://ci38v0jfp4220" path="res://Assets/checker.jpg" id="2_s1ktn"]
 [ext_resource type="ArrayMesh" uid="uid://caofxnauygyql" path="res://Assets/icosphere_mesh.res" id="3_7pu2d"]
-[ext_resource type="PackedScene" uid="uid://rny8dnin5fm3" path="res://Assets/Models/wrench_low.fbx" id="4_ajrvf"]
-[ext_resource type="PackedScene" uid="uid://b8kgfpv63kg6p" path="res://Assets/Models/Backpack.fbx" id="5_mkfqg"]
-[ext_resource type="PackedScene" uid="uid://byfb7x3b4whqy" path="res://Assets/Models/Bandages.fbx" id="6_lt3d0"]
-[ext_resource type="PackedScene" uid="uid://52asmqf063ee" path="res://Assets/Models/Bonfire_Fire.fbx" id="7_pjdeb"]
-[ext_resource type="PackedScene" uid="uid://sjqwf5o22ogj" path="res://Assets/Models/Shotgun_SawedOff.fbx" id="8_bfw2p"]
-[ext_resource type="PackedScene" uid="uid://nwmv3u6lfd4g" path="res://Assets/Models/Radio.fbx" id="9_kllmn"]
+[ext_resource type="PackedScene" uid="uid://rny8dnin5fm3" path="res://Assets/zzAdventurers/MyModels/wrench_low.fbx" id="4_ajrvf"]
+[ext_resource type="PackedScene" uid="uid://b8kgfpv63kg6p" path="res://Assets/zzAdventurers/MyModels/Backpack.fbx" id="5_mkfqg"]
+[ext_resource type="PackedScene" uid="uid://byfb7x3b4whqy" path="res://Assets/zzAdventurers/MyModels/Bandages.fbx" id="6_lt3d0"]
+[ext_resource type="PackedScene" uid="uid://52asmqf063ee" path="res://Assets/zzAdventurers/MyModels/Bonfire_Fire.fbx" id="7_pjdeb"]
+[ext_resource type="PackedScene" uid="uid://sjqwf5o22ogj" path="res://Assets/zzAdventurers/MyModels/Shotgun_SawedOff.fbx" id="8_bfw2p"]
+[ext_resource type="PackedScene" uid="uid://nwmv3u6lfd4g" path="res://Assets/zzAdventurers/MyModels/Radio.fbx" id="9_kllmn"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_hp20k"]
 flip_faces = true

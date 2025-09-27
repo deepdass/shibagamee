@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PowerUps" load_steps=3 format=3 uid="uid://b5466pswj1qd6"]
 
-[ext_resource type="PackedScene" uid="uid://d3qymr87utloi" path="res://Assets/Adventurers/Assets/gltf/sword_1handed.gltf" id="1_bwgrk"]
+[ext_resource type="PackedScene" uid="uid://d3qymr87utloi" path="res://Assets/zzAdventurers/Assets/gltf/sword_1handed.gltf" id="1_bwgrk"]
 [ext_resource type="Script" uid="uid://ctxk67plu8g8l" path="res://Scripts/3PowerUps/RES_PowerUp.gd" id="2_yny2u"]
 
 [resource]

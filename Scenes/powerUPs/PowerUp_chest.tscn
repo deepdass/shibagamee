@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=4 uid="uid://7wuf3nd758mc"]
 
-[ext_resource type="Texture2D" uid="uid://e08etccomcp2" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="1_lbilg"]
+[ext_resource type="Texture2D" uid="uid://e08etccomcp2" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="1_lbilg"]
 [ext_resource type="Script" uid="uid://dki57qs1yif3i" path="res://Scripts/3PowerUps/power_up_chest.gd" id="1_ox5j7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lbilg"]

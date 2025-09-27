@@ -1,7 +1,7 @@
 [gd_scene load_steps=104 format=4 uid="uid://blbh1xbrydvng"]
 
 [ext_resource type="Script" uid="uid://d3k6vceltb6c3" path="res://Scripts/prototype/mage_movement.gd" id="1_0xdm5"]
-[ext_resource type="Texture2D" uid="uid://dakdmcqthjlnf" path="res://Assets/Adventurers/Characters/gltf/Mage_mage_texture.png" id="2_0xdm5"]
+[ext_resource type="Texture2D" uid="uid://dakdmcqthjlnf" path="res://Assets/zzAdventurers/Characters/gltf/Mage_mage_texture.png" id="2_0xdm5"]
 [ext_resource type="Script" uid="uid://ciotuu3ij1svi" path="res://Scripts/1players/Mage/Mage_StatsManager.gd" id="3_wse4s"]
 [ext_resource type="PackedScene" uid="uid://bbco0ihgwlru1" path="res://Scenes/zidk/mage_projectile.tscn" id="4_642wo"]
 

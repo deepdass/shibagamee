@@ -1,9 +1,9 @@
 [gd_scene load_steps=15 format=4 uid="uid://c55n0l3l78jo5"]
 
 [ext_resource type="Script" uid="uid://dwrg1j4xsnvtx" path="res://Scenes/rooms/roomSCRIPT.gd" id="1_mjr1c"]
-[ext_resource type="MeshLibrary" uid="uid://61gf5acs8qic" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib1.tres" id="3_cnrn0"]
-[ext_resource type="MeshLibrary" uid="uid://itk8p671mpm7" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Propslib.tres" id="4_6mppt"]
-[ext_resource type="Texture2D" uid="uid://e08etccomcp2" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="4_jg48x"]
+[ext_resource type="MeshLibrary" uid="uid://61gf5acs8qic" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib1.tres" id="3_cnrn0"]
+[ext_resource type="MeshLibrary" uid="uid://itk8p671mpm7" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Propslib.tres" id="4_6mppt"]
+[ext_resource type="Texture2D" uid="uid://e08etccomcp2" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="4_jg48x"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_hmakl"]
 agent_height = 1.0

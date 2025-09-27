@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=4 uid="uid://g3llfmf10p8d"]
 
 [ext_resource type="Script" uid="uid://3l5au2u2nmyy" path="res://Scripts/prototype/player.gd" id="1_v0iea"]
-[ext_resource type="PackedScene" uid="uid://b8kgfpv63kg6p" path="res://Assets/Models/Backpack.fbx" id="2_cvnsp"]
+[ext_resource type="PackedScene" uid="uid://b8kgfpv63kg6p" path="res://Assets/zzAdventurers/MyModels/Backpack.fbx" id="2_cvnsp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cvnsp"]
 

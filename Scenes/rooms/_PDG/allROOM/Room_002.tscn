@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://wweet4cu7kft" path="res://Scenes/rooms/_PDG/roomPDG.gd" id="1_ifaoi"]
 [ext_resource type="Script" uid="uid://eqgp7no52l1i" path="res://addons/SimpleDungeons/DungeonRoom3D.gd" id="1_pmmkw"]
-[ext_resource type="MeshLibrary" uid="uid://61gf5acs8qic" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib1.tres" id="1_y5p10"]
-[ext_resource type="MeshLibrary" uid="uid://itk8p671mpm7" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Propslib.tres" id="2_qllyy"]
+[ext_resource type="MeshLibrary" uid="uid://61gf5acs8qic" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib1.tres" id="1_y5p10"]
+[ext_resource type="MeshLibrary" uid="uid://itk8p671mpm7" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Propslib.tres" id="2_qllyy"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_hmakl"]
 agent_height = 1.0

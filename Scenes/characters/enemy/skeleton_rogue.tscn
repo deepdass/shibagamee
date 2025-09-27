@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bih8wywuxokjh" path="res://Scripts/2enemy/Rogue/skeleton_rogue.gd" id="1_l56yq"]
 [ext_resource type="PackedScene" uid="uid://cixblde5ubic8" path="res://Scenes/zidk/arrow_Ske_rogue_projectile.tscn" id="2_km1pq"]
 [ext_resource type="Texture2D" uid="uid://dhbsglarwx1np" path="res://Assets/Skeletons/characters/gltf/Skeleton_Rogue_skeleton_texture.png" id="2_l56yq"]
-[ext_resource type="PackedScene" uid="uid://hfav0mtbys7w" path="res://Assets/Adventurers/Assets/gltf/crossbow_2handed.gltf" id="3_hhmmh"]
+[ext_resource type="PackedScene" uid="uid://hfav0mtbys7w" path="res://Assets/zzAdventurers/Assets/gltf/crossbow_2handed.gltf" id="3_hhmmh"]
 [ext_resource type="AudioStream" uid="uid://dbvac6oe2ppgt" path="res://Assets/Audio/SkeletonDeath_AUD.mp3" id="4_h2m1m"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_841wv"]

@@ -7,10 +7,10 @@
 [ext_resource type="Script" uid="uid://dwrg1j4xsnvtx" path="res://Scenes/rooms/roomSCRIPT.gd" id="4_fv7jm"]
 [ext_resource type="PackedScene" uid="uid://c7illv6kf10b2" path="res://Scenes/characters/players/character_base.tscn" id="4_navn1"]
 [ext_resource type="PackedScene" uid="uid://dcw5e6cjvxy3b" path="res://Scenes/rooms/allROOMS/Room_002.tscn" id="5_n3mfx"]
-[ext_resource type="MeshLibrary" uid="uid://61gf5acs8qic" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib1.tres" id="5_va1cp"]
-[ext_resource type="MeshLibrary" uid="uid://itk8p671mpm7" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Propslib.tres" id="6_dooxh"]
+[ext_resource type="MeshLibrary" uid="uid://61gf5acs8qic" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib1.tres" id="5_va1cp"]
+[ext_resource type="MeshLibrary" uid="uid://itk8p671mpm7" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Propslib.tres" id="6_dooxh"]
 [ext_resource type="PackedScene" uid="uid://dswx3oxm25bfa" path="res://Scenes/rooms/allROOMS/Room_003.tscn" id="6_h4pxw"]
-[ext_resource type="Texture2D" uid="uid://e08etccomcp2" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="7_rewsw"]
+[ext_resource type="Texture2D" uid="uid://c3mchi10usuw1" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="7_rewsw"]
 [ext_resource type="PackedScene" uid="uid://dilj5s750b7tp" path="res://Scenes/rooms/allROOMS/Room_004.tscn" id="11_va1cp"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2ulnn"]

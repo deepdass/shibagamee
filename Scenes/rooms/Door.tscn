@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=4 uid="uid://b5id238d3lxmv"]
 
-[ext_resource type="Texture2D" uid="uid://e08etccomcp2" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="1_cmng2"]
+[ext_resource type="Texture2D" uid="uid://e08etccomcp2" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="1_cmng2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p7ifo"]
 size = Vector3(0.515076, 1.99648, 1.90307)

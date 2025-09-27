@@ -1,9 +1,9 @@
 [gd_scene load_steps=15 format=4 uid="uid://dy3xf0k58ncpg"]
 
 [ext_resource type="Script" uid="uid://dwrg1j4xsnvtx" path="res://Scenes/rooms/roomSCRIPT.gd" id="1_ourhf"]
-[ext_resource type="MeshLibrary" uid="uid://61gf5acs8qic" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib1.tres" id="2_44mwa"]
-[ext_resource type="MeshLibrary" uid="uid://itk8p671mpm7" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Propslib.tres" id="3_g5bpl"]
-[ext_resource type="Texture2D" uid="uid://e08etccomcp2" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="4_0dy03"]
+[ext_resource type="MeshLibrary" uid="uid://61gf5acs8qic" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib1.tres" id="2_44mwa"]
+[ext_resource type="MeshLibrary" uid="uid://itk8p671mpm7" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Propslib.tres" id="3_g5bpl"]
+[ext_resource type="Texture2D" uid="uid://c3mchi10usuw1" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="4_0dy03"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_hmakl"]
 vertices = PackedVector3Array(-15.3797, 2.4, -22.3797, -15.3797, 2.4, -21.6297, -14.8797, 2.4, -21.3797, -14.8797, 2.4, -22.6297, 1.3703, 2.4, -1.1297, 1.6203, 2.4, -0.629696, 2.3703, 2.4, -0.629696, 22.8703, 2.4, -25.3797, 23.3703, 2.4, -25.6297, 23.3703, 2.4, -26.3797, 22.8703, 2.4, -26.6297, 2.6203, 2.4, -1.1297, -2.8797, 2.4, -4.3797, 18.8703, 2.4, -31.6297, 18.8703, 2.4, -34.8797, -2.8797, 2.4, -34.8797, -2.8797, 2.4, -31.3797, -3.3797, 2.4, -30.8797, -11.3797, 2.4, -24.8797, -6.8797, 2.4, -30.8797, -6.8797, 2.4, -29.3797, -14.8797, 2.4, -24.8797, -7.3797, 2.4, -28.8797, 7.6203, 2.4, -9.1297, 10.8703, 2.4, -9.1297, 10.8703, 2.4, -12.3797, -10.8797, 2.4, -28.8797, -10.8797, 2.4, -25.3797, -2.8797, 2.4, -1.1297, 22.8703, 2.4, -30.8797, 19.6203, 2.4, -30.8797, -3.6297, 2.4, -5.1297, 6.8703, 2.4, -1.1297, 6.8703, 2.4, -8.3797, 11.6203, 2.4, -13.1297, 18.8703, 2.4, -16.3797, 19.6203, 2.4, -17.1297, -10.8797, 2.4, -8.3797, -10.8797, 2.4, -5.1297, 18.8703, 2.4, -13.1297, -11.6297, 2.4, -9.1297, 22.8703, 2.4, -17.1297, -14.8797, 2.4, -9.1297)
