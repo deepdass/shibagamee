@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1iyvhybjua1r"]
+
+[ext_resource type="PackedScene" uid="uid://djgs2yc34k5y" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_foundation_front_and_sides.gltf" id="286292867089115797"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_oq1pl"]
+points = PackedVector3Array(-1.1, 0, -1, -1.1, 0, 1.0999999, -1.1, 2, -1, 1.1, 0, -1, -1.1, 2, 1.0999999, 1.1, 0, 1.0999999, 1.1, 2, -1, 1.1, 2, 1.0999999)
+
+[node name="floor_foundation_front_and_sides" instance=ExtResource("286292867089115797")]
+
+[node name="floor_foundation_front_and_sides_col" type="StaticBody3D" parent="floor_foundation_front_and_sides" index="0"]
+
+[node name="floor_foundation_front_and_sides_col_shape" type="CollisionShape3D" parent="floor_foundation_front_and_sides/floor_foundation_front_and_sides_col" index="0"]
+shape = SubResource("ConvexPolygonShape3D_oq1pl")

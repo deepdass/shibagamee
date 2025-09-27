@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwr64w66vlpst"]
+
+[ext_resource type="PackedScene" uid="uid://bupqldd5m8dg2" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_foundation_diagonal_corner.gltf" id="8592817804720471960"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3fnbj"]
+points = PackedVector3Array(-1.1, 0, -1, -1.1, 2, -1, 0.9999999, 0, -1, 0.9999999, 0, 1.0999999, 0.9999999, 2, 1.0999999, 0.9999999, 2, -1)
+
+[node name="floor_foundation_diagonal_corner" instance=ExtResource("8592817804720471960")]
+
+[node name="floor_foundation_diagonal_corner_col" type="StaticBody3D" parent="floor_foundation_diagonal_corner" index="0"]
+
+[node name="floor_foundation_diagonal_corner_col_shape" type="CollisionShape3D" parent="floor_foundation_diagonal_corner/floor_foundation_diagonal_corner_col" index="0"]
+shape = SubResource("ConvexPolygonShape3D_3fnbj")

@@ -6,8 +6,8 @@ extends Area3D
 var sub_viewport = null
 @onready var sub_viewport_path := "/root/World/SubViewportContainer/SubViewport"
 
-const allRES := ["res://Scenes/powerUPs/Boots_of_swiftness.tres",
-"res://Scenes/powerUPs/Lifebloom.tres",
+const allRES := ["res://Scenes/powerUPs/5_Common/bootofswiftness/Boots_of_swiftness.tres",
+"res://Scenes/powerUPs/5_Common/lifebloom/Lifebloom.tres",
 "res://Scenes/powerUPs/5_Common/st pat (crit rate)/St. Patricks.tres",
 "res://Scenes/powerUPs/5_Common/attack/attack.tres",
 "res://Scenes/powerUPs/5_Common/crackedskull (crit damage)/crackedskull.tres"]

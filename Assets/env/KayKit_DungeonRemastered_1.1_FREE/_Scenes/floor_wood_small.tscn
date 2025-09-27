@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj4mers1hrrcu"]
+
+[ext_resource type="PackedScene" uid="uid://cg7jdfg2fcav4" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_wood_small.gltf" id="3988111703384232576"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nggx2"]
+points = PackedVector3Array(-1, -0.1, -1, -1, -0.1, 1, -1, 0.024995103, -1, 1, -0.1, -1, -1, 0.024995103, 1, 1, -0.1, 1, -1, 0.050000004, -0.47513705, -0.97513705, 0.050000004, -0.97513705, 1, 0.024995103, -1, -1, 0.050000004, 0.97494125, 1, 0.024995103, 1, 0.97494125, 0.050000004, -0.97513705, 1, 0.050000004, -0.47513705, 1, 0.050000004, 0.97494125)
+
+[node name="floor_wood_small" instance=ExtResource("3988111703384232576")]
+
+[node name="floor_wood_small_col" type="StaticBody3D" parent="floor_wood_small" index="0"]
+
+[node name="floor_wood_small_col_shape" type="CollisionShape3D" parent="floor_wood_small/floor_wood_small_col" index="0"]
+shape = SubResource("ConvexPolygonShape3D_nggx2")

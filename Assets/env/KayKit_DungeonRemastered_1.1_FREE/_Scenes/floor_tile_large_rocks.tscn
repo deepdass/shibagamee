@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://7bjwt6snh5pk"]
+
+[ext_resource type="PackedScene" uid="uid://1wpwdff1dk0s" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_tile_large_rocks.gltf" id="6682992639864343697"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ol8yr"]
+points = PackedVector3Array(-2, -0.10000001, -2, -2, -0.10000001, 2, -2, 0.049951717, -2, 2, -0.10000001, -2, -2, 0.049951717, 2, 2, -0.10000001, 2, -1.3539546, 0.38852626, 0.3899765, -0.37705564, 0.43242824, -0.25959277, 2, 0.049951717, -2, -1.3645263, 0.3174113, 0.96906805, 2, 0.049951717, 2, 0.6480031, 0.5361739, 0.7298355, -0.05794835, 0.5361739, 0.69381356, 0.85434604, 0.5361739, 0.3797965)
+
+[node name="floor_tile_large_rocks" instance=ExtResource("6682992639864343697")]
+
+[node name="floor_tile_large_rocks_col" type="StaticBody3D" parent="floor_tile_large_rocks" index="0"]
+
+[node name="floor_tile_large_rocks_col_shape" type="CollisionShape3D" parent="floor_tile_large_rocks/floor_tile_large_rocks_col" index="0"]
+shape = SubResource("ConvexPolygonShape3D_ol8yr")

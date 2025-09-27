@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://pvw2bvgkvatl"]
+
+[ext_resource type="PackedScene" uid="uid://ddncya8tfaxts" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_tile_small_broken_B.gltf" id="4183063315382590536"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_e5wwa"]
+points = PackedVector3Array(-1, -0.10000001, -1, -1, -0.10000001, 1, -1, 0.049999997, -1, 1, -0.10000001, -1, -1, 0.049999997, 1, 1, -0.10000001, 1, 1, 0.049999997, -1, 1, 0.049999997, 1)
+
+[node name="floor_tile_small_broken_B" instance=ExtResource("4183063315382590536")]
+
+[node name="floor_tile_small_broken_B_col" type="StaticBody3D" parent="floor_tile_small_broken_B" index="0"]
+
+[node name="floor_tile_small_broken_B_col_shape" type="CollisionShape3D" parent="floor_tile_small_broken_B/floor_tile_small_broken_B_col" index="0"]
+shape = SubResource("ConvexPolygonShape3D_e5wwa")

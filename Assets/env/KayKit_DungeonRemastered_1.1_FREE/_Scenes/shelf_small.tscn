@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkmmy6s61ysiw"]
+
+[ext_resource type="PackedScene" uid="uid://jllmkrn3vreu" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/shelf_small.gltf" id="775104737348743805"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3n5hu"]
+points = PackedVector3Array(-0.5, -0.10000005, -1.4901161e-08, -0.5, 0.099999905, -1.4901161e-08, -0.100039154, -0.3, -1.4901161e-08, -0.5, -0.10000005, 0.4749902, -0.5, 0.099999905, 0.4749902, 0.5, 0.099999905, -1.4901161e-08, -0.100039154, -0.3, 0.124999985, 0.09994125, -0.3, -1.4901161e-08, -0.5, -0.07501963, 0.5, 0.5, -0.10000005, 0.4749902, -0.5, 0.07498035, 0.5, 0.5, 0.099999905, 0.4749902, 0.5, -0.10000005, -1.4901161e-08, 0.09994125, -0.3, 0.124999985, 0.5, -0.07501963, 0.5, 0.5, 0.07498035, 0.5)
+
+[node name="shelf_small" instance=ExtResource("775104737348743805")]
+
+[node name="shelf_small_col" type="StaticBody3D" parent="shelf_small" index="0"]
+
+[node name="shelf_small_col_shape" type="CollisionShape3D" parent="shelf_small/shelf_small_col" index="0"]
+shape = SubResource("ConvexPolygonShape3D_3n5hu")

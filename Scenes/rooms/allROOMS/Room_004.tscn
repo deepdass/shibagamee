@@ -1,8 +1,7 @@
-[gd_scene load_steps=15 format=4 uid="uid://dilj5s750b7tp"]
+[gd_scene load_steps=14 format=4 uid="uid://dilj5s750b7tp"]
 
 [ext_resource type="Script" uid="uid://dwrg1j4xsnvtx" path="res://Scenes/rooms/roomSCRIPT.gd" id="1_kbsnl"]
-[ext_resource type="MeshLibrary" uid="uid://61gf5acs8qic" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib1.tres" id="2_xqjhb"]
-[ext_resource type="MeshLibrary" uid="uid://itk8p671mpm7" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Propslib.tres" id="3_swfyg"]
+[ext_resource type="MeshLibrary" uid="uid://dylygcgh2k4ek" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib.tres" id="2_swfyg"]
 [ext_resource type="Texture2D" uid="uid://c3mchi10usuw1" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="4_ophdv"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_hmakl"]
@@ -139,7 +138,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.51523, 3, -9.28849)
 
 [node name="floor" type="GridMap" parent="NavigationRegion3D/env"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -1)
-mesh_library = ExtResource("2_xqjhb")
+mesh_library = ExtResource("2_swfyg")
 collision_mask = 7
 data = {
 "cells": PackedInt32Array(2, 65535, 655389, 0, 65535, 655389, 65535, 65533, 655389, 3, 65533, 655389, 5, 65533, 655389, 4, 65531, 655389, 6, 65531, 655389, 5, 65529, 655389, 7, 65530, 655389, 8, 65531, 655389, 8, 65530, 655389, 8, 65528, 655389, 6, 65528, 655389, 7, 65526, 655389, 9, 65529, 655389, 9, 65528, 655389, 9, 65526, 655389, 7, 65524, 655389, 5, 65524, 655389, 5, 65526, 655389, 3, 65526, 655389, 3, 65524, 655389, 1, 65526, 655389, 1, 65524, 655389, 1, 65528, 655389, 3, 65528, 655389, 4, 65528, 655389, 3, 65530, 655389, 1, 65530, 655389, 1, 65532, 655389, 2, 65532, 655389, 1, 65533, 655389, 65535, 65530, 655389, 65535, 65531, 655389, 65535, 65528, 655389, 65535, 65527, 655389, 65533, 65529, 655389, 65533, 65528, 655389, 65533, 65527, 655389, 65533, 65530, 655389, 0, 65525, 655389, 9, 65525, 1048605, 2, 1, 655389, 0, 1, 655389, 3, 65522, 655389, 5, 65522, 655389, 65531, 65528, 655389, 65531, 65530, 655389, 2, 65527, 36, 8, 65525, 36, 2, 65534, 36, 65534, 65531, 37)
@@ -148,16 +147,15 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="walls" type="GridMap" parent="NavigationRegion3D/env"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -1)
-mesh_library = ExtResource("2_xqjhb")
+mesh_library = ExtResource("2_swfyg")
 collision_layer = 2
 collision_mask = 7
 data = {
-"cells": PackedInt32Array(65534, 65532, 655389, 3, 65535, 1048635, 4, 65534, 59, 6, 65534, 1441857, 6, 65532, 1048642, 8, 65532, 60, 9, 65532, 1441860, 9, 65531, 1441861, 9, 65530, 1048644, 10, 65530, 1441858, 10, 65528, 1048654, 10, 65526, 1048654, 10, 65524, 66, 8, 65524, 655425, 8, 65523, 65, 6, 65523, 59, 2, 65523, 69, 4, 65523, 71, 0, 65523, 1048641, 0, 65524, 1441857, 65535, 65524, 1048641, 65535, 65526, 1441857, 65532, 65529, 1441865, 1, 0, 655433, 3, 0, 1441857, 65535, 0, 655425, 65535, 65534, 68, 65534, 65534, 655428, 65533, 65533, 655425, 65534, 65533, 68, 65533, 65531, 65, 65532, 65531, 655425, 65532, 65527, 1048635, 65533, 65526, 59, 65532, 65526, 1048644, 65535, 65535, 1048655, 3, 65534, 1048644)
+"cells": PackedInt32Array(65534, 65532, 655389, 3, 65535, 1048635, 4, 65534, 59, 6, 65534, 1441857, 6, 65532, 1048642, 8, 65532, 60, 9, 65532, 1441860, 9, 65531, 1441861, 9, 65530, 1048644, 10, 65530, 1441858, 10, 65528, 1048652, 10, 65526, 1048652, 10, 65524, 66, 8, 65524, 655425, 8, 65523, 65, 6, 65523, 59, 2, 65523, 69, 4, 65523, 71, 0, 65523, 1048641, 0, 65524, 1441857, 65535, 65524, 1048641, 65535, 65526, 1441857, 65532, 65529, 1441863, 1, 0, 655431, 3, 0, 1441857, 65535, 0, 655425, 65535, 65534, 68, 65534, 65534, 655428, 65533, 65533, 655425, 65534, 65533, 68, 65533, 65531, 65, 65532, 65531, 655425, 65532, 65527, 1048635, 65533, 65526, 59, 65532, 65526, 1048644, 65535, 65535, 1048645, 3, 65534, 1048644)
 }
 
 [node name="props" type="GridMap" parent="NavigationRegion3D/env"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -1)
-mesh_library = ExtResource("3_swfyg")
 collision_layer = 4
 collision_mask = 7
 

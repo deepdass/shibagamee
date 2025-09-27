@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxftwm05l083l"]
+
+[ext_resource type="PackedScene" uid="uid://ca3p0ly22q5t3" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/ceiling_tile.gltf" id="6494256184346139396"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ml06m"]
+points = PackedVector3Array(-2, -0.050024286, -2, -2, 0.09996697, -2, 2, -0.050024286, -2, -2, -0.2500012, -1.1472201, -2, 0.09996697, 2, 2, 0.09996697, -2, 2, -0.2500012, -1.1472201, -2, -0.2500012, 1.1468284, -2, -0.050024286, 2, 2, 0.09996697, 2, 2, -0.2500012, 1.1468284, 2, -0.050024286, 2)
+
+[node name="ceiling_tile" instance=ExtResource("6494256184346139396")]
+
+[node name="ceiling_tile_col" type="StaticBody3D" parent="ceiling_tile" index="0"]
+
+[node name="ceiling_tile_col_shape" type="CollisionShape3D" parent="ceiling_tile/ceiling_tile_col" index="0"]
+shape = SubResource("ConvexPolygonShape3D_ml06m")

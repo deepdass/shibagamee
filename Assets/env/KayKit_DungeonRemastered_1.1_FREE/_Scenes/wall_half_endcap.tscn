@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmqlrmxro4fk2"]
+
+[ext_resource type="PackedScene" uid="uid://e0m51vpyf35w" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_half_endcap.gltf" id="6482891997153566900"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_behgk"]
+points = PackedVector3Array(-2, 0, -0.49999997, 0, 0, -0.49999997, -2, 0, 0.49990216, -2, 4, -0.49999997, 0, 0, 0.49990216, 0, 4, -0.49999997, -2, 4, 0.49990216, 0, 4, 0.49990216)
+
+[node name="wall_half_endcap" instance=ExtResource("6482891997153566900")]
+
+[node name="wall_half_endcap_col" type="StaticBody3D" parent="wall_half_endcap" index="0"]
+
+[node name="wall_half_endcap_col_shape" type="CollisionShape3D" parent="wall_half_endcap/wall_half_endcap_col" index="0"]
+shape = SubResource("ConvexPolygonShape3D_behgk")

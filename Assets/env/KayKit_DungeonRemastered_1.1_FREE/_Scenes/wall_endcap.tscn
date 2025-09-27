@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqn4ht2ne355p"]
+
+[ext_resource type="PackedScene" uid="uid://dnacw7c5u5fs0" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_endcap.gltf" id="3495614451678057802"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_e23th"]
+points = PackedVector3Array(0, 0, -0.5, 0.89991415, 0, -0.5, 0, 0, 0.49999988, 0, 4, -0.5, 0.9999626, 0, -0.42932656, 0.89991415, 4, -0.5, 0.89991415, 0, 0.49999988, 0, 4, 0.49999988, 1.0669053, 0.71064997, -0.10131171, 0.9999626, 0, 0.42922854, 0.9999626, 4, -0.42932656, 0.89991415, 4, 0.49999988, 1.0669053, 0.9154268, -0.10131171, 1.0669053, 0.71064997, 0.07781905, 1.0669053, 2.5023494, 0.098766565, 0.9999626, 4, 0.42922854, 1.0669053, 2.7071261, -0.0802663, 1.0669053, 2.7071261, 0.098766565)
+
+[node name="wall_endcap" instance=ExtResource("3495614451678057802")]
+
+[node name="wall_endcap_col" type="StaticBody3D" parent="wall_endcap" index="0"]
+
+[node name="wall_endcap_col_shape" type="CollisionShape3D" parent="wall_endcap/wall_endcap_col" index="0"]
+shape = SubResource("ConvexPolygonShape3D_e23th")

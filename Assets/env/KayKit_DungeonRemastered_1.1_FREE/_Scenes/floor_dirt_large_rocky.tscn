@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl4te5yiweb1k"]
+
+[ext_resource type="PackedScene" uid="uid://daunrxiu1lfnd" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_dirt_large_rocky.gltf" id="6147503662376310177"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3425q"]
+points = PackedVector3Array(-1.9999998, -0.099999994, -1.9999877, -1.9999998, -0.099999994, 2.0000124, -1.9999998, 0.01999861, -1.9999877, 2.0000002, -0.099999994, -1.9999877, -1.9999998, 0.01999861, 2.0000124, 2.0000002, -0.099999994, 2.0000124, -1.424432, 0.2221238, -1.3230104, -1.0638212, 0.22435382, -1.3155711, 2.0000002, 0.01999861, -1.9999877, 0.53054047, 0.29279262, 0.83752215, 2.0000002, 0.01999861, 2.0000124, 0.804229, 0.2184327, -1.1554301)
+
+[node name="floor_dirt_large_rocky" instance=ExtResource("6147503662376310177")]
+
+[node name="floor_dirt_large_rocky_col" type="StaticBody3D" parent="floor_dirt_large_rocky" index="0"]
+
+[node name="floor_dirt_large_rocky_col_shape" type="CollisionShape3D" parent="floor_dirt_large_rocky/floor_dirt_large_rocky_col" index="0"]
+shape = SubResource("ConvexPolygonShape3D_3425q")

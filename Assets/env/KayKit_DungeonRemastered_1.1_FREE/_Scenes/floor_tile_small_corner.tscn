@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://g037tu154qy1"]
+
+[ext_resource type="PackedScene" uid="uid://curkrh54ihfj6" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_tile_small_corner.gltf" id="4137782188250764648"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vmxfh"]
+points = PackedVector3Array(-1, -0.10000001, -1, -1, 0.049999997, -1, 1, -0.10000001, -1, 1, -0.10000001, 1, 1, 0.049999997, 1, 1, 0.049999997, -1)
+
+[node name="floor_tile_small_corner" instance=ExtResource("4137782188250764648")]
+
+[node name="floor_tile_small_corner_col" type="StaticBody3D" parent="floor_tile_small_corner" index="0"]
+
+[node name="floor_tile_small_corner_col_shape" type="CollisionShape3D" parent="floor_tile_small_corner/floor_tile_small_corner_col" index="0"]
+shape = SubResource("ConvexPolygonShape3D_vmxfh")

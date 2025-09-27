@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpcjk5ul8mldn"]
+
+[ext_resource type="PackedScene" uid="uid://xd8rmi37joc6" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_tile_small_weeds_B.gltf" id="8553689965418793275"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5i4ey"]
+points = PackedVector3Array(-1, -0.10000001, -1, -1, -0.10000001, 1, -1, 0.049993888, -1, 1, -0.10000001, -1, -1, 0.049993888, 1, 1, -0.10000001, 1, 0.48629606, 0.1954758, 0.07341421, 0.49099457, 0.1954758, -0.14761162, 0.6133516, 0.1954758, -0.21476114, -0.061276436, 0.12244561, -0.6716915, 1, 0.049993888, -1, 1, 0.049993888, 1, 0.60571647, 0.1954758, 0.1458497, 0.802271, 0.1954758, -0.100234926, 0.87333596, 0.18792693, -0.06480032, 0.8864527, 0.18196885, -0.028582633, 0.8717698, 0.18792693, 0.0068520308, 0.7993344, 0.1954758, 0.039350033, 0.8533673, 0.18995155, -0.029365718)
+
+[node name="floor_tile_small_weeds_B" instance=ExtResource("8553689965418793275")]
+
+[node name="floor_tile_small_weeds_B_col" type="StaticBody3D" parent="floor_tile_small_weeds_B" index="0"]
+
+[node name="floor_tile_small_weeds_B_col_shape" type="CollisionShape3D" parent="floor_tile_small_weeds_B/floor_tile_small_weeds_B_col" index="0"]
+shape = SubResource("ConvexPolygonShape3D_5i4ey")

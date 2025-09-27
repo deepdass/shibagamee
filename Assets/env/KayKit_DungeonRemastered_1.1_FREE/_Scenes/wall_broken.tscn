@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkrf2ikhd0mrw"]
+
+[ext_resource type="PackedScene" uid="uid://c32437itbuyvn" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_broken.gltf" id="903563080812765484"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_f3fwv"]
+points = PackedVector3Array(-1.9122319, 0.08851713, -0.5, 1.8524749, 3.8517492, 0.5, 1.8524749, 0.14825074, 0.5, 1.9122319, 3.9114828, -0.5, -1.8524749, 3.8517492, 0.5, 1.9122319, 0.08851713, -0.5, -1.9122319, 3.9114828, -0.5, -1.8524749, 0.14825074, 0.5)
+
+[node name="wall_broken" instance=ExtResource("903563080812765484")]
+
+[node name="wall_broken_col" type="StaticBody3D" parent="wall_broken" index="0"]
+
+[node name="wall_broken_col_shape" type="CollisionShape3D" parent="wall_broken/wall_broken_col" index="0"]
+shape = SubResource("ConvexPolygonShape3D_f3fwv")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dat8e2lvdmw8k"]
+
+[ext_resource type="PackedScene" uid="uid://x35immtqp7sj" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/banner_thin_brown.gltf" id="4509856562612692580"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_iakha"]
+points = PackedVector3Array(-0.5499928, 0.5997982, 0.38057584, -0.41033927, 0.55634105, 0.38057584, -0.5499928, 0.97477114, 0.47335237, -0.5499928, 3.1997762, 0.38057584, 0.022726655, 3.6002026, 0.35330322, -0.24742809, 0.55634105, 0.38057584, 0.5500076, 0.97477114, 0.47335237, 0.0009765029, 3.5837507, 0.7156141, -0.5499928, 3.449965, 0.5108744, -0.5499928, 3.72747, 0.5108744, 0.54989994, 3.72747, 0.5108744, 0.54989994, 3.1997762, 0.38057584, 0.5500076, 1.3997197, 0.38057584, 0.5500076, 0.5997982, 0.38057584, 0.41024643, 0.5662741, 0.38057584, 0.54989994, 3.449965, 0.5108744, 0.06934965, 3.631864, 0.6885897, -0.005053282, 3.6666298, 0.6871002)
+
+[node name="banner_thin_brown" instance=ExtResource("4509856562612692580")]
+
+[node name="banner_thin_brown_col" type="StaticBody3D" parent="banner_thin_brown" index="0"]
+
+[node name="banner_thin_brown_col_shape" type="CollisionShape3D" parent="banner_thin_brown/banner_thin_brown_col" index="0"]
+shape = SubResource("ConvexPolygonShape3D_iakha")

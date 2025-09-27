@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8dr7wxtspnen"]
+
+[ext_resource type="PackedScene" uid="uid://cnlcywbitmmo3" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/pillar_decorated.gltf" id="406491896046109267"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cg4ha"]
+points = PackedVector3Array(-1.1159993, 2.846907, 0.58518666, -1.0950252, 2.8703995, 0.6441117, -0.7500435, 3.9996085, 0.2761653, -0.7500435, 3.9996085, -0.27642384, -0.7500435, 0, -0.27642384, -0.7500435, 0, 0.2761653, -0.27637655, 0, 0.74990886, -1.0570095, 2.8112764, 0.6673804, -0.072315216, 3.6194205, 0.92735344, -0.450069, 3.7270947, 0.755433, -0.27637655, 4, 0.74990886, -0.27637655, 4, -0.74999994, -0.27637655, 0, -0.74999994, 0.27616215, 0, 0.74990886, -0.058550835, 1.4804229, 0.84566194, 0.00087594986, 3.58379, 0.9601639, 0.27616215, 4, 0.74990886, -0.0052415133, 3.6664057, 0.9315384, 0.27616215, 4, -0.74999994, 0.27616215, 0, -0.74999994, 0.058336496, 1.4804229, 0.84566194, 0.7498292, 0, 0.2761653, 1.092189, 2.87314, 0.6446139, 1.0537363, 2.8148003, 0.66821736, 0.0692606, 3.63195, 0.93304497, 0.4498546, 3.7270947, 0.755433, 0.7498292, 3.9996085, 0.2761653, 0.7498292, 3.9996085, -0.27642384, 0.7498292, 0, -0.27642384, 1.115785, 2.846907, 0.60979456, 1.0948108, 2.8703995, 0.55086964)
+
+[node name="pillar_decorated" instance=ExtResource("406491896046109267")]
+
+[node name="pillar_decorated_col" type="StaticBody3D" parent="pillar_decorated" index="0"]
+
+[node name="pillar_decorated_col_shape" type="CollisionShape3D" parent="pillar_decorated/pillar_decorated_col" index="0"]
+shape = SubResource("ConvexPolygonShape3D_cg4ha")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://sd4j37jcrwnu"]
+
+[ext_resource type="PackedScene" uid="uid://c1085lb4yhuhd" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/barrier_corner.gltf" id="7104216996727347546"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5j3ol"]
+points = PackedVector3Array(-0.100149274, 0, -0.3949747, -0.100149274, 1.1999217, -0.3949747, 0.3949747, 0, 0.09991482, -2, 0, -0.25009468, -2, 1.0749413, -0.25009468, -0.100149274, 1.4, 0.09991482, 0.3949747, 1.1999217, 0.09991482, 0.24986029, 0, 2, -2, 0, 0.24995238, -2, 1.0998826, -0.18750088, 0.18726635, 1.0998826, 2, 0.24986029, 1.0749413, 2, -2, 1.0998826, 0.18735862, -0.1875931, 1.0998826, 2, -0.25018692, 0, 2, -2, 1.0749413, 0.24995238, -0.25018692, 1.0749413, 2)
+
+[node name="barrier_corner" instance=ExtResource("7104216996727347546")]
+
+[node name="barrier_corner_col" type="StaticBody3D" parent="barrier_corner" index="0"]
+
+[node name="barrier_corner_col_shape" type="CollisionShape3D" parent="barrier_corner/barrier_corner_col" index="0"]
+shape = SubResource("ConvexPolygonShape3D_5j3ol")

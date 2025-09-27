@@ -38,9 +38,11 @@ materials/extract=1
 materials/extract_format=0
 materials/extract_path=""
 _subresources={
-"nodes": {
-"PATH:floor_tile_large": {
-"import/skip_import": true
+"materials": {
+"texture": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/texture.tres",
+"use_external/path": "uid://bihl8kfakw0ig"
 }
 }
 }

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://rmu4uvrmj4fe"]
+
+[ext_resource type="PackedScene" uid="uid://ceeih3tj366kn" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_tile_small_decorated.gltf" id="4562421239407027044"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qkaam"]
+points = PackedVector3Array(-1, -0.10000001, -1, -1, -0.10000001, 1, -1, 0.049965784, -1, 1, -0.10000001, -1, -1, 0.049965784, 1, 1, -0.10000001, 1, -0.8680501, 0.18532844, -0.46613157, -0.27897418, 0.55320615, -0.050704777, -0.040916204, 0.6657183, -0.12842602, -0.031323433, 0.6657183, -0.16033673, 0.0009788275, 0.6657183, -0.16777605, 1, 0.049965784, -1, -0.018206716, 0.6657183, -0.1043461, -0.2599843, 0.55653536, 0.0035238266, -0.28484732, 0.55222255, -0.018010974, 1, 0.049965784, 1, -0.008613944, 0.67298204, -0.13606107, 0.023688316, 0.6657183, -0.14369619, 0.014095545, 0.6657183, -0.11178541)
+
+[node name="floor_tile_small_decorated" instance=ExtResource("4562421239407027044")]
+
+[node name="floor_tile_small_decorated_col" type="StaticBody3D" parent="floor_tile_small_decorated" index="0"]
+
+[node name="floor_tile_small_decorated_col_shape" type="CollisionShape3D" parent="floor_tile_small_decorated/floor_tile_small_decorated_col" index="0"]
+shape = SubResource("ConvexPolygonShape3D_qkaam")

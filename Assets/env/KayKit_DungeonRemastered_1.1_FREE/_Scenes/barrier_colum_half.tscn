@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjrik7xbms4vu"]
+
+[ext_resource type="PackedScene" uid="uid://b8s4851frpall" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/barrier_colum_half.gltf" id="2654757478467920755"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_i4ck2"]
+points = PackedVector3Array(-0.00012239814, 1.4, -2.9802322e-08, -0.35000002, 1.1999217, -0.35000002, -0.35000002, 1.1999217, 0.34999996, 0.3499853, 1.1999217, 0.34993148, 1.9997698, 1.0749413, 0.24996084, 1.9997698, 1.0998826, 0.18747061, 1.9997698, 1.0998826, -0.18753918, 1.9997698, 1.0749413, -0.25002939, 0.3499853, 1.1999217, -0.35000002, -0.35000002, 0, -0.35000002, -0.35000002, 0, 0.34999996, 0.3499853, 0, 0.34993148, 1.9997698, 0, 0.24996084, 1.9997698, 0, -0.25002939, 0.3499853, 0, -0.35000002)
+
+[node name="barrier_colum_half" instance=ExtResource("2654757478467920755")]
+
+[node name="barrier_colum_half_col" type="StaticBody3D" parent="barrier_colum_half" index="0"]
+
+[node name="barrier_colum_half_col_shape" type="CollisionShape3D" parent="barrier_colum_half/barrier_colum_half_col" index="0"]
+shape = SubResource("ConvexPolygonShape3D_i4ck2")

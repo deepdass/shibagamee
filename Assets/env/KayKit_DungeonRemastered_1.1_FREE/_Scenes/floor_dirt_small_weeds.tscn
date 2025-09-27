@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5p5by7l2ioka"]
+
+[ext_resource type="PackedScene" uid="uid://c0qeouotw0k4p" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_dirt_small_weeds.gltf" id="8839606405016359574"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ncaa3"]
+points = PackedVector3Array(-1.0000124, -0.099999994, -1.0000004, -1.0000124, -0.099999994, 0.99999964, -1.0000124, 0.019971982, -1.0000004, 0.9999876, -0.099999994, -1.0000004, -1.0000124, 0.019971982, 0.99999964, 0.9999876, -0.099999994, 0.99999964, -0.34437418, 0.18792695, -0.30109668, -0.29817218, 0.18792695, -0.35571688, -0.22142977, 0.19547582, -0.33555245, 0.9999876, 0.019971982, -1.0000004, -0.23611265, 0.19547582, -0.020947874, -0.31128883, 0.19547582, -0.2286613, 0.9999876, 0.019971982, 0.99999964, 0.03444338, 0.11628507, 0.8144084, 0.0019453764, 0.12244563, 0.758222, -0.0037320256, 0.19547582, -0.2967897, 0.07535958, 0.18792695, -0.28915465, 0.09963524, 0.18792695, -0.22180927, -0.09868115, 0.19547582, 0.003523469, 0.04384041, 0.19547582, -0.16542715, 0.11568844, 0.12244563, 0.74921656, 0.09258747, 0.11628507, 0.80990565, 0.062242866, 0.117962584, 0.7965932, 0.06948638, 0.18995157, -0.24902147)
+
+[node name="floor_dirt_small_weeds" instance=ExtResource("8839606405016359574")]
+
+[node name="floor_dirt_small_weeds_col" type="StaticBody3D" parent="floor_dirt_small_weeds" index="0"]
+
+[node name="floor_dirt_small_weeds_col_shape" type="CollisionShape3D" parent="floor_dirt_small_weeds/floor_dirt_small_weeds_col" index="0"]
+shape = SubResource("ConvexPolygonShape3D_ncaa3")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://m1p6o8fwpvyc"]
+
+[ext_resource type="PackedScene" uid="uid://bstdobotob1io" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_shelves.gltf" id="953886690220395010"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_w6qem"]
+points = PackedVector3Array(2, 4, 0.49999744, 0.40877056, 2.899765, 0.77978253, 0.4393108, 2.8496475, 0.7894211, 1, 2.674628, 0.7499299, 0.94205165, 1.5011747, 0.7967838, 2, 0, 0.49999744, 2, 4, -0.5, -2, 4, 0.49999744, -1, 2.674628, 0.7499299, 0.1859827, 1.5011747, 0.8676002, 0.94205165, 1.2110415, 0.7967838, 2, 0, -0.5, 0.1859827, 1.2110415, 0.8676002, -2, 0, 0.49999744, -2, 4, -0.5, -0.9678935, 1.3731402, 0.763049, -2, 0, -0.5, -1, 1.0246671, 0.7499299)
+
+[node name="wall_shelves" instance=ExtResource("953886690220395010")]
+
+[node name="wall_shelves_col" type="StaticBody3D" parent="wall_shelves" index="0"]
+
+[node name="wall_shelves_col_shape" type="CollisionShape3D" parent="wall_shelves/wall_shelves_col" index="0"]
+shape = SubResource("ConvexPolygonShape3D_w6qem")

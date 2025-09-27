@@ -38,6 +38,17 @@ materials/extract=1
 materials/extract_format=0
 materials/extract_path=""
 _subresources={
+&"materials": {
+"MAT_Dungeon": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/MAT_Dungeon.tres"
+},
+"texture": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/texture.tres",
+"use_external/path": "uid://bihl8kfakw0ig"
+}
+},
 "nodes": {
 "PATH:wall": {
 "generate/physics": true

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://mvqgu3y13u83"]
+
+[ext_resource type="PackedScene" uid="uid://cb1c83f71h1td" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_tile_big_grate_open.gltf" id="6853844951013730394"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rct3l"]
+points = PackedVector3Array(-2, -0.100058734, -2, -0.9275646, -1, -1.5254502, -1.5254502, -1, -0.9275646, -2, -0.100058734, 2, -2, 0.049999952, -2, 2, -0.100058734, -2, 0.92717314, -1, -1.5254502, -1.5254502, -1, 0.92717314, -2, 0.049999952, 2, -0.9275646, -1, 1.5250587, 2, -0.100058734, 2, 2, 0.049999952, -2, 1.5250587, -1, -0.9275646, 2, 0.049999952, 2, 0.92717314, -1, 1.5250587, 1.5250587, -1, 0.92717314)
+
+[node name="floor_tile_big_grate_open" instance=ExtResource("6853844951013730394")]
+
+[node name="floor_tile_big_grate_open_col" type="StaticBody3D" parent="floor_tile_big_grate_open" index="0"]
+
+[node name="floor_tile_big_grate_open_col_shape" type="CollisionShape3D" parent="floor_tile_big_grate_open/floor_tile_big_grate_open_col" index="0"]
+shape = SubResource("ConvexPolygonShape3D_rct3l")

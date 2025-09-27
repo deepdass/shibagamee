@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx0lm5lum16xd"]
+
+[ext_resource type="PackedScene" uid="uid://bmm0yxpgoy550" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/table_long.gltf" id="7486771768274247226"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lgvgs"]
+points = PackedVector3Array(1.0000001, 0.97494125, 0.65935826, 1.0000001, 0.97494125, -1.9753329, 0.9749414, 1, 1.974942, 0.9998044, 0.97494125, 1.974942, 0.8999609, 8.195639e-08, 1.874707, 0.9749414, 0.7999217, -1.9753329, 0.9749414, 0.97494125, -2, 0.9749414, 1, -1.9753329, 0.8999609, 8.195639e-08, -1.8750979, -0.9751374, 1, 1.974942, 0.9749414, 0.97494125, 1.999609, 0.9749414, 0.7999217, 1.974942, 0.8749021, 8.195639e-08, 1.8997657, 0.8749021, 8.195639e-08, -1.9001566, -0.9751374, 0.97494125, -2, -0.9751374, 1, -1.9753329, -1.0000004, 0.97494125, 1.974942, -0.9751374, 0.97494125, 1.999609, -0.8750982, 8.195639e-08, 1.8997657, -0.8750982, 8.195639e-08, -1.9001566, -0.9751374, 0.7999217, -1.9753329, -1.0000004, 0.97494125, -1.9753329, -0.900157, 8.195639e-08, 1.874707, -0.9751374, 0.7999217, 1.974942, -0.900157, 8.195639e-08, -1.8750979)
+
+[node name="table_long" instance=ExtResource("7486771768274247226")]
+
+[node name="table_long_col" type="StaticBody3D" parent="table_long" index="0"]
+
+[node name="table_long_col_shape" type="CollisionShape3D" parent="table_long/table_long_col" index="0"]
+shape = SubResource("ConvexPolygonShape3D_lgvgs")

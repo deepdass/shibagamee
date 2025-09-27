@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cov5icp8oa8a"]
+
+[ext_resource type="PackedScene" uid="uid://bjuvwvu6on7n" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/table_medium.gltf" id="4401701234539744529"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cg6tc"]
+points = PackedVector3Array(-0.97513705, 0.97494125, -1, -0.8750979, 8.195639e-08, -0.9001566, -0.97513705, 0.7999217, -0.97513705, -1, 0.97494125, -0.97513705, -0.97513705, 1, -0.97513705, 0.97494173, 0.97494125, -1, -0.9001566, 8.195639e-08, -0.8750979, 0.8749025, 8.195639e-08, -0.9001566, -1, 0.97494125, 0.97494173, -0.97513705, 1, 0.97494173, 0.97494173, 1, -0.97513705, 0.99980474, 0.97494125, -0.97513705, 0.97494173, 0.7999217, -0.97513705, -0.9001566, 8.195639e-08, 0.8749025, 0.89996123, 8.195639e-08, -0.8750979, -0.97513705, 0.7999217, 0.97494173, -0.97513705, 0.97494125, 0.99980474, 0.52486324, 0.97494125, 1.0000005, 0.97494173, 1, 0.97494173, 1.0000005, 0.97494125, 0.97494173, -0.8750979, 8.195639e-08, 0.89996123, 0.89996123, 8.195639e-08, 0.8749025, 0.8749025, 8.195639e-08, 0.89996123, 0.97494173, 0.97494125, 0.99980474, 0.97494173, 0.7999217, 0.97494173)
+
+[node name="table_medium" instance=ExtResource("4401701234539744529")]
+
+[node name="table_medium_col" type="StaticBody3D" parent="table_medium" index="0"]
+
+[node name="table_medium_col_shape" type="CollisionShape3D" parent="table_medium/table_medium_col" index="0"]
+shape = SubResource("ConvexPolygonShape3D_cg6tc")

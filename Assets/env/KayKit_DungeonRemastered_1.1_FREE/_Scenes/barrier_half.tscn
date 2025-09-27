@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7a25rd5tfim7"]
+
+[ext_resource type="PackedScene" uid="uid://be0uiaoidh1qb" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/barrier_half.gltf" id="6538058227483689531"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cmgmt"]
+points = PackedVector3Array(2, 1.1, 0.1875, 2, 1.074912, 0.25000003, 2, 1.1, -0.18750007, 0, 1.1, 0.18745106, 2, 0, 0.25000003, 0, 1.074912, 0.2499511, 0.75, 0.8999413, 0.25000003, 2, 1.074912, -0.2500001, 0, 1.1, -0.18754902, 2, 0, -0.2500001, 0.75, 0.29998043, 0.25000003, 0, 0, 0.2499511, 0, 1.074912, -0.2500001, 0, 0, -0.2500001)
+
+[node name="barrier_half" instance=ExtResource("6538058227483689531")]
+
+[node name="barrier_half_col" type="StaticBody3D" parent="barrier_half" index="0"]
+
+[node name="barrier_half_col_shape" type="CollisionShape3D" parent="barrier_half/barrier_half_col" index="0"]
+shape = SubResource("ConvexPolygonShape3D_cmgmt")
