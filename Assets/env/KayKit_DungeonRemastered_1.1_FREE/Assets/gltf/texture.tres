@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c6ifcr5y83f3w"]
+
+[ext_resource type="Texture2D" uid="uid://c3mchi10usuw1" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="1_4ws2i"]
+
+[resource]
+resource_name = "texture"
+albedo_texture = ExtResource("1_4ws2i")
+roughness = 0.45
