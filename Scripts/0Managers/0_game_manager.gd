@@ -94,8 +94,8 @@ func _on_timer_timeout() -> void:  ## kill timeout
 func won():
 	player.StatsManager.stats.score += 1
 	get_tree().set_meta("saved_stats", player.StatsManager.stats)
-	Engine.time_scale = 0.7
-	await get_tree().create_timer(0.3).timeout
+	Engine.time_scale = 0.3
+	await get_tree().create_timer(0.1).timeout
 	Engine.time_scale = 1
 	get_tree().reload_current_scene()
 
