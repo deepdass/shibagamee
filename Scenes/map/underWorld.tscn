@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c7illv6kf10b2" path="res://Scenes/characters/players/character_base.tscn" id="5_2ulnn"]
 [ext_resource type="ArrayMesh" uid="uid://dwvhthktir4xx" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj/bottle_A_brown.obj" id="5_7bm7t"]
 [ext_resource type="PackedScene" uid="uid://7wuf3nd758mc" path="res://Scenes/powerUPs/PowerUp_chest.tscn" id="5_aq7sw"]
-[ext_resource type="MeshLibrary" uid="uid://itk8p671mpm7" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Propslib.tres" id="6_moq3e"]
+[ext_resource type="MeshLibrary" uid="uid://itk8p671mpm7" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Propslib1.tres" id="6_moq3e"]
 [ext_resource type="ArrayMesh" uid="uid://c0m5np7dt27n4" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj/box_small.obj" id="7_7ecmq"]
 [ext_resource type="ArrayMesh" uid="uid://da70bkccr2th1" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj/box_large.obj" id="8_4m062"]
 [ext_resource type="ArrayMesh" uid="uid://bg5j6xp2ftsxj" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj/chair.obj" id="9_4m062"]
