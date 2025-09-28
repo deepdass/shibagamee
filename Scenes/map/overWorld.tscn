@@ -45,14 +45,17 @@ sky = SubResource("Sky_cw0pf")
 ambient_light_source = 2
 ambient_light_color = Color(0.415686, 0.537255, 0.72549, 1)
 ambient_light_energy = 1.5
+ssao_enabled = true
 ssao_radius = 1.41
 ssao_intensity = 3.39
 ssao_detail = 2.0
 ssao_sharpness = 0.26
+ssil_enabled = true
 ssil_radius = 3.65
 ssil_intensity = 4.0
 ssil_sharpness = 0.43
 ssil_normal_rejection = 0.9
+sdfgi_enabled = true
 sdfgi_read_sky_light = false
 
 [node name="World" type="Node3D"]

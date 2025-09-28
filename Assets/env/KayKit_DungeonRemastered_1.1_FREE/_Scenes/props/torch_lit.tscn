@@ -11,3 +11,9 @@ points = PackedVector3Array(-0.27514166, 0.6195562, -0.04578516, -0.27514166, 0.
 
 [node name="torch_lit_col_shape" type="CollisionShape3D" parent="torch_lit/torch_lit_col" index="0"]
 shape = SubResource("ConvexPolygonShape3D_8upfi")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="torch_lit" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5088546, 0)
+light_color = Color(1, 0.78039217, 0.41960785, 1)
+light_energy = 1.5
+omni_range = 15.0

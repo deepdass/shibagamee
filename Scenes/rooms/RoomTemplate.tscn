@@ -6,7 +6,6 @@
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_hmakl"]
 agent_height = 1.0
-agent_radius = 0.55
 agent_max_climb = 0.5
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p7ifo"]

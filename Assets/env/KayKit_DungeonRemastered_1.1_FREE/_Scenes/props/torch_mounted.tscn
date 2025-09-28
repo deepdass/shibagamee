@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo6isdiofn7db"]
+
+[ext_resource type="PackedScene" uid="uid://qrj3y8hi402t" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/props/torch_lit.tscn" id="2_pw62y"]
+[ext_resource type="PackedScene" uid="uid://ckeycpksn3bfe" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/torch_mounted.gltf" id="8263841808171569155"]
+
+[node name="torch_mounted" instance=ExtResource("8263841808171569155")]
+
+[node name="torch_lit" parent="torch_mounted" index="0" instance=ExtResource("2_pw62y")]
+transform = Transform3D(1, 0, 0, 0, 0.9743936, -0.224849, 0, 0.224849, 0.9743936, 0, 0.0012922138, 0.20887375)

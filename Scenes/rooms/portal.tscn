@@ -18,4 +18,12 @@ script = ExtResource("1_q8f08")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.38166, -0.165266)
 shape = SubResource("CylinderShape3D_q8f08")
 
+[node name="OmniLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.341852, 0.8284823)
+light_color = Color(0, 0.77254903, 1, 1)
+light_energy = 16.0
+spot_range = 7.793231
+spot_attenuation = 2.0
+spot_angle_attenuation = 0.27554515
+
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
