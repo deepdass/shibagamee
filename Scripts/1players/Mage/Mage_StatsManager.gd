@@ -83,17 +83,11 @@ func randomnessFactor():
 func effective_damage():
 	return stats.attack * CAL_defence() * crit(stats.crit_rate/100) * randomnessFactor()
 
-func won():
-	stats.score += 1
-	get_tree().set_meta("saved_stats", stats)
-	get_tree().reload_current_scene()
-	
+
 
 ###############################################################################
 func applyUpgrades(receivedPowerups):
 	stats.health += receivedPowerups.health
-	stats.health = clampi(stats.health, 0, 7)
-	
 	stats.movement_speed += receivedPowerups.movement_speed
 	stats.sp_Meter += receivedPowerups.sp_Meter
 	stats.attack += receivedPowerups.attack

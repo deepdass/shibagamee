@@ -60,7 +60,7 @@ func _physics_process(delta: float) -> void:
 		var look_at_me = Vector3(pos.x, player.position.y, pos.z)
 		player._rotate(look_at_me)
 	if panel_2 != null:
-		panel_2.get_node("score").text = "Score - " + str(player.StatsManager.stats.score)
+		panel_2.get_node("score").text = "Score: " + str(player.StatsManager.stats.score)
 		if player.StatsManager.stats.score == 0:
 			panel_2.get_node("tip").visible = true
 		else:
@@ -88,7 +88,10 @@ func _on_timer_timeout() -> void:  ## kill timeout
 	get_tree().reload_current_scene()
 
 func won():
-	player.StatsManager.won()
+	player.StatsManager.stats.score += 1
+	get_tree().set_meta("saved_stats", player.StatsManager.stats)
+	await get_tree().create_timer(0.5).timeout
+	get_tree().reload_current_scene()
 
 func _on_area_3d_body_entered(body: Node3D) -> void: ##inside crypt
 	if body == player:

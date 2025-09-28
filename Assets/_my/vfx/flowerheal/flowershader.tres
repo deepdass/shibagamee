@@ -7,8 +7,8 @@ texture = ExtResource("1_j3m1f")
 texture_type = 1
 
 [sub_resource type="Gradient" id="Gradient_lmgoe"]
-offsets = PackedFloat32Array(0.334471, 0.7883959)
-colors = PackedColorArray(0, 1.0729398, 0, 1, 0.4196058, 1.3655106, 1.2981844, 1)
+offsets = PackedFloat32Array(0.35836178, 0.7337884)
+colors = PackedColorArray(0, 1.0727857, 0.79129124, 1, 0.6364638, 1.2285678, 0.34041193, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_w3is7"]
 gradient = SubResource("Gradient_lmgoe")

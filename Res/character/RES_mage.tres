@@ -4,15 +4,9 @@
 
 [resource]
 script = ExtResource("1_11ken")
-score = 0
 health = 3
-enemy_health = 0.0
-defence = 0.0
-sp_Meter = 0
-attack = 65.0
-attack_range = 0.0
+attack = 200.0
 crit_rate = 30.0
 crit_damage = 230.0
 movement_speed = 7.5
-stamina = 0
 metadata/_custom_type_script = "uid://be76riygqspue"
