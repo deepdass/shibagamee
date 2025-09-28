@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://rekblaynb4gg"]
+[gd_scene load_steps=27 format=4 uid="uid://rekblaynb4gg"]
 
 [ext_resource type="Script" uid="uid://b8tcib7cuxmbg" path="res://Scripts/0Managers/0_game_manager.gd" id="1_um8rm"]
 [ext_resource type="Texture2D" uid="uid://dwnmocndg7gk7" path="res://Assets/UI/Heart.png" id="3_ueb55"]
@@ -11,6 +11,7 @@
 [ext_resource type="MeshLibrary" uid="uid://dylygcgh2k4ek" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib.tres" id="6_va1cp"]
 [ext_resource type="Texture2D" uid="uid://c3mchi10usuw1" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="7_rewsw"]
 [ext_resource type="PackedScene" uid="uid://dilj5s750b7tp" path="res://Scenes/rooms/allROOMS/Room_004.tscn" id="11_va1cp"]
+[ext_resource type="PackedScene" uid="uid://dtfykehixm3vo" path="res://Scenes/rooms/allROOMS/room_005.tscn" id="12_dooxh"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2ulnn"]
 
@@ -343,6 +344,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -4)
 script = ExtResource("4_dooxh")
 roomsCount = 8
+
+[node name="room10" parent="SubViewportContainer/SubViewport/myy/rooms" instance=ExtResource("12_dooxh")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2, 0, -143)
 
 [node name="room" type="Node3D" parent="SubViewportContainer/SubViewport/myy/rooms"]
 script = ExtResource("4_fv7jm")
