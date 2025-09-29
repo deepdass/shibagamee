@@ -69,8 +69,10 @@ func _target_in_range():
 func _hitfinish():
 	if global_position.distance_to(player.global_position) < ATTACK_RANGE + 0.5 :
 		var dir = global_position.direction_to(player.global_position)
-		player.decrease_health()
 		player.velocity += Vector3(dir.x , dir.y * 0.1, dir.z ) * KnockbackMul
+		player.decrease_health()
+		player.decrease_health()
+		
 	
 
 func take_damage():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://rekblaynb4gg"]
+[gd_scene load_steps=43 format=4 uid="uid://rekblaynb4gg"]
 
 [ext_resource type="Script" uid="uid://b8tcib7cuxmbg" path="res://Scripts/0Managers/0_game_manager.gd" id="1_um8rm"]
 [ext_resource type="Texture2D" uid="uid://dwnmocndg7gk7" path="res://Assets/UI/Heart.png" id="3_ueb55"]
@@ -11,12 +11,23 @@
 [ext_resource type="PackedScene" uid="uid://dswx3oxm25bfa" path="res://Scenes/rooms/allROOMS/Room_003.tscn" id="6_h4pxw"]
 [ext_resource type="MeshLibrary" uid="uid://dylygcgh2k4ek" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib.tres" id="6_va1cp"]
 [ext_resource type="Texture2D" uid="uid://c3mchi10usuw1" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="7_rewsw"]
+[ext_resource type="PackedScene" uid="uid://dcyej82fy3mav" path="res://Assets/env/_myVeggies/ivyCorner_1.fbx" id="8_dr8is"]
 [ext_resource type="MeshLibrary" uid="uid://d1qa0gwyywdnw" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Propslib.tres" id="9_kb3uq"]
 [ext_resource type="MeshLibrary" uid="uid://itk8p671mpm7" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Propslib1.tres" id="10_um8rm"]
 [ext_resource type="PackedScene" uid="uid://dilj5s750b7tp" path="res://Scenes/rooms/allROOMS/Room_004.tscn" id="11_va1cp"]
 [ext_resource type="PackedScene" uid="uid://dtfykehixm3vo" path="res://Scenes/rooms/allROOMS/room_005.tscn" id="12_dooxh"]
 [ext_resource type="PackedScene" uid="uid://da0utsy7lwo57" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/props/table_long_broken.tscn" id="16_ueb55"]
+[ext_resource type="PackedScene" uid="uid://df8d77da7hxk7" path="res://Assets/env/_myVeggies/ivyGround_3.fbx" id="16_w4wbn"]
 [ext_resource type="PackedScene" uid="uid://dmxybku4id4l2" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/props/table_medium_broken.tscn" id="17_navn1"]
+[ext_resource type="PackedScene" uid="uid://dx16i037brfmi" path="res://Assets/env/_myVeggies/ivyWall_1.fbx" id="19_hbuxf"]
+[ext_resource type="PackedScene" uid="uid://c11k8ehi280h" path="res://Assets/env/_myVeggies/ivyWall_2.fbx" id="20_qia36"]
+[ext_resource type="PackedScene" uid="uid://b2hjpgefhvt30" path="res://Assets/env/_myVeggies/ivyGround_5.fbx" id="21_w4wbn"]
+[ext_resource type="PackedScene" uid="uid://cldv6it0do0yw" path="res://Assets/env/_myVeggies/ivyWall_3.fbx" id="22_urrsd"]
+[ext_resource type="PackedScene" uid="uid://p0h8ytkf8bai" path="res://Assets/env/_myVeggies/ivyGround_2.fbx" id="23_tu65r"]
+[ext_resource type="PackedScene" uid="uid://dsqkar63wcd4d" path="res://Assets/env/_myVeggies/ivyGround_1.fbx" id="24_qia36"]
+[ext_resource type="PackedScene" uid="uid://dvsa0eawo65uh" path="res://Assets/env/_myVeggies/ivyGround_6.fbx" id="25_w4wbn"]
+[ext_resource type="PackedScene" uid="uid://ceolwuxw83bo5" path="res://Assets/env/_myVeggies/ivyCorner_2.fbx" id="27_tu65r"]
+[ext_resource type="PackedScene" uid="uid://dffxgagomaeqe" path="res://Assets/env/_myVeggies/ivybush.fbx" id="28_tjdgt"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2ulnn"]
 
@@ -324,12 +335,11 @@ environment = SubResource("Environment_n4gow")
 
 [node name="Player" parent="SubViewportContainer/SubViewport/myy/per" instance=ExtResource("4_navn1")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.166969, -9.53674e-07, -0.32634)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 platform_on_leave = 2
 
 [node name="camera_rig" type="Node3D" parent="SubViewportContainer/SubViewport/myy/per"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.166969, -9.53674e-07, -0.32634)
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/myy/per/camera_rig"]
 unique_name_in_owner = true
@@ -347,6 +357,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="envProps" type="Node" parent="SubViewportContainer/SubViewport/myy"]
 
+[node name="floor" type="GridMap" parent="SubViewportContainer/SubViewport/myy/envProps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -1)
+mesh_library = ExtResource("6_va1cp")
+collision_mask = 7
+data = {
+"cells": PackedInt32Array(10, 65523, 655389, 10, 65521, 655389, 12, 65525, 29, 12, 65521, 29, 13, 65523, 29, 65521, 65482, 1441821, 65523, 65482, 1441821, 65523, 65484, 1441821, 65524, 65485, 1441821, 65522, 65485, 1441821, 65522, 65486, 1441821, 65527, 65484, 1441821, 65531, 65508, 1441821, 65533, 65508, 1441821, 65533, 65510, 1441821, 65531, 65510, 1441821, 65529, 65510, 1441821, 65531, 65535, 1048605, 65532, 0, 1048605, 65533, 1, 1048605, 65535, 2, 1048605, 0, 1, 1048605, 2, 0, 1048605, 3, 65535, 1048605, 1, 1, 1048605, 65534, 2, 1048605, 0, 2, 1048605, 2, 65534, 1048605, 65532, 65534, 1048605)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="walls" type="GridMap" parent="SubViewportContainer/SubViewport/myy/envProps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -1)
+mesh_library = ExtResource("6_va1cp")
+collision_layer = 2
+collision_mask = 7
+data = {
+"cells": PackedInt32Array(65528, 65511, 655363, 65527, 65510, 655363, 65526, 65509, 655363, 65526, 65508, 1048580, 65528, 65510, 1048582, 65527, 65509, 1048582, 65526, 65507, 1048582, 0, 65511, 655362, 65530, 65511, 655361, 65532, 65511, 655361, 65534, 65511, 655361, 65535, 65511, 4)
+}
+
 [node name="props" type="GridMap" parent="SubViewportContainer/SubViewport/myy/envProps"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -1)
 mesh_library = ExtResource("9_kb3uq")
@@ -360,13 +388,75 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 [node name="torch_mounted" parent="SubViewportContainer/SubViewport/myy/envProps" instance=ExtResource("4_rewsw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.42365, 2.0521214, -39.757572)
 
+[node name="table_long_broken" parent="SubViewportContainer/SubViewport/myy/envProps" instance=ExtResource("16_ueb55")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.26228, 0, -127)
+
+[node name="table_medium_broken" parent="SubViewportContainer/SubViewport/myy/envProps" instance=ExtResource("17_navn1")]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -12, 0, -130)
+
+[node name="veggies" type="Node" parent="SubViewportContainer/SubViewport/myy/envProps"]
+
+[node name="ivyCorner_1" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("8_dr8is")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.516914, 0.18103603, -39.40777)
+
+[node name="ivyWall_1" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("19_hbuxf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4144063, 0, -39.65892)
+
+[node name="ivyWall_2" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("20_qia36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.150356, 0.15024626, -35.731377)
+
+[node name="ivyGround_5" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("21_w4wbn")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 20.026003, 0.012966633, -31.84565)
+
+[node name="ivyWall_3" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("22_urrsd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4141963, 0.16039234, -3.7710178)
+
+[node name="ivyGround_2" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("23_tu65r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9902995, -0.0030000359, -25.84319)
+
+[node name="ivyWall_4" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("19_hbuxf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.514082, 0.17313233, -145.76955)
+
+[node name="ivyCorner_2" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("8_dr8is")]
+transform = Transform3D(-0.24224365, 0, 0.97021544, 0, 1, 0, -0.97021544, 0, -0.24224365, -32.76304, -0.12664315, -142.62111)
+
+[node name="ivyGround_1" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("24_qia36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.3256445, 0.10105412, -142.2304)
+
+[node name="ivyGround_6" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("25_w4wbn")]
+transform = Transform3D(0.49999997, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.49999997, -26.287226, 0.029336244, -144.42465)
+
+[node name="ivyCorner_3" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("8_dr8is")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -28.294638, -0.08212587, -120.58577)
+
+[node name="ivyGround_3" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("24_qia36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.457323, 0.028225303, -132.48561)
+
+[node name="ivyGround_7" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("21_w4wbn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.837449, 0.09400225, -122.58308)
+
+[node name="ivyGround_4" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("16_w4wbn")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -27.310568, 0.0039070845, -121.8512)
+
+[node name="ivyWall_5" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("20_qia36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.657883, -0.16111559, -109.65246)
+
+[node name="ivyWall_6" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("22_urrsd")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.310091, -0.009745836, -141.23999)
+
+[node name="ivyCorner_4" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("27_tu65r")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.509314, 0, -29.73427)
+
+[node name="ivybush" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("28_tjdgt")]
+transform = Transform3D(-0.31160536, 0, 0.95021164, 0, 1, 0, -0.95021164, 0, -0.31160536, -16.786938, 0.04998517, -28.98312)
+
 [node name="rooms" type="Marker3D" parent="SubViewportContainer/SubViewport/myy"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -4)
 script = ExtResource("4_dooxh")
 roomsCount = 8
 
 [node name="room10" parent="SubViewportContainer/SubViewport/myy/rooms" instance=ExtResource("12_dooxh")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.0109997, 0.075, -143)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.011, 0, -143)
 
 [node name="room" type="Node3D" parent="SubViewportContainer/SubViewport/myy/rooms"]
 script = ExtResource("4_fv7jm")
@@ -557,11 +647,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -36)
 [node name="room9" parent="SubViewportContainer/SubViewport/myy/rooms" instance=ExtResource("11_va1cp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -12.2513)
 
-[node name="table_long_broken" parent="." instance=ExtResource("16_ueb55")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.26228, 0, -127)
-
-[node name="table_medium_broken" parent="." instance=ExtResource("17_navn1")]
-transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -12, 0, -130)
+[node name="room11" parent="SubViewportContainer/SubViewport/myy/rooms" instance=ExtResource("5_n3mfx")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -26, 0, -82)
 
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
 [connection signal="body_entered" from="killzone" to="GameManager" method="_on_killzone_body_entered"]

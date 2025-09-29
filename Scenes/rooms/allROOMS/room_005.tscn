@@ -128,7 +128,9 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 16.5
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 11.505592, 2.000002, -37.24448)
 
 [node name="rubble_half2" parent="NavigationRegion3D/env/props2" instance=ExtResource("5_tscyl")]
-transform = Transform3D(0.9283367, 0, 0.37174055, 0, 1, 0, -0.37174055, 0, 0.9283367, 24.98208, 0.049984932, -2.435252)
+transform = Transform3D(-0.9983378, 0, -0.057633698, 0, 1, 0, 0.057633698, 0, -0.9983378, 28.561207, 0.049984932, -3.0906537)
+
+[node name="veggies" type="Node" parent="NavigationRegion3D/env/props2"]
 
 [node name="nearTree" type="Area3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 3, -12)
