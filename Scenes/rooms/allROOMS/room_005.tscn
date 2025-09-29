@@ -116,10 +116,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_u174k")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="rubble_large" parent="NavigationRegion3D/env/props2" instance=ExtResource("7_iflkh")]
-transform = Transform3D(0.98718643, 0, -0.15957107, 0, 1, 0, 0.15957107, 0, 0.98718643, 3.67267, 0.049898148, -3.0732822)
+transform = Transform3D(0.98718643, 0, -0.15957107, 0, 1, 0, 0.15957107, 0, 0.98718643, 3.432735, 0.049898148, -3.0732822)
 
 [node name="rubble_half" parent="NavigationRegion3D/env/props2" instance=ExtResource("5_tscyl")]
-transform = Transform3D(-0.24499999, 0, 0.4243524, 0, 0.48999995, 0, -0.4243524, 0, -0.24499999, 1.9523923, 0.05000306, -4.5691986)
+transform = Transform3D(-0.24499999, 0, 0.4243524, 0, 0.48999995, 0, -0.4243524, 0, -0.24499999, 1.7124574, 0.05000306, -4.5691986)
 
 [node name="torch_mounted" parent="NavigationRegion3D/env/props2" instance=ExtResource("8_iflkh")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 16.505592, 2.000002, -37.24448)

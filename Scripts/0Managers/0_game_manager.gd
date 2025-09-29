@@ -59,9 +59,7 @@ func _physics_process(delta: float) -> void:
 		var pos = intersection.position
 		var look_at_me = Vector3(pos.x, player.position.y, pos.z)
 		player._rotate(look_at_me)
-	else:
-		var look_at_me = Vector3(player.position.x, player.position.y, player.position.z)
-		player._rotate(look_at_me)
+
 		
 	if panel_2 != null:
 		panel_2.get_node("score").text = "Score: " + str(player.StatsManager.stats.score)

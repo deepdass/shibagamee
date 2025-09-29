@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://rekblaynb4gg"]
+[gd_scene load_steps=32 format=4 uid="uid://rekblaynb4gg"]
 
 [ext_resource type="Script" uid="uid://b8tcib7cuxmbg" path="res://Scripts/0Managers/0_game_manager.gd" id="1_um8rm"]
 [ext_resource type="Texture2D" uid="uid://dwnmocndg7gk7" path="res://Assets/UI/Heart.png" id="3_ueb55"]
@@ -15,6 +15,8 @@
 [ext_resource type="MeshLibrary" uid="uid://itk8p671mpm7" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Propslib1.tres" id="10_um8rm"]
 [ext_resource type="PackedScene" uid="uid://dilj5s750b7tp" path="res://Scenes/rooms/allROOMS/Room_004.tscn" id="11_va1cp"]
 [ext_resource type="PackedScene" uid="uid://dtfykehixm3vo" path="res://Scenes/rooms/allROOMS/room_005.tscn" id="12_dooxh"]
+[ext_resource type="PackedScene" uid="uid://da0utsy7lwo57" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/props/table_long_broken.tscn" id="16_ueb55"]
+[ext_resource type="PackedScene" uid="uid://dmxybku4id4l2" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/props/table_medium_broken.tscn" id="17_navn1"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2ulnn"]
 
@@ -364,7 +366,7 @@ script = ExtResource("4_dooxh")
 roomsCount = 8
 
 [node name="room10" parent="SubViewportContainer/SubViewport/myy/rooms" instance=ExtResource("12_dooxh")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2, 0, -142)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.0109997, 0.075, -143)
 
 [node name="room" type="Node3D" parent="SubViewportContainer/SubViewport/myy/rooms"]
 script = ExtResource("4_fv7jm")
@@ -554,6 +556,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -36)
 
 [node name="room9" parent="SubViewportContainer/SubViewport/myy/rooms" instance=ExtResource("11_va1cp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -12.2513)
+
+[node name="table_long_broken" parent="." instance=ExtResource("16_ueb55")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.26228, 0, -127)
+
+[node name="table_medium_broken" parent="." instance=ExtResource("17_navn1")]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -12, 0, -130)
 
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
 [connection signal="body_entered" from="killzone" to="GameManager" method="_on_killzone_body_entered"]
