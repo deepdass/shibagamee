@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=4 uid="uid://c55n0l3l78jo5"]
 
 [ext_resource type="Script" uid="uid://dwrg1j4xsnvtx" path="res://Scenes/rooms/roomSCRIPT.gd" id="1_mjr1c"]
-[ext_resource type="MeshLibrary" uid="uid://dylygcgh2k4ek" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib.tres" id="2_he860"]
+[ext_resource type="MeshLibrary" uid="uid://crl8041p05pde" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib1.tres" id="2_he860"]
 [ext_resource type="Texture2D" uid="uid://c3mchi10usuw1" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="4_jg48x"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_hmakl"]
@@ -132,11 +132,6 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -1)
 mesh_library = ExtResource("2_he860")
 collision_layer = 2
-collision_mask = 7
-
-[node name="props" type="GridMap" parent="NavigationRegion3D/env"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -1)
-collision_layer = 4
 collision_mask = 7
 
 [node name="door_Container" type="Marker3D" parent="NavigationRegion3D/env"]

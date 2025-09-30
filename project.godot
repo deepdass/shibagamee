@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="shibagamee"
-run/main_scene="uid://dly6jv8oiogek"
+run/main_scene="uid://rekblaynb4gg"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
 [autoload]

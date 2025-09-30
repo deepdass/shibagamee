@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://rekblaynb4gg"]
+[gd_scene load_steps=42 format=4 uid="uid://rekblaynb4gg"]
 
 [ext_resource type="Script" uid="uid://b8tcib7cuxmbg" path="res://Scripts/0Managers/0_game_manager.gd" id="1_um8rm"]
 [ext_resource type="Texture2D" uid="uid://dwnmocndg7gk7" path="res://Assets/UI/Heart.png" id="3_ueb55"]
@@ -9,11 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://bo6isdiofn7db" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/props/torch_mounted.tscn" id="4_rewsw"]
 [ext_resource type="PackedScene" uid="uid://dcw5e6cjvxy3b" path="res://Scenes/rooms/allROOMS/Room_002.tscn" id="5_n3mfx"]
 [ext_resource type="PackedScene" uid="uid://dswx3oxm25bfa" path="res://Scenes/rooms/allROOMS/Room_003.tscn" id="6_h4pxw"]
-[ext_resource type="MeshLibrary" uid="uid://dylygcgh2k4ek" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib.tres" id="6_va1cp"]
 [ext_resource type="Texture2D" uid="uid://c3mchi10usuw1" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="7_rewsw"]
 [ext_resource type="PackedScene" uid="uid://dcyej82fy3mav" path="res://Assets/env/_myVeggies/ivyCorner_1.fbx" id="8_dr8is"]
 [ext_resource type="MeshLibrary" uid="uid://d1qa0gwyywdnw" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Propslib.tres" id="9_kb3uq"]
-[ext_resource type="MeshLibrary" uid="uid://itk8p671mpm7" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Propslib1.tres" id="10_um8rm"]
 [ext_resource type="PackedScene" uid="uid://dilj5s750b7tp" path="res://Scenes/rooms/allROOMS/Room_004.tscn" id="11_va1cp"]
 [ext_resource type="PackedScene" uid="uid://dtfykehixm3vo" path="res://Scenes/rooms/allROOMS/room_005.tscn" id="12_dooxh"]
 [ext_resource type="PackedScene" uid="uid://da0utsy7lwo57" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/props/table_long_broken.tscn" id="16_ueb55"]
@@ -23,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://c11k8ehi280h" path="res://Assets/env/_myVeggies/ivyWall_2.fbx" id="20_qia36"]
 [ext_resource type="PackedScene" uid="uid://b2hjpgefhvt30" path="res://Assets/env/_myVeggies/ivyGround_5.fbx" id="21_w4wbn"]
 [ext_resource type="PackedScene" uid="uid://cldv6it0do0yw" path="res://Assets/env/_myVeggies/ivyWall_3.fbx" id="22_urrsd"]
+[ext_resource type="MeshLibrary" uid="uid://crl8041p05pde" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib1.tres" id="23_tjdgt"]
 [ext_resource type="PackedScene" uid="uid://p0h8ytkf8bai" path="res://Assets/env/_myVeggies/ivyGround_2.fbx" id="23_tu65r"]
 [ext_resource type="PackedScene" uid="uid://dsqkar63wcd4d" path="res://Assets/env/_myVeggies/ivyGround_1.fbx" id="24_qia36"]
 [ext_resource type="PackedScene" uid="uid://dvsa0eawo65uh" path="res://Assets/env/_myVeggies/ivyGround_6.fbx" id="25_w4wbn"]
@@ -359,7 +358,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="floor" type="GridMap" parent="SubViewportContainer/SubViewport/myy/envProps"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -1)
-mesh_library = ExtResource("6_va1cp")
+mesh_library = ExtResource("23_tjdgt")
 collision_mask = 7
 data = {
 "cells": PackedInt32Array(10, 65523, 655389, 10, 65521, 655389, 12, 65525, 29, 12, 65521, 29, 13, 65523, 29, 65521, 65482, 1441821, 65523, 65482, 1441821, 65523, 65484, 1441821, 65524, 65485, 1441821, 65522, 65485, 1441821, 65522, 65486, 1441821, 65527, 65484, 1441821, 65531, 65508, 1441821, 65533, 65508, 1441821, 65533, 65510, 1441821, 65531, 65510, 1441821, 65529, 65510, 1441821, 65531, 65535, 1048605, 65532, 0, 1048605, 65533, 1, 1048605, 65535, 2, 1048605, 0, 1, 1048605, 2, 0, 1048605, 3, 65535, 1048605, 1, 1, 1048605, 65534, 2, 1048605, 0, 2, 1048605, 2, 65534, 1048605, 65532, 65534, 1048605)
@@ -368,7 +367,7 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="walls" type="GridMap" parent="SubViewportContainer/SubViewport/myy/envProps"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -1)
-mesh_library = ExtResource("6_va1cp")
+mesh_library = ExtResource("23_tjdgt")
 collision_layer = 2
 collision_mask = 7
 data = {
@@ -487,7 +486,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="floor" type="GridMap" parent="SubViewportContainer/SubViewport/myy/rooms/room/NavigationRegion3D/env"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -1)
-mesh_library = ExtResource("6_va1cp")
+mesh_library = ExtResource("23_tjdgt")
 collision_mask = 7
 data = {
 "cells": PackedInt32Array(0, 65535, 655389, 65534, 65535, 655389, 2, 65535, 655389, 65532, 65533, 655389, 4, 65531, 655389, 65530, 65533, 655389, 65530, 65531, 655389, 65530, 65529, 655389, 65530, 65527, 655389, 10, 65527, 655389, 10, 65525, 655389, 10, 65523, 655389, 10, 65521, 655389, 8, 65519, 655389, 6, 65519, 655389, 4, 65519, 655389, 2, 65519, 655389, 0, 65519, 655389, 65534, 65519, 655389, 65532, 65521, 655389, 65530, 65522, 655389, 65530, 65524, 655389, 65528, 65531, 655389, 65528, 65529, 655389, 65528, 65527, 655389, 65528, 65525, 655389, 65528, 65524, 655389, 65534, 65533, 655389, 0, 65533, 655389, 2, 65533, 655389, 2, 65531, 655389, 0, 65531, 655389, 65534, 65531, 655389, 65532, 65531, 655389, 65532, 65529, 655389, 65532, 65527, 655389, 65530, 65526, 655389, 65532, 65525, 655389, 65532, 65523, 655389, 65534, 65521, 655389, 65534, 65523, 655389, 65534, 65529, 655389, 0, 65529, 655389, 0, 65523, 655389, 0, 65521, 655389, 2, 65521, 655389, 4, 65521, 655389, 6, 65521, 655389, 8, 65521, 655389, 8, 65523, 655389, 8, 65525, 655389, 8, 65527, 655389, 8, 65528, 655389, 6, 65528, 655389, 6, 65526, 655389, 6, 65524, 655389, 6, 65523, 655389, 4, 65523, 655389, 2, 65523, 655389, 2, 65529, 655389, 4, 65529, 655389, 4, 65527, 655389, 4, 65525, 655389, 6, 65529, 29, 8, 65529, 29, 65534, 1, 29, 0, 1, 29, 2, 1, 29, 12, 65525, 29, 12, 65523, 29, 12, 65521, 29, 65526, 65524, 29, 65526, 65526, 29, 65525, 65525, 29, 13, 65523, 29, 65533, 65528, 37, 5, 65526, 37, 2, 65522, 36, 65535, 65522, 36, 0, 65526, 25, 3, 65525, 29, 3, 65527, 29, 65533, 65527, 29, 65533, 65525, 29, 0, 3, 29, 65534, 2, 29, 2, 2, 29, 3, 1, 29, 65533, 1, 29)
@@ -496,18 +495,12 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="walls" type="GridMap" parent="SubViewportContainer/SubViewport/myy/rooms/room/NavigationRegion3D/env"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -1)
-mesh_library = ExtResource("6_va1cp")
+mesh_library = ExtResource("23_tjdgt")
 collision_layer = 2
 collision_mask = 7
 data = {
 "cells": PackedInt32Array(65527, 65525, 1048647, 11, 65523, 1048647, 0, 0, 72, 3, 65533, 1441854, 2, 0, 655442, 65534, 0, 655429, 65533, 65535, 1441869, 65532, 65534, 655429, 65530, 65534, 655429, 65529, 65533, 1441874, 65528, 65532, 655442, 3, 65535, 1048658, 4, 65532, 82, 5, 65531, 1441874, 6, 65530, 655429, 8, 65530, 655429, 65527, 65531, 1048645, 65527, 65529, 1048635, 65527, 65527, 1048635, 65527, 65523, 1048641, 65529, 65523, 1441857, 65529, 65521, 1048641, 65531, 65521, 1441857, 65531, 65520, 1048641, 65533, 65520, 1441857, 65533, 65518, 1048641, 65535, 65518, 69, 1, 65518, 69, 4, 65518, 69, 2, 65518, 79, 6, 65518, 655431, 8, 65518, 59, 9, 65519, 1441851, 10, 65520, 655419, 11, 65521, 1048635, 11, 65527, 1048635, 11, 65525, 1048635, 9, 65528, 1048641, 9, 65530, 1441857, 11, 65528, 1441857, 11, 65520, 68, 9, 65518, 68, 9, 65520, 655428, 0, 65526, 43, 65529, 65534, 655428, 65527, 65532, 655428, 65529, 65532, 68, 65533, 65534, 67, 65533, 0, 655427, 3, 0, 1441860, 3, 65532, 1048644, 5, 65532, 1441860, 5, 65530, 1048644, 3, 65518, 655429)
 }
-
-[node name="props" type="GridMap" parent="SubViewportContainer/SubViewport/myy/rooms/room/NavigationRegion3D/env"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -1)
-mesh_library = ExtResource("10_um8rm")
-collision_layer = 4
-collision_mask = 7
 
 [node name="door_Container" type="Marker3D" parent="SubViewportContainer/SubViewport/myy/rooms/room/NavigationRegion3D/env"]
 
