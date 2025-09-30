@@ -163,6 +163,10 @@ shadow_mesh = SubResource("ArrayMesh_0dy03")
 
 [node name="World" type="Node3D"]
 
+[node name="realScreenVis" type="Panel" parent="."]
+offset_right = 3840.0
+offset_bottom = 2160.0
+
 [node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
 unique_name_in_owner = true
 script = ExtResource("1_um8rm")
@@ -178,6 +182,41 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.81879, 0)
 shape = SubResource("WorldBoundaryShape3D_2ulnn")
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="MechUI" type="Panel" parent="UI"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="staminaBar_right" type="ProgressBar" parent="UI/MechUI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 600.0
+offset_top = 1996.0
+offset_right = 3200.0
+offset_bottom = 2056.0
+grow_horizontal = 2
+grow_vertical = 0
+value = 42.84
+show_percentage = false
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="UI/MechUI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 600.0
+offset_top = 1996.0
+offset_right = 3200.0
+offset_bottom = 2056.0
+grow_horizontal = 2
+grow_vertical = 0
+fill_mode = 6
 
 [node name="Panel" type="Panel" parent="UI"]
 scale = Vector2(1.6, 1.6)
