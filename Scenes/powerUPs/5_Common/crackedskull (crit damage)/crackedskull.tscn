@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bbv1qrxrs4y7w"]
 
-[ext_resource type="PackedScene" uid="uid://dl5kj6onuwrcv" path="res://Assets/env/HalloweenBits/Assets/gltf/skull.gltf" id="1_7bp75"]
+[ext_resource type="PackedScene" path="res://Assets/env/HalloweenBits/Assets/gltf/skull.gltf" id="1_7bp75"]
 [ext_resource type="PackedScene" uid="uid://d3qymr87utloi" path="res://Assets/zzAdventurers/Assets/gltf/sword_1handed.gltf" id="2_wtnk3"]
 
 [node name="Node3D" type="Node3D"]

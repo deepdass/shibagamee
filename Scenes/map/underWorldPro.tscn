@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://rekblaynb4gg"]
+[gd_scene load_steps=64 format=4 uid="uid://rekblaynb4gg"]
 
 [ext_resource type="Script" uid="uid://b8tcib7cuxmbg" path="res://Scripts/0Managers/0_game_manager.gd" id="1_um8rm"]
 [ext_resource type="Texture2D" uid="uid://dwnmocndg7gk7" path="res://Assets/UI/Heart.png" id="3_ueb55"]
@@ -12,13 +12,21 @@
 [ext_resource type="Texture2D" uid="uid://c3mchi10usuw1" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="7_rewsw"]
 [ext_resource type="PackedScene" uid="uid://dcyej82fy3mav" path="res://Assets/env/_myVeggies/ivyCorner_1.fbx" id="8_dr8is"]
 [ext_resource type="MeshLibrary" uid="uid://d1qa0gwyywdnw" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Propslib.tres" id="9_kb3uq"]
+[ext_resource type="PackedScene" uid="uid://cfxdtnlqs8d17" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/box_large.tscn" id="9_tjdgt"]
+[ext_resource type="PackedScene" uid="uid://vmcw5jyixika" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/box_small.tscn" id="10_0wknt"]
+[ext_resource type="PackedScene" uid="uid://1uug6yuadss" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/barrel_large.tscn" id="11_nw05x"]
 [ext_resource type="PackedScene" uid="uid://dilj5s750b7tp" path="res://Scenes/rooms/allROOMS/Room_004.tscn" id="11_va1cp"]
 [ext_resource type="PackedScene" uid="uid://dtfykehixm3vo" path="res://Scenes/rooms/allROOMS/room_005.tscn" id="12_dooxh"]
+[ext_resource type="PackedScene" uid="uid://bx0lm5lum16xd" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/table_long.tscn" id="12_h0gvv"]
+[ext_resource type="PackedScene" uid="uid://dpri80suc5sdm" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/bottle_A_labeled_green.tscn" id="16_htge1"]
 [ext_resource type="PackedScene" uid="uid://da0utsy7lwo57" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/props/table_long_broken.tscn" id="16_ueb55"]
 [ext_resource type="PackedScene" uid="uid://df8d77da7hxk7" path="res://Assets/env/_myVeggies/ivyGround_3.fbx" id="16_w4wbn"]
+[ext_resource type="PackedScene" uid="uid://dqes3m8pc5uwv" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/plate.tscn" id="17_ijs62"]
 [ext_resource type="PackedScene" uid="uid://dmxybku4id4l2" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/props/table_medium_broken.tscn" id="17_navn1"]
 [ext_resource type="PackedScene" uid="uid://dx16i037brfmi" path="res://Assets/env/_myVeggies/ivyWall_1.fbx" id="19_hbuxf"]
+[ext_resource type="PackedScene" uid="uid://bi82dl1ci1ygb" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/_bones/bone_A.tscn" id="20_lk2sa"]
 [ext_resource type="PackedScene" uid="uid://c11k8ehi280h" path="res://Assets/env/_myVeggies/ivyWall_2.fbx" id="20_qia36"]
+[ext_resource type="PackedScene" uid="uid://dnd1c36f2315c" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/_bones/skull.tscn" id="21_dxabe"]
 [ext_resource type="PackedScene" uid="uid://b2hjpgefhvt30" path="res://Assets/env/_myVeggies/ivyGround_5.fbx" id="21_w4wbn"]
 [ext_resource type="PackedScene" uid="uid://cldv6it0do0yw" path="res://Assets/env/_myVeggies/ivyWall_3.fbx" id="22_urrsd"]
 [ext_resource type="MeshLibrary" uid="uid://crl8041p05pde" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib1.tres" id="23_tjdgt"]
@@ -27,6 +35,20 @@
 [ext_resource type="PackedScene" uid="uid://dvsa0eawo65uh" path="res://Assets/env/_myVeggies/ivyGround_6.fbx" id="25_w4wbn"]
 [ext_resource type="PackedScene" uid="uid://ceolwuxw83bo5" path="res://Assets/env/_myVeggies/ivyCorner_2.fbx" id="27_tu65r"]
 [ext_resource type="PackedScene" uid="uid://dffxgagomaeqe" path="res://Assets/env/_myVeggies/ivybush.fbx" id="28_tjdgt"]
+[ext_resource type="PackedScene" uid="uid://v1cnreituo6i" path="res://Assets/env/HalloweenBits/Assets/gltf/bone_C.gltf" id="32_67380"]
+[ext_resource type="PackedScene" uid="uid://dl5kj6onuwrcv" path="res://Assets/env/HalloweenBits/Assets/gltf/skull.gltf" id="33_jp8a1"]
+[ext_resource type="PackedScene" uid="uid://cnx23bwhhijuj" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/barrel_small.tscn" id="34_4xi8d"]
+[ext_resource type="PackedScene" uid="uid://cov5icp8oa8a" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/table_medium.tscn" id="37_c3sr5"]
+[ext_resource type="PackedScene" uid="uid://fk10dwa1jj41" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/chair.tscn" id="38_ga8wp"]
+[ext_resource type="PackedScene" uid="uid://bblpv3gcg1oku" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/bottle_B_brown.tscn" id="39_06hv4"]
+[ext_resource type="PackedScene" uid="uid://jpu36lhdt6yp" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/_bones/bone_B.tscn" id="40_c3sr5"]
+[ext_resource type="PackedScene" uid="uid://150ruiel47i5" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/_bones/bone_C.tscn" id="41_ga8wp"]
+[ext_resource type="PackedScene" uid="uid://mv4gfi316aiq" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/bottle_A_green.tscn" id="44_qldx1"]
+[ext_resource type="PackedScene" uid="uid://dowo04m643hdh" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/bottle_C_green.tscn" id="45_dxabe"]
+[ext_resource type="PackedScene" uid="uid://teq0dywlhm1t" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/stool.tscn" id="46_qldx1"]
+[ext_resource type="PackedScene" uid="uid://b756tkw3ra6m6" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/keg.tscn" id="47_6wjr2"]
+[ext_resource type="PackedScene" uid="uid://cuysc4xedrcam" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/bottle_A_brown.tscn" id="48_o0qel"]
+[ext_resource type="PackedScene" uid="uid://dki0ifhnm8ilv" path="res://Assets/env/_myVeggies/ivyGround_4.fbx" id="49_rfjiq"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2ulnn"]
 
@@ -419,20 +441,339 @@ mesh_library = ExtResource("9_kb3uq")
 collision_layer = 4
 collision_mask = 7
 data = {
-"cells": PackedInt32Array(0, 65516, 34, 65527, 65521, 41, 65529, 65519, 28, 65531, 65518, 29, 65529, 65520, 77, 65531, 65519, 1441895)
+"cells": PackedInt32Array(0, 65516, 34, 65527, 65521, 41, 65529, 65519, 28, 65531, 65518, 29, 65529, 65520, 77, 65531, 65519, 1441895, 34, 65515, 25, 40, 65517, 103, 30, 65531, 1048675)
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="torch_mounted" parent="SubViewportContainer/SubViewport/myy/envProps" instance=ExtResource("4_rewsw")]
+[node name="LIGHTS" type="Node" parent="SubViewportContainer/SubViewport/myy/envProps"]
+
+[node name="torch_mounted" parent="SubViewportContainer/SubViewport/myy/envProps/LIGHTS" instance=ExtResource("4_rewsw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.42365, 2.0521214, -39.757572)
 
-[node name="table_long_broken" parent="SubViewportContainer/SubViewport/myy/envProps" instance=ExtResource("16_ueb55")]
+[node name="torch_mounted2" parent="SubViewportContainer/SubViewport/myy/envProps/LIGHTS" instance=ExtResource("4_rewsw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.091373, 2.3512404, -71.748535)
+
+[node name="torch_mounted3" parent="SubViewportContainer/SubViewport/myy/envProps/LIGHTS" instance=ExtResource("4_rewsw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -32.23092, 2.3238096, -49.746418)
+
+[node name="torch_mounted4" parent="SubViewportContainer/SubViewport/myy/envProps/LIGHTS" instance=ExtResource("4_rewsw")]
+transform = Transform3D(-0.25881904, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, -0.25881904, 21.70645, 2, -31.720402)
+
+[node name="torch_mounted5" parent="SubViewportContainer/SubViewport/myy/envProps/LIGHTS" instance=ExtResource("4_rewsw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.080036, 2.2865777, -43.749203)
+
+[node name="torch_mounted6" parent="SubViewportContainer/SubViewport/myy/envProps/LIGHTS" instance=ExtResource("4_rewsw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.003, 1.9251328, -19.759333)
+
+[node name="torch_mounted7" parent="SubViewportContainer/SubViewport/myy/envProps/LIGHTS" instance=ExtResource("4_rewsw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 24.246092, 2.1372359, 4.415847)
+
+[node name="torch_mounted8" parent="SubViewportContainer/SubViewport/myy/envProps/LIGHTS" instance=ExtResource("4_rewsw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 63.749165, 2.3678157, -0.08712077)
+
+[node name="torch_mounted9" parent="SubViewportContainer/SubViewport/myy/envProps/LIGHTS" instance=ExtResource("4_rewsw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.075714, 2.0515425, -41.9994)
+
+[node name="torch_mounted10" parent="SubViewportContainer/SubViewport/myy/envProps/LIGHTS" instance=ExtResource("4_rewsw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 55.76001, 2.1361394, -31.664877)
+
+[node name="torch_mounted11" parent="SubViewportContainer/SubViewport/myy/envProps/LIGHTS" instance=ExtResource("4_rewsw")]
+transform = Transform3D(0, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, 0, -17.749924, 2.0161924, -23.957632)
+
+[node name="torch_mounted12" parent="SubViewportContainer/SubViewport/myy/envProps/LIGHTS" instance=ExtResource("4_rewsw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.009182, 2.393193, -35.652966)
+
+[node name="torch_mounted13" parent="SubViewportContainer/SubViewport/myy/envProps/LIGHTS" instance=ExtResource("4_rewsw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.006601, 2.393193, -65.754684)
+
+[node name="torch_mounted14" parent="SubViewportContainer/SubViewport/myy/envProps/LIGHTS" instance=ExtResource("4_rewsw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.340251, 2.393193, -92.11753)
+
+[node name="torch_mounted15" parent="SubViewportContainer/SubViewport/myy/envProps/LIGHTS" instance=ExtResource("4_rewsw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.322152, 2.3599932, -74.519554)
+
+[node name="torch_mounted16" parent="SubViewportContainer/SubViewport/myy/envProps/LIGHTS" instance=ExtResource("4_rewsw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.3221521, 2.3599932, -52.519554)
+
+[node name="torch_mounted17" parent="SubViewportContainer/SubViewport/myy/envProps/LIGHTS" instance=ExtResource("4_rewsw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.484201, 2.3599932, -97.681816)
+
+[node name="torch_mounted18" parent="SubViewportContainer/SubViewport/myy/envProps/LIGHTS" instance=ExtResource("4_rewsw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -32.318283, 2.3443763, -105.495255)
+
+[node name="torch_mounted19" parent="SubViewportContainer/SubViewport/myy/envProps/LIGHTS" instance=ExtResource("4_rewsw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.47426, 2.3592188, -79.65433)
+
+[node name="PROPS" type="Node" parent="SubViewportContainer/SubViewport/myy/envProps"]
+
+[node name="table_long_broken" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("16_ueb55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.26228, 0, -127)
 
-[node name="table_medium_broken" parent="SubViewportContainer/SubViewport/myy/envProps" instance=ExtResource("17_navn1")]
+[node name="table_medium_broken" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("17_navn1")]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -12, 0, -130)
 
+[node name="box_large" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("9_tjdgt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.825096, 0, -27)
+
+[node name="box_small" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("10_0wknt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.107395, 0, -25.753262)
+
+[node name="barrel_large" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("11_nw05x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.696236, 0, -38.615147)
+
+[node name="box_large2" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("9_tjdgt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.234493, 0, -27.42759)
+
+[node name="box_small2" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("10_0wknt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0, -26.267824)
+
+[node name="box_large3" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("9_tjdgt")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -33.95575, 0, -27.718971)
+
+[node name="table_long" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("12_h0gvv")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -49.42504, 0, -52)
+
+[node name="box_large4" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("9_tjdgt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.223488, 0.04998541, -51.79332)
+
+[node name="bone_C2" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("32_67380")]
+transform = Transform3D(1, 0, 0, 0, -0.25881904, -0.9659258, 0, 0.9659258, -0.25881904, -51, 0.14979023, -51.0862)
+
+[node name="skull2" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("33_jp8a1")]
+transform = Transform3D(0.70415604, -0.09125829, 0.70415604, -0.02124679, 0.9885541, 0.1493629, -0.7097269, -0.120135896, 0.69415736, -52.12662, -0.019324899, -50.70747)
+
+[node name="barrel_small" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("34_4xi8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.20373, 1.3094547, -51.7676)
+
+[node name="bottle_A_labeled_green" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("16_htge1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.758823, 1.0000002, -94.13653)
+
+[node name="table_long2" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("12_h0gvv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41, 0, -97)
+
+[node name="table_long3" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("12_h0gvv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41, 0, -93)
+
+[node name="plate" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("17_ijs62")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.15956, 1, -92.32957)
+
+[node name="bone_B" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("40_c3sr5")]
+transform = Transform3D(0.49999997, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.49999997, -42.159435, 0.13910854, -95.21245)
+
+[node name="bone_C" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("41_ga8wp")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -41.796085, 0.11315039, -96.190384)
+
+[node name="box_large5" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("9_tjdgt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -80)
+
+[node name="box_small3" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("10_0wknt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.333359, 0.049985886, -78.702194)
+
+[node name="table_long4" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("12_h0gvv")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -18.76009, 0.049985886, -78.96054)
+
+[node name="box_small4" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("10_0wknt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.571465, 0.8499861, -79.66583)
+
+[node name="bone_A" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("20_lk2sa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.039375, 0.18802671, -33.273033)
+
+[node name="skull" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("21_dxabe")]
+transform = Transform3D(0.9073597, 0, 0.42035496, 0, 1, 0, -0.42035496, 0, 0.9073597, 35.24532, 0.11990875, -33.222954)
+
+[node name="barrel_large2" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("11_nw05x")]
+transform = Transform3D(-0.5775727, 0, 0.81633925, 0, 1, 0, -0.81633925, 0, -0.5775727, 36.31052, 0, -34.224876)
+
+[node name="chair" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("38_ga8wp")]
+transform = Transform3D(0, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, 0, 33.557594, 0.049985886, -43.083134)
+
+[node name="barrel_large3" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("11_nw05x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.869053, 0, -18.558052)
+
+[node name="box_large6" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("9_tjdgt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.943596, 0.049985886, -34.058884)
+
+[node name="box_large7" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("9_tjdgt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.472466, 0.049985886, -33.84533)
+
+[node name="box_large8" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("9_tjdgt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.85606, 1.546732, -33.84533)
+
+[node name="box_large9" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("9_tjdgt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.80231, 0.049984932, -32.428673)
+
+[node name="box_small5" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("10_0wknt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.824875, 1.3716223, -32.522507)
+
+[node name="bone_B2" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("40_c3sr5")]
+transform = Transform3D(0.25881907, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881907, 66.75872, 1.5349591, -33.9131)
+
+[node name="bottle_A_green" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("44_qldx1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.845566, 0.04998684, -33.09164)
+
+[node name="table_long5" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("12_h0gvv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 0, 2)
+
+[node name="table_long6" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("12_h0gvv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 0, 6)
+
+[node name="table_medium" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("37_c3sr5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 0, 10)
+
+[node name="table_long7" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("12_h0gvv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 0, 3.5805788)
+
+[node name="table_long8" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("12_h0gvv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 0, 7.580579)
+
+[node name="chair2" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("38_ga8wp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.208862, 0.049985886, 9.995699)
+
+[node name="barrel_large4" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("11_nw05x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.824852, 1, 2.5901256)
+
+[node name="skull3" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("21_dxabe")]
+transform = Transform3D(0.9330791, 0, -0.35967112, 0, 1, 0, 0.35967112, 0, 0.9330791, 42.882988, 1, 4)
+
+[node name="bone_C3" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("41_ga8wp")]
+transform = Transform3D(0.9478463, -0.31478623, -0.04996987, 0, -0.15677917, 0.98763365, -0.31872767, -0.93612486, -0.14860256, 43.14763, 1.1380398, 4.598369)
+
+[node name="box_large10" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("9_tjdgt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.810257, 0.029910028, -1.5926876)
+
+[node name="box_small6" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("10_0wknt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.053745, 0.04998517, -0.30001056)
+
+[node name="bottle_C_green" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("45_dxabe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.11408, 0.8977876, -0.3131539)
+
+[node name="bottle_A_green2" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("44_qldx1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.38844, 0.11310625, -0.6403402)
+
+[node name="table_medium2" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("37_c3sr5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -13.052514, 0.049985886, -68.602646)
+
+[node name="table_long9" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("12_h0gvv")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10, 0, -68.56497)
+
+[node name="skull4" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("21_dxabe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.71298, 0.14489534, -86.84274)
+
+[node name="barrel_large5" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("11_nw05x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.661258, 0, -87.85918)
+
+[node name="barrel_small2" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("34_4xi8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.786456, 0.049985886, -86.54077)
+
+[node name="stool" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("46_qldx1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.035139, 0.04998541, -88.032196)
+
+[node name="skull5" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("21_dxabe")]
+transform = Transform3D(0.8395408, -0.13202216, -0.5270118, 0.08912245, 0.9903513, -0.106119804, 0.535937, 0.042123325, 0.84320647, 46.503536, 0.14489296, -42.17358)
+
+[node name="keg" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("47_6wjr2")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 25.81675, 0, -1)
+
+[node name="stool2" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("46_qldx1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.089664, 0.049985886, 0.27362227)
+
+[node name="box_large11" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("9_tjdgt")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 20.678074, 0.04998398, -57.29939)
+
+[node name="box_small7" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("10_0wknt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.002666, 0.049984455, -55.89204)
+
+[node name="barrel_large6" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("11_nw05x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -50)
+
+[node name="bottle_A_brown" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("48_o0qel")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.701225, 0.049985886, -49.151005)
+
+[node name="chair3" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("38_ga8wp")]
+transform = Transform3D(-0.6366842, -0.77112484, 0, 0.77112484, -0.6366842, 0, 0, 0, 1, 26.794916, 0.5918256, -82.64652)
+
+[node name="table_medium3" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("37_c3sr5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, -84)
+
+[node name="stool3" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("46_qldx1")]
+transform = Transform3D(-1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0, 1, 45.38017, 0.5768409, -42.739822)
+
+[node name="barrel_large7" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("11_nw05x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6320724, 0.049985886, -92.15186)
+
+[node name="table_medium4" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("37_c3sr5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -54, 0, -94.90895)
+
+[node name="chair4" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("38_ga8wp")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -54, 0, -96.54015)
+
+[node name="bottle_B_brown" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("39_06hv4")]
+transform = Transform3D(1, 0, 0, 0, -0.18534076, -0.98267436, 0, 0.98267436, -0.18534076, -54.991302, 0.3188544, -93.34606)
+
+[node name="table_long10" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("12_h0gvv")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -45.625965, 0.049985886, -34.65016)
+
+[node name="barrel_small3" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("34_4xi8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.082085, 1.058852, -35.088642)
+
+[node name="box_large12" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("9_tjdgt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.84146, 0.04998541, -70.77605)
+
 [node name="veggies" type="Node" parent="SubViewportContainer/SubViewport/myy/envProps"]
+
+[node name="ivyGround_17" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("21_w4wbn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.987682, 0.0792917, -54.103294)
+
+[node name="ivyGround_18" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("25_w4wbn")]
+transform = Transform3D(-0.6089137, 0, 0.7932365, 0, 1, 0, -0.7932365, 0, -0.6089137, -30.714024, 0.077348985, -65.47445)
+
+[node name="ivyGround_19" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("16_w4wbn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.021263, -0.003456235, -62.324017)
+
+[node name="ivyGround_20" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("23_tu65r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.236942, 0.0035790503, -25.644724)
+
+[node name="ivyGround_21" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("25_w4wbn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.692991, 0.0567377, -55.002853)
+
+[node name="ivyWall_17" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("22_urrsd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.762297, 0.3036108, -65.7233)
+
+[node name="ivyGround_22" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("49_rfjiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.247401, 0.04372984, -52.14435)
+
+[node name="ivyGround_23" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("21_w4wbn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0679083, 0.012811542, -87.91272)
+
+[node name="ivyWall_18" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("22_urrsd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.460447, -0.38468176, -99.70944)
+
+[node name="ivyGround_24" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("25_w4wbn")]
+transform = Transform3D(-0.37404007, 0, 0.9274125, 0, 1, 0, -0.9274125, 0, -0.37404007, 28.935097, 0.077348985, -91.536285)
+
+[node name="ivyGround_25" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("24_qia36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.795381, 0.045267984, -74.52174)
+
+[node name="ivyCorner_9" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("27_tu65r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.511945, 0.1807796, -85.403046)
+
+[node name="ivyGround_26" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("16_w4wbn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.266232, -0.033954263, -79.43628)
+
+[node name="ivyWall_19" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("22_urrsd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.571888, 0.3730955, -97.64252)
+
+[node name="ivyWall_20" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("20_qia36")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27.556997, 0.5387478, -75.241585)
+
+[node name="ivyWall_21" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("22_urrsd")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27.83108, 0.17989491, -77.54255)
+
+[node name="ivyGround_27" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("25_w4wbn")]
+transform = Transform3D(0.49999997, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.49999997, -43.0607, 0.09893334, -94.50719)
+
+[node name="ivyGround_28" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("49_rfjiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.433952, 0.07337767, -97.549416)
 
 [node name="ivyCorner_1" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("8_dr8is")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.516914, 0.18103603, -39.40777)
@@ -440,11 +781,17 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.5
 [node name="ivyWall_1" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("19_hbuxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4144063, 0, -39.65892)
 
+[node name="ivyCorner_7" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("8_dr8is")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -47.6141, 0.18103603, -71.3233)
+
+[node name="ivyWall_13" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("19_hbuxf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.511593, 0, -71.574455)
+
 [node name="ivyWall_2" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("20_qia36")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.150356, 0.15024626, -35.731377)
 
 [node name="ivyGround_5" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("21_w4wbn")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 20.026003, 0.012966633, -31.84565)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 20.026003, 0.012966633, -33.760864)
 
 [node name="ivyWall_3" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("22_urrsd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4141963, 0.16039234, -3.7710178)
@@ -487,6 +834,75 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.
 
 [node name="ivybush" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("28_tjdgt")]
 transform = Transform3D(-0.31160536, 0, 0.95021164, 0, 1, 0, -0.95021164, 0, -0.31160536, -16.786938, 0.04998517, -28.98312)
+
+[node name="ivybush2" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("28_tjdgt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.361576, -0.06330085, -38.63577)
+
+[node name="ivyCorner_5" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("27_tu65r")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 28.513235, 0, -43.485718)
+
+[node name="ivyWall_7" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("19_hbuxf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.66389, 0.14372736, -43.583115)
+
+[node name="ivyGround_8" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("23_tu65r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.23275, 0.006762415, -26.59974)
+
+[node name="ivyGround_9" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("21_w4wbn")]
+transform = Transform3D(-0.8660254, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, -0.8660254, 70.25933, 0.07891691, -31.283356)
+
+[node name="ivyCorner_6" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("8_dr8is")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 64.49518, -0.10015032, -41.75072)
+
+[node name="ivyWall_8" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("20_qia36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.433624, 0.03241539, -42.0254)
+
+[node name="ivyGround_10" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("25_w4wbn")]
+transform = Transform3D(0.6692084, 0, 0.7430748, 0, 1, 0, -0.7430748, 0, 0.6692084, 35.859722, 0.047234774, 4.062645)
+
+[node name="ivyWall_9" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("19_hbuxf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.48564, 0.5236398, -7.73107)
+
+[node name="ivyGround_11" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("16_w4wbn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.348072, 0.04981309, 9.610474)
+
+[node name="ivyWall_10" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("20_qia36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.063095, -0.0416885, -15.7057295)
+
+[node name="ivyWall_11" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("22_urrsd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.306423, 0.027184546, -15.674868)
+
+[node name="ivyWall_12" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("20_qia36")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 63.645252, -0.15522522, -6.5939045)
+
+[node name="ivyGround_12" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("24_qia36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.08575, 0.05062954, -29.96672)
+
+[node name="ivyGround_13" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("16_w4wbn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.24895, -0.013785958, -40.413525)
+
+[node name="ivybush3" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("28_tjdgt")]
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 63.155136, -0.071796656, -3.182296)
+
+[node name="ivyWall_14" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("19_hbuxf")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 24.353455, -0.010457516, 2.3350735)
+
+[node name="ivyWall_15" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("19_hbuxf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.675459, 0.18055695, -39.671047)
+
+[node name="ivyGround_14" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("16_w4wbn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.82903, 0.07808292, -38.277206)
+
+[node name="ivyGround_15" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("21_w4wbn")]
+transform = Transform3D(-0.5980448, 0, -0.8014627, 0, 1, 0, 0.8014627, 0, -0.5980448, -30.496246, 0.07891309, -38.08885)
+
+[node name="ivyGround_16" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("25_w4wbn")]
+transform = Transform3D(-1.0000001, 2.9802322e-08, -1.7763568e-15, 0, -4.371139e-08, 1, 2.9802322e-08, 1.0000001, 4.3711392e-08, -28.561918, 1.6248608, -39.57937)
+
+[node name="ivyWall_16" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("19_hbuxf")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -51.68588, 0.029489517, -30.038853)
+
+[node name="ivyCorner_8" parent="SubViewportContainer/SubViewport/myy/envProps/veggies" instance=ExtResource("8_dr8is")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -51.477356, 0.02233696, -31.474676)
 
 [node name="rooms" type="Marker3D" parent="SubViewportContainer/SubViewport/myy"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -4)

@@ -1,10 +1,10 @@
 [gd_scene load_steps=119 format=4 uid="uid://8shx465x7qij"]
 
 [ext_resource type="PackedScene" uid="uid://cqrf82diurxid" path="res://Assets/env/HalloweenBits/Assets/gltf/arch.gltf" id="1_eos8o"]
-[ext_resource type="Texture2D" uid="uid://dvrcewvncaq7y" path="res://Assets/env/HalloweenBits/Assets/gltf/halloweenbits_texture.png" id="2_eos8o"]
+[ext_resource type="Texture2D" uid="uid://dynkw872vyaeb" path="res://Assets/env/HalloweenBits/Assets/gltf/halloweenbits_texture.png" id="2_eos8o"]
 [ext_resource type="PackedScene" uid="uid://csqo5mskcofhd" path="res://Assets/env/HalloweenBits/Assets/gltf/bench.gltf" id="3_e6x02"]
 [ext_resource type="PackedScene" uid="uid://drh2ltlqhskuq" path="res://Assets/env/HalloweenBits/Assets/gltf/bench_decorated.gltf" id="4_gn2bt"]
-[ext_resource type="PackedScene" uid="uid://ct765nkbtkb5g" path="res://Assets/env/HalloweenBits/Assets/gltf/bone_A.gltf" id="5_b2soc"]
+[ext_resource type="PackedScene" path="res://Assets/env/HalloweenBits/Assets/gltf/bone_A.gltf" id="5_b2soc"]
 [ext_resource type="PackedScene" uid="uid://ch1sw81d8xtl" path="res://Assets/env/HalloweenBits/Assets/gltf/bone_B.gltf" id="6_8ivdc"]
 [ext_resource type="PackedScene" uid="uid://v1cnreituo6i" path="res://Assets/env/HalloweenBits/Assets/gltf/bone_C.gltf" id="7_3c5jl"]
 [ext_resource type="PackedScene" uid="uid://d1vhgjbhvg7t" path="res://Assets/env/HalloweenBits/Assets/gltf/candle.gltf" id="8_17oc7"]

@@ -7,7 +7,7 @@ points = PackedVector3Array(0.75, 1.4249706, 0.6749707, 0.6749706, 1.5, 0.674970
 
 [node name="box_large" instance=ExtResource("3444153025216875985")]
 
-[node name="box_large_col" type="StaticBody3D" parent="box_large" index="0"]
+[node name="box_large_col" type="RigidBody3D" parent="box_large" index="0"]
 
 [node name="box_large_col_shape" type="CollisionShape3D" parent="box_large/box_large_col" index="0"]
 shape = SubResource("ConvexPolygonShape3D_klu1p")

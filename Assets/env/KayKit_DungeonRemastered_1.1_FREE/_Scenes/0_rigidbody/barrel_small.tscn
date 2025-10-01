@@ -7,7 +7,7 @@ points = PackedVector3Array(-9.7990036e-05, 0.7408345, 0.500681, -0.33453953, 0.
 
 [node name="barrel_small" instance=ExtResource("8932191005484205575")]
 
-[node name="barrel_small_col" type="StaticBody3D" parent="barrel_small" index="0"]
+[node name="barrel_small_col" type="RigidBody3D" parent="barrel_small" index="0"]
 
 [node name="barrel_small_col_shape" type="CollisionShape3D" parent="barrel_small/barrel_small_col" index="0"]
 shape = SubResource("ConvexPolygonShape3D_dhwum")
