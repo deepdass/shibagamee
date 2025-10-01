@@ -2,10 +2,10 @@ extends Node
 
 
 
-@onready var the_base_character = get_parent().get_parent().get_parent()
+@onready var the_base_character : CharacterBody3D = get_parent().get_parent().get_parent()
 
 @export var stats : Stats
-var RES := load("res://Res/character/RES_mage.tres")
+var RES : Resource = load("res://Res/character/RES_mage.tres")
 
 var can_crit : bool = false
 
@@ -14,8 +14,8 @@ var can_crit : bool = false
 ## attack basic
 @export var projectile : PackedScene
 @onready var fireposnode: Node3D = $"../fireposnode"
-@export var projectile_speed = 15
-@export var milli_per_shots = 667
+@export var projectile_speed : int = 15
+@export var milli_per_shots : int = 667
 
 ##
 
@@ -23,7 +23,7 @@ var can_crit : bool = false
 @onready var animation_tree: AnimationTree = $"../CharacterMesh/AnimationTree"
 
 
-var can_attack_basic = true
+var can_attack_basic : bool = true
 @onready var attack_bacis__timer: Timer = $attack_bacis__Timer
 
 
@@ -45,10 +45,10 @@ func _physics_process(_delta: float) -> void:
 		attack_basic()
 
 
-func attack_basic():
+func attack_basic() -> void:
 	if can_attack_basic:
 		animation_tree.set("parameters/attack_basic/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
-		var new_projectile = projectile.instantiate()
+		var new_projectile : Node3D = projectile.instantiate()
 		new_projectile.global_transform = fireposnode.global_transform
 		new_projectile.projectile_speed = projectile_speed
 		get_tree().get_current_scene().add_child(new_projectile)
@@ -61,14 +61,14 @@ func _on_timer_timeout() -> void: ##  attack basic timer
 
 
 
-func CAL_defence():
+func CAL_defence() -> float:
 	if stats.attack == 0 and stats.defence == 0:
 		return 0.0
 	return (stats.attack/(stats.attack + stats.defence))
 
 
-func crit(rate):
-	var num = randf_range(0,1)
+func crit(rate : float) -> float:
+	var num : float = randf_range(0,1)
 	
 	if num < rate:
 		can_crit = true
@@ -77,16 +77,16 @@ func crit(rate):
 		can_crit = false
 		return 1.0 
 
-func randomnessFactor():
+func randomnessFactor() -> float:
 	return randf_range(0.9,1.1)
 	
-func effective_damage():
+func effective_damage() -> float:
 	return stats.attack * CAL_defence() * crit(stats.crit_rate/100) * randomnessFactor()
 
 
 
 ###############################################################################
-func applyUpgrades(receivedPowerups):
+func applyUpgrades(receivedPowerups: Stats) -> void:
 	stats.health += receivedPowerups.health
 	stats.movement_speed += receivedPowerups.movement_speed
 	stats.sp_Meter += receivedPowerups.sp_Meter
@@ -95,7 +95,9 @@ func applyUpgrades(receivedPowerups):
 	stats.crit_rate += receivedPowerups.crit_rate
 	stats.crit_damage += receivedPowerups.crit_damage
 	stats.movement_speed += receivedPowerups.movement_speed
-	stats.stamina += receivedPowerups.stamina
+	if !receivedPowerups.stamina == 0:
+		stats.stamina += receivedPowerups.stamina
+		the_base_character.set_stamina()
 	
 	
 	if receivedPowerups.type == "equip_prop":

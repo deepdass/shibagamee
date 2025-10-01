@@ -3,10 +3,10 @@ extends Area3D
 
 @export var PowerUp : PowerUps 
 
-var sub_viewport = null
-@onready var sub_viewport_path := "/root/World/SubViewportContainer/SubViewport"
+var sub_viewport : SubViewport = null
+@onready var sub_viewport_path : String = "/root/World/SubViewportContainer/SubViewport"
 
-const allRES := ["res://Scenes/powerUPs/5_Common/bootofswiftness/Boots_of_swiftness.tres",
+const allRES : Array[String]= ["res://Scenes/powerUPs/5_Common/bootofswiftness/Boots_of_swiftness.tres",
 "res://Scenes/powerUPs/5_Common/lifebloom/Lifebloom.tres",
 "res://Scenes/powerUPs/5_Common/st pat (crit rate)/St. Patricks.tres",
 "res://Scenes/powerUPs/5_Common/attack/attack.tres",
@@ -14,16 +14,17 @@ const allRES := ["res://Scenes/powerUPs/5_Common/bootofswiftness/Boots_of_swiftn
 
 
 @onready var meshspawn: Node3D = $meshspawn
-@onready var player = null
+@onready var player : CharacterBody3D= null
 @onready var entered : bool = false
 #@onready var sprite_3d: Sprite3D = $Sprite3D
 
 func _ready() -> void:
-	var RESstring = allRES[randi_range(0,(allRES.size()-1))]
+	var RESstring : String = allRES[randi_range(0,(allRES.size()-1))]
 	PowerUp = load(RESstring)
-	var powerup_mesh_inst = PowerUp.mesh.instantiate()
+	var powerup_mesh_inst : Node3D = PowerUp.mesh.instantiate()
 	powerup_mesh_inst.position = meshspawn.position
 	meshspawn.add_child(powerup_mesh_inst)
+	
 	sub_viewport = get_node(sub_viewport_path)
 
 

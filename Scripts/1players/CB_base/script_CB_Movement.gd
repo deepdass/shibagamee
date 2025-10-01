@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 ##refs
 @onready var game_manager: Node = %GameManager  ## game_manager.decrease_health()
-@export var character_mesh = preload("res://Scenes/characters/players/mage.tscn")
+@export var character_mesh : PackedScene = preload("res://Scenes/characters/players/mage.tscn")
 
 ##visuals
 @onready var animation_tree: AnimationTree = null
@@ -17,21 +17,21 @@ extends CharacterBody3D
 @onready var hurt_sfx: AudioStreamPlayer = $hurtSFX
 
 
-var dashing = false
-var running = false
+var dashing : bool= false
+var running : bool= false
 var look_at_me : Vector3
 
 
 ##
 
-const JUMP_VELOCITY = 3.5
-const DASH_STAMINAcost = 20
+const JUMP_VELOCITY : float = 3.5
+const DASH_STAMINAcost : int = 20
 @onready var stamina_bar: TextureProgressBar = $"../../../../../UI/staminaBar"
 
 
 func _ready() -> void:
 	# setup
-	var character_mesh_inst = character_mesh.instantiate()
+	var character_mesh_inst : Node3D = character_mesh.instantiate()
 	visuals.add_child(character_mesh_inst)
 	character_mesh_inst.global_transform = visuals.global_transform
 	
@@ -62,13 +62,13 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("left", "right", "forward", "backward")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var direction : Vector3= (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		#var dot_product := direction.dot(look_at_me.normalized())
 		#print(dot_product)
 		if Input.is_action_just_pressed("dash") and !dashing and StatsManager.stats.stamina > DASH_STAMINAcost:
 			StatsManager.stats.stamina -= DASH_STAMINAcost
-			stamina_bar.value = StatsManager.stats.stamina
+			set_stamina()
 			animation_tree.set("parameters/dash/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 			dashing = true
 			velocity = direction * StatsManager.stats.movement_speed * 15 + velocity
@@ -84,7 +84,7 @@ func _physics_process(delta: float) -> void:
 			if !dashing and StatsManager.stats.stamina < stamina_bar.max_value:
 				StatsManager.stats.stamina += 30 * delta
 				clamp(StatsManager.stats.stamina, 0 , stamina_bar.max_value)
-				stamina_bar.value = StatsManager.stats.stamina
+				set_stamina()
 			
 		visuals.look_at(direction + position)
 		
@@ -108,34 +108,37 @@ func _physics_process(delta: float) -> void:
 
 func _on_dash_timer_timeout() -> void:
 	dashing = false
+	
+func set_stamina() -> void:
+	stamina_bar.value = StatsManager.stats.stamina
 
 ## movement - end ##
 
 
-func _push_away_rigid_bodies():
+func _push_away_rigid_bodies() -> void:
 	for i in get_slide_collision_count():
 		var c := get_slide_collision(i)
 		if c.get_collider() is RigidBody3D:
-			var push_dir = -c.get_normal()
+			var push_dir : Vector3 = -c.get_normal()
 			var velocity_diff_in_push_dir = self.velocity.dot(push_dir) - c.get_collider().linear_velocity.dot(push_dir)
 			velocity_diff_in_push_dir = max(0., velocity_diff_in_push_dir)
-			const MY_APPROX_MASS_KG = 80.0
-			var mass_ratio = min(1., MY_APPROX_MASS_KG / c.get_collider().mass)
+			const MY_APPROX_MASS_KG : int = 80
+			var mass_ratio : float = min(1., MY_APPROX_MASS_KG / c.get_collider().mass)
 			if mass_ratio < 0.25:
 				continue
 			push_dir.y = 0
-			var push_force = mass_ratio * 5.0 #magic number
+			var push_force : float = mass_ratio * 5.0 #magic number
 			c.get_collider().apply_impulse(push_dir * velocity_diff_in_push_dir * push_force, c.get_position() - c.get_collider().global_position)
 
-func _rotate(where):
+func _rotate(where: Vector3) -> void:
 	look_at_me = where
 
 
-func decrease_health():
+func decrease_health() -> void:
 	StatsManager.stats.health -= 1
 	ui()
 	hurt_sfx.play()
 
 
-func ui():
+func ui() -> void:
 	game_manager.update_UI()

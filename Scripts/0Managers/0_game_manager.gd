@@ -46,18 +46,17 @@ func _physics_process(delta: float) -> void:
 	##
 	
 	
-	var mouse_pos = sub_viewport.get_mouse_position()
+	var mouse_pos : Vector2 = sub_viewport.get_mouse_position()
 	ray_origin = camera_3d.project_ray_origin(mouse_pos)
 	ray_target_pt = ray_origin + camera_3d.project_ray_normal(mouse_pos) * 1000
 	
-	var space_state = world.get_world_3d().direct_space_state
-	var params = PhysicsRayQueryParameters3D.create(ray_origin,ray_target_pt,1)
+	var space_state : PhysicsDirectSpaceState3D = world.get_world_3d().direct_space_state
+	var params : PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(ray_origin,ray_target_pt,1)
 	params.exclude = [player]
-	var intersection = space_state.intersect_ray(params)
+	var intersection : Dictionary = space_state.intersect_ray(params)
 	
 	if not intersection.is_empty():
-		var pos = intersection.position
-		var look_at_me = Vector3(pos.x, player.position.y, pos.z)
+		var look_at_me : Vector3 = Vector3(intersection.position.x, player.position.y, intersection.position.z)
 		player._rotate(look_at_me)
 
 		
@@ -69,9 +68,9 @@ func _physics_process(delta: float) -> void:
 			panel_2.get_node("tip").visible = false
 		
 
-func update_UI():
+func update_UI() -> void: 
 	if hearts.size() >= player.StatsManager.stats.health:
-		for i in hearts.size():
+		for i : int in hearts.size():
 			if (i < player.StatsManager.stats.health):
 				hearts[i].show()
 			else:
@@ -89,7 +88,7 @@ func _on_timer_timeout() -> void:  ## kill timeout
 	Engine.time_scale = 1
 	get_tree().reload_current_scene()
 
-func won():
+func won() -> void:
 	player.StatsManager.stats.score += 1
 	get_tree().set_meta("saved_stats", player.StatsManager.stats)
 	Engine.time_scale = 0.3
@@ -104,5 +103,5 @@ func _on_area_3d_body_entered(body: Node3D) -> void: ##inside crypt
 
 func _on_killzone_body_entered(body: Node3D) -> void:
 	if body == player:
-		for i in player.StatsManager.stats.health:
+		for i : int in player.StatsManager.stats.health:
 			player.decrease_health()

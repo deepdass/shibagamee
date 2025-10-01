@@ -2,10 +2,10 @@ extends CharacterBody3D
 
 @export var stat : Stats 
 
-var subViewport = null
-var player = null
-@onready var player_path := "/root/World/SubViewportContainer/SubViewport/myy/per/Player"
-@onready var sub_viewport_path := "/root/World/SubViewportContainer/SubViewport"
+var subViewport : SubViewport = null
+var player : CharacterBody3D = null
+@onready var player_path : String = "/root/World/SubViewportContainer/SubViewport/myy/per/Player"
+@onready var sub_viewport_path : String = "/root/World/SubViewportContainer/SubViewport"
 
 @onready var skeleton_minion_eyes: MeshInstance3D = $Skeleton_Minion/Rig/Skeleton3D/Skeleton_Minion_Eyes
 @onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
@@ -18,12 +18,12 @@ var health : float = 200
 @onready var destroyaftertime: Timer = $destroyaftertime
 
 
-const  SPEED = 4.2
-const ATTACK_RANGE = 1.5
-const KnockbackMul = 25
+const  SPEED : float = 4.2
+const ATTACK_RANGE : float = 1.5
+const KnockbackMul : int = 25
 
-const enem_KnockbackMul = 40
-var state_machine
+const enem_KnockbackMul : int = 40
+var state_machine : AnimationNodeStateMachinePlayback
 
 @onready var animation_tree: AnimationTree = $Skeleton_Minion/AnimationTree
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
@@ -50,7 +50,7 @@ func _process(delta: float) -> void:
 	match state_machine.get_current_node():
 		"Walking_A":
 			navigation_agent_3d.set_target_position(player.global_transform.origin)
-			var next_pt = navigation_agent_3d.get_next_path_position()
+			var next_pt : Vector3 = navigation_agent_3d.get_next_path_position()
 			velocity = (next_pt - global_transform.origin).normalized() * SPEED
 			
 			look_at(Vector3(global_position.x + velocity.x, global_position.y, global_position.z + velocity.z), Vector3.UP)
@@ -63,30 +63,30 @@ func _process(delta: float) -> void:
 	
 	move_and_slide()
 
-func _target_in_range():
+func _target_in_range() -> bool:
 	return global_position.distance_to(player.global_position) < ATTACK_RANGE
 	
-func _hitfinish():
+func _hitfinish() -> void:
 	if global_position.distance_to(player.global_position) < ATTACK_RANGE + 0.5 :
-		var dir = global_position.direction_to(player.global_position)
+		var dir : Vector3 = global_position.direction_to(player.global_position)
 		player.velocity += Vector3(dir.x , dir.y * 0.1, dir.z ) * KnockbackMul
 		player.decrease_health()
 		player.decrease_health()
 		
 	
 
-func take_damage():
-	var damageRec = player.StatsManager.effective_damage()
+func take_damage()  -> void:
+	var damageRec : float = player.StatsManager.effective_damage()
 	health -= damageRec
 	
-	var fallChance = randi_range(0,100)
+	var fallChance : int = randi_range(0,100)
 	if fallChance < 15:
 		collision_shape_3d.disabled = true
 		timer.start()
 		animation_tree.set("parameters/conditions/fall",true)
 		audio_stream_player.play()
 	else:
-		var dir = -global_position.direction_to(player.global_position)
+		var dir : Vector3 = -global_position.direction_to(player.global_position)
 		velocity = Vector3.ZERO
 		velocity += Vector3(dir.x , dir.y * 0.1, dir.z ) * enem_KnockbackMul
 		move_and_slide()
@@ -101,7 +101,7 @@ func take_damage():
 		animation_tree.set("parameters/conditions/Resurrect",false)
 		destroyaftertime.start()
 
-func showDmg():
+func showDmg() -> void:
 	if player.StatsManager.can_crit:
 		damagepopup.get_node("damagepopup").set_modulate(Color(0.7, 0.14, 0.14, 1))
 		damagepopup.get_node("damagepopup").set_outline_modulate(Color(0.11, 0, 0, 1))

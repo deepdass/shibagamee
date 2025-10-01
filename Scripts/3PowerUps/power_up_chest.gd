@@ -19,10 +19,10 @@ func _ready() -> void:
 	pass
 		
 
-func _physics_process(_delta):
-	var up = global_transform.basis.y
-	var upright = Vector3.UP
-	var tilt = up.cross(upright) * 100  # strength factor
+func _physics_process(_delta : float) -> void:
+	var up : Vector3 = global_transform.basis.y
+	var upright : Vector3 = Vector3.UP
+	var tilt : Vector3 = up.cross(upright) * 100  # strength factor
 	apply_torque_impulse(tilt)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -31,12 +31,12 @@ func _process(_delta: float) -> void:
 			already_opened = true
 			animation_player.play("chest_open")
 			pts_anim.play("powerUp_upanddown")
-			for i in pts_parent.get_children():
-				var powerup_inst = powerUp.instantiate()
+			for i : Node3D in pts_parent.get_children():
+				var powerup_inst : Area3D = powerUp.instantiate()
 				i.add_child(powerup_inst)
 
 
-func _showPowerUps():
+func _showPowerUps() -> void:
 	pts_parent.visible = true
 	interact_area.queue_free()
 
