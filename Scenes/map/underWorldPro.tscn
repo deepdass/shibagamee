@@ -1,6 +1,8 @@
-[gd_scene load_steps=64 format=4 uid="uid://rekblaynb4gg"]
+[gd_scene load_steps=69 format=4 uid="uid://rekblaynb4gg"]
 
 [ext_resource type="Script" uid="uid://b8tcib7cuxmbg" path="res://Scripts/0Managers/0_game_manager.gd" id="1_um8rm"]
+[ext_resource type="Script" uid="uid://bm5mc8ak8jjih" path="res://Scripts/0Managers/minimap_cam.gd" id="2_62ixm"]
+[ext_resource type="Texture2D" uid="uid://cna7hum5q5uek" path="res://Assets/UI/staminaBar_gimp.png" id="2_mil5o"]
 [ext_resource type="Texture2D" uid="uid://dwnmocndg7gk7" path="res://Assets/UI/Heart.png" id="3_ueb55"]
 [ext_resource type="PackedScene" uid="uid://dy3xf0k58ncpg" path="res://Scenes/rooms/allROOMS/Room_001.tscn" id="4_4kuwp"]
 [ext_resource type="Script" uid="uid://c1ciyr271og1w" path="res://Scenes/rooms/roomsManager.gd" id="4_dooxh"]
@@ -8,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c7illv6kf10b2" path="res://Scenes/characters/players/character_base.tscn" id="4_navn1"]
 [ext_resource type="PackedScene" uid="uid://bo6isdiofn7db" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/props/torch_mounted.tscn" id="4_rewsw"]
 [ext_resource type="PackedScene" uid="uid://dcw5e6cjvxy3b" path="res://Scenes/rooms/allROOMS/Room_002.tscn" id="5_n3mfx"]
+[ext_resource type="PackedScene" uid="uid://bqp5gwc1bjj17" path="res://Scenes/characters/players/mage.tscn" id="6_7a0ti"]
 [ext_resource type="PackedScene" uid="uid://dswx3oxm25bfa" path="res://Scenes/rooms/allROOMS/Room_003.tscn" id="6_h4pxw"]
 [ext_resource type="Texture2D" uid="uid://c3mchi10usuw1" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="7_rewsw"]
 [ext_resource type="PackedScene" uid="uid://dcyej82fy3mav" path="res://Assets/env/_myVeggies/ivyCorner_1.fbx" id="8_dr8is"]
@@ -51,6 +54,25 @@
 [ext_resource type="PackedScene" uid="uid://dki0ifhnm8ilv" path="res://Assets/env/_myVeggies/ivyGround_4.fbx" id="49_rfjiq"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2ulnn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7a0ti"]
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62ixm"]
+draw_center = false
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.051970966, 0.05197096, 0.05197095, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+corner_detail = 16
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_idx2o"]
 rayleigh_coefficient = 1.29
@@ -205,40 +227,53 @@ shape = SubResource("WorldBoundaryShape3D_2ulnn")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="MechUI" type="Panel" parent="UI"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="staminaBar_right" type="ProgressBar" parent="UI/MechUI"]
-layout_mode = 1
+[node name="staminaBar" type="TextureProgressBar" parent="UI"]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 600.0
-offset_top = 1996.0
-offset_right = 3200.0
-offset_bottom = 2056.0
+offset_left = -638.0
+offset_top = -71.0
+offset_right = -382.0
+offset_bottom = -64.0
 grow_horizontal = 2
 grow_vertical = 0
-value = 42.84
-show_percentage = false
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="UI/MechUI"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 600.0
-offset_top = 1996.0
-offset_right = 3200.0
-offset_bottom = 2056.0
-grow_horizontal = 2
-grow_vertical = 0
+scale = Vector2(5, 4.5)
+value = 100.0
 fill_mode = 6
+texture_progress = ExtResource("2_mil5o")
+tint_progress = Color(0.84608996, 0.84608996, 0.84608996, 1)
+
+[node name="miniMap" type="PanelContainer" parent="UI"]
+clip_children = 1
+clip_contents = true
+offset_left = 3420.0
+offset_top = 20.0
+offset_right = 3820.0
+offset_bottom = 420.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7a0ti")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="UI/miniMap"]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="UI/miniMap/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(400, 400)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="UI/miniMap/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 16, 0)
+projection = 1
+size = 40.0
+script = ExtResource("2_62ixm")
+
+[node name="miniMapBorder" type="PanelContainer" parent="UI"]
+offset_left = 3417.0
+offset_top = 17.0
+offset_right = 3823.0
+offset_bottom = 423.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_62ixm")
 
 [node name="Panel" type="Panel" parent="UI"]
 scale = Vector2(1.6, 1.6)
@@ -342,9 +377,9 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = 3476.0
-offset_top = -23.0
+offset_top = 403.0
 offset_right = 3768.0
-offset_bottom = 114.0
+offset_bottom = 540.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 100
 text = "Score "
@@ -355,9 +390,9 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = 3305.0
-offset_top = 92.0
+offset_top = 518.0
 offset_right = 3815.0
-offset_bottom = 175.0
+offset_bottom = 601.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 60
 text = "Find the Portal!! :)"
@@ -397,6 +432,7 @@ environment = SubResource("Environment_n4gow")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 platform_on_leave = 2
+character_mesh = ExtResource("6_7a0ti")
 
 [node name="camera_rig" type="Node3D" parent="SubViewportContainer/SubViewport/myy/per"]
 unique_name_in_owner = true

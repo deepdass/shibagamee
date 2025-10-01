@@ -18,4 +18,4 @@ class_name  Stats
 
 
 @export var movement_speed : float
-@export var stamina : int
+@export var stamina : float

@@ -25,6 +25,8 @@ var look_at_me : Vector3
 ##
 
 const JUMP_VELOCITY = 3.5
+const DASH_STAMINAcost = 20
+@onready var stamina_bar: TextureProgressBar = $"../../../../../UI/staminaBar"
 
 
 func _ready() -> void:
@@ -64,7 +66,9 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		#var dot_product := direction.dot(look_at_me.normalized())
 		#print(dot_product)
-		if Input.is_action_just_pressed("dash") and !dashing:
+		if Input.is_action_just_pressed("dash") and !dashing and StatsManager.stats.stamina > DASH_STAMINAcost:
+			StatsManager.stats.stamina -= DASH_STAMINAcost
+			stamina_bar.value = StatsManager.stats.stamina
 			animation_tree.set("parameters/dash/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 			dashing = true
 			velocity = direction * StatsManager.stats.movement_speed * 15 + velocity
@@ -77,6 +81,10 @@ func _physics_process(delta: float) -> void:
 			velocity.z = direction.z * StatsManager.stats.movement_speed
 			if !running:
 				running = true
+			if !dashing and StatsManager.stats.stamina < stamina_bar.max_value:
+				StatsManager.stats.stamina += 30 * delta
+				clamp(StatsManager.stats.stamina, 0 , stamina_bar.max_value)
+				stamina_bar.value = StatsManager.stats.stamina
 			
 		visuals.look_at(direction + position)
 		
@@ -92,6 +100,11 @@ func _physics_process(delta: float) -> void:
 	
 	_push_away_rigid_bodies()
 	move_and_slide()
+
+
+
+
+
 
 func _on_dash_timer_timeout() -> void:
 	dashing = false
@@ -126,7 +139,3 @@ func decrease_health():
 
 func ui():
 	game_manager.update_UI()
-
-
-func _callCharactertype():
-	pass
