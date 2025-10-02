@@ -1,9 +1,12 @@
-[gd_scene load_steps=25 format=3 uid="uid://dly6jv8oiogek"]
+[gd_scene load_steps=30 format=3 uid="uid://dly6jv8oiogek"]
 
 [ext_resource type="Script" uid="uid://b8tcib7cuxmbg" path="res://Scripts/0Managers/0_game_manager.gd" id="1_c00dn"]
+[ext_resource type="Script" uid="uid://bm5mc8ak8jjih" path="res://Scripts/0Managers/minimap_cam.gd" id="2_oakbx"]
+[ext_resource type="Texture2D" uid="uid://cna7hum5q5uek" path="res://Assets/UI/staminaBar_gimp.png" id="3_h2kxg"]
 [ext_resource type="MeshLibrary" uid="uid://crol18xh2ltij" path="res://Assets/env/HalloweenBits/Assets/upperworldtiles.tres" id="5_16mms"]
 [ext_resource type="PackedScene" uid="uid://br483nydnq3u5" path="res://Scenes/props/overworldgate.tscn" id="5_oakbx"]
 [ext_resource type="PackedScene" uid="uid://buu6tgndshc3j" path="res://Assets/env/HalloweenBits/Assets/gltf/tree_pine_orange_large.gltf" id="6_0odvr"]
+[ext_resource type="PackedScene" uid="uid://bqp5gwc1bjj17" path="res://Scenes/characters/players/mage.tscn" id="6_h2kxg"]
 [ext_resource type="MeshLibrary" uid="uid://b14igan24nl53" path="res://Assets/env/HalloweenBits/Assets/upperworldtiles1.tres" id="6_hrm0u"]
 [ext_resource type="PackedScene" uid="uid://bfi56748suwnn" path="res://Assets/env/HalloweenBits/Assets/gltf/tree_pine_orange_small.gltf" id="7_qheq5"]
 [ext_resource type="PackedScene" uid="uid://bi32f8c7ukjt0" path="res://Assets/env/HalloweenBits/Assets/gltf/tree_pine_orange_medium.gltf" id="8_qheq5"]
@@ -18,6 +21,25 @@
 [ext_resource type="Texture2D" uid="uid://dwnmocndg7gk7" path="res://Assets/UI/Heart.png" id="21_ps8ey"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_tnj4i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sjwbd"]
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mh7yw"]
+draw_center = false
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.051970966, 0.05197096, 0.05197095, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+corner_detail = 16
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7xp1n"]
 size = Vector3(1.58618, 2.54568, 1.125)
@@ -45,17 +67,14 @@ sky = SubResource("Sky_cw0pf")
 ambient_light_source = 2
 ambient_light_color = Color(0.415686, 0.537255, 0.72549, 1)
 ambient_light_energy = 1.5
-ssao_enabled = true
 ssao_radius = 1.41
 ssao_intensity = 3.39
 ssao_detail = 2.0
 ssao_sharpness = 0.26
-ssil_enabled = true
 ssil_radius = 3.65
 ssil_intensity = 4.0
 ssil_sharpness = 0.43
 ssil_normal_rejection = 0.9
-sdfgi_enabled = true
 sdfgi_read_sky_light = false
 
 [node name="World" type="Node3D"]
@@ -75,6 +94,57 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.81879, 0)
 shape = SubResource("WorldBoundaryShape3D_tnj4i")
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="miniMap" type="PanelContainer" parent="UI"]
+clip_children = 1
+clip_contents = true
+offset_left = 3420.0
+offset_top = 20.0
+offset_right = 3820.0
+offset_bottom = 420.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_sjwbd")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="UI/miniMap"]
+texture_filter = 1
+layout_mode = 2
+stretch = true
+stretch_shrink = 2
+
+[node name="SubViewport" type="SubViewport" parent="UI/miniMap/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(200, 200)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="UI/miniMap/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 16, 0)
+projection = 1
+size = 40.0
+script = ExtResource("2_oakbx")
+
+[node name="miniMapBorder" type="PanelContainer" parent="UI"]
+offset_left = 3417.0
+offset_top = 17.0
+offset_right = 3823.0
+offset_bottom = 423.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mh7yw")
+
+[node name="staminaBar" type="TextureProgressBar" parent="UI"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -638.0
+offset_top = -71.0
+offset_right = -382.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(5, 4.5)
+value = 100.0
+fill_mode = 6
+texture_progress = ExtResource("3_h2kxg")
+tint_progress = Color(0.84608996, 0.84608996, 0.84608996, 1)
 
 [node name="Panel" type="Panel" parent="UI"]
 scale = Vector2(1.6, 1.6)
@@ -188,6 +258,7 @@ shape = SubResource("BoxShape3D_7xp1n")
 [node name="Player" parent="SubViewportContainer/SubViewport/myy/per" instance=ExtResource("17_cw0pf")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 3, 1, 7)
+character_mesh = ExtResource("6_h2kxg")
 
 [node name="camera_rig" type="Node3D" parent="SubViewportContainer/SubViewport/myy/per"]
 unique_name_in_owner = true

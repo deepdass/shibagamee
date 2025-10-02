@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PowerUps" load_steps=3 format=3 uid="uid://bh6wj5qtmksg6"]
+
+[ext_resource type="Script" uid="uid://ctxk67plu8g8l" path="res://Scripts/3PowerUps/RES_PowerUp.gd" id="1_31bh1"]
+[ext_resource type="PackedScene" uid="uid://du1ett16hu0d0" path="res://Scenes/powerUPs/5_Common/monster(stamina)/monster.fbx" id="1_utge7"]
+
+[resource]
+script = ExtResource("1_31bh1")
+mesh = ExtResource("1_utge7")
+description = "+20 stamina"
+rarity = "Common"
+type = "justUpgrades"
+stamina = 15.0
+metadata/_custom_type_script = "uid://ctxk67plu8g8l"

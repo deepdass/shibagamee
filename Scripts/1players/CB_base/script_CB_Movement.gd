@@ -94,6 +94,10 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, StatsManager.stats.movement_speed)
 		
 		running = false
+		if !dashing and StatsManager.stats.stamina < stamina_bar.max_value:
+				StatsManager.stats.stamina += 40 * delta
+				clamp(StatsManager.stats.stamina, 0 , stamina_bar.max_value)
+				set_stamina()
 	
 	animation_tree.set("parameters/AnimationNodeStateMachine/conditions/running", running)
 	animation_tree.set("parameters/AnimationNodeStateMachine/conditions/idle", !running)
@@ -112,6 +116,8 @@ func _on_dash_timer_timeout() -> void:
 func set_stamina() -> void:
 	stamina_bar.value = StatsManager.stats.stamina
 
+func set_maxVal(add : int) -> void:
+	stamina_bar.max_value += add
 ## movement - end ##
 
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b1snawenta0nr"
-path="res://.godot/imported/4hat.fbx-8aef65f5ac313063755a68c57cb725a7.scn"
+uid="uid://c1smcsixfgi77"
+path="res://.godot/imported/St.patric.fbx-f7e45f314ec5a898228fc205f3147ad7.scn"
 
 [deps]
 
-source_file="res://Scenes/powerUPs/5_Common/st pat (crit rate)/4hat.fbx"
-dest_files=["res://.godot/imported/4hat.fbx-8aef65f5ac313063755a68c57cb725a7.scn"]
+source_file="res://Scenes/powerUPs/5_Common/st pat (crit rate)/St.patric.fbx"
+dest_files=["res://.godot/imported/St.patric.fbx-f7e45f314ec5a898228fc205f3147ad7.scn"]
 
 [params]
 
@@ -49,4 +49,4 @@ _subresources={
 fbx/importer=0
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1
-fbx/naming_version=1
+fbx/naming_version=2

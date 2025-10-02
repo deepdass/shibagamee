@@ -96,6 +96,7 @@ func applyUpgrades(receivedPowerups: Stats) -> void:
 	stats.crit_damage += receivedPowerups.crit_damage
 	stats.movement_speed += receivedPowerups.movement_speed
 	if !receivedPowerups.stamina == 0:
+		the_base_character.set_maxVal(receivedPowerups.stamina)
 		stats.stamina += receivedPowerups.stamina
 		the_base_character.set_stamina()
 	
