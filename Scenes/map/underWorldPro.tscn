@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=4 uid="uid://rekblaynb4gg"]
+[gd_scene load_steps=67 format=4 uid="uid://rekblaynb4gg"]
 
 [ext_resource type="Script" uid="uid://b8tcib7cuxmbg" path="res://Scripts/0Managers/0_game_manager.gd" id="1_um8rm"]
 [ext_resource type="Script" uid="uid://bm5mc8ak8jjih" path="res://Scripts/0Managers/minimap_cam.gd" id="2_62ixm"]
@@ -38,8 +38,6 @@
 [ext_resource type="PackedScene" uid="uid://dvsa0eawo65uh" path="res://Assets/env/_myVeggies/ivyGround_6.fbx" id="25_w4wbn"]
 [ext_resource type="PackedScene" uid="uid://ceolwuxw83bo5" path="res://Assets/env/_myVeggies/ivyCorner_2.fbx" id="27_tu65r"]
 [ext_resource type="PackedScene" uid="uid://dffxgagomaeqe" path="res://Assets/env/_myVeggies/ivybush.fbx" id="28_tjdgt"]
-[ext_resource type="PackedScene" uid="uid://v1cnreituo6i" path="res://Assets/env/HalloweenBits/Assets/gltf/bone_C.gltf" id="32_67380"]
-[ext_resource type="PackedScene" uid="uid://dl5kj6onuwrcv" path="res://Assets/env/HalloweenBits/Assets/gltf/skull.gltf" id="33_jp8a1"]
 [ext_resource type="PackedScene" uid="uid://cnx23bwhhijuj" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/barrel_small.tscn" id="34_4xi8d"]
 [ext_resource type="PackedScene" uid="uid://cov5icp8oa8a" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/table_medium.tscn" id="37_c3sr5"]
 [ext_resource type="PackedScene" uid="uid://fk10dwa1jj41" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/chair.tscn" id="38_ga8wp"]
@@ -558,25 +556,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.107395, 0, -25.753262)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.696236, 0, -38.615147)
 
 [node name="box_large2" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("9_tjdgt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.234493, 0, -27.42759)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.32346, 0, -27.075798)
 
 [node name="box_small2" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("10_0wknt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0, -26.267824)
 
 [node name="box_large3" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("9_tjdgt")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -33.95575, 0, -27.718971)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.848988, 0, -27.567728)
 
 [node name="table_long" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("12_h0gvv")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -49.42504, 0, -52)
 
 [node name="box_large4" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("9_tjdgt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.223488, 0.04998541, -51.79332)
-
-[node name="bone_C2" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("32_67380")]
-transform = Transform3D(1, 0, 0, 0, -0.25881904, -0.9659258, 0, 0.9659258, -0.25881904, -51, 0.14979023, -51.0862)
-
-[node name="skull2" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("33_jp8a1")]
-transform = Transform3D(0.70415604, -0.09125829, 0.70415604, -0.02124679, 0.9885541, 0.1493629, -0.7097269, -0.120135896, 0.69415736, -52.12662, -0.019324899, -50.70747)
 
 [node name="barrel_small" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("34_4xi8d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.20373, 1.3094547, -51.7676)
@@ -606,10 +598,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -80)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.333359, 0.049985886, -78.702194)
 
 [node name="table_long4" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("12_h0gvv")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -18.76009, 0.049985886, -78.96054)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.76009, 0.049985886, -78.96054)
 
 [node name="box_small4" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("10_0wknt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.571465, 0.8499861, -79.66583)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.571465, 1.0277331, -79.66583)
 
 [node name="bone_A" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("20_lk2sa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.039375, 0.18802671, -33.273033)
@@ -714,7 +706,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 25.8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.089664, 0.049985886, 0.27362227)
 
 [node name="box_large11" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("9_tjdgt")]
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 20.678074, 0.04998398, -57.29939)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.678074, 0.04998398, -57.29939)
 
 [node name="box_small7" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("10_0wknt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.002666, 0.049984455, -55.89204)
@@ -754,6 +746,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.082085, 1.058852, -35.088
 
 [node name="box_large12" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("9_tjdgt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.84146, 0.04998541, -70.77605)
+
+[node name="skull6" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("21_dxabe")]
+transform = Transform3D(0.70710677, -0.08952997, 0.70141596, 0, 0.991952, 0.1266145, -0.70710677, -0.08952997, 0.70141596, -52.19283, 0.14328152, -50.624756)
+
+[node name="bone_C2" parent="SubViewportContainer/SubViewport/myy/envProps/PROPS" instance=ExtResource("41_ga8wp")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -50.958755, 0.04998517, -50.77352)
 
 [node name="veggies" type="Node" parent="SubViewportContainer/SubViewport/myy/envProps"]
 

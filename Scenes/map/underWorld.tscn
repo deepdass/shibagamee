@@ -1,17 +1,17 @@
-[gd_scene load_steps=33 format=3 uid="uid://dnusa7yud0k00"]
+[gd_scene load_steps=29 format=3 uid="uid://dnusa7yud0k00"]
 
 [ext_resource type="Script" uid="uid://b8tcib7cuxmbg" path="res://Scripts/0Managers/0_game_manager.gd" id="1_cc7uj"]
 [ext_resource type="Script" uid="uid://bjd6nnkoo61vr" path="res://Scripts/0Managers/0_dungeon_logic.gd" id="1_hmakl"]
 [ext_resource type="Texture2D" uid="uid://dwnmocndg7gk7" path="res://Assets/UI/Heart.png" id="2_hmakl"]
-[ext_resource type="MeshLibrary" uid="uid://61gf5acs8qic" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib1.tres" id="4_cc7uj"]
+[ext_resource type="MeshLibrary" uid="uid://crl8041p05pde" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib1.tres" id="4_cc7uj"]
 [ext_resource type="PackedScene" uid="uid://c7illv6kf10b2" path="res://Scenes/characters/players/character_base.tscn" id="5_2ulnn"]
 [ext_resource type="ArrayMesh" uid="uid://dwvhthktir4xx" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj/bottle_A_brown.obj" id="5_7bm7t"]
 [ext_resource type="PackedScene" uid="uid://7wuf3nd758mc" path="res://Scenes/powerUPs/PowerUp_chest.tscn" id="5_aq7sw"]
 [ext_resource type="MeshLibrary" uid="uid://itk8p671mpm7" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Propslib1.tres" id="6_moq3e"]
 [ext_resource type="ArrayMesh" uid="uid://c0m5np7dt27n4" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj/box_small.obj" id="7_7ecmq"]
 [ext_resource type="ArrayMesh" uid="uid://da70bkccr2th1" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj/box_large.obj" id="8_4m062"]
-[ext_resource type="ArrayMesh" uid="uid://bg5j6xp2ftsxj" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj/chair.obj" id="9_4m062"]
 [ext_resource type="ArrayMesh" uid="uid://v8k8krpm056d" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj/table_medium.obj" id="10_cc7uj"]
+[ext_resource type="PackedScene" uid="uid://b6gigdw1kf7l1" path="res://Scenes/props/chair.tscn" id="11_aq7sw"]
 [ext_resource type="ArrayMesh" uid="uid://jenrvgtt2wuu" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj/table_small.obj" id="11_hmakl"]
 [ext_resource type="ArrayMesh" uid="uid://28ko584fes8l" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj/keg.obj" id="12_mu2mn"]
 [ext_resource type="PackedScene" uid="uid://b6td1ktk5mvgv" path="res://Scenes/props/coin.tscn" id="13_moq3e"]
@@ -64,18 +64,6 @@ size = Vector3(1.51068, 1.5014, 1.51001)
 [sub_resource type="BoxShape3D" id="BoxShape3D_4m062"]
 size = Vector3(1, 0.998108, 1)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4bed1"]
-points = PackedVector3Array(-0.110879, 0.262821, 0.316096, -0.344498, -0.00973412, 0.140945, -0.344498, 0.0876452, 0.121494, -0.324991, 0.243346, 0.335547, -0.130362, -0.00973412, 0.355059, -0.208227, 0.204367, 0.0435979, -0.130362, -0.00973412, 0.140945, -0.344498, -0.00973412, 0.355059, -0.110879, 0.262821, 0.121494, -0.313119, 0.246194, 0.13099, -0.305553, 0.0876452, 0.0435979, -0.324991, 0.262821, 0.316096, -0.208227, 0.0876452, 0.0435979, -0.305553, 0.204367, 0.0435979, -0.110879, 0.243346, 0.335547, -0.110879, 0.184945, 0.121494, -0.344498, 0.126544, 0.335547, -0.344498, 0.126544, 0.121494, -0.344498, 0.0292176, 0.355059, -0.110879, 0.184945, 0.335547, -0.130362, 0.0292176, 0.355059)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4ukty"]
-points = PackedVector3Array(-0.208227, 0.204367, 0.0435674, -0.334624, 0.00178525, -0.329341, -0.344498, 0.0876452, -0.345798, -0.110879, 0.262821, -0.326322, -0.130362, -0.00973412, -0.131715, -0.324991, 0.262821, -0.112201, -0.305553, 0.0876452, 0.0435674, -0.130362, -0.00973412, -0.345798, -0.110879, 0.262821, -0.112201, -0.324991, 0.262821, -0.326322, -0.344498, -0.00973412, -0.131715, -0.208227, 0.0876452, 0.0435674, -0.305553, 0.204367, 0.0435674, -0.344498, 0.126544, -0.131715, -0.110879, 0.184945, -0.112201, -0.110879, 0.184945, -0.326322, -0.344498, 0.126544, -0.326322)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_s84dp"]
-points = PackedVector3Array(-0.310687, 0.272136, -0.301909, 0.110393, 0.47267, 0.375, 0.12274, 0.282316, -0.384734, -0.363962, 0.515884, -0.36522, -0.363962, 0.282316, 0.374482, 0.12274, 0.515884, -0.36522, -0.363962, 0.515884, 0.374482, 0.12274, 0.282316, 0.374482, -0.363962, 0.282316, -0.384734, 0.12274, 0.515884, 0.374482, -0.110974, 0.262821, 0.316092, -0.110974, 0.262821, -0.326268, -0.36837, 0.47173, -0.361558, -0.310687, 0.272136, 0.293164)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5a430"]
-points = PackedVector3Array(0.130003, 0.3, -0.363983, 0.351596, 1.05758, 0.375, 0.3526, 1.08116, 0.360253, 0.356344, -0.00973415, -0.345782, 0.148894, 0.0257486, 0.335086, 0.166503, 1.18689, -0.180429, 0.352056, 1.07844, -0.367579, 0.395296, 0.457626, 0.374482, 0.1526, 1.05672, 0.341679, 0.356344, -0.00973415, 0.33553, 0.12274, 0.515924, 0.374482, 0.148889, 0.0257202, -0.32584, 0.395296, 0.47714, -0.36522, 0.1526, 1.05672, -0.332417, 0.3526, 1.1935, 0.0794641, 0.12274, 0.496532, -0.384734, 0.166161, 1.18901, 0.171757, 0.1526, 1.1632, -0.101791, 0.37582, 0.496532, -0.384734, 0.166257, 1.07705, -0.36647, 0.3526, 1.17474, -0.182562, 0.129595, 0.335958, 0.374412, 0.168206, 1.0491, 0.367936, 0.277746, 1.21313, -0.0140859, 0.3526, 1.17474, 0.191824, 0.137677, 0.145314, 0.299263, 0.351157, 0.3, 0.373245, 0.165976, 1.09711, 0.33962, 0.1526, 1.1632, 0.111053, 0.16614, 1.20776, 0.0603519, 0.202758, 1.19486, 0.173454, 0.395296, 0.47714, 0.374482)
-
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mu2mn"]
 points = PackedVector3Array(-0.862202, 1.11022e-16, -0.893068, 0.982883, 0.983999, 0.983118, 0.92436, 1, 0.924401, -0.982909, 0.983991, 0.9831, -0.982909, 0.983991, -0.9831, 0.982883, 0.983999, -0.983118, 0.893027, -1.11022e-16, 0.862199, -0.862202, -1.11022e-16, 0.893068, 0.893027, 0, -0.862199, -0.924403, 1, -0.924401, -0.892877, 0, -0.862199, 0.981399, 0.891235, -0.981634, -0.924403, 1, 0.924401, 0.92436, 1, -0.924401, 0.862159, 1.11022e-16, 0.893068, -0.98142, 0.891226, 0.981612, 0.862159, 1.11022e-16, -0.893068, -0.892877, 0, 0.862199, 0.981399, 0.891235, 0.981634, -0.98142, 0.891226, -0.981612, 0.979167, 0.829172, -0.948724, -0.979165, 0.829157, 0.948679, -0.948487, 0.829091, -0.979156, -0.948487, 0.829091, 0.979156, 0.979167, 0.829172, 0.948724, -0.979165, 0.829157, -0.948679, 0.948443, 0.829091, -0.979156, 0.948443, 0.829091, 0.979156)
 
@@ -110,7 +98,7 @@ script = ExtResource("1_hmakl")
 
 [node name="Heart1" type="TextureRect" parent="UI/Panel"]
 texture_filter = 1
-layout_mode = 2
+layout_mode = 0
 offset_left = 18.0
 offset_top = 19.0
 offset_right = 200.0
@@ -121,7 +109,7 @@ expand_mode = 3
 
 [node name="Heart2" type="TextureRect" parent="UI/Panel"]
 texture_filter = 1
-layout_mode = 2
+layout_mode = 0
 offset_left = 108.0
 offset_top = 19.0
 offset_right = 290.0
@@ -132,7 +120,7 @@ expand_mode = 3
 
 [node name="Heart3" type="TextureRect" parent="UI/Panel"]
 texture_filter = 1
-layout_mode = 2
+layout_mode = 0
 offset_left = 198.0
 offset_top = 19.0
 offset_right = 380.0
@@ -143,7 +131,7 @@ expand_mode = 3
 
 [node name="Heart4" type="TextureRect" parent="UI/Panel"]
 texture_filter = 1
-layout_mode = 2
+layout_mode = 0
 offset_left = 288.0
 offset_top = 19.0
 offset_right = 470.0
@@ -154,7 +142,7 @@ expand_mode = 3
 
 [node name="Heart5" type="TextureRect" parent="UI/Panel"]
 texture_filter = 1
-layout_mode = 2
+layout_mode = 0
 offset_left = 378.0
 offset_top = 19.0
 offset_right = 560.0
@@ -165,7 +153,7 @@ expand_mode = 3
 
 [node name="Heart6" type="TextureRect" parent="UI/Panel"]
 texture_filter = 1
-layout_mode = 2
+layout_mode = 0
 offset_left = 468.0
 offset_top = 19.0
 offset_right = 650.0
@@ -176,7 +164,7 @@ expand_mode = 3
 
 [node name="Heart7" type="TextureRect" parent="UI/Panel"]
 texture_filter = 1
-layout_mode = 2
+layout_mode = 0
 offset_left = 558.0
 offset_top = 19.0
 offset_right = 740.0
@@ -197,7 +185,7 @@ stretch_shrink = 4
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(240, 135)
+size = Vector2i(480, 270)
 render_target_update_mode = 4
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
@@ -418,27 +406,8 @@ shape = SubResource("BoxShape3D_4m062")
 mesh = ExtResource("7_7ecmq")
 skeleton = NodePath("../../../../../../..")
 
-[node name="chair" type="RigidBody3D" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/props"]
+[node name="chair" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/props" instance=ExtResource("11_aq7sw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.6251, 5.05584, 9.25458)
-collision_layer = 4
-collision_mask = 7
-mass = 30.0
-
-[node name="Chair" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/props/chair"]
-mesh = ExtResource("9_4m062")
-skeleton = NodePath("../..")
-
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/props/chair"]
-shape = SubResource("ConvexPolygonShape3D_4bed1")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/props/chair"]
-shape = SubResource("ConvexPolygonShape3D_4ukty")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/props/chair"]
-shape = SubResource("ConvexPolygonShape3D_s84dp")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/props/chair"]
-shape = SubResource("ConvexPolygonShape3D_5a430")
 
 [node name="table" type="RigidBody3D" parent="SubViewportContainer/SubViewport/myy/NavigationRegion3D/props"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9249, 5.05584, 9.61184)
