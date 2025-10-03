@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhr680towhgop"]
+[gd_scene load_steps=4 format=3 uid="uid://bhr680towhgop"]
 
 [ext_resource type="Script" uid="uid://dsepagb0kj4c5" path="res://Scenes/powerUPs/sel_power_up.gd" id="1_5vuf2"]
+[ext_resource type="PackedScene" uid="uid://covgpjcq1khie" path="res://Assets/_my/vfx/powerUpeffect.tscn" id="2_52n0j"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_52n0j"]
 radius = 1.0
@@ -51,6 +52,8 @@ text = "Stats, Mythic"
 [node name="Label3" type="Label" parent="popUp/CanvasLayer2/PowerUp_popUP/VBoxContainer"]
 layout_mode = 2
 text = "Info"
+
+[node name="powerUPEffect" parent="." instance=ExtResource("2_52n0j")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

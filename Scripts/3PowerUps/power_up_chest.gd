@@ -34,11 +34,9 @@ func _process(_delta: float) -> void:
 			for i : Node3D in pts_parent.get_children():
 				var powerup_inst : Area3D = powerUp.instantiate()
 				i.add_child(powerup_inst)
+			pts_parent.visible = true
+			interact_area.queue_free()
 
-
-func _showPowerUps() -> void:
-	pts_parent.visible = true
-	interact_area.queue_free()
 
 
 func _on_interact_area_body_entered(_body: Node3D) -> void:

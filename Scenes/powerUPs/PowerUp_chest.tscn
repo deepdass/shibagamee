@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=4 uid="uid://7wuf3nd758mc"]
 
-[ext_resource type="Texture2D" uid="uid://e08etccomcp2" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="1_lbilg"]
+[ext_resource type="Texture2D" uid="uid://c3mchi10usuw1" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="1_lbilg"]
 [ext_resource type="Script" uid="uid://dki57qs1yif3i" path="res://Scripts/3PowerUps/power_up_chest.gd" id="1_ox5j7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lbilg"]
@@ -144,20 +144,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(-2.35619, 0, 0), Vector3(-2.35619, 0, 0), Vector3(0, 0, 0)]
 }
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.5),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"_showPowerUps"
-}]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ox5j7"]
 _data = {
@@ -177,7 +163,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0.772945, -2.22096)]
+"values": [Vector3(0, 1.337, -2.22096)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -189,7 +175,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-1.5, 0.772945, 1.77904)]
+"values": [Vector3(-1.5, 1.337, 1.77904)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -201,7 +187,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(1.5, 0.772945, 1.77904)]
+"values": [Vector3(1.5, 1.337, 1.77904)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -254,7 +240,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1, 2),
 "transitions": PackedFloat32Array(1, 0.517632, 1),
 "update": 0,
-"values": [Vector3(0, 0.772945, -2.22096), Vector3(0, 0.569786, -2.22096), Vector3(0, 0.772945, -2.22096)]
+"values": [Vector3(0, 0.9283608, -2.22096), Vector3(0, 0.7482789, -2.22096), Vector3(0, 0.928, -2.22096)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -266,7 +252,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1, 2),
 "transitions": PackedFloat32Array(1, 0.517632, 1),
 "update": 0,
-"values": [Vector3(-1.5, 0.772945, 1.77904), Vector3(-1.5, 0.569786, 1.77904), Vector3(-1.5, 0.772945, 1.77904)]
+"values": [Vector3(-1.5, 0.9283608, 1.77904), Vector3(-1.5, 0.7482789, 1.77904), Vector3(-1.5, 0.928, 1.77904)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -278,7 +264,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 1, 2),
 "transitions": PackedFloat32Array(1, 0.517632, 1),
 "update": 0,
-"values": [Vector3(1.5, 0.772945, 1.77904), Vector3(1.5, 0.569786, 1.77904), Vector3(1.5, 0.772945, 1.77904)]
+"values": [Vector3(1.5, 0.9283608, 1.77904), Vector3(1.5, 0.7482789, 1.77904), Vector3(1.5, 0.928, 1.77904)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -357,15 +343,16 @@ libraries = {
 }
 
 [node name="pts" type="Node3D" parent="."]
+visible = false
 
 [node name="pt1" type="Node3D" parent="pts"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.772945, -2.22096)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.337, -2.22096)
 
 [node name="pt2" type="Node3D" parent="pts"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.772945, 1.77904)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.337, 1.77904)
 
 [node name="pt3" type="Node3D" parent="pts"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.772945, 1.77904)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1.337, 1.77904)
 
 [node name="ptsAnim" type="AnimationPlayer" parent="."]
 root_node = NodePath("../pts")

@@ -80,7 +80,7 @@ func take_damage()  -> void:
 	health -= damageRec
 	
 	var fallChance : int = randi_range(0,100)
-	if fallChance < 15:
+	if fallChance < 5:
 		collision_shape_3d.disabled = true
 		timer.start()
 		animation_tree.set("parameters/conditions/fall",true)

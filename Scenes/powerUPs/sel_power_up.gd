@@ -26,6 +26,10 @@ func _ready() -> void:
 	powerup_mesh_inst.position = meshspawn.position
 	meshspawn.add_child(powerup_mesh_inst)
 	
+	#var mesh: MeshInstance3D = get_node("powerUPEffect").get_node("auraglows/auraGlow")
+	#mesh.material_override.set_shader_parameter("main_color", Color.REBECCA_PURPLE)
+	#get_node("powerUPEffect").get_node("spots").process_material.color = Color.RED
+	
 	sub_viewport = get_node(sub_viewport_path)
 
 
