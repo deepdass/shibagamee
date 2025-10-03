@@ -1,14 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://covgpjcq1khie"]
+[gd_scene load_steps=11 format=3 uid="uid://b60vdq2f12r1u"]
 
-[ext_resource type="Shader" uid="uid://874ucxv6qb5q" path="res://Shaders/powerupAura/S_blinkingAura.tres" id="1_mkgrf"]
-[ext_resource type="Texture2D" uid="uid://sgal27j1yn1e" path="res://Assets/_my/vfx/powerUp/t/T_Aura7.png" id="2_rwkmb"]
-[ext_resource type="Texture2D" uid="uid://cvikh2ru2phm" path="res://Assets/_my/vfx/powerUp/t/point.png" id="4_rwkmb"]
+[ext_resource type="Shader" uid="uid://874ucxv6qb5q" path="res://Shaders/powerupAura/S_blinkingAura.tres" id="1_xvqnp"]
+[ext_resource type="Texture2D" uid="uid://sgal27j1yn1e" path="res://Assets/_my/vfx/powerUp/t/T_Aura7.png" id="2_xsye6"]
+[ext_resource type="Texture2D" uid="uid://cvikh2ru2phm" path="res://Assets/_my/vfx/powerUp/t/point.png" id="3_q3xyi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ic20k"]
 render_priority = 0
-shader = ExtResource("1_mkgrf")
-shader_parameter/main_color = Color(0.53015363, 1.3224915, 1.585, 1)
-shader_parameter/T_transparency = ExtResource("2_rwkmb")
+shader = ExtResource("1_xvqnp")
+shader_parameter/main_color = Color(1.281, 0, 0, 1)
+shader_parameter/T_transparency = ExtResource("2_xsye6")
 
 [sub_resource type="QuadMesh" id="QuadMesh_i7xmq"]
 size = Vector2(2.8, 5)
@@ -18,7 +18,7 @@ transparency = 1
 shading_mode = 0
 vertex_color_use_as_albedo = true
 vertex_color_is_srgb = true
-albedo_texture = ExtResource("4_rwkmb")
+albedo_texture = ExtResource("3_q3xyi")
 billboard_mode = 1
 billboard_keep_scale = true
 proximity_fade_distance = 0.01
@@ -47,7 +47,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 1.3
 scale_max = 1.8
 scale_curve = SubResource("CurveTexture_rwkmb")
-color = Color(0.75854987, 3.1229057, 3.1229057, 1)
+color = Color(6.810317, 0, 0, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_ic20k"]
 
@@ -71,6 +71,7 @@ skeleton = NodePath("../..")
 [node name="spots" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8219179, 0)
 material_override = SubResource("StandardMaterial3D_mkgrf")
+amount = 10
 lifetime = 1.5
 process_material = SubResource("ParticleProcessMaterial_dqafi")
 draw_pass_1 = SubResource("QuadMesh_ic20k")
