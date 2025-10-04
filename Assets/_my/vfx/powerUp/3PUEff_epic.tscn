@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dd7akaxxdgm8i"]
+[gd_scene load_steps=14 format=3 uid="uid://dd7akaxxdgm8i"]
 
 [ext_resource type="Shader" uid="uid://874ucxv6qb5q" path="res://Shaders/powerupAura/S_blinkingAura.tres" id="1_day0u"]
 [ext_resource type="Texture2D" uid="uid://sgal27j1yn1e" path="res://Assets/_my/vfx/powerUp/t/T_Aura7.png" id="2_70eqg"]
 [ext_resource type="Texture2D" uid="uid://cvikh2ru2phm" path="res://Assets/_my/vfx/powerUp/t/point.png" id="3_6gxjg"]
+[ext_resource type="Shader" uid="uid://4ch02mv4w1c2" path="res://Shaders/powerupAura/downAura.tres" id="4_6gxjg"]
+[ext_resource type="ArrayMesh" uid="uid://60vbg2cwue1l" path="res://Assets/_my/vfx/powerUp/powerups_cylinde.obj" id="5_jcyik"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ic20k"]
 render_priority = 0
@@ -11,7 +13,7 @@ shader_parameter/main_color = Color(0.646, 0.114, 1.177, 1)
 shader_parameter/T_transparency = ExtResource("2_70eqg")
 
 [sub_resource type="QuadMesh" id="QuadMesh_i7xmq"]
-size = Vector2(2.8, 5)
+size = Vector2(2.333, 4.167)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mkgrf"]
 transparency = 1
@@ -51,10 +53,17 @@ color = Color(1.8831778, 0.41339287, 3.3529627, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_ic20k"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2qy12"]
+render_priority = 0
+shader = ExtResource("4_6gxjg")
+shader_parameter/circlecolor = Color(0.78039217, 0.10980392, 1, 1)
+shader_parameter/extraop = 0.0800000038
+shader_parameter/speed = Vector2(0, 1.5)
+
 [node name="powerUPEffect" type="Node3D"]
 
 [node name="auraglows" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.37441754, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29061627, 0)
 
 [node name="auraGlow" type="MeshInstance3D" parent="auraglows"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.71349454, 0)
@@ -69,9 +78,14 @@ mesh = SubResource("QuadMesh_i7xmq")
 skeleton = NodePath("../..")
 
 [node name="spots" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8219179, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7381166, 0)
 material_override = SubResource("StandardMaterial3D_mkgrf")
 amount = 6
 lifetime = 1.5
 process_material = SubResource("ParticleProcessMaterial_dqafi")
 draw_pass_1 = SubResource("QuadMesh_ic20k")
+
+[node name="PowerupsCylinder" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.4, 0, 0, 0, 2.256, 0, 0, 0, 1.4, 0, -0.182, 0)
+material_override = SubResource("ShaderMaterial_2qy12")
+mesh = ExtResource("5_jcyik")

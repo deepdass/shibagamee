@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxr3gb7uidkfc"]
+
+[ext_resource type="PackedScene" uid="uid://du1ett16hu0d0" path="res://Scenes/powerUPs/5_Common/monster(stamina)/monster.fbx" id="1_8k5am"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="monster" parent="." instance=ExtResource("1_8k5am")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46773595, 0)
