@@ -6,12 +6,19 @@ extends Area3D
 var sub_viewport : SubViewport = null
 @onready var sub_viewport_path : String = "/root/World/SubViewportContainer/SubViewport"
 
-const allRES : Array[String]= ["res://Scenes/powerUPs/5_Common/bootofswiftness/Boots_of_swiftness.tres",
+const allRES : Array[String] = ["res://Scenes/powerUPs/5_Common/bootofswiftness/Boots_of_swiftness.tres",
 "res://Scenes/powerUPs/5_Common/lifebloom/Lifebloom.tres",
 "res://Scenes/powerUPs/5_Common/st pat (crit rate)/St. Patricks.tres",
 "res://Scenes/powerUPs/5_Common/attack/attack.tres",
 "res://Scenes/powerUPs/5_Common/crackedskull (crit damage)/crackedskull.tres",
 "res://Scenes/powerUPs/5_Common/monster(stamina)/monster.tres"]
+
+
+const VFXarray : Array[String] = ["res://Assets/_my/vfx/powerUp/1PUEff_mythic.tscn",
+"res://Assets/_my/vfx/powerUp/2PUEff_legendary.tscn",
+"res://Assets/_my/vfx/powerUp/3PUEff_epic.tscn",
+"res://Assets/_my/vfx/powerUp/4PUEff_rare.tscn",
+"res://Assets/_my/vfx/powerUp/5PUEff_common.tscn"]
 
 
 @onready var meshspawn: Node3D = $meshspawn
@@ -26,12 +33,35 @@ func _ready() -> void:
 	powerup_mesh_inst.position = meshspawn.position
 	meshspawn.add_child(powerup_mesh_inst)
 	
-	#var mesh: MeshInstance3D = get_node("powerUPEffect").get_node("auraglows/auraGlow")
-	#mesh.material_override.set_shader_parameter("main_color", Color.REBECCA_PURPLE)
-	#get_node("powerUPEffect").get_node("spots").process_material.color = Color.RED
 	
+	if PowerUp.rarity == "Common":
+		spwanLevelVFX(VFXarray[4])
+		
+	elif PowerUp.rarity == "Rare":
+		spwanLevelVFX(VFXarray[3])
+	
+	elif PowerUp.rarity == "Epic":
+		spwanLevelVFX(VFXarray[2])
+	
+	elif PowerUp.rarity == "Legendary":
+		spwanLevelVFX(VFXarray[1])
+	
+	else:
+		spwanLevelVFX(VFXarray[0])
+	
+	
+	
+	
+	
+	###
 	sub_viewport = get_node(sub_viewport_path)
 
+
+func spwanLevelVFX(vfx : String) -> void:
+	var levVFX : PackedScene = load(vfx)
+	var levVFX_inst : Node3D = levVFX.instantiate()
+	levVFX_inst.position = position
+	add_child(levVFX_inst)
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and entered == true:
