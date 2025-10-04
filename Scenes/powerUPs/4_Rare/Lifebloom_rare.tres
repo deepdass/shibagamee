@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PowerUps" load_steps=3 format=3 uid="uid://djik0mx35ssfy"]
+
+[ext_resource type="PackedScene" uid="uid://d3x3x3tiiyhn4" path="res://Scenes/powerUPs/allpowerUpsThings/lifebloom/heartup_INST.tscn" id="1_7vjeo"]
+[ext_resource type="Script" uid="uid://ctxk67plu8g8l" path="res://Scripts/3PowerUps/RES_PowerUp.gd" id="2_hrt1s"]
+
+[resource]
+script = ExtResource("2_hrt1s")
+mesh = ExtResource("1_7vjeo")
+name = "Lifebloom"
+rarity = "Rare"
+type = "justUpgrades"
+health = 2
+metadata/_custom_type_script = "uid://ctxk67plu8g8l"

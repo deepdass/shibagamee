@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PowerUps" load_steps=3 format=3 uid="uid://dp3elfe3vb7sj"]
+
+[ext_resource type="PackedScene" uid="uid://d3qymr87utloi" path="res://Assets/zzAdventurers/Assets/gltf/sword_1handed.gltf" id="1_esykp"]
+[ext_resource type="Script" uid="uid://ctxk67plu8g8l" path="res://Scripts/3PowerUps/RES_PowerUp.gd" id="2_fxgmi"]
+
+[resource]
+script = ExtResource("2_fxgmi")
+mesh = ExtResource("1_esykp")
+name = "attack"
+rarity = "Mythic"
+type = "justUpgrades"
+attack = 1000000.0
+metadata/_custom_type_script = "uid://ctxk67plu8g8l"

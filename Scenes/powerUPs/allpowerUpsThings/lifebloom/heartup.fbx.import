@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dp1u6t0ep62f7"
-path="res://.godot/imported/heartup.fbx-ebfaec9051bbdbb0a357685212c8e92a.scn"
+path="res://.godot/imported/heartup.fbx-813c89981a0ef66128a7b3b355c64bfe.scn"
 
 [deps]
 
-source_file="res://Scenes/powerUPs/5_Common/lifebloom/heartup.fbx"
-dest_files=["res://.godot/imported/heartup.fbx-ebfaec9051bbdbb0a357685212c8e92a.scn"]
+source_file="res://Scenes/powerUPs/allpowerUpsThings/lifebloom/heartup.fbx"
+dest_files=["res://.godot/imported/heartup.fbx-813c89981a0ef66128a7b3b355c64bfe.scn"]
 
 [params]
 

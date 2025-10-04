@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PowerUps" load_steps=3 format=3 uid="uid://bbaburou3jiti"]
+
+[ext_resource type="PackedScene" uid="uid://bw2367pg0824m" path="res://Scenes/powerUPs/allpowerUpsThings/bootofswiftness/bootofswiftness.fbx" id="1_rlwrc"]
+[ext_resource type="Script" uid="uid://ctxk67plu8g8l" path="res://Scripts/3PowerUps/RES_PowerUp.gd" id="2_6wpym"]
+
+[resource]
+script = ExtResource("2_6wpym")
+mesh = ExtResource("1_rlwrc")
+name = "Boots of Swiftness"
+rarity = "Rare"
+type = "justUpgrades"
+movement_speed = 1.0
+metadata/_custom_type_script = "uid://ctxk67plu8g8l"

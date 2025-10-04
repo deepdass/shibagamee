@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PowerUps" load_steps=3 format=3 uid="uid://cnga46qvlfqah"]
 
-[ext_resource type="PackedScene" uid="uid://bw2367pg0824m" path="res://Scenes/powerUPs/5_Common/bootofswiftness/bootofswiftness.fbx" id="1_23f07"]
+[ext_resource type="PackedScene" uid="uid://bw2367pg0824m" path="res://Scenes/powerUPs/allpowerUpsThings/bootofswiftness/bootofswiftness.fbx" id="1_23f07"]
 [ext_resource type="Script" uid="uid://ctxk67plu8g8l" path="res://Scripts/3PowerUps/RES_PowerUp.gd" id="2_ddlh2"]
 
 [resource]

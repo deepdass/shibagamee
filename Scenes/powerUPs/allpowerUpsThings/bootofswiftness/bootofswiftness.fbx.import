@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://du1ett16hu0d0"
-path="res://.godot/imported/monster.fbx-5269c8666263789e54fe0b0905e06c15.scn"
+uid="uid://bw2367pg0824m"
+path="res://.godot/imported/bootofswiftness.fbx-a18d25eb48cd90d35f821f459c0cd76c.scn"
 
 [deps]
 
-source_file="res://Scenes/powerUPs/5_Common/monster(stamina)/monster.fbx"
-dest_files=["res://.godot/imported/monster.fbx-5269c8666263789e54fe0b0905e06c15.scn"]
+source_file="res://Scenes/powerUPs/allpowerUpsThings/bootofswiftness/bootofswiftness.fbx"
+dest_files=["res://.godot/imported/bootofswiftness.fbx-a18d25eb48cd90d35f821f459c0cd76c.scn"]
 
 [params]
 
@@ -17,7 +17,7 @@ nodes/root_type=""
 nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true
-nodes/root_scale=0.3
+nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
 nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
@@ -37,8 +37,16 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"materials": {
+"boot": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/texture.tres",
+"use_external/path": "uid://bihl8kfakw0ig"
+}
+}
+}
 fbx/importer=0
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1
-fbx/naming_version=2
+fbx/naming_version=1

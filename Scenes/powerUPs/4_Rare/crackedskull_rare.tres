@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PowerUps" load_steps=3 format=3 uid="uid://c75aktciaurc3"]
+
+[ext_resource type="PackedScene" uid="uid://bbv1qrxrs4y7w" path="res://Scenes/powerUPs/allpowerUpsThings/crackedskull (crit damage)/crackedskull.tscn" id="1_pm0ui"]
+[ext_resource type="Script" uid="uid://ctxk67plu8g8l" path="res://Scripts/3PowerUps/RES_PowerUp.gd" id="2_3v3nw"]
+
+[resource]
+script = ExtResource("2_3v3nw")
+mesh = ExtResource("1_pm0ui")
+name = "critDmg"
+rarity = "Rare"
+type = "justUpgrades"
+crit_damage = 40.0
+metadata/_custom_type_script = "uid://ctxk67plu8g8l"

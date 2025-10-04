@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpwuq7esl2hh7"
-path.s3tc="res://.godot/imported/bootofswiftness_0.png-4a78d78914e5c25ffa48a2de218df66f.s3tc.ctex"
+uid="uid://diq3cw5tnxo0v"
+path.s3tc="res://.godot/imported/monster_0.png-bb2544b0a5dfc319cc829f0f77a7b7a9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "33c924802a36c4f3415e10bb6940e832"
+"md5": "23086e7e8d5972c90fc96e1eb79b05c4"
 }
 
 [deps]
 
-source_file="res://Scenes/powerUPs/5_Common/bootofswiftness/bootofswiftness_0.png"
-dest_files=["res://.godot/imported/bootofswiftness_0.png-4a78d78914e5c25ffa48a2de218df66f.s3tc.ctex"]
+source_file="res://Scenes/powerUPs/allpowerUpsThings/monster(stamina)/monster_0.png"
+dest_files=["res://.godot/imported/monster_0.png-bb2544b0a5dfc319cc829f0f77a7b7a9.s3tc.ctex"]
 
 [params]
 
@@ -40,5 +40,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=32
 detect_3d/compress_to=0

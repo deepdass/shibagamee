@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=4 uid="uid://rekblaynb4gg"]
+[gd_scene load_steps=67 format=4 uid="uid://rekblaynb4gg"]
 
 [ext_resource type="Script" uid="uid://b8tcib7cuxmbg" path="res://Scripts/0Managers/0_game_manager.gd" id="1_um8rm"]
 [ext_resource type="Script" uid="uid://bm5mc8ak8jjih" path="res://Scripts/0Managers/minimap_cam.gd" id="2_62ixm"]
@@ -50,11 +50,6 @@
 [ext_resource type="PackedScene" uid="uid://b756tkw3ra6m6" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/keg.tscn" id="47_6wjr2"]
 [ext_resource type="PackedScene" uid="uid://cuysc4xedrcam" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/bottle_A_brown.tscn" id="48_o0qel"]
 [ext_resource type="PackedScene" uid="uid://dki0ifhnm8ilv" path="res://Assets/env/_myVeggies/ivyGround_4.fbx" id="49_rfjiq"]
-[ext_resource type="PackedScene" uid="uid://b60vdq2f12r1u" path="res://Assets/_my/vfx/powerUp/1PUEff_mythic.tscn" id="51_m5sgk"]
-[ext_resource type="PackedScene" uid="uid://c3vp0rhaak2ge" path="res://Assets/_my/vfx/powerUp/2PUEff_legendary.tscn" id="52_uxsn7"]
-[ext_resource type="PackedScene" uid="uid://dd7akaxxdgm8i" path="res://Assets/_my/vfx/powerUp/3PUEff_epic.tscn" id="53_sxwsn"]
-[ext_resource type="PackedScene" uid="uid://covgpjcq1khie" path="res://Assets/_my/vfx/powerUp/4PUEff_rare.tscn" id="54_o0pdb"]
-[ext_resource type="PackedScene" uid="uid://brmxo7nxl3yxt" path="res://Assets/_my/vfx/powerUp/5PUEff_common.tscn" id="55_c7mee"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2ulnn"]
 
@@ -1139,21 +1134,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -12.2513)
 
 [node name="room11" parent="SubViewportContainer/SubViewport/myy/rooms" instance=ExtResource("5_n3mfx")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -26, 0, -82)
-
-[node name="powerUPEffect" parent="." instance=ExtResource("51_m5sgk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6349277, 1.4620733, -0.20304108)
-
-[node name="powerUPEffect2" parent="." instance=ExtResource("52_uxsn7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3305514, 1.4620733, -0.20304108)
-
-[node name="powerUPEffect3" parent="." instance=ExtResource("53_sxwsn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06009078, 1.4620733, -0.20304108)
-
-[node name="powerUPEffect4" parent="." instance=ExtResource("54_o0pdb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3650723, 1.4620733, -0.20304108)
-
-[node name="powerUPEffect5" parent="." instance=ExtResource("55_c7mee")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.724361, 1.4620733, -0.20304108)
 
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
 [connection signal="body_entered" from="killzone" to="GameManager" method="_on_killzone_body_entered"]

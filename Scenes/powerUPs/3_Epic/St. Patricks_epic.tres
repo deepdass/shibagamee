@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PowerUps" load_steps=3 format=3 uid="uid://c8l13gqdfcpi1"]
+
+[ext_resource type="PackedScene" uid="uid://c1smcsixfgi77" path="res://Scenes/powerUPs/allpowerUpsThings/st pat (crit rate)/St.patric.fbx" id="1_o8iew"]
+[ext_resource type="Script" uid="uid://ctxk67plu8g8l" path="res://Scripts/3PowerUps/RES_PowerUp.gd" id="2_t26g5"]
+
+[resource]
+script = ExtResource("2_t26g5")
+mesh = ExtResource("1_o8iew")
+name = "St. Patricks"
+rarity = "Epic"
+type = "justUpgrades"
+crit_rate = 20.0
+metadata/_custom_type_script = "uid://ctxk67plu8g8l"

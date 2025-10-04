@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PowerUps" load_steps=3 format=3 uid="uid://dgxcndfd5q2wl"]
+
+[ext_resource type="PackedScene" uid="uid://d3qymr87utloi" path="res://Assets/zzAdventurers/Assets/gltf/sword_1handed.gltf" id="1_p5fcn"]
+[ext_resource type="Script" uid="uid://ctxk67plu8g8l" path="res://Scripts/3PowerUps/RES_PowerUp.gd" id="2_tyyfw"]
+
+[resource]
+script = ExtResource("2_tyyfw")
+mesh = ExtResource("1_p5fcn")
+name = "attack"
+rarity = "Rare"
+type = "justUpgrades"
+attack = 30.0
+metadata/_custom_type_script = "uid://ctxk67plu8g8l"

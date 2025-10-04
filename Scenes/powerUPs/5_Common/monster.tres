@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PowerUps" load_steps=3 format=3 uid="uid://bh6wj5qtmksg6"]
 
 [ext_resource type="Script" uid="uid://ctxk67plu8g8l" path="res://Scripts/3PowerUps/RES_PowerUp.gd" id="1_31bh1"]
-[ext_resource type="PackedScene" uid="uid://dxr3gb7uidkfc" path="res://Scenes/powerUPs/5_Common/monster(stamina)/Scene_monster.tscn" id="1_utge7"]
+[ext_resource type="PackedScene" uid="uid://dxr3gb7uidkfc" path="res://Scenes/powerUPs/allpowerUpsThings/monster(stamina)/Scene_monster.tscn" id="1_utge7"]
 
 [resource]
 script = ExtResource("1_31bh1")

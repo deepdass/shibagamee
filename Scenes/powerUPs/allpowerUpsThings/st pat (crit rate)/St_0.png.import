@@ -2,24 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://diq3cw5tnxo0v"
-path.s3tc="res://.godot/imported/monster_0.png-3407a886061a978b4c06f4374b5487f6.s3tc.ctex"
+uid="uid://5pdg8dw2046m"
+path="res://.godot/imported/St_0.png-e241f014b8c3edcf91b30a831d2a31ef.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
-"md5": "23086e7e8d5972c90fc96e1eb79b05c4"
+"md5": "33c924802a36c4f3415e10bb6940e832"
 }
 
 [deps]
 
-source_file="res://Scenes/powerUPs/5_Common/monster(stamina)/monster_0.png"
-dest_files=["res://.godot/imported/monster_0.png-3407a886061a978b4c06f4374b5487f6.s3tc.ctex"]
+source_file="res://Scenes/powerUPs/allpowerUpsThings/st pat (crit rate)/St_0.png"
+dest_files=["res://.godot/imported/St_0.png-e241f014b8c3edcf91b30a831d2a31ef.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,5 +39,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=32
-detect_3d/compress_to=0
+process/size_limit=0
+detect_3d/compress_to=1

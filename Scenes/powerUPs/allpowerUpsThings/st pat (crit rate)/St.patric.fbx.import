@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c1smcsixfgi77"
-path="res://.godot/imported/St.patric.fbx-f7e45f314ec5a898228fc205f3147ad7.scn"
+path="res://.godot/imported/St.patric.fbx-6daeb0945542728ffaaa3abee5c113f8.scn"
 
 [deps]
 
-source_file="res://Scenes/powerUPs/5_Common/st pat (crit rate)/St.patric.fbx"
-dest_files=["res://.godot/imported/St.patric.fbx-f7e45f314ec5a898228fc205f3147ad7.scn"]
+source_file="res://Scenes/powerUPs/allpowerUpsThings/st pat (crit rate)/St.patric.fbx"
+dest_files=["res://.godot/imported/St.patric.fbx-6daeb0945542728ffaaa3abee5c113f8.scn"]
 
 [params]
 

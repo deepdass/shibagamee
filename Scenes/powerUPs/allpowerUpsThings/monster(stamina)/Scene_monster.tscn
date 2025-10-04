@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dxr3gb7uidkfc"]
 
-[ext_resource type="PackedScene" uid="uid://du1ett16hu0d0" path="res://Scenes/powerUPs/5_Common/monster(stamina)/monster.fbx" id="1_8k5am"]
+[ext_resource type="PackedScene" uid="uid://du1ett16hu0d0" path="res://Scenes/powerUPs/allpowerUpsThings/monster(stamina)/monster.fbx" id="1_8k5am"]
 
 [node name="Node3D" type="Node3D"]
 

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PowerUps" load_steps=3 format=3 uid="uid://hdprvyj1js65"]
+
+[ext_resource type="PackedScene" uid="uid://dxr3gb7uidkfc" path="res://Scenes/powerUPs/allpowerUpsThings/monster(stamina)/Scene_monster.tscn" id="1_uf7h8"]
+[ext_resource type="Script" uid="uid://ctxk67plu8g8l" path="res://Scripts/3PowerUps/RES_PowerUp.gd" id="2_x2ct2"]
+
+[resource]
+script = ExtResource("2_x2ct2")
+mesh = ExtResource("1_uf7h8")
+description = "+20 stamina"
+rarity = "Legendary"
+type = "justUpgrades"
+stamina = 100.0
+metadata/_custom_type_script = "uid://ctxk67plu8g8l"

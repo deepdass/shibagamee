@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PowerUps" load_steps=3 format=3 uid="uid://cvponw3l3u28w"]
 
-[ext_resource type="PackedScene" uid="uid://bbv1qrxrs4y7w" path="res://Scenes/powerUPs/5_Common/crackedskull (crit damage)/crackedskull.tscn" id="1_c3ncr"]
+[ext_resource type="PackedScene" uid="uid://bbv1qrxrs4y7w" path="res://Scenes/powerUPs/allpowerUpsThings/crackedskull (crit damage)/crackedskull.tscn" id="1_c3ncr"]
 [ext_resource type="Script" uid="uid://ctxk67plu8g8l" path="res://Scripts/3PowerUps/RES_PowerUp.gd" id="2_e8cwf"]
 
 [resource]

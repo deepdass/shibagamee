@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PowerUps" load_steps=3 format=3 uid="uid://cufjy62kehcki"]
 
-[ext_resource type="PackedScene" uid="uid://c1smcsixfgi77" path="res://Scenes/powerUPs/5_Common/st pat (crit rate)/St.patric.fbx" id="1_xbesc"]
+[ext_resource type="PackedScene" uid="uid://c1smcsixfgi77" path="res://Scenes/powerUPs/allpowerUpsThings/st pat (crit rate)/St.patric.fbx" id="1_xbesc"]
 [ext_resource type="Script" uid="uid://ctxk67plu8g8l" path="res://Scripts/3PowerUps/RES_PowerUp.gd" id="2_yt2ti"]
 
 [resource]
