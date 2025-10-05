@@ -61,7 +61,7 @@ points = PackedVector3Array(-0.9750742, 0.8005195, -1.4328429, -1.0317461, 1.047
 [node name="table_long" type="RigidBody3D"]
 collision_layer = 4
 collision_mask = 7
-mass = 90.0
+mass = 180.0
 
 [node name="table_long" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_8837x")
