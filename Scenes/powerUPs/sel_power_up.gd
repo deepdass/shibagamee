@@ -6,42 +6,32 @@ extends Area3D
 var sub_viewport : SubViewport = null
 @onready var sub_viewport_path : String = "/root/World/SubViewportContainer/SubViewport"
 
-const allRES_dict : Dictionary = {"Mythic": [],
+const allRES_dict : Dictionary = {"Mythic": ["res://Scenes/powerUPs/1_mythic/attack_mythic.tres"],
 
-"Legendary": [],
+"Legendary": ["res://Scenes/powerUPs/2_Legendary/monster_legendary.tres"],
 
-"Epic": [],
-
-"Rare": [],
-
-"Common": []}
-
-
-const allRES : Array[String] = ["res://Scenes/powerUPs/5_Common/attack.tres",
-"res://Scenes/powerUPs/5_Common/Boots_of_swiftness.tres",
-"res://Scenes/powerUPs/5_Common/crackedskull.tres",
-"res://Scenes/powerUPs/5_Common/Lifebloom.tres",
-"res://Scenes/powerUPs/5_Common/monster.tres",
-"res://Scenes/powerUPs/5_Common/St. Patricks.tres",
-
-"res://Scenes/powerUPs/4_Rare/attack_rare.tres",
-"res://Scenes/powerUPs/4_Rare/Boots_of_swiftness_rare.tres",
-"res://Scenes/powerUPs/4_Rare/crackedskull_rare.tres",
-"res://Scenes/powerUPs/4_Rare/Lifebloom_rare.tres",
-"res://Scenes/powerUPs/4_Rare/monster_rare.tres",
-"res://Scenes/powerUPs/4_Rare/St. Patricks_rare.tres",
-
-"res://Scenes/powerUPs/3_Epic/attack_epic.tres",
+"Epic": ["res://Scenes/powerUPs/3_Epic/attack_epic.tres",
 "res://Scenes/powerUPs/3_Epic/Boots_of_swiftness_epic.tres",
 "res://Scenes/powerUPs/3_Epic/crackedskull_epic.tres",
 "res://Scenes/powerUPs/3_Epic/Lifebloom_epic.tres",
 "res://Scenes/powerUPs/3_Epic/monster_epic.tres",
-"res://Scenes/powerUPs/3_Epic/St. Patricks_epic.tres",
+"res://Scenes/powerUPs/3_Epic/St. Patricks_epic.tres"],
 
-"res://Scenes/powerUPs/1_mythic/attack_mythic.tres",
+"Rare": ["res://Scenes/powerUPs/4_Rare/attack_rare.tres",
+"res://Scenes/powerUPs/4_Rare/Boots_of_swiftness_rare.tres",
+"res://Scenes/powerUPs/4_Rare/crackedskull_rare.tres",
+"res://Scenes/powerUPs/4_Rare/Lifebloom_rare.tres",
+"res://Scenes/powerUPs/4_Rare/monster_rare.tres",
+"res://Scenes/powerUPs/4_Rare/St. Patricks_rare.tres"],
 
-"res://Scenes/powerUPs/2_Legendary/monster_legendary.tres"]
+"Common": ["res://Scenes/powerUPs/5_Common/attack.tres",
+"res://Scenes/powerUPs/5_Common/Boots_of_swiftness.tres",
+"res://Scenes/powerUPs/5_Common/crackedskull.tres",
+"res://Scenes/powerUPs/5_Common/Lifebloom.tres",
+"res://Scenes/powerUPs/5_Common/monster.tres",
+"res://Scenes/powerUPs/5_Common/St. Patricks.tres"]}
 
+var allrarity : Array = allRES_dict.keys()
 
 const VFXarray : Array[String] = ["res://Assets/_my/vfx/powerUp/1PUEff_mythic.tscn",
 "res://Assets/_my/vfx/powerUp/2PUEff_legendary.tscn",
@@ -56,31 +46,19 @@ const VFXarray : Array[String] = ["res://Assets/_my/vfx/powerUp/1PUEff_mythic.ts
 #@onready var sprite_3d: Sprite3D = $Sprite3D
 
 func _ready() -> void:
-	var RESstring : String = allRES[randi_range(0,(allRES.size()-1))]
+	
+	var powerUP_rarity : String = allRES_dict.keys().pick_random()
+	print(powerUP_rarity)
+	
+	var RESstring : String = allRES_dict[powerUP_rarity].pick_random()
 	PowerUp = load(RESstring)
 	var powerup_mesh_inst : Node3D = PowerUp.mesh.instantiate()
 	powerup_mesh_inst.position = meshspawn.position
 	meshspawn.add_child(powerup_mesh_inst)
 	
+	spwanLevelVFX(VFXarray[allrarity.find(powerUP_rarity)])
 	
-	if PowerUp.rarity == "Common":
-		spwanLevelVFX(VFXarray[4])
-		
-	elif PowerUp.rarity == "Rare":
-		spwanLevelVFX(VFXarray[3])
-	
-	elif PowerUp.rarity == "Epic":
-		spwanLevelVFX(VFXarray[2])
-	
-	elif PowerUp.rarity == "Legendary":
-		spwanLevelVFX(VFXarray[1])
-	
-	else:
-		spwanLevelVFX(VFXarray[0])
-	
-	
-	
-	
+
 	
 	###
 	sub_viewport = get_node(sub_viewport_path)

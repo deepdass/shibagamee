@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b60vdq2f12r1u"]
+[gd_scene load_steps=12 format=3 uid="uid://b60vdq2f12r1u"]
 
 [ext_resource type="Shader" uid="uid://874ucxv6qb5q" path="res://Shaders/powerupAura/S_blinkingAura.tres" id="1_xvqnp"]
 [ext_resource type="Texture2D" uid="uid://sgal27j1yn1e" path="res://Assets/_my/vfx/powerUp/t/T_Aura7.png" id="2_xsye6"]
@@ -26,32 +26,11 @@ billboard_keep_scale = true
 proximity_fade_distance = 0.01
 stencil_flags = 2
 
+[sub_resource type="QuadMesh" id="QuadMesh_ic20k"]
+
 [sub_resource type="Curve" id="Curve_mkgrf"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_rwkmb"]
-width = 32
-curve = SubResource("Curve_mkgrf")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dqafi"]
-emission_shape = 6
-emission_ring_axis = Vector3(0, 1, 0)
-emission_ring_height = 2.0
-emission_ring_radius = 1.0
-emission_ring_inner_radius = 0.7
-emission_ring_cone_angle = 90.0
-direction = Vector3(0, 1, 0)
-spread = 5.0
-initial_velocity_min = 0.5
-initial_velocity_max = 1.1999999
-gravity = Vector3(0, 0, 0)
-scale_min = 1.3
-scale_max = 1.8
-scale_curve = SubResource("CurveTexture_rwkmb")
-color = Color(6.810317, 0, 0, 1)
-
-[sub_resource type="QuadMesh" id="QuadMesh_ic20k"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w1vhe"]
 render_priority = 0
@@ -77,13 +56,29 @@ material_override = SubResource("ShaderMaterial_ic20k")
 mesh = SubResource("QuadMesh_i7xmq")
 skeleton = NodePath("../..")
 
-[node name="spots" type="GPUParticles3D" parent="."]
+[node name="spots" type="CPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0852929, 0)
 material_override = SubResource("StandardMaterial3D_mkgrf")
 amount = 10
 lifetime = 1.5
-process_material = SubResource("ParticleProcessMaterial_dqafi")
-draw_pass_1 = SubResource("QuadMesh_ic20k")
+fixed_fps = 30
+visibility_aabb = AABB(-4, -4, -4, 8, 8, 8)
+mesh = SubResource("QuadMesh_ic20k")
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 2.0
+emission_ring_radius = 1.2
+emission_ring_inner_radius = 0.8
+emission_ring_cone_angle = 90.0
+direction = Vector3(0, 1, 0)
+spread = 5.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 0.5
+initial_velocity_max = 1.1999999
+scale_amount_min = 1.3
+scale_amount_max = 1.8
+scale_amount_curve = SubResource("Curve_mkgrf")
+color = Color(6.810317, 0, 0, 1)
 
 [node name="PowerupsCylinder" type="MeshInstance3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 3.222, 0, 0, 0, 2, 0, -0.182, 0)
