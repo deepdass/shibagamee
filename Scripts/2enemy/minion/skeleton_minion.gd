@@ -20,7 +20,7 @@ var health : float = 200
 
 const  SPEED : float = 4.2
 const ATTACK_RANGE : float = 1.5
-const KnockbackMul : int = 25
+const KnockbackMul : int = 35
 
 const enem_KnockbackMul : int = 40
 var state_machine : AnimationNodeStateMachinePlayback
@@ -72,6 +72,7 @@ func _hitfinish() -> void:
 		player.velocity += Vector3(dir.x , dir.y * 0.1, dir.z ) * KnockbackMul
 		player.decrease_health()
 		player.decrease_health()
+		player.game_manager.shakeCamera(0.3,0.1)
 		
 	
 

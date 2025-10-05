@@ -122,16 +122,16 @@ navigation_mesh = SubResource("NavigationMesh_hmakl")
 [node name="spwans" type="Marker3D" parent="NavigationRegion3D"]
 
 [node name="Node3D" type="Marker3D" parent="NavigationRegion3D/spwans"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9407, 3, -15.4763)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.802462, 3, -14.398468)
 
 [node name="Node3D2" type="Marker3D" parent="NavigationRegion3D/spwans"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.64004, 3, -20.4052)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.259092, 3, -19.327366)
 
 [node name="Node3D3" type="Marker3D" parent="NavigationRegion3D/spwans"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.828479, 3, -16.114)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6830952, 3, -15.036168)
 
 [node name="Node3D4" type="Marker3D" parent="NavigationRegion3D/spwans"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.51523, 3, -9.28849)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3698463, 3, -8.210658)
 
 [node name="env" type="Marker3D" parent="NavigationRegion3D"]
 

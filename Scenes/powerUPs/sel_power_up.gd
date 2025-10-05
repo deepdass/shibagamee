@@ -50,7 +50,6 @@ func _ready() -> void:
 	randomize()
 	
 	var powerUP_rarity : String = allRES_dict.keys().pick_random()
-	print(powerUP_rarity)
 	
 	var RESstring : String = allRES_dict[powerUP_rarity].pick_random()
 	PowerUp = load(RESstring)

@@ -44,8 +44,7 @@ func _physics_process(delta: float) -> void:
 		camera_3d.position = camera_3d.position.move_toward(cam_initailpt.position, delta * 25)
 		camera_3d.position = camera_3d.position.move_toward(cam_initailpt.position + Vector3(0,0.01,0.01), delta * 25)
 	##
-	
-	
+		
 	var mouse_pos : Vector2 = sub_viewport.get_mouse_position()
 	ray_origin = camera_3d.project_ray_origin(mouse_pos)
 	ray_target_pt = ray_origin + camera_3d.project_ray_normal(mouse_pos) * 1000
@@ -67,6 +66,19 @@ func _physics_process(delta: float) -> void:
 		else:
 			panel_2.get_node("tip").visible = false
 		
+
+func shakeCamera(duration :float, strength: float) -> void:
+	var camera_initial_pos : Vector3 = camera_rig.global_position
+	var shake_start_time : float = Time.get_ticks_msec()/1000.0
+	
+	while (Time.get_ticks_msec() / 1000.0) - shake_start_time < duration:
+		var x: float = randf_range(-strength, strength)
+		var y: float = randf_range(-strength, strength)
+		camera_rig.global_position = Vector3(x, y, 0) + camera_initial_pos
+		await get_tree().process_frame
+		
+	camera_rig.global_position = lerp(camera_rig.position,player.position,0.13)
+
 
 func update_UI() -> void: 
 	if hearts.size() >= player.StatsManager.stats.health:

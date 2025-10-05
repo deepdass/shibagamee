@@ -11,7 +11,7 @@ var timer:int = 0
 func _physics_process(delta: float) -> void:
 	var forward_direction : Vector3 = global_transform.basis.z.normalized()
 	global_translate(forward_direction * projectile_speed * delta)
-
+	
 func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
 	queue_free()
 
@@ -22,6 +22,11 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		body.take_damage()
 		spawn_hiteffect()
 	elif !body.has_method("decrease_health") and body != rigid:
+		
+		if body is RigidBody3D:
+			var dir : Vector3 = (body.global_position - global_position).normalized()
+			body.apply_impulse(dir * 5000)  # tweak force value
+		
 		audio_stream_player.stop()
 		spawn_hiteffect()
 		queue_free()

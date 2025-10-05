@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bbco0ihgwlru1"]
+[gd_scene load_steps=19 format=3 uid="uid://bbco0ihgwlru1"]
 
 [ext_resource type="Script" uid="uid://bcih858s23f8s" path="res://Scripts/1players/Mage/mage_projectile.gd" id="1_modmu"]
 [ext_resource type="ArrayMesh" uid="uid://d11xfp7ihys5v" path="res://Assets/_my/fireball_head_mesh.obj" id="2_0gr0s"]
@@ -56,9 +56,6 @@ point_count = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iguuu"]
 size = Vector3(0.556105, 0.6899414, 0.546387)
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_3b7pp"]
-radius = 0.1985208
 
 [node name="mage_projectile" type="Node3D"]
 script = ExtResource("1_modmu")
@@ -120,13 +117,5 @@ volume_db = -10.0
 autoplay = true
 bus = &"SFX"
 
-[node name="rigid" type="RigidBody3D" parent="."]
-script = ExtResource("1_modmu")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="rigid"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.076024234)
-shape = SubResource("SphereShape3D_3b7pp")
-
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]
-[connection signal="body_exited" from="rigid" to="rigid" method="_on_body_exited"]
