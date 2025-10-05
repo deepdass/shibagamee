@@ -1,5 +1,6 @@
 extends Node3D
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+@onready var rigid: RigidBody3D = $rigid
 
 @onready var hiteffect : PackedScene = preload("res://Assets/_my/vfx/hiteffects/hiteffect_scene.tscn")
 
@@ -19,11 +20,15 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	
 	if body.has_method("take_damage"):
 		body.take_damage()
-	elif body is RigidBody3D:
-		pass
-	elif !body.has_method("decrease_health"):
+		spawn_hiteffect()
+	elif !body.has_method("decrease_health") and body != rigid:
 		audio_stream_player.stop()
-		var hiteffect_inst : Node3D = hiteffect.instantiate()
-		hiteffect_inst.position = position
-		get_tree().get_current_scene().add_child(hiteffect_inst)
+		spawn_hiteffect()
 		queue_free()
+
+
+
+func spawn_hiteffect() -> void:
+	var hiteffect_inst : Node3D = hiteffect.instantiate()
+	hiteffect_inst.position = position
+	get_tree().get_current_scene().add_child(hiteffect_inst)
