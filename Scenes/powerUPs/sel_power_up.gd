@@ -47,6 +47,8 @@ const VFXarray : Array[String] = ["res://Assets/_my/vfx/powerUp/1PUEff_mythic.ts
 
 func _ready() -> void:
 	
+	randomize()
+	
 	var powerUP_rarity : String = allRES_dict.keys().pick_random()
 	print(powerUP_rarity)
 	

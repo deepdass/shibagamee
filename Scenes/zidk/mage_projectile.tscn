@@ -1,10 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://bbco0ihgwlru1"]
+[gd_scene load_steps=20 format=3 uid="uid://bbco0ihgwlru1"]
 
 [ext_resource type="Script" uid="uid://bcih858s23f8s" path="res://Scripts/1players/Mage/mage_projectile.gd" id="1_modmu"]
 [ext_resource type="ArrayMesh" uid="uid://d11xfp7ihys5v" path="res://Assets/_my/fireball_head_mesh.obj" id="2_0gr0s"]
-[ext_resource type="Shader" uid="uid://dgxuvs6hpakck" path="res://Shaders/pojectile/mage_projectile_ball.tres" id="2_wmgsc"]
-[ext_resource type="Shader" uid="uid://dna72u8nellpt" path="res://Shaders/pojectile/mage_projectile.tres" id="3_36bjb"]
-[ext_resource type="Shader" uid="uid://dey5l5ng5n1mv" path="res://Shaders/pojectile/mage_projectile_trail.tres" id="5_36bjb"]
+[ext_resource type="Shader" uid="uid://dgxuvs6hpakck" path="res://Shaders/pojectile/basic_fireball/mage_projectile_ball.tres" id="2_wmgsc"]
+[ext_resource type="Shader" uid="uid://dna72u8nellpt" path="res://Shaders/pojectile/basic_fireball/mage_projectile.tres" id="3_36bjb"]
+[ext_resource type="Shader" uid="uid://dey5l5ng5n1mv" path="res://Shaders/pojectile/basic_fireball/mage_projectile_trail.tres" id="5_36bjb"]
 [ext_resource type="Texture2D" uid="uid://ds4nwe17k3hwt" path="res://Assets/_my/T_VFX_basic1.PNG" id="6_iguuu"]
 [ext_resource type="AudioStream" uid="uid://bxrtsx3bts2hl" path="res://Assets/Audio/431174__highpixel__fireball-explosion.wav" id="7_3b7pp"]
 
@@ -56,6 +56,9 @@ point_count = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iguuu"]
 size = Vector3(0.556105, 0.6899414, 0.546387)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3b7pp"]
+radius = 0.1985208
 
 [node name="mage_projectile" type="Node3D"]
 script = ExtResource("1_modmu")
@@ -116,6 +119,12 @@ stream = ExtResource("7_3b7pp")
 volume_db = -10.0
 autoplay = true
 bus = &"SFX"
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.076024234)
+shape = SubResource("SphereShape3D_3b7pp")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]

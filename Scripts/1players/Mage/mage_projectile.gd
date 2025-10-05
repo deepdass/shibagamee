@@ -1,6 +1,8 @@
 extends Node3D
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
+@onready var hiteffect : PackedScene = preload("res://Assets/_my/vfx/hiteffects/hiteffect_scene.tscn")
+
 var projectile_speed : int = 30
 var timer:int = 0
 
@@ -14,8 +16,14 @@ func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
+	
 	if body.has_method("take_damage"):
 		body.take_damage()
+	elif body is RigidBody3D:
+		pass
 	elif !body.has_method("decrease_health"):
 		audio_stream_player.stop()
+		var hiteffect_inst : Node3D = hiteffect.instantiate()
+		hiteffect_inst.position = position
+		get_tree().get_current_scene().add_child(hiteffect_inst)
 		queue_free()
