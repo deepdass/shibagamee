@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=4 uid="uid://rekblaynb4gg"]
+[gd_scene load_steps=66 format=4 uid="uid://rekblaynb4gg"]
 
 [ext_resource type="Script" uid="uid://b8tcib7cuxmbg" path="res://Scripts/0Managers/0_game_manager.gd" id="1_um8rm"]
 [ext_resource type="Script" uid="uid://bm5mc8ak8jjih" path="res://Scripts/0Managers/minimap_cam.gd" id="2_62ixm"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://c7illv6kf10b2" path="res://Scenes/characters/players/character_base.tscn" id="4_navn1"]
 [ext_resource type="PackedScene" uid="uid://bo6isdiofn7db" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/props/torch_mounted.tscn" id="4_rewsw"]
 [ext_resource type="PackedScene" uid="uid://dcw5e6cjvxy3b" path="res://Scenes/rooms/allROOMS/Room_002.tscn" id="5_n3mfx"]
-[ext_resource type="PackedScene" uid="uid://bqp5gwc1bjj17" path="res://Scenes/characters/players/mage.tscn" id="6_7a0ti"]
 [ext_resource type="PackedScene" uid="uid://dswx3oxm25bfa" path="res://Scenes/rooms/allROOMS/Room_003.tscn" id="6_h4pxw"]
 [ext_resource type="Texture2D" uid="uid://c3mchi10usuw1" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="7_rewsw"]
 [ext_resource type="PackedScene" uid="uid://dcyej82fy3mav" path="res://Assets/env/_myVeggies/ivyCorner_1.fbx" id="8_dr8is"]
@@ -433,7 +432,6 @@ environment = SubResource("Environment_n4gow")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 platform_on_leave = 2
-character_mesh = ExtResource("6_7a0ti")
 
 [node name="camera_rig" type="Node3D" parent="SubViewportContainer/SubViewport/myy/per"]
 unique_name_in_owner = true
