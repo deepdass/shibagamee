@@ -4,7 +4,7 @@ extends Node3D
 
 @onready var hiteffect : PackedScene = preload("res://Assets/_my/vfx/hiteffects/hiteffect_scene.tscn")
 
-var projectile_speed : int = 30
+var projectile_speed : int = 15
 var timer:int = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

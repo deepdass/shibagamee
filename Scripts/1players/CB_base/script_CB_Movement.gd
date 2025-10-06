@@ -10,12 +10,14 @@ extends CharacterBody3D
 
 ##attackrefs
 @onready var StatsManager: Node = null
-@onready var dash_timer: Timer = $"dash timer"
 
 ##audio
 @onready var dash_sfx: AudioStreamPlayer = $dashSFX
 @onready var hurt_sfx: AudioStreamPlayer = $hurtSFX
 
+
+@onready var dash_timer: Timer = $"dash timer"
+@onready var stamina_bar: TextureProgressBar = $"../../../../../UI/staminaBar"
 
 var dashing : bool= false
 var running : bool= false
@@ -26,7 +28,6 @@ var look_at_me : Vector3
 
 const JUMP_VELOCITY : float = 3.5
 const DASH_STAMINAcost : int = 20
-@onready var stamina_bar: TextureProgressBar = $"../../../../../UI/staminaBar"
 
 
 func _ready() -> void:
@@ -40,12 +41,13 @@ func _ready() -> void:
 	
 	StatsManager = character_mesh_inst.get_node("StatsManager")
 	
-	
-	game_manager.update_UI()
+	ui()
 	#
 	
 	#combat
 	randomize()
+	#
+	
 func _physics_process(delta: float) -> void:
 	
 	## movement - start ##
@@ -104,9 +106,7 @@ func _physics_process(delta: float) -> void:
 	
 	_push_away_rigid_bodies()
 	move_and_slide()
-
-
-
+	### movement end ###
 
 
 

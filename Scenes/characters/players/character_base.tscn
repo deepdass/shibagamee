@@ -15,7 +15,6 @@ length = 0.7
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 collision_mask = 7
 script = ExtResource("1_w62f0")
-character_mesh = null
 
 [node name="visuals" type="Node3D" parent="."]
 
