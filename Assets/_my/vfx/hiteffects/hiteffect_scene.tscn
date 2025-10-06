@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://d38uc5fftbptj"]
+[gd_scene load_steps=14 format=3 uid="uid://d38uc5fftbptj"]
 
 [ext_resource type="Shader" uid="uid://b6q2mmei0tflk" path="res://Shaders/pojectile/basic_fireball/hiteffects/hiteffect_basic.tres" id="1_xygyw"]
 [ext_resource type="Texture2D" uid="uid://dq76ka6hvailo" path="res://Assets/_my/vfx/hiteffects/t/T_flare8_vfx.png" id="2_l1kbw"]
@@ -9,44 +9,16 @@ render_priority = 0
 shader = ExtResource("1_xygyw")
 shader_parameter/Texture2DParameter = ExtResource("2_l1kbw")
 
-[sub_resource type="Curve" id="Curve_f2wpi"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5019608, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_2iyhy"]
-width = 32
-texture_mode = 1
-curve = SubResource("Curve_f2wpi")
-
-[sub_resource type="Gradient" id="Gradient_bgiah"]
-offsets = PackedFloat32Array(0, 0.5676856)
-colors = PackedColorArray(5.5085006, 1.8274184, 0, 1, 0.84635025, 0.5381104, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_utw45"]
-gradient = SubResource("Gradient_bgiah")
-width = 32
-use_hdr = true
+[sub_resource type="QuadMesh" id="QuadMesh_pi2ur"]
+size = Vector2(2, 2)
 
 [sub_resource type="Curve" id="Curve_iudf2"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.011764713, 0.8385762), -2.8635182, -2.8635182, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="CurveTexture" id="CurveTexture_m3xjx"]
-width = 32
-curve = SubResource("Curve_iudf2")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xygyw"]
-angle_min = -179.99998
-angle_max = 180.00002
-gravity = Vector3(0, 0, 0)
-scale_min = 2.2
-scale_max = 2.8
-scale_curve = SubResource("CurveTexture_m3xjx")
-color_ramp = SubResource("GradientTexture1D_utw45")
-alpha_curve = SubResource("CurveTexture_2iyhy")
-
-[sub_resource type="QuadMesh" id="QuadMesh_pi2ur"]
-size = Vector2(4, 4)
+[sub_resource type="Gradient" id="Gradient_bgiah"]
+offsets = PackedFloat32Array(0, 0.5676856)
+colors = PackedColorArray(5.5085006, 1.8274184, 0, 1, 0.84635025, 0.5381104, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iudf2"]
 blend_mode = 1
@@ -58,40 +30,39 @@ vertex_color_use_as_albedo = true
 vertex_color_is_srgb = true
 albedo_texture = ExtResource("3_f2wpi")
 
-[sub_resource type="Curve" id="Curve_2iyhy"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_bgiah"]
-width = 32
-texture_mode = 1
-curve = SubResource("Curve_2iyhy")
+[sub_resource type="QuadMesh" id="QuadMesh_m3xjx"]
+size = Vector2(0.2, 1)
 
 [sub_resource type="Curve" id="Curve_pi2ur"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_f2wpi"]
-width = 32
-curve = SubResource("Curve_pi2ur")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2iyhy"]
-particle_flag_align_y = true
-emission_shape = 2
-emission_sphere_radius = 0.05
-direction = Vector3(1, 1, 0)
-spread = 180.0
-initial_velocity_min = 3.0
-initial_velocity_max = 8.0
-gravity = Vector3(0, 0, 0)
-scale_min = 0.29999998
-scale_max = 0.7
-scale_curve = SubResource("CurveTexture_f2wpi")
-color = Color(1.0184411, 0.95858943, 0.24036837, 1)
-alpha_curve = SubResource("CurveTexture_bgiah")
-
-[sub_resource type="QuadMesh" id="QuadMesh_m3xjx"]
-size = Vector2(0.2, 1)
+[sub_resource type="Animation" id="Animation_2iyhy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hit:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sparks:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_f2wpi"]
 resource_name = "emit"
@@ -135,33 +106,6 @@ tracks/2/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_2iyhy"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("hit:emitting")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("sparks:emitting")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bgiah"]
 _data = {
 &"RESET": SubResource("Animation_2iyhy"),
@@ -170,23 +114,44 @@ _data = {
 
 [node name="hiteff" type="Node3D"]
 
-[node name="hit" type="GPUParticles3D" parent="."]
+[node name="hit" type="CPUParticles3D" parent="."]
 material_override = SubResource("ShaderMaterial_l1kbw")
 emitting = false
 amount = 1
 lifetime = 0.3
 explosiveness = 1.0
-process_material = SubResource("ParticleProcessMaterial_xygyw")
-draw_pass_1 = SubResource("QuadMesh_pi2ur")
+fixed_fps = 30
+visibility_aabb = AABB(-4, -4, -4, 8, 8, 8)
+mesh = SubResource("QuadMesh_pi2ur")
+gravity = Vector3(0, 0, 0)
+angle_min = -179.99998
+angle_max = 180.00002
+scale_amount_min = 1.1
+scale_amount_max = 1.8
+scale_amount_curve = SubResource("Curve_iudf2")
+color_ramp = SubResource("Gradient_bgiah")
 
-[node name="sparks" type="GPUParticles3D" parent="."]
+[node name="sparks" type="CPUParticles3D" parent="."]
 material_override = SubResource("StandardMaterial3D_iudf2")
 emitting = false
 amount = 7
 lifetime = 0.4
 explosiveness = 0.4
-process_material = SubResource("ParticleProcessMaterial_2iyhy")
-draw_pass_1 = SubResource("QuadMesh_m3xjx")
+fixed_fps = 30
+visibility_aabb = AABB(-4, -4, -4, 8, 8, 8)
+mesh = SubResource("QuadMesh_m3xjx")
+emission_shape = 2
+emission_sphere_radius = 0.05
+particle_flag_align_y = true
+direction = Vector3(1, 1, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 3.0
+initial_velocity_max = 8.0
+scale_amount_min = 0.29999998
+scale_amount_max = 0.7
+scale_amount_curve = SubResource("Curve_pi2ur")
+color = Color(1.0184411, 0.95858943, 0.24036837, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
