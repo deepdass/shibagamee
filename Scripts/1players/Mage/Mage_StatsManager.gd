@@ -2,7 +2,7 @@ extends Node
 
 
 
-@onready var the_base_character : CharacterBody3D = get_parent().get_parent().get_parent()
+@onready var player : CharacterBody3D = get_parent().get_parent().get_parent()
 
 @export var stats : Stats
 var RES : Resource = load("res://Res/character/RES_mage.tres")
@@ -16,6 +16,9 @@ var can_crit : bool = false
 @onready var fireposnode: Node3D = $"../fireposnode"
 @export var projectile_speed : int = 15
 @export var milli_per_shots : int = 667
+
+var nearestEnemy : CharacterBody3D 
+var nearestEnemy_distance : float = INF
 
 ##
 
@@ -39,9 +42,16 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	
+	if nearestEnemy:
+		nearestEnemy_distance = (player.global_position - nearestEnemy.global_position).length()
+	else: 
+		nearestEnemy = null
+		nearestEnemy_distance = INF
+	
 	##pewpew
 	if Input.is_action_pressed("attack"):
-		the_base_character.get_node("visuals").look_at(the_base_character.look_at_me, Vector3.UP)
+		print(nearestEnemy)
+		player.get_node("visuals").look_at(player.look_at_me, Vector3.UP)
 		attack_basic()
 
 
@@ -54,13 +64,14 @@ func attack_basic() -> void:
 		get_tree().get_current_scene().add_child(new_projectile)
 		can_attack_basic = false
 		attack_bacis__timer.start()
+	
 
 
 func _on_timer_timeout() -> void: ##  attack basic timer
 	can_attack_basic = true
 
 
-
+###################################################################
 func CAL_defence() -> float:
 	if stats.attack == 0 and stats.defence == 0:
 		return 0.0
@@ -96,13 +107,13 @@ func applyUpgrades(receivedPowerups: Stats) -> void:
 	stats.crit_damage += receivedPowerups.crit_damage
 	stats.movement_speed += receivedPowerups.movement_speed
 	if !receivedPowerups.stamina == 0:
-		the_base_character.set_maxVal(receivedPowerups.stamina)
+		player.set_maxVal(receivedPowerups.stamina)
 		stats.stamina += receivedPowerups.stamina
-		the_base_character.set_stamina()
+		player.set_stamina()
 	
 	
 	if receivedPowerups.type == "equip_prop":
 		var equip_prop_path : BoneAttachment3D = get_node(receivedPowerups.equip_path)
 		equip_prop_path.visible = true
 	
-	the_base_character.ui()
+	player.ui()
