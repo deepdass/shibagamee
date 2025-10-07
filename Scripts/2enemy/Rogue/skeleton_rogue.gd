@@ -1,7 +1,5 @@
 extends CharacterBody3D
 
-@export var stat : Stats 
-
 var subViewport : SubViewport = null
 var player : CharacterBody3D = null
 @onready var player_path : String = "/root/World/SubViewportContainer/SubViewport/myy/per/Player"
