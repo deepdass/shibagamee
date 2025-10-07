@@ -33,6 +33,7 @@ const enem_KnockbackMul : int = 45
 
 @onready var destroyaftertime: Timer = $destroyaftertime
 
+var player_hitpos : CollisionShape3D
 
 signal died
 
@@ -42,6 +43,7 @@ func _ready() -> void:
 	timer.wait_time = animation_tree.get_animation("Death_C_Skeletons").length + 0.3
 	
 	player = get_node(player_path)
+	player_hitpos = player.get_node("Player Capsule")
 	subViewport = get_node(sub_viewport_path)
 	
 	state_machine = animation_tree.get("parameters/playback")
@@ -78,6 +80,7 @@ func _hitfinish() -> void:
 		new_projectile.global_transform = fireposnode.global_transform
 		new_projectile.projectile_speed = projectile_speed
 		get_tree().get_current_scene().add_child(new_projectile)
+		new_projectile.set_player_ref(player_hitpos)
 		
 		
 func take_damage() -> void:

@@ -4,7 +4,7 @@ extends CharacterBody3D
 @onready var game_manager: Node = %GameManager  ## game_manager.decrease_health()
 @export var character_mesh : PackedScene = preload("res://Scenes/characters/players/mage.tscn")
 
-@onready var bloodeffanim: AnimationPlayer = $bloodeff/bloodeffanim
+#@onready var bloodeffanim: AnimationPlayer = $bloodeff/bloodeffanim
 
 ##visuals
 @onready var animation_tree: AnimationTree = null
@@ -144,7 +144,9 @@ func _rotate(where: Vector3) -> void:
 
 func decrease_health() -> void:
 	StatsManager.stats.health -= 1
-	bloodeffanim.play("blood")
+	
+	#bloodeffanim.play("blood")
+	
 	ui()
 	hurt_sfx.play()
 

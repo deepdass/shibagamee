@@ -1,24 +1,24 @@
-[gd_scene load_steps=66 format=4 uid="uid://rekblaynb4gg"]
+[gd_scene load_steps=67 format=4 uid="uid://rekblaynb4gg"]
 
 [ext_resource type="Script" uid="uid://b8tcib7cuxmbg" path="res://Scripts/0Managers/0_game_manager.gd" id="1_um8rm"]
 [ext_resource type="Script" uid="uid://bm5mc8ak8jjih" path="res://Scripts/0Managers/minimap_cam.gd" id="2_62ixm"]
 [ext_resource type="Texture2D" uid="uid://cna7hum5q5uek" path="res://Assets/UI/staminaBar_gimp.png" id="2_mil5o"]
 [ext_resource type="Texture2D" uid="uid://dwnmocndg7gk7" path="res://Assets/UI/Heart.png" id="3_ueb55"]
-[ext_resource type="PackedScene" uid="uid://dy3xf0k58ncpg" path="res://Scenes/rooms/allROOMS/Room_001.tscn" id="4_4kuwp"]
+[ext_resource type="PackedScene" uid="uid://dy3xf0k58ncpg" path="res://Scenes/rooms/allROOMS/_Room_001.tscn" id="4_4kuwp"]
 [ext_resource type="Script" uid="uid://c1ciyr271og1w" path="res://Scenes/rooms/roomsManager.gd" id="4_dooxh"]
 [ext_resource type="Script" uid="uid://dwrg1j4xsnvtx" path="res://Scenes/rooms/roomSCRIPT.gd" id="4_fv7jm"]
 [ext_resource type="PackedScene" uid="uid://c7illv6kf10b2" path="res://Scenes/characters/players/character_base.tscn" id="4_navn1"]
 [ext_resource type="PackedScene" uid="uid://bo6isdiofn7db" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/props/torch_mounted.tscn" id="4_rewsw"]
-[ext_resource type="PackedScene" uid="uid://dcw5e6cjvxy3b" path="res://Scenes/rooms/allROOMS/Room_002.tscn" id="5_n3mfx"]
-[ext_resource type="PackedScene" uid="uid://dswx3oxm25bfa" path="res://Scenes/rooms/allROOMS/Room_003.tscn" id="6_h4pxw"]
+[ext_resource type="PackedScene" uid="uid://dcw5e6cjvxy3b" path="res://Scenes/rooms/allROOMS/_Room_002.tscn" id="5_n3mfx"]
+[ext_resource type="PackedScene" uid="uid://dswx3oxm25bfa" path="res://Scenes/rooms/allROOMS/_Room_003.tscn" id="6_h4pxw"]
 [ext_resource type="Texture2D" uid="uid://c3mchi10usuw1" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="7_rewsw"]
 [ext_resource type="PackedScene" uid="uid://dcyej82fy3mav" path="res://Assets/env/_myVeggies/ivyCorner_1.fbx" id="8_dr8is"]
 [ext_resource type="MeshLibrary" uid="uid://d1qa0gwyywdnw" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Propslib.tres" id="9_kb3uq"]
 [ext_resource type="PackedScene" uid="uid://cfxdtnlqs8d17" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/box_large.tscn" id="9_tjdgt"]
 [ext_resource type="PackedScene" uid="uid://vmcw5jyixika" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/box_small.tscn" id="10_0wknt"]
 [ext_resource type="PackedScene" uid="uid://1uug6yuadss" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/barrel_large.tscn" id="11_nw05x"]
-[ext_resource type="PackedScene" uid="uid://dilj5s750b7tp" path="res://Scenes/rooms/allROOMS/Room_004.tscn" id="11_va1cp"]
-[ext_resource type="PackedScene" uid="uid://dtfykehixm3vo" path="res://Scenes/rooms/allROOMS/room_005.tscn" id="12_dooxh"]
+[ext_resource type="PackedScene" uid="uid://dilj5s750b7tp" path="res://Scenes/rooms/allROOMS/_Room_004.tscn" id="11_va1cp"]
+[ext_resource type="PackedScene" uid="uid://dtfykehixm3vo" path="res://Scenes/rooms/allROOMS/_znature_room.tscn" id="12_dooxh"]
 [ext_resource type="PackedScene" uid="uid://bx0lm5lum16xd" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/table_long.tscn" id="12_h0gvv"]
 [ext_resource type="PackedScene" uid="uid://dpri80suc5sdm" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/bottle_A_labeled_green.tscn" id="16_htge1"]
 [ext_resource type="PackedScene" uid="uid://da0utsy7lwo57" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/props/table_long_broken.tscn" id="16_ueb55"]
@@ -49,6 +49,7 @@
 [ext_resource type="PackedScene" uid="uid://b756tkw3ra6m6" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/keg.tscn" id="47_6wjr2"]
 [ext_resource type="PackedScene" uid="uid://cuysc4xedrcam" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/bottle_A_brown.tscn" id="48_o0qel"]
 [ext_resource type="PackedScene" uid="uid://dki0ifhnm8ilv" path="res://Assets/env/_myVeggies/ivyGround_4.fbx" id="49_rfjiq"]
+[ext_resource type="PackedScene" uid="uid://cmk4fsve3kb1e" path="res://Scenes/rooms/allROOMS/_Room_006.tscn" id="50_mil5o"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2ulnn"]
 
@@ -1132,6 +1133,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -12.2513)
 
 [node name="room11" parent="SubViewportContainer/SubViewport/myy/rooms" instance=ExtResource("5_n3mfx")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -26, 0, -82)
+
+[node name="room12" parent="SubViewportContainer/SubViewport/myy/rooms" instance=ExtResource("50_mil5o")]
+transform = Transform3D(2.9802322e-08, 0, -1, 0, 1, 0, 1, 0, 2.9802322e-08, -4, 0, 22)
 
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
 [connection signal="body_entered" from="killzone" to="GameManager" method="_on_killzone_body_entered"]

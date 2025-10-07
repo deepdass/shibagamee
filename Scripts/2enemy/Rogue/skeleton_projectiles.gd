@@ -3,13 +3,18 @@ extends Node3D
 var projectile_speed : int = 15
 var timer:int = 0
 
+var forward_direction : Vector3
+
 var KnockbackMul : int = 30
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	var forward_direction : Vector3 = global_transform.basis.z.normalized()
 	global_translate(forward_direction * projectile_speed * delta)
 	
+
+func set_player_ref(player_ref : CollisionShape3D) -> void:
+	forward_direction = (player_ref.global_position - global_position).normalized()
+	look_at(player_ref.global_position)
 
 func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
 	queue_free()

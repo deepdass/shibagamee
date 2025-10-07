@@ -11,9 +11,10 @@ size = Vector3(0.423557, 0.7561035, 0.804337)
 script = ExtResource("1_jgnx1")
 
 [node name="FireballHeadMesh2" parent="." instance=ExtResource("2_slwbb")]
-transform = Transform3D(1.4, 0, 0, 0, -6.11959e-08, 1.4, 0, -1.4, -6.11959e-08, 0, 0, 0)
+transform = Transform3D(-1.4, 1.2239188e-07, 5.349915e-15, 0, -6.11959e-08, 1.4, 1.2239188e-07, 1.4, 6.11959e-08, 0, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
@@ -21,6 +22,7 @@ transform = Transform3D(1, 0.000767945, 0, -0.000767945, 1, 0, 0, 0, 1, 0.000316
 shape = SubResource("BoxShape3D_iguuu")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_jgnx1")

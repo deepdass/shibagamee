@@ -1,10 +1,12 @@
-[gd_scene load_steps=14 format=4 uid="uid://c55n0l3l78jo5"]
+[gd_scene load_steps=14 format=4 uid="uid://cmk4fsve3kb1e"]
 
-[ext_resource type="Script" uid="uid://dwrg1j4xsnvtx" path="res://Scenes/rooms/roomSCRIPT.gd" id="1_mjr1c"]
-[ext_resource type="MeshLibrary" uid="uid://crl8041p05pde" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib1.tres" id="2_he860"]
-[ext_resource type="Texture2D" uid="uid://c3mchi10usuw1" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="4_jg48x"]
+[ext_resource type="Script" uid="uid://dwrg1j4xsnvtx" path="res://Scenes/rooms/roomSCRIPT.gd" id="1_oajxi"]
+[ext_resource type="MeshLibrary" uid="uid://crl8041p05pde" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib1.tres" id="2_sdchs"]
+[ext_resource type="Texture2D" uid="uid://c3mchi10usuw1" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="3_4sms0"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_hmakl"]
+vertices = PackedVector3Array(16.75, 4.40613, -16.894976, 17, 4.40613, -16.394976, 17.25, 4.40613, -23.144976, 13, 1.4061301, -10.644976, 15, 1.4061301, -10.644976, 15, 4.40613, -16.644976, 12.75, 4.40613, -16.894976, 12.85, 3.90613, -14.394976, 15, 3.90613, -14.244976, -5, 4.40613, -23.144976, -5, 4.40613, -16.894976, 17, 4.40613, -15.144976, 23.25, 4.40613, -15.394976, 23.25, 4.40613, -23.144976, -5.75, 0.40613008, -6.3949757, -5.75, 0.40613008, -5.6449757, -5, 0.40613008, -5.3949757, -5, 0.40613008, -6.6449757, 7.5, 0.40613008, -0.89497566, 7.75, 0.40613008, -0.14497566, 8.5, 0.40613008, -0.14497566, 8.75, 0.40613008, -0.89497566, -3, 0.40613008, -2.3949757, 12, 0.40613008, -10.394976, 7, 0.40613008, -15.644976, -5, 0.40613008, -19.144976, -5, 0.40613008, -2.8949757, -3.5, 0.40613008, -2.8949757, 15, 0.40613008, -0.89497566, 15, 0.40613008, -9.252118, 7, 0.40613008, -19.144976, 11.75, 0.40613008, -10.894976, 11.75, 0.6561301, -15.144976, 7.5, 0.40613008, -15.144976, -3, 0.40613008, -0.89497566, 17, 4.40613, -2.8949757, 23.25, 4.40613, -2.8949757, -7, 0.40613008, -6.8949757, -7, 0.40613008, -5.1449757, -9.75, 0.40613008, -4.3949757, -9.5, 0.40613008, -2.3949757, -7, 0.40613008, -2.3949757, -7, 0.40613008, -9.644976, -9.5, 0.40613008, -9.644976, -9.75, 0.40613008, -7.6449757, -11.5, 0.40613008, -7.6449757, -11.5, 0.40613008, -4.3949757, -4.25, 4.40613, -1.8949757, -3.75, 4.40613, -1.1449757, -4, 4.40613, -2.1449757, -6, 4.40613, -2.3949757, -6, 4.40613, -1.8949757, -3.75, 4.40613, -0.14497566, -4.25, 4.40613, -0.89497566, -4, 4.40613, 0.10502434, 16, 4.40613, 0.10502434, 16, 4.40613, -0.39497566, 7.5, 0.40613008, 0.85502434, 8.75, 0.40613008, 0.85502434, 11.5, 0.40613008, 0.85502434, 9.5, 0.40613008, 3.8550243, 11.5, 0.40613008, 3.6050243, 4.5, 0.40613008, 0.85502434, 4.5, 0.40613008, 3.6050243, 6.25, 0.40613008, 3.6050243, 6.5, 0.40613008, 5.6050243, 9.5, 0.40613008, 5.6050243)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(6, 5, 7), PackedInt32Array(7, 5, 8), PackedInt32Array(7, 8, 3), PackedInt32Array(3, 8, 4), PackedInt32Array(10, 9, 6), PackedInt32Array(6, 9, 2), PackedInt32Array(5, 6, 0), PackedInt32Array(0, 6, 2), PackedInt32Array(11, 1, 12), PackedInt32Array(12, 1, 2), PackedInt32Array(12, 2, 13), PackedInt32Array(14, 17, 15), PackedInt32Array(15, 17, 16), PackedInt32Array(19, 18, 20), PackedInt32Array(20, 18, 21), PackedInt32Array(22, 17, 18), PackedInt32Array(18, 17, 23), PackedInt32Array(23, 17, 24), PackedInt32Array(24, 17, 25), PackedInt32Array(23, 21, 18), PackedInt32Array(27, 26, 16), PackedInt32Array(4, 29, 3), PackedInt32Array(3, 29, 23), PackedInt32Array(23, 29, 28), PackedInt32Array(23, 28, 21), PackedInt32Array(27, 16, 22), PackedInt32Array(22, 16, 17), PackedInt32Array(25, 30, 24), PackedInt32Array(33, 32, 31), PackedInt32Array(33, 31, 23), PackedInt32Array(24, 33, 23), PackedInt32Array(18, 34, 22), PackedInt32Array(35, 11, 36), PackedInt32Array(36, 11, 12), PackedInt32Array(15, 38, 14), PackedInt32Array(14, 38, 37), PackedInt32Array(40, 39, 41), PackedInt32Array(41, 39, 38), PackedInt32Array(43, 42, 44), PackedInt32Array(44, 42, 37), PackedInt32Array(38, 39, 37), PackedInt32Array(37, 39, 44), PackedInt32Array(44, 39, 46), PackedInt32Array(44, 46, 45), PackedInt32Array(49, 48, 47), PackedInt32Array(51, 50, 47), PackedInt32Array(47, 50, 49), PackedInt32Array(54, 53, 52), PackedInt32Array(56, 55, 52), PackedInt32Array(52, 55, 54), PackedInt32Array(20, 58, 19), PackedInt32Array(19, 58, 57), PackedInt32Array(61, 60, 59), PackedInt32Array(59, 60, 58), PackedInt32Array(63, 62, 64), PackedInt32Array(64, 62, 57), PackedInt32Array(58, 60, 57), PackedInt32Array(57, 60, 64), PackedInt32Array(64, 60, 65), PackedInt32Array(65, 60, 66)]
 agent_height = 1.0
 agent_max_climb = 0.5
 
@@ -70,7 +72,7 @@ _data = {
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tg5mm"]
 resource_name = "texture"
-albedo_texture = ExtResource("4_jg48x")
+albedo_texture = ExtResource("3_4sms0")
 roughness = 0.45
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_cmng2"]
@@ -108,36 +110,56 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_cmng2")
 
 [node name="room" type="Node3D"]
-script = ExtResource("1_mjr1c")
+script = ExtResource("1_oajxi")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 navigation_mesh = SubResource("NavigationMesh_hmakl")
 
 [node name="spwans" type="Marker3D" parent="NavigationRegion3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.97797, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.022030115, 0)
 
 [node name="Node3D" type="Marker3D" parent="NavigationRegion3D/spwans"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.463, 0, -16.6281)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4629993, 1, -16.6281)
+
+[node name="Node3D2" type="Marker3D" parent="NavigationRegion3D/spwans"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.537001, 1, -12.628099)
+
+[node name="Node3D4" type="Marker3D" parent="NavigationRegion3D/spwans"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.537001, 5, -21.6281)
+
+[node name="Node3D5" type="Marker3D" parent="NavigationRegion3D/spwans"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.577127, 5, -20.6281)
+
+[node name="Node3D3" type="Marker3D" parent="NavigationRegion3D/spwans"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53700066, 1, -5.6280994)
 
 [node name="env" type="Marker3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 
 [node name="floor" type="GridMap" parent="NavigationRegion3D/env"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -1)
-mesh_library = ExtResource("2_he860")
+mesh_library = ExtResource("2_sdchs")
 collision_mask = 7
+data = {
+"cells": PackedInt32Array(0, 65535, 1048605, 2, 65535, 1048605, 4, 65535, 1048605, 6, 65535, 1048605, 6, 65533, 1048605, 6, 65531, 1048605, 4, 65533, 1048605, 65534, 65535, 1048605, 65533, 65534, 1048605, 65533, 65532, 1048605, 65533, 65530, 1048605, 6, 65529, 1048605, 4, 65529, 1048605, 65533, 65529, 1048605, 65535, 65529, 1048605, 1, 65529, 1048605, 2, 65529, 1048605, 65535, 65531, 1048605, 65535, 65533, 1048605, 1, 65533, 1048605, 1, 65531, 1048605, 4, 65531, 1048605, 3, 65531, 1048605, 2, 65533, 1048605, 6, 65528, 58, 131078, 65527, 655398, 131078, 65525, 655398, 131076, 65525, 655398, 131074, 65525, 655398, 131072, 65525, 655398, 0, 65527, 29, 65534, 65527, 29, 65533, 65527, 29, 2, 65527, 29, 131076, 65527, 655398, 131074, 65527, 655398, 131072, 65527, 655398, 196606, 65527, 655398, 196605, 65527, 655398, 196605, 65525, 655398, 196606, 65525, 655398, 131080, 65527, 655398, 131080, 65525, 655398, 131082, 65525, 655398, 131082, 65527, 655398, 131080, 65529, 655398, 131082, 65529, 655398, 131080, 65531, 655398, 131082, 65531, 655398, 131080, 65533, 655398, 131082, 65533, 655398, 131080, 65534, 655398, 131082, 65534, 655398, 131081, 65535, 655360, 131083, 65535, 1441795, 131083, 65533, 1441792, 131083, 65531, 1441792, 131083, 65529, 1441792, 131083, 65527, 1441792, 131083, 65525, 1441792, 131082, 65524, 655360, 131083, 65524, 655366, 131080, 65524, 655360, 131078, 65524, 655360, 131076, 65524, 655360, 131074, 65524, 655360, 131072, 65524, 655360, 196606, 65524, 655360, 196604, 65524, 1048579, 196604, 65526, 1048576, 2, 1, 655389, 4, 1, 655389, 3, 2, 655389, 65531, 65532, 655389, 65531, 65534, 655389, 65530, 65533, 655389)
+}
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="walls" type="GridMap" parent="NavigationRegion3D/env"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -1)
-mesh_library = ExtResource("2_he860")
+mesh_library = ExtResource("2_sdchs")
 collision_layer = 2
 collision_mask = 7
+data = {
+"cells": PackedInt32Array(7, 65528, 67, 7, 65530, 1441874, 7, 65532, 1441874, 1, 65526, 69, 65535, 65526, 69, 65533, 65526, 655442, 65532, 65527, 1048658, 65532, 65526, 1048644, 7, 65534, 1441880, 7, 0, 1441859, 5, 0, 655442, 1, 0, 655442, 3, 0, 655432, 0, 65526, 69, 65532, 65533, 1441864, 65532, 65535, 655427, 65533, 65535, 67, 65533, 0, 655427, 65535, 0, 655429, 65532, 65531, 1048658, 65532, 65529, 1048658, 196604, 65528, 655363, 196606, 65528, 655360, 131072, 65528, 655360, 131074, 65528, 655360, 131076, 65528, 655360, 131079, 65529, 1048576, 131079, 65531, 1048576, 131079, 65533, 1048576, 131077, 65528, 1048582, 131079, 65528, 1048582, 131079, 65535, 655363, 3, 65527, 1048645, 4, 65528, 69, 3, 65528, 655428, 2, 65526, 655442, 6, 65528, 655437)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="door_Container" type="Marker3D" parent="NavigationRegion3D/env"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="door" type="StaticBody3D" parent="NavigationRegion3D/env/door_Container"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8, 0, 0)
 
 [node name="doorBlock" type="CollisionShape3D" parent="NavigationRegion3D/env/door_Container/door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -163,4 +185,32 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.012
 mesh = SubResource("ArrayMesh_iog33")
 skeleton = NodePath("")
 
+[node name="door2" type="StaticBody3D" parent="NavigationRegion3D/env/door_Container"]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -6, 0, -6)
+
+[node name="doorBlock" type="CollisionShape3D" parent="NavigationRegion3D/env/door_Container/door2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_p7ifo")
+disabled = true
+debug_color = Color(1, 1, 1, 0.746)
+
+[node name="Area3D" type="Area3D" parent="NavigationRegion3D/env/door_Container/door2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="detectPlayer" type="CollisionShape3D" parent="NavigationRegion3D/env/door_Container/door2/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29134, 0.449, 0)
+shape = SubResource("BoxShape3D_he860")
+debug_color = Color(0, 0.6, 0.7, 0.641)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NavigationRegion3D/env/door_Container/door2"]
+libraries = {
+&"": SubResource("AnimationLibrary_2rkpr")
+}
+
+[node name="wall_doorway_door" type="MeshInstance3D" parent="NavigationRegion3D/env/door_Container/door2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0128989, -2.84387, 0.812118)
+mesh = SubResource("ArrayMesh_iog33")
+skeleton = NodePath("")
+
 [connection signal="body_entered" from="NavigationRegion3D/env/door_Container/door/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="NavigationRegion3D/env/door_Container/door2/Area3D" to="." method="_on_area_3d_body_entered"]
