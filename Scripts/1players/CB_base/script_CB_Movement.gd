@@ -124,11 +124,11 @@ func set_maxVal(add : int) -> void:
 
 
 func _push_away_rigid_bodies() -> void:
-	for i in get_slide_collision_count():
-		var c := get_slide_collision(i)
+	for i : int in get_slide_collision_count():
+		var c : KinematicCollision3D = get_slide_collision(i)
 		if c.get_collider() is RigidBody3D:
 			var push_dir : Vector3 = -c.get_normal()
-			var velocity_diff_in_push_dir = self.velocity.dot(push_dir) - c.get_collider().linear_velocity.dot(push_dir)
+			var velocity_diff_in_push_dir : float = self.velocity.dot(push_dir) - c.get_collider().linear_velocity.dot(push_dir)
 			velocity_diff_in_push_dir = max(0., velocity_diff_in_push_dir)
 			const MY_APPROX_MASS_KG : int = 80
 			var mass_ratio : float = min(1., MY_APPROX_MASS_KG / c.get_collider().mass)

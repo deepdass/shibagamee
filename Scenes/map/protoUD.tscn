@@ -1,0 +1,325 @@
+[gd_scene load_steps=15 format=3 uid="uid://duwpjgksalina"]
+
+[ext_resource type="Script" uid="uid://b8tcib7cuxmbg" path="res://Scripts/0Managers/0_game_manager.gd" id="1_fet0j"]
+[ext_resource type="Texture2D" uid="uid://cna7hum5q5uek" path="res://Assets/UI/staminaBar_gimp.png" id="2_lbtde"]
+[ext_resource type="Script" uid="uid://bm5mc8ak8jjih" path="res://Scripts/0Managers/minimap_cam.gd" id="3_xb210"]
+[ext_resource type="Texture2D" uid="uid://dwnmocndg7gk7" path="res://Assets/UI/Heart.png" id="4_am5cg"]
+[ext_resource type="PackedScene" uid="uid://c7illv6kf10b2" path="res://Scenes/characters/players/character_base.tscn" id="5_ielc5"]
+[ext_resource type="MeshLibrary" uid="uid://crl8041p05pde" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib1.tres" id="6_377bg"]
+[ext_resource type="Script" uid="uid://c1ciyr271og1w" path="res://Scenes/rooms/roomsManager.gd" id="7_qjqld"]
+[ext_resource type="PackedScene" uid="uid://dss71ck1xs2sn" path="res://Scenes/rooms/allROOMS/_Room_009.tscn" id="8_n5al0"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2ulnn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7a0ti"]
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62ixm"]
+draw_center = false
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.051970966, 0.05197096, 0.05197095, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+corner_detail = 16
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_idx2o"]
+rayleigh_coefficient = 1.29
+ground_color = Color(0.313219, 0.479875, 0.8463, 1)
+
+[sub_resource type="Sky" id="Sky_2ulnn"]
+sky_material = SubResource("PhysicalSkyMaterial_idx2o")
+
+[sub_resource type="Environment" id="Environment_n4gow"]
+background_mode = 1
+background_color = Color(0.147604, 0.21763, 0.326386, 1)
+sky = SubResource("Sky_2ulnn")
+ambient_light_source = 2
+ambient_light_color = Color(0.415686, 0.537255, 0.72549, 1)
+ambient_light_energy = 1.5
+ssao_radius = 1.41
+ssao_intensity = 3.39
+ssao_detail = 2.0
+ssao_sharpness = 0.26
+ssil_radius = 3.65
+ssil_intensity = 4.0
+ssil_sharpness = 0.43
+ssil_normal_rejection = 0.9
+sdfgi_read_sky_light = false
+adjustment_enabled = true
+adjustment_contrast = 1.1
+
+[node name="World" type="Node3D"]
+
+[node name="realScreenVis" type="Panel" parent="."]
+offset_right = 3840.0
+offset_bottom = 2160.0
+
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
+unique_name_in_owner = true
+script = ExtResource("1_fet0j")
+hearts = [NodePath("../UI/Panel/Heart1"), NodePath("../UI/Panel/Heart2"), NodePath("../UI/Panel/Heart3"), NodePath("../UI/Panel/Heart4"), NodePath("../UI/Panel/Heart5"), NodePath("../UI/Panel/Heart6"), NodePath("../UI/Panel/Heart7")]
+
+[node name="Timer" type="Timer" parent="GameManager"]
+wait_time = 0.5
+
+[node name="killzone" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.81879, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="killzone"]
+shape = SubResource("WorldBoundaryShape3D_2ulnn")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="staminaBar" type="TextureProgressBar" parent="UI"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -638.0
+offset_top = -71.0
+offset_right = -382.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(5, 4.5)
+value = 100.0
+fill_mode = 6
+texture_progress = ExtResource("2_lbtde")
+tint_progress = Color(0.84608996, 0.84608996, 0.84608996, 1)
+
+[node name="miniMap" type="PanelContainer" parent="UI"]
+clip_children = 1
+clip_contents = true
+offset_left = 3420.0
+offset_top = 20.0
+offset_right = 3820.0
+offset_bottom = 420.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7a0ti")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="UI/miniMap"]
+texture_filter = 1
+layout_mode = 2
+stretch = true
+stretch_shrink = 2
+
+[node name="SubViewport" type="SubViewport" parent="UI/miniMap/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(200, 200)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="UI/miniMap/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 16, 0)
+projection = 1
+size = 40.0
+script = ExtResource("3_xb210")
+
+[node name="miniMapBorder" type="PanelContainer" parent="UI"]
+offset_left = 3417.0
+offset_top = 17.0
+offset_right = 3823.0
+offset_bottom = 423.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_62ixm")
+
+[node name="Panel" type="Panel" parent="UI"]
+scale = Vector2(1.6, 1.6)
+
+[node name="Heart1" type="TextureRect" parent="UI/Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 19.0
+offset_right = 200.0
+offset_bottom = 187.0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("4_am5cg")
+expand_mode = 3
+
+[node name="Heart2" type="TextureRect" parent="UI/Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 108.0
+offset_top = 19.0
+offset_right = 290.0
+offset_bottom = 187.0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("4_am5cg")
+expand_mode = 3
+
+[node name="Heart3" type="TextureRect" parent="UI/Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 198.0
+offset_top = 19.0
+offset_right = 380.0
+offset_bottom = 187.0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("4_am5cg")
+expand_mode = 3
+
+[node name="Heart4" type="TextureRect" parent="UI/Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 288.0
+offset_top = 19.0
+offset_right = 470.0
+offset_bottom = 187.0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("4_am5cg")
+expand_mode = 3
+
+[node name="Heart5" type="TextureRect" parent="UI/Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 378.0
+offset_top = 19.0
+offset_right = 560.0
+offset_bottom = 187.0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("4_am5cg")
+expand_mode = 3
+
+[node name="Heart6" type="TextureRect" parent="UI/Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 468.0
+offset_top = 19.0
+offset_right = 650.0
+offset_bottom = 187.0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("4_am5cg")
+expand_mode = 3
+
+[node name="Heart7" type="TextureRect" parent="UI/Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 558.0
+offset_top = 19.0
+offset_right = 740.0
+offset_bottom = 187.0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("4_am5cg")
+expand_mode = 3
+
+[node name="heartsOverload" type="Label" parent="UI/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 634.375
+offset_right = 702.375
+offset_bottom = 61.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.77, 0, 0.2695, 1)
+theme_override_font_sizes/font_size = 40
+text = "+7"
+
+[node name="Panel2" type="Panel" parent="UI"]
+
+[node name="score" type="Label" parent="UI/Panel2"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 3476.0
+offset_top = 403.0
+offset_right = 3768.0
+offset_bottom = 540.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 100
+text = "Score "
+
+[node name="tip" type="Label" parent="UI/Panel2"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 3305.0
+offset_top = 518.0
+offset_right = 3815.0
+offset_bottom = 601.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 60
+text = "Find the Portal!! :)"
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 6
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(320, 180)
+render_target_update_mode = 4
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(-0.101372, 0.707474, 0.699432, 0.00664804, -0.702556, 0.711598, 0.994826, 0.076786, 0.0665162, 5.85244, 6.7486, 0)
+light_color = Color(0.636053, 0.67, 0.6164, 1)
+light_bake_mode = 1
+shadow_enabled = true
+shadow_bias = 0.5
+shadow_blur = 0.1
+directional_shadow_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
+environment = SubResource("Environment_n4gow")
+
+[node name="myy" type="Node" parent="SubViewportContainer/SubViewport"]
+
+[node name="per" type="Marker3D" parent="SubViewportContainer/SubViewport/myy"]
+
+[node name="Player" parent="SubViewportContainer/SubViewport/myy/per" instance=ExtResource("5_ielc5")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+platform_on_leave = 2
+
+[node name="camera_rig" type="Node3D" parent="SubViewportContainer/SubViewport/myy/per"]
+unique_name_in_owner = true
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/myy/per/camera_rig"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.766044, 0.642788, 0, -0.642788, 0.766044, 0, 10.5755, 10.1963)
+current = true
+fov = 60.0
+size = 15.0
+far = 70.0
+
+[node name="cam_Initailpt" type="Node3D" parent="SubViewportContainer/SubViewport/myy/per/camera_rig"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.5755, 10.1963)
+
+[node name="cam_finalpt" type="Node3D" parent="SubViewportContainer/SubViewport/myy/per/camera_rig"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="floor" type="GridMap" parent="SubViewportContainer/SubViewport/myy"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -5)
+mesh_library = ExtResource("6_377bg")
+collision_mask = 7
+data = {
+"cells": PackedInt32Array(-2, 1, 1048605, -65536, 1, 1048605, -65535, 1, 1048605, -3, 1, 1048605, -2, 3, 1048605, -65536, 3, 1048605, -1, 4, 1048605)
+}
+metadata/_editor_floor_ = Vector3(0, -1, 0)
+
+[node name="rooms" type="Marker3D" parent="SubViewportContainer/SubViewport/myy"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -4)
+script = ExtResource("7_qjqld")
+roomsCount = 8
+
+[node name="room" parent="SubViewportContainer/SubViewport/myy/rooms" instance=ExtResource("8_n5al0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
+[connection signal="body_entered" from="killzone" to="GameManager" method="_on_killzone_body_entered"]
