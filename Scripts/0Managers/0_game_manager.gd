@@ -45,18 +45,18 @@ func _physics_process(delta: float) -> void:
 		camera_3d.position = camera_3d.position.move_toward(cam_initailpt.position + Vector3(0,0.01,0.01), delta * 25)
 	##
 		
-	var mouse_pos : Vector2 = sub_viewport.get_mouse_position()
-	ray_origin = camera_3d.project_ray_origin(mouse_pos)
-	ray_target_pt = ray_origin + camera_3d.project_ray_normal(mouse_pos) * 1000
-	
-	var space_state : PhysicsDirectSpaceState3D = world.get_world_3d().direct_space_state
-	var params : PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(ray_origin,ray_target_pt,1)
-	params.exclude = [player]
-	var intersection : Dictionary = space_state.intersect_ray(params)
-	
-	if not intersection.is_empty():
-		var look_at_me : Vector3 = Vector3(intersection.position.x, player.position.y, intersection.position.z)
-		player._rotate(look_at_me)
+	#var mouse_pos : Vector2 = sub_viewport.get_mouse_position()
+	#ray_origin = camera_3d.project_ray_origin(mouse_pos)
+	#ray_target_pt = ray_origin + camera_3d.project_ray_normal(mouse_pos) * 1000
+	#
+	#var space_state : PhysicsDirectSpaceState3D = world.get_world_3d().direct_space_state
+	#var params : PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(ray_origin,ray_target_pt,1)
+	#params.exclude = [player]
+	#var intersection : Dictionary = space_state.intersect_ray(params)
+	#
+	#if not intersection.is_empty():
+		#var look_at_me : Vector3 = Vector3(intersection.position.x, player.position.y, intersection.position.z)
+		#player._rotate(look_at_me)
 
 		
 	if panel_2 != null:

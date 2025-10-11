@@ -5,10 +5,11 @@ extends Node
 @onready var player : CharacterBody3D = get_parent().get_parent().get_parent()
 
 @export var stats : Stats
+
 var RES : Resource = load("res://Res/character/RES_mage.tres")
 
-var can_crit : bool = false
 
+var can_crit : bool = false
 
 
 ## attack basic
@@ -42,16 +43,15 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	
-	if nearestEnemy:
-		nearestEnemy_distance = (player.global_position - nearestEnemy.global_position).length()
-	else: 
-		nearestEnemy = null
+	if nearestEnemy == null or not is_instance_valid(nearestEnemy):
 		nearestEnemy_distance = INF
+
 	
 	##pewpew
 	if Input.is_action_pressed("attack"):
-		print(nearestEnemy)
-		player.get_node("visuals").look_at(player.look_at_me, Vector3.UP)
+		if nearestEnemy:
+			player.get_node("visuals").look_at(Vector3(nearestEnemy.global_position.x, player.global_position.y, nearestEnemy.global_position.z), Vector3.UP)
+		#player.get_node("visuals").look_at(player.look_at_me, Vector3.UP)
 		attack_basic()
 
 
@@ -62,6 +62,9 @@ func attack_basic() -> void:
 		new_projectile.global_transform = fireposnode.global_transform
 		new_projectile.projectile_speed = projectile_speed
 		get_tree().get_current_scene().add_child(new_projectile)
+		
+		new_projectile.attack_thisenemy(nearestEnemy)
+		
 		can_attack_basic = false
 		attack_bacis__timer.start()
 	

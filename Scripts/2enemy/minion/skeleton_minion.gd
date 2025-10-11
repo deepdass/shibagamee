@@ -11,10 +11,11 @@ var player : CharacterBody3D = null
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 var health : float = 200
-@onready var damagepopup: Node3D = $idknode
+
+@onready var idk: Marker3D = $idk
+@onready var damagepopup: Label3D = $idk/damagepopup
 
 @onready var destroyaftertime: Timer = $destroyaftertime
-
 
 const  SPEED : float = 4.2
 const ATTACK_RANGE : float = 1.5
@@ -26,6 +27,8 @@ var state_machine : AnimationNodeStateMachinePlayback
 @onready var animation_tree: AnimationTree = $Skeleton_Minion/AnimationTree
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var timer: Timer = $Timer
+
+var disfrom_player : float
 
 signal died
 
@@ -42,8 +45,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	set_menear()
+	
 	velocity = Vector3.ZERO
-	damagepopup.look_at(subViewport.get_camera_3d().global_position)
+	idk.look_at(subViewport.get_camera_3d().global_position)
 	
 	match state_machine.get_current_node():
 		"Walking_A":
@@ -60,6 +65,15 @@ func _process(delta: float) -> void:
 	animation_tree.set("parameters/conditions/run", !_target_in_range())
 	
 	move_and_slide()
+
+func set_menear() -> void:
+	if health >= 0:
+		disfrom_player = (player.global_position - global_position).length()
+		if disfrom_player < player.StatsManager.nearestEnemy_distance:
+			player.StatsManager.nearestEnemy = self
+
+	
+
 
 func _target_in_range() -> bool:
 	return global_position.distance_to(player.global_position) < ATTACK_RANGE
@@ -89,7 +103,7 @@ func take_damage()  -> void:
 		velocity = Vector3.ZERO
 		velocity += Vector3(dir.x , dir.y * 0.1, dir.z ) * enem_KnockbackMul
 		move_and_slide()
-	damagepopup.get_node("damagepopup").text = "%.1f" % damageRec
+	damagepopup.text = "%.1f" % damageRec
 	showDmg()
 	if health <= 0:
 		emit_signal("died")
@@ -99,14 +113,17 @@ func take_damage()  -> void:
 		animation_tree.set("parameters/conditions/fall",true)
 		animation_tree.set("parameters/conditions/Resurrect",false)
 		destroyaftertime.start()
+		
+		player.StatsManager.nearestEnemy = null
+		player.StatsManager.nearestEnemy_distance = INF
 
 func showDmg() -> void:
 	if player.StatsManager.can_crit:
-		damagepopup.get_node("damagepopup").set_modulate(Color(0.7, 0.14, 0.14, 1))
-		damagepopup.get_node("damagepopup").set_outline_modulate(Color(0.11, 0, 0, 1))
+		damagepopup.set_modulate(Color(0.7, 0.14, 0.14, 1))
+		damagepopup.set_outline_modulate(Color(0.11, 0, 0, 1))
 	else:
-		damagepopup.get_node("damagepopup").set_modulate(Color(1, 1, 1, 1))
-		damagepopup.get_node("damagepopup").set_outline_modulate(Color(1, 1, 1, 1))
+		damagepopup.set_modulate(Color(1, 1, 1, 1))
+		damagepopup.set_outline_modulate(Color(1, 1, 1, 1))
 	damagepopup.visible = true
 	await get_tree().create_timer(0.6).timeout
 	damagepopup.visible = false

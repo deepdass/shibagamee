@@ -23,7 +23,7 @@ extends CharacterBody3D
 
 var dashing : bool= false
 var running : bool= false
-var look_at_me : Vector3
+#var look_at_me : Vector3
 
 
 ##
@@ -93,7 +93,8 @@ func _physics_process(delta: float) -> void:
 		visuals.look_at(direction + position)
 		
 	else:
-		visuals.look_at(look_at_me, Vector3.UP)
+		#visuals.look_at(look_at_me, Vector3.UP)
+		
 		velocity.x = move_toward(velocity.x, 0, StatsManager.stats.movement_speed)
 		velocity.z = move_toward(velocity.z, 0, StatsManager.stats.movement_speed)
 		
@@ -138,8 +139,9 @@ func _push_away_rigid_bodies() -> void:
 			var push_force : float = mass_ratio * 5.0 #magic number
 			c.get_collider().apply_impulse(push_dir * velocity_diff_in_push_dir * push_force, c.get_position() - c.get_collider().global_position)
 
-func _rotate(where: Vector3) -> void:
-	look_at_me = where
+
+#func _rotate(where: Vector3) -> void:
+	#look_at_me = where
 
 
 func decrease_health() -> void:
