@@ -6,7 +6,7 @@
 script = ExtResource("1_11ken")
 health = 5
 attack = 1000.0
-attack_range = 25.0
+attack_range = 15.0
 crit_rate = 30.0
 crit_damage = 170.0
 movement_speed = 7.5

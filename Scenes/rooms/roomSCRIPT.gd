@@ -10,6 +10,7 @@ var enemySCENEs : Dictionary = {"minion" : preload("res://Scenes/characters/enem
 								}
 
 var num_enemyCount : int
+var enemylist_ref : Array[CharacterBody3D]
 @onready var enemy_spawns : Marker3D = $NavigationRegion3D/spwans
 
 @onready var doors : Marker3D = $NavigationRegion3D/env/door_Container
@@ -18,6 +19,9 @@ var num_enemyCount : int
 func _ready() -> void:
 	player = get_node(player_path)
 	get_parent().ChangeroomCount()
+	
+	enemylist_ref = player.StatsManager.enemylist
+	
 	
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body == player:
@@ -32,6 +36,7 @@ func spawnEnemy() -> void:
 		var enemy : CharacterBody3D = enemySCENEs[enemySCENEs.keys().pick_random()].instantiate()
 		enemy.position = whichpt.position
 		get_node("NavigationRegion3D").add_child(enemy)
+		enemylist_ref.append(enemy)
 			
 		enemy.died.connect(_on_enemy_killed)
 

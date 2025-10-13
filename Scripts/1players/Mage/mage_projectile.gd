@@ -5,15 +5,13 @@ extends Node3D
 @onready var hiteffect : PackedScene = preload("res://Assets/_my/vfx/hiteffects/hiteffect_scene.tscn")
 
 var projectile_speed : int = 15
-var timer:int = 0
-
 var forward_direction : Vector3
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	global_translate(forward_direction * projectile_speed * delta)
 	
-func attack_thisenemy(enemy_ref) -> void:
+func attack_thisenemy(enemy_ref : CharacterBody3D) -> void:
 	if enemy_ref != null:
 		forward_direction = (enemy_ref.collision_shape_3d.global_position - global_position).normalized()
 	else:

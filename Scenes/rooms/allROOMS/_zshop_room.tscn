@@ -1,65 +1,10 @@
-[gd_scene load_steps=26 format=4 uid="uid://duwpjgksalina"]
+[gd_scene load_steps=14 format=4 uid="uid://ef4r1il4fo0w"]
 
-[ext_resource type="Script" uid="uid://b8tcib7cuxmbg" path="res://Scripts/0Managers/0_game_manager.gd" id="1_fet0j"]
-[ext_resource type="Texture2D" uid="uid://cna7hum5q5uek" path="res://Assets/UI/staminaBar_gimp.png" id="2_lbtde"]
-[ext_resource type="Script" uid="uid://bm5mc8ak8jjih" path="res://Scripts/0Managers/minimap_cam.gd" id="3_xb210"]
-[ext_resource type="Texture2D" uid="uid://dwnmocndg7gk7" path="res://Assets/UI/Heart.png" id="4_am5cg"]
-[ext_resource type="PackedScene" uid="uid://c7illv6kf10b2" path="res://Scenes/characters/players/character_base.tscn" id="5_ielc5"]
-[ext_resource type="MeshLibrary" uid="uid://crl8041p05pde" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib1.tres" id="6_377bg"]
-[ext_resource type="Script" uid="uid://c1ciyr271og1w" path="res://Scenes/rooms/roomsManager.gd" id="7_qjqld"]
-[ext_resource type="Script" uid="uid://dwrg1j4xsnvtx" path="res://Scenes/rooms/roomSCRIPT.gd" id="8_lbtde"]
-[ext_resource type="Texture2D" uid="uid://c3mchi10usuw1" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="9_xb210"]
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2ulnn"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7a0ti"]
-corner_radius_top_left = 200
-corner_radius_top_right = 200
-corner_radius_bottom_right = 200
-corner_radius_bottom_left = 200
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62ixm"]
-draw_center = false
-border_width_left = 8
-border_width_top = 8
-border_width_right = 8
-border_width_bottom = 8
-border_color = Color(0.051970966, 0.05197096, 0.05197095, 1)
-corner_radius_top_left = 200
-corner_radius_top_right = 200
-corner_radius_bottom_right = 200
-corner_radius_bottom_left = 200
-corner_detail = 16
-
-[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_idx2o"]
-rayleigh_coefficient = 1.29
-ground_color = Color(0.313219, 0.479875, 0.8463, 1)
-
-[sub_resource type="Sky" id="Sky_2ulnn"]
-sky_material = SubResource("PhysicalSkyMaterial_idx2o")
-
-[sub_resource type="Environment" id="Environment_n4gow"]
-background_mode = 1
-background_color = Color(0.147604, 0.21763, 0.326386, 1)
-sky = SubResource("Sky_2ulnn")
-ambient_light_source = 2
-ambient_light_color = Color(0.415686, 0.537255, 0.72549, 1)
-ambient_light_energy = 1.5
-ssao_radius = 1.41
-ssao_intensity = 3.39
-ssao_detail = 2.0
-ssao_sharpness = 0.26
-ssil_radius = 3.65
-ssil_intensity = 4.0
-ssil_sharpness = 0.43
-ssil_normal_rejection = 0.9
-sdfgi_read_sky_light = false
-adjustment_enabled = true
-adjustment_contrast = 1.1
+[ext_resource type="Script" uid="uid://dwrg1j4xsnvtx" path="res://Scenes/rooms/roomSCRIPT.gd" id="1_0sydr"]
+[ext_resource type="MeshLibrary" uid="uid://crl8041p05pde" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib1.tres" id="2_3ryw7"]
+[ext_resource type="Texture2D" uid="uid://c3mchi10usuw1" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="3_jsp00"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_hmakl"]
-vertices = PackedVector3Array(10.855024, 4.40613, -19.144974, 11.105024, 4.40613, -18.644974, 13.105024, 4.40613, -18.644974, 13.105024, 4.40613, -29.144974, -9.644976, 4.40613, -26.894974, -13.144976, 4.40613, -27.144974, -12.894976, 4.40613, -21.894974, 3.6050243, 4.40613, -14.894974, 9.355024, 4.90613, -14.644974, 8.855024, 4.40613, -18.894974, 7.9175243, 4.40613, -14.707474, 9.188358, 4.40613, -16.06164, -8.894976, 4.40613, -27.644974, 5.1050243, 4.40613, -29.394974, 5.1050243, 4.40613, -31.144974, -9.144976, 4.40613, -31.144974, 5.6050243, 4.40613, -28.894974, -10.144976, 4.40613, -12.894974, 3.1050243, 4.65613, -12.644974, 3.1050243, 4.40613, -14.394974, -13.144976, 4.40613, -11.144974, -10.894976, 4.65613, -10.644974, -10.894976, 4.40613, -12.394974, -13.644976, 4.40613, -20.894974, -17.144976, 4.40613, -21.144974, -16.894976, 4.40613, -19.644974, -14.644976, 4.40613, -6.8949738, -11.394976, 2.40613, -6.8949738, -11.394976, 2.40613, -9.144974, -14.894976, 4.40613, -8.894974, -13.561643, 4.40613, -6.8949738, -13.728309, 4.40613, -8.978308, -21.144976, 4.40613, -8.894974, -17.394976, 4.40613, -8.894974, -15.144976, 4.40613, -10.894974, -17.644976, 4.40613, -18.894974, -21.144976, 4.40613, -19.144974, -16.894976, 4.40613, -8.394974, -17.144976, 4.40613, -2.8949738, -14.894976, 4.40613, -2.8949738, 13.105024, 0.40613008, -7.3949738, 13.605024, 0.40613008, -7.6449738, 13.605024, 0.40613008, -8.394974, 13.105024, 0.40613008, -8.644974, 12.855024, 2.40613, -13.644974, 10.605024, 0.40613008, -9.394974, 13.042524, 0.40613008, -9.894974, 12.980024, 1.4061301, -11.144974, 9.105024, 0.40613008, -13.144974, 4.8550243, 0.6561301, -13.144974, 4.8550243, 0.40613008, -11.394974, 9.105024, 0.40613008, -9.644974, 11.105024, 0.40613008, -2.3949738, 11.605024, 0.40613008, -2.8949738, 13.105024, 0.40613008, -2.8949738, 12.980024, 3.90613, -16.144974, 10.962168, 3.90613, -16.002117, 10.890738, 2.90613, -14.680689, 2.8550243, 0.40613008, -10.894974, 2.8550243, 0.40613008, -0.89497375, 11.105024, 0.40613008, -0.89497375, 10.355024, 8.40613, -17.644974, 10.355024, 8.40613, -18.394974, 9.605024, 8.40613, -18.144974, 9.605024, 8.40613, -14.144974, 10.105024, 8.40613, -13.894974, 4.3550243, 8.40613, -13.894974, 4.1050243, 8.40613, -14.144974, 3.6050243, 8.40613, -12.144974, 4.1050243, 8.40613, -11.894974, -10.394976, 8.40613, -10.144974, -14.394976, 8.40613, -10.144974, -14.394976, 8.40613, -9.644974, -9.894976, 8.40613, -9.894974, -9.644976, 8.40613, -11.894974, -9.894976, 8.40613, -12.144974, -7.6449757, 0.40613008, -15.644974, -7.6449757, 0.40613008, -12.894974, -0.39497566, 0.40613008, -12.894974, -0.39497566, 0.40613008, -15.644974, -2.6449757, 0.40613008, -0.89497375, -2.3949757, 0.40613008, -0.14497375, -1.6449757, 0.40613008, -0.14497375, -1.3949757, 0.40613008, -0.89497375, -6.6449757, 0.40613008, -10.644974, -9.394976, 0.40613008, -9.144974, -9.394976, 0.40613008, -5.3949738, 0.35502434, 0.40613008, -0.89497375, 0.35502434, 0.40613008, -10.894974, -9.644976, 0.40613008, -6.8949738, -6.3949757, 0.40613008, -11.144974, -9.144976, 0.40613008, -10.644974, -13.144976, 0.40613008, -5.1449738, -13.144976, 0.40613008, -2.8949738, -9.394976, 0.40613008, -2.8949738, -9.144976, 0.40613008, -0.89497375, 12.105024, 4.40613, -1.6449738, 13.105024, 4.40613, -1.8949738, 11.855024, 4.40613, -1.8949738, -9.894976, 4.40613, -2.1449738, -12.894976, 4.40613, -2.1449738, -10.394976, 4.40613, -1.8949738, 11.605024, 4.40613, -0.14497375, 12.105024, 4.40613, 0.105026245, -9.894976, 4.40613, 0.105026245, -9.644976, 4.40613, -0.14497375, -2.6449757, 0.40613008, 0.85502625, -1.3949757, 0.40613008, 0.85502625, -0.39497566, 0.40613008, 3.8550262, 1.6050243, 0.40613008, 3.6050262, 1.6050243, 0.40613008, 0.85502625, -5.6449757, 0.40613008, 0.85502625, -5.6449757, 0.40613008, 3.6050262, -3.8949757, 0.40613008, 3.6050262, -3.6449757, 0.40613008, 5.6050262, -0.39497566, 0.40613008, 5.6050262)
-polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(6, 5, 4), PackedInt32Array(8, 10, 11), PackedInt32Array(11, 10, 9), PackedInt32Array(9, 10, 7), PackedInt32Array(12, 6, 4), PackedInt32Array(13, 12, 14), PackedInt32Array(14, 12, 15), PackedInt32Array(0, 9, 3), PackedInt32Array(3, 9, 16), PackedInt32Array(6, 12, 17), PackedInt32Array(17, 12, 7), PackedInt32Array(7, 12, 9), PackedInt32Array(9, 12, 13), PackedInt32Array(13, 16, 9), PackedInt32Array(19, 18, 17), PackedInt32Array(7, 19, 17), PackedInt32Array(22, 21, 20), PackedInt32Array(17, 22, 20), PackedInt32Array(25, 24, 23), PackedInt32Array(29, 31, 26), PackedInt32Array(26, 31, 30), PackedInt32Array(30, 31, 27), PackedInt32Array(27, 31, 28), PackedInt32Array(33, 32, 34), PackedInt32Array(34, 32, 35), PackedInt32Array(35, 32, 36), PackedInt32Array(25, 23, 35), PackedInt32Array(35, 23, 17), PackedInt32Array(35, 17, 20), PackedInt32Array(35, 20, 34), PackedInt32Array(29, 26, 37), PackedInt32Array(37, 26, 39), PackedInt32Array(37, 39, 38), PackedInt32Array(23, 6, 17), PackedInt32Array(37, 33, 29), PackedInt32Array(29, 33, 34), PackedInt32Array(41, 40, 42), PackedInt32Array(42, 40, 43), PackedInt32Array(43, 45, 46), PackedInt32Array(46, 45, 47), PackedInt32Array(47, 45, 44), PackedInt32Array(49, 48, 50), PackedInt32Array(50, 48, 51), PackedInt32Array(43, 40, 45), PackedInt32Array(45, 40, 51), PackedInt32Array(51, 40, 53), PackedInt32Array(51, 53, 52), PackedInt32Array(40, 54, 53), PackedInt32Array(2, 55, 1), PackedInt32Array(1, 55, 56), PackedInt32Array(56, 55, 57), PackedInt32Array(57, 55, 44), PackedInt32Array(57, 44, 45), PackedInt32Array(50, 51, 58), PackedInt32Array(58, 51, 52), PackedInt32Array(58, 52, 60), PackedInt32Array(58, 60, 59), PackedInt32Array(62, 61, 63), PackedInt32Array(63, 61, 64), PackedInt32Array(64, 61, 65), PackedInt32Array(67, 64, 66), PackedInt32Array(66, 64, 65), PackedInt32Array(67, 66, 68), PackedInt32Array(68, 66, 69), PackedInt32Array(71, 70, 72), PackedInt32Array(72, 70, 73), PackedInt32Array(75, 68, 74), PackedInt32Array(74, 68, 69), PackedInt32Array(75, 74, 70), PackedInt32Array(70, 74, 73), PackedInt32Array(79, 78, 76), PackedInt32Array(76, 78, 77), PackedInt32Array(81, 80, 82), PackedInt32Array(82, 80, 83), PackedInt32Array(85, 84, 86), PackedInt32Array(86, 84, 88), PackedInt32Array(86, 88, 83), PackedInt32Array(83, 88, 87), PackedInt32Array(27, 28, 89), PackedInt32Array(89, 28, 85), PackedInt32Array(84, 90, 88), PackedInt32Array(85, 91, 84), PackedInt32Array(86, 89, 85), PackedInt32Array(93, 92, 94), PackedInt32Array(94, 92, 86), PackedInt32Array(83, 80, 86), PackedInt32Array(94, 86, 95), PackedInt32Array(95, 86, 80), PackedInt32Array(58, 59, 88), PackedInt32Array(88, 59, 87), PackedInt32Array(98, 97, 96), PackedInt32Array(101, 100, 99), PackedInt32Array(98, 96, 102), PackedInt32Array(102, 96, 103), PackedInt32Array(105, 102, 104), PackedInt32Array(104, 102, 103), PackedInt32Array(104, 101, 105), PackedInt32Array(105, 101, 99), PackedInt32Array(82, 107, 81), PackedInt32Array(81, 107, 106), PackedInt32Array(109, 108, 110), PackedInt32Array(110, 108, 107), PackedInt32Array(112, 111, 113), PackedInt32Array(113, 111, 106), PackedInt32Array(106, 107, 113), PackedInt32Array(113, 107, 108), PackedInt32Array(113, 108, 114), PackedInt32Array(114, 108, 115)]
 agent_height = 1.0
 agent_max_climb = 0.5
 
@@ -125,7 +70,7 @@ _data = {
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tg5mm"]
 resource_name = "texture"
-albedo_texture = ExtResource("9_xb210")
+albedo_texture = ExtResource("3_jsp00")
 roughness = 0.45
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_cmng2"]
@@ -162,376 +107,59 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_cmng2")
 
-[node name="World" type="Node3D"]
+[node name="room" type="Node3D"]
+script = ExtResource("1_0sydr")
 
-[node name="realScreenVis" type="Panel" parent="."]
-offset_right = 3840.0
-offset_bottom = 2160.0
-
-[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
-unique_name_in_owner = true
-script = ExtResource("1_fet0j")
-hearts = [NodePath("../UI/Panel/Heart1"), NodePath("../UI/Panel/Heart2"), NodePath("../UI/Panel/Heart3"), NodePath("../UI/Panel/Heart4"), NodePath("../UI/Panel/Heart5"), NodePath("../UI/Panel/Heart6"), NodePath("../UI/Panel/Heart7")]
-
-[node name="Timer" type="Timer" parent="GameManager"]
-wait_time = 0.5
-
-[node name="killzone" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.81879, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="killzone"]
-shape = SubResource("WorldBoundaryShape3D_2ulnn")
-
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="staminaBar" type="TextureProgressBar" parent="UI"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -638.0
-offset_top = -71.0
-offset_right = -382.0
-offset_bottom = -64.0
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(5, 4.5)
-value = 100.0
-fill_mode = 6
-texture_progress = ExtResource("2_lbtde")
-tint_progress = Color(0.84608996, 0.84608996, 0.84608996, 1)
-
-[node name="miniMap" type="PanelContainer" parent="UI"]
-clip_children = 1
-clip_contents = true
-offset_left = 3420.0
-offset_top = 20.0
-offset_right = 3820.0
-offset_bottom = 420.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_7a0ti")
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="UI/miniMap"]
-texture_filter = 1
-layout_mode = 2
-stretch = true
-stretch_shrink = 2
-
-[node name="SubViewport" type="SubViewport" parent="UI/miniMap/SubViewportContainer"]
-handle_input_locally = false
-size = Vector2i(200, 200)
-render_target_update_mode = 4
-
-[node name="Camera3D" type="Camera3D" parent="UI/miniMap/SubViewportContainer/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 16, 0)
-projection = 1
-size = 40.0
-script = ExtResource("3_xb210")
-
-[node name="miniMapBorder" type="PanelContainer" parent="UI"]
-offset_left = 3417.0
-offset_top = 17.0
-offset_right = 3823.0
-offset_bottom = 423.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_62ixm")
-
-[node name="Panel" type="Panel" parent="UI"]
-scale = Vector2(1.6, 1.6)
-
-[node name="Heart1" type="TextureRect" parent="UI/Panel"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 18.0
-offset_top = 19.0
-offset_right = 200.0
-offset_bottom = 187.0
-scale = Vector2(0.45, 0.45)
-texture = ExtResource("4_am5cg")
-expand_mode = 3
-
-[node name="Heart2" type="TextureRect" parent="UI/Panel"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 108.0
-offset_top = 19.0
-offset_right = 290.0
-offset_bottom = 187.0
-scale = Vector2(0.45, 0.45)
-texture = ExtResource("4_am5cg")
-expand_mode = 3
-
-[node name="Heart3" type="TextureRect" parent="UI/Panel"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 198.0
-offset_top = 19.0
-offset_right = 380.0
-offset_bottom = 187.0
-scale = Vector2(0.45, 0.45)
-texture = ExtResource("4_am5cg")
-expand_mode = 3
-
-[node name="Heart4" type="TextureRect" parent="UI/Panel"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 288.0
-offset_top = 19.0
-offset_right = 470.0
-offset_bottom = 187.0
-scale = Vector2(0.45, 0.45)
-texture = ExtResource("4_am5cg")
-expand_mode = 3
-
-[node name="Heart5" type="TextureRect" parent="UI/Panel"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 378.0
-offset_top = 19.0
-offset_right = 560.0
-offset_bottom = 187.0
-scale = Vector2(0.45, 0.45)
-texture = ExtResource("4_am5cg")
-expand_mode = 3
-
-[node name="Heart6" type="TextureRect" parent="UI/Panel"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 468.0
-offset_top = 19.0
-offset_right = 650.0
-offset_bottom = 187.0
-scale = Vector2(0.45, 0.45)
-texture = ExtResource("4_am5cg")
-expand_mode = 3
-
-[node name="Heart7" type="TextureRect" parent="UI/Panel"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 558.0
-offset_top = 19.0
-offset_right = 740.0
-offset_bottom = 187.0
-scale = Vector2(0.45, 0.45)
-texture = ExtResource("4_am5cg")
-expand_mode = 3
-
-[node name="heartsOverload" type="Label" parent="UI/Panel"]
-visible = false
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = 634.375
-offset_right = 702.375
-offset_bottom = 61.0
-grow_horizontal = 0
-theme_override_colors/font_color = Color(0.77, 0, 0.2695, 1)
-theme_override_font_sizes/font_size = 40
-text = "+7"
-
-[node name="Panel2" type="Panel" parent="UI"]
-
-[node name="score" type="Label" parent="UI/Panel2"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = 3476.0
-offset_top = 403.0
-offset_right = 3768.0
-offset_bottom = 540.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 100
-text = "Score "
-
-[node name="tip" type="Label" parent="UI/Panel2"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = 3305.0
-offset_top = 518.0
-offset_right = 3815.0
-offset_bottom = 601.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 60
-text = "Find the Portal!! :)"
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
-texture_filter = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-stretch = true
-stretch_shrink = 6
-
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
-handle_input_locally = false
-size = Vector2i(320, 180)
-render_target_update_mode = 4
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(-0.101372, 0.707474, 0.699432, 0.00664804, -0.702556, 0.711598, 0.994826, 0.076786, 0.0665162, 5.85244, 6.7486, 0)
-light_color = Color(0.636053, 0.67, 0.6164, 1)
-light_bake_mode = 1
-shadow_enabled = true
-shadow_bias = 0.5
-shadow_blur = 0.1
-directional_shadow_mode = 1
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
-environment = SubResource("Environment_n4gow")
-
-[node name="myy" type="Node" parent="SubViewportContainer/SubViewport"]
-
-[node name="per" type="Marker3D" parent="SubViewportContainer/SubViewport/myy"]
-
-[node name="Player" parent="SubViewportContainer/SubViewport/myy/per" instance=ExtResource("5_ielc5")]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-platform_on_leave = 2
-
-[node name="camera_rig" type="Node3D" parent="SubViewportContainer/SubViewport/myy/per"]
-unique_name_in_owner = true
-
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/myy/per/camera_rig"]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.766044, 0.642788, 0, -0.642788, 0.766044, 0, 10.5755, 10.1963)
-current = true
-fov = 60.0
-size = 15.0
-far = 70.0
-
-[node name="cam_Initailpt" type="Node3D" parent="SubViewportContainer/SubViewport/myy/per/camera_rig"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.5755, 10.1963)
-
-[node name="cam_finalpt" type="Node3D" parent="SubViewportContainer/SubViewport/myy/per/camera_rig"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-
-[node name="floor" type="GridMap" parent="SubViewportContainer/SubViewport/myy"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -5)
-mesh_library = ExtResource("6_377bg")
-collision_mask = 7
-data = {
-"cells": PackedInt32Array(-2, 1, 1048605, -65536, 1, 1048605, -65535, 1, 1048605, -3, 1, 1048605, -2, 3, 1048605, -65536, 3, 1048605, -1, 4, 1048605)
-}
-metadata/_editor_floor_ = Vector3(0, -1, 0)
-
-[node name="rooms" type="Marker3D" parent="SubViewportContainer/SubViewport/myy"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -4)
-script = ExtResource("7_qjqld")
-roomsCount = 8
-
-[node name="room" type="Node3D" parent="SubViewportContainer/SubViewport/myy/rooms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
-script = ExtResource("8_lbtde")
-
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="SubViewportContainer/SubViewport/myy/rooms/room"]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_hmakl")
 
-[node name="spwans" type="Marker3D" parent="SubViewportContainer/SubViewport/myy/rooms/room/NavigationRegion3D"]
+[node name="spwans" type="Marker3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9779699, 0)
 
-[node name="Node3D" type="Marker3D" parent="SubViewportContainer/SubViewport/myy/rooms/room/NavigationRegion3D/spwans"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -9)
+[node name="Node3D" type="Marker3D" parent="NavigationRegion3D/spwans"]
 
-[node name="Node3D2" type="Marker3D" parent="SubViewportContainer/SubViewport/myy/rooms/room/NavigationRegion3D/spwans"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -5)
-
-[node name="Node3D3" type="Marker3D" parent="SubViewportContainer/SubViewport/myy/rooms/room/NavigationRegion3D/spwans"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 4.2919836, -22)
-
-[node name="Node3D4" type="Marker3D" parent="SubViewportContainer/SubViewport/myy/rooms/room/NavigationRegion3D/spwans"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 4.2919836, -21)
-
-[node name="Node3D5" type="Marker3D" parent="SubViewportContainer/SubViewport/myy/rooms/room/NavigationRegion3D/spwans"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 4.2919836, -8)
-
-[node name="Node3D6" type="Marker3D" parent="SubViewportContainer/SubViewport/myy/rooms/room/NavigationRegion3D/spwans"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4.2919836, -28)
-
-[node name="env" type="Marker3D" parent="SubViewportContainer/SubViewport/myy/rooms/room/NavigationRegion3D"]
+[node name="env" type="Marker3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 
-[node name="floor" type="GridMap" parent="SubViewportContainer/SubViewport/myy/rooms/room/NavigationRegion3D/env"]
+[node name="floor" type="GridMap" parent="NavigationRegion3D/env"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -1)
-mesh_library = ExtResource("6_377bg")
+mesh_library = ExtResource("2_3ryw7")
 collision_mask = 7
-data = {
-"cells": PackedInt32Array(0, 65535, 1441821, 2, 65535, 1441821, 4, 65535, 29, 5, 65534, 29, 65535, 65533, 29, 0, 65531, 29, 2, 65531, 29, 4, 65531, 29, 5, 65532, 29, 1, 65533, 29, 3, 65533, 29, 5, 65527, 45, 65529, 65531, 54, 65534, 65535, 29, 65532, 65535, 29, 65531, 65532, 29, 65533, 65532, 29, 65534, 65531, 29, 65531, 65531, 29, 65533, 65531, 29, 65531, 65534, 29, 65531, 65535, 29, 65533, 65534, 29, 65529, 65534, 29, 2, 65530, 655389, 3, 65530, 655389, 65534, 65529, 29, 65532, 65529, 29, 196599, 65534, 38, 196599, 65532, 38, 196597, 65531, 38, 196597, 65529, 38, 196597, 65527, 38, 196599, 65526, 38, 196599, 65528, 38, 196599, 65530, 38, 196601, 65530, 38, 196601, 65528, 38, 196601, 65526, 38, 196601, 65524, 38, 196603, 65521, 38, 196603, 65523, 38, 196603, 65525, 38, 196603, 65527, 38, 196603, 65529, 38, 196605, 65529, 38, 196605, 65527, 38, 196605, 65525, 38, 196605, 65523, 38, 196605, 65521, 38, 196607, 65521, 38, 196607, 65523, 38, 196607, 65525, 38, 196607, 65527, 38, 196607, 65529, 38, 131073, 65528, 38, 131073, 65526, 38, 131073, 65524, 38, 131073, 65522, 38, 131075, 65522, 38, 131075, 65524, 38, 131075, 65526, 38, 131075, 65528, 38, 131077, 65526, 38, 131077, 65524, 38, 131077, 65522, 38, 131073, 65521, 38, 196601, 65523, 38, 131072, 65529, 38, 131076, 65527, 1441869, 65533, 1, 1441821, 65535, 1, 1441821, 65534, 2, 1441821)
-}
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="walls" type="GridMap" parent="SubViewportContainer/SubViewport/myy/rooms/room/NavigationRegion3D/env"]
+[node name="walls" type="GridMap" parent="NavigationRegion3D/env"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -1)
-mesh_library = ExtResource("6_377bg")
+mesh_library = ExtResource("2_3ryw7")
 collision_layer = 2
 collision_mask = 7
-data = {
-"cells": PackedInt32Array(131076, 65527, 1441834, 65530, 65531, 1441857, 65530, 65530, 1048641, 0, 65530, 69, 65535, 65530, 69, 65530, 65535, 67, 65528, 65535, 655427, 65528, 65534, 1048653, 65530, 0, 655427, 65534, 0, 655432, 65532, 0, 655442, 0, 0, 655442, 65531, 65530, 83, 2, 0, 82, 1, 0, 69, 65529, 65535, 69, 65531, 0, 69, 5, 65535, 1048643, 5, 0, 1441860, 4, 0, 655429, 6, 65534, 1048645, 6, 65535, 1441860, 6, 65532, 1441863, 6, 65530, 1441861, 6, 65529, 1441861, 6, 65528, 1441861, 131078, 65527, 1048582, 131078, 65528, 1048576, 131078, 65530, 1048576, 131078, 65532, 1048576, 131078, 65534, 1048576, 131078, 65535, 1048578, 1, 65530, 1441857, 2, 65529, 655429, 3, 65529, 655429, 131073, 65530, 1441858, 131073, 65529, 1048644, 131074, 65529, 76, 131076, 65529, 1441858, 4, 65528, 1441861, 4, 65529, 1441860, 131078, 65526, 1048576, 131078, 65524, 1048576, 131078, 65522, 1048576, 196600, 65531, 655402, 196600, 65533, 1441794, 196600, 65535, 1441795, 196598, 65535, 655363, 196598, 65534, 1048580, 196598, 65532, 3, 196596, 65532, 655363, 196596, 65530, 1048576, 196596, 65528, 1048576, 196596, 65526, 1048579, 196598, 65526, 1441795, 196598, 65525, 1048579, 196600, 65525, 1441795, 196600, 65522, 1048579, 196602, 65522, 1441795, 196602, 65520, 1048579, 131074, 65520, 3, 131074, 65521, 655363, 131076, 65521, 655360, 131078, 65521, 655362, 196604, 65520, 655360, 196606, 65520, 655360, 131072, 65520, 655360, 196607, 65530, 76, 196605, 65530, 76, 196603, 65530, 76, 196602, 65530, 1048644, 196602, 65531, 1441858, 196601, 65531, 655437, 196600, 65524, 1048580, 65533, 65530, 62)
-}
-metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="door_Container" type="Marker3D" parent="SubViewportContainer/SubViewport/myy/rooms/room/NavigationRegion3D/env"]
+[node name="door_Container" type="Marker3D" parent="NavigationRegion3D/env"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
-[node name="door" type="StaticBody3D" parent="SubViewportContainer/SubViewport/myy/rooms/room/NavigationRegion3D/env/door_Container"]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2, 0, 0)
+[node name="door" type="StaticBody3D" parent="NavigationRegion3D/env/door_Container"]
 
-[node name="doorBlock" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/myy/rooms/room/NavigationRegion3D/env/door_Container/door"]
+[node name="doorBlock" type="CollisionShape3D" parent="NavigationRegion3D/env/door_Container/door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_p7ifo")
 disabled = true
 debug_color = Color(1, 1, 1, 0.746)
 
-[node name="Area3D" type="Area3D" parent="SubViewportContainer/SubViewport/myy/rooms/room/NavigationRegion3D/env/door_Container/door"]
+[node name="Area3D" type="Area3D" parent="NavigationRegion3D/env/door_Container/door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="detectPlayer" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/myy/rooms/room/NavigationRegion3D/env/door_Container/door/Area3D"]
+[node name="detectPlayer" type="CollisionShape3D" parent="NavigationRegion3D/env/door_Container/door/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29134, 0.449, 0)
 shape = SubResource("BoxShape3D_he860")
 debug_color = Color(0, 0.6, 0.7, 0.641)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/myy/rooms/room/NavigationRegion3D/env/door_Container/door"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NavigationRegion3D/env/door_Container/door"]
 libraries = {
 &"": SubResource("AnimationLibrary_2rkpr")
 }
 
-[node name="wall_doorway_door" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/myy/rooms/room/NavigationRegion3D/env/door_Container/door"]
+[node name="wall_doorway_door" type="MeshInstance3D" parent="NavigationRegion3D/env/door_Container/door"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0128989, -2.84387, 0.812118)
 mesh = SubResource("ArrayMesh_iog33")
 skeleton = NodePath("")
 
-[node name="door2" type="StaticBody3D" parent="SubViewportContainer/SubViewport/myy/rooms/room/NavigationRegion3D/env/door_Container"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -8)
-
-[node name="doorBlock" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/myy/rooms/room/NavigationRegion3D/env/door_Container/door2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("BoxShape3D_p7ifo")
-disabled = true
-debug_color = Color(1, 1, 1, 0.746)
-
-[node name="Area3D" type="Area3D" parent="SubViewportContainer/SubViewport/myy/rooms/room/NavigationRegion3D/env/door_Container/door2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-
-[node name="detectPlayer" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/myy/rooms/room/NavigationRegion3D/env/door_Container/door2/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29134, 0.449, 0)
-shape = SubResource("BoxShape3D_he860")
-debug_color = Color(0, 0.6, 0.7, 0.641)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/myy/rooms/room/NavigationRegion3D/env/door_Container/door2"]
-libraries = {
-&"": SubResource("AnimationLibrary_2rkpr")
-}
-
-[node name="wall_doorway_door" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/myy/rooms/room/NavigationRegion3D/env/door_Container/door2"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0128989, -2.84387, 0.812118)
-mesh = SubResource("ArrayMesh_iog33")
-skeleton = NodePath("")
-
-[connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
-[connection signal="body_entered" from="killzone" to="GameManager" method="_on_killzone_body_entered"]
-[connection signal="body_entered" from="SubViewportContainer/SubViewport/myy/rooms/room/NavigationRegion3D/env/door_Container/door/Area3D" to="SubViewportContainer/SubViewport/myy/rooms/room" method="_on_area_3d_body_entered"]
-[connection signal="body_entered" from="SubViewportContainer/SubViewport/myy/rooms/room/NavigationRegion3D/env/door_Container/door2/Area3D" to="SubViewportContainer/SubViewport/myy/rooms/room" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="NavigationRegion3D/env/door_Container/door/Area3D" to="." method="_on_area_3d_body_entered"]

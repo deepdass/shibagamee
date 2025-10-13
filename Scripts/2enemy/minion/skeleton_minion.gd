@@ -28,7 +28,6 @@ var state_machine : AnimationNodeStateMachinePlayback
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var timer: Timer = $Timer
 
-var disfrom_player : float
 
 signal died
 
@@ -45,7 +44,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	set_menear()
 	
 	velocity = Vector3.ZERO
 	idk.look_at(subViewport.get_camera_3d().global_position)
@@ -65,13 +63,6 @@ func _process(delta: float) -> void:
 	animation_tree.set("parameters/conditions/run", !_target_in_range())
 	
 	move_and_slide()
-
-func set_menear() -> void:
-	if health >= 0:
-		disfrom_player = (player.global_position - global_position).length()
-		if disfrom_player < player.StatsManager.nearestEnemy_distance:
-			player.StatsManager.nearestEnemy = self
-
 	
 
 
@@ -114,8 +105,8 @@ func take_damage()  -> void:
 		animation_tree.set("parameters/conditions/Resurrect",false)
 		destroyaftertime.start()
 		
+		player.StatsManager.enemylist.erase(self)
 		player.StatsManager.nearestEnemy = null
-		player.StatsManager.nearestEnemy_distance = INF
 
 func showDmg() -> void:
 	if player.StatsManager.can_crit:

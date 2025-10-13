@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://dc7ih71yirsl" path="res://Assets/Audio/205563__everheat__arrow.wav" id="6_jgnx1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iguuu"]
-size = Vector3(0.423557, 0.7561035, 0.804337)
+size = Vector3(0.26235116, 0.24386597, 0.804337)
 
 [node name="mage_projectile" type="Node3D"]
 script = ExtResource("1_jgnx1")
@@ -18,7 +18,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0.000767945, 0, -0.000767945, 1, 0, 0, 0, 1, 0.00031657214, -0.0007676482, 0.163)
+transform = Transform3D(1, 0.000767945, 0, -0.000767945, 1, 0, 0, 0, 1, -1.2533701e-08, 0, 0.14336883)
 shape = SubResource("BoxShape3D_iguuu")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]

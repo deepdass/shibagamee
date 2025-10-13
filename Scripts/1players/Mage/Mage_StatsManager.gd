@@ -1,13 +1,9 @@
 extends Node
 
-
-
-@onready var player : CharacterBody3D = get_parent().get_parent().get_parent()
-
 @export var stats : Stats
-
 var RES : Resource = load("res://Res/character/RES_mage.tres")
 
+@onready var player : CharacterBody3D = get_parent().get_parent().get_parent()
 
 var can_crit : bool = false
 
@@ -16,11 +12,12 @@ var can_crit : bool = false
 @export var projectile : PackedScene
 @onready var fireposnode: Node3D = $"../fireposnode"
 @export var projectile_speed : int = 15
-@export var milli_per_shots : int = 667
+@export var milli_per_shots : int = 800
 
 var nearestEnemy : CharacterBody3D 
 var nearestEnemy_distance : float = INF
 
+var enemylist : Array[CharacterBody3D]
 ##
 
 
@@ -43,12 +40,14 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	
-	if nearestEnemy == null or not is_instance_valid(nearestEnemy):
-		nearestEnemy_distance = INF
-
-	
 	##pewpew
 	if Input.is_action_pressed("attack"):
+		nearestEnemy_distance = INF
+		for i : CharacterBody3D in enemylist:
+			var newdis : float = (player.global_position - i.global_position).length()
+			if !(nearestEnemy_distance < newdis) and newdis < stats.attack_range:
+				nearestEnemy_distance = newdis
+				nearestEnemy = i
 		if nearestEnemy:
 			player.get_node("visuals").look_at(Vector3(nearestEnemy.global_position.x, player.global_position.y, nearestEnemy.global_position.z), Vector3.UP)
 		#player.get_node("visuals").look_at(player.look_at_me, Vector3.UP)
