@@ -5,7 +5,6 @@ class_name  Stats
 @export var score : int = 0
 
 @export var health : int
-@export var enemy_health : float
 
 @export var defence : float
 @export var sp_Meter : int
@@ -19,3 +18,5 @@ class_name  Stats
 
 @export var movement_speed : float
 @export var stamina : float
+
+@export var luck : float

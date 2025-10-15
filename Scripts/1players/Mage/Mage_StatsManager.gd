@@ -108,6 +108,8 @@ func applyUpgrades(receivedPowerups: Stats) -> void:
 	stats.crit_rate += receivedPowerups.crit_rate
 	stats.crit_damage += receivedPowerups.crit_damage
 	stats.movement_speed += receivedPowerups.movement_speed
+	stats.luck += receivedPowerups.luck
+	
 	if !receivedPowerups.stamina == 0:
 		player.set_maxVal(receivedPowerups.stamina)
 		stats.stamina += receivedPowerups.stamina

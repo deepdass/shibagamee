@@ -10,5 +10,6 @@ attack_range = 15.0
 crit_rate = 30.0
 crit_damage = 170.0
 movement_speed = 7.5
-stamina = 100
+stamina = 100.0
+luck = 1.0
 metadata/_custom_type_script = "uid://be76riygqspue"
