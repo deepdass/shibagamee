@@ -11,8 +11,6 @@ script = ExtResource("1_5vuf2")
 [node name="detect player" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_52n0j")
 
-[node name="meshspawn" type="Node3D" parent="."]
-
 [node name="popUp" type="Control" parent="."]
 visible = false
 layout_mode = 3

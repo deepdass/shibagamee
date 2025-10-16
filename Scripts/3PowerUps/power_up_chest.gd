@@ -2,7 +2,7 @@ extends RigidBody3D
 
 @export var PowerUp : PowerUps 
 
-var allRES_dict : Dictionary = {"Mythic": ["res://Scenes/powerUPs/1_mythic/attack_mythic.tres"],
+const allRES_dict : Dictionary = {"Mythic": ["res://Scenes/powerUPs/1_mythic/attack_mythic.tres"],
 
 "Legendary": ["res://Scenes/powerUPs/2_Legendary/monster_legendary.tres"],
 
@@ -27,13 +27,13 @@ var allRES_dict : Dictionary = {"Mythic": ["res://Scenes/powerUPs/1_mythic/attac
 "res://Scenes/powerUPs/5_Common/monster.tres",
 "res://Scenes/powerUPs/5_Common/St. Patricks.tres"]}
 
-var allrarity : Array = allRES_dict.keys()
+const VFXarray : Dictionary = {"Mythic": "res://Assets/_my/vfx/powerUp/1PUEff_mythic.tscn",
+"Legendary": "res://Assets/_my/vfx/powerUp/2PUEff_legendary.tscn",
+"Epic": "res://Assets/_my/vfx/powerUp/3PUEff_epic.tscn",
+"Rare": "res://Assets/_my/vfx/powerUp/4PUEff_rare.tscn",
+"Common": "res://Assets/_my/vfx/powerUp/5PUEff_common.tscn"}
 
-const VFXarray : Array[String] = ["res://Assets/_my/vfx/powerUp/1PUEff_mythic.tscn",
-"res://Assets/_my/vfx/powerUp/2PUEff_legendary.tscn",
-"res://Assets/_my/vfx/powerUp/3PUEff_epic.tscn",
-"res://Assets/_my/vfx/powerUp/4PUEff_rare.tscn",
-"res://Assets/_my/vfx/powerUp/5PUEff_common.tscn"]
+var allrarity : Array = allRES_dict.keys()
 
 
 @onready var animation_player: AnimationPlayer = $chest_mesh/AnimationPlayer
@@ -47,6 +47,15 @@ var already_opened : bool = false
 
 @onready var pts_parent: Node3D = $pts
 @onready var powerUp : PackedScene = preload("res://Scenes/powerUPs/power_up_base.tscn") 
+
+
+const RARITY_WEIGHTS : Dictionary = {
+	"Mythic": 1,
+	"Legendary": 2,
+	"Epic": 4,
+	"Rare": 8,
+	"Common": 15
+}
 
 
 # Called when the node enters the scene tree for the first time.
@@ -71,31 +80,38 @@ func _process(_delta: float) -> void:
 			pts_parent.visible = true
 			interact_area.queue_free()
 
+func pick_weighted_rarity() -> String:
+	var pool: Array[String] = []
+	for rarity : String in allrarity:
+		if rarity in RARITY_WEIGHTS:
+			for _i in range(RARITY_WEIGHTS[rarity]):
+				pool.append(rarity)
+	return pool.pick_random()
+
+
 func spawn_powerUps() -> void:
-	
 	for i : Node3D in pts_parent.get_children():
 		var powerup_inst : Area3D = powerUp.instantiate()
 		i.add_child(powerup_inst)
 		
-		var powerUP_rarity : String = allRES_dict.keys().pick_random()
+		var powerUP_rarity : String = pick_weighted_rarity()
 		
-		if !allRES_dict[powerUP_rarity].is_empty():
-			var RESstring : String = allRES_dict[powerUP_rarity].pick_random()
-			PowerUp = load(RESstring)
-			powerup_inst.ThepowerUp = PowerUp
-			var powerup_mesh_inst : Node3D = PowerUp.mesh.instantiate()
-			i.add_child(powerup_mesh_inst)
+		var RESstring : String = allRES_dict[powerUP_rarity].pick_random()
+		PowerUp = load(RESstring)
+		powerup_inst.ThepowerUp = PowerUp
+		var powerup_mesh_inst : Node3D = PowerUp.mesh.instantiate()
+		i.add_child(powerup_mesh_inst)
 		
-			for path in allRES_dict[powerUP_rarity]:
-				if path == RESstring:
-					allRES_dict[powerUP_rarity].erase(path)
-					break
+		allRES_dict[powerUP_rarity].erase(RESstring)
 		
 		#############
-		var levVFX : PackedScene = load(VFXarray[allrarity.find(powerUP_rarity)])
+		var levVFX : PackedScene = load(VFXarray[powerUP_rarity])
 		var levVFX_inst : Node3D = levVFX.instantiate()
 		i.add_child(levVFX_inst)
 		#############
+		
+		if allRES_dict[powerUP_rarity].is_empty():
+			allrarity.erase(powerUP_rarity)
 
 func _on_interact_area_body_entered(_body: Node3D) -> void:
 	player_entered = true
