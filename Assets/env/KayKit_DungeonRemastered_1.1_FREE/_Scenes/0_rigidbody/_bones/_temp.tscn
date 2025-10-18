@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dcpmu6d4hdde3"]
+
+[node name="idk" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 7

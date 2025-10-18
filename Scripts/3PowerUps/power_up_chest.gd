@@ -54,7 +54,7 @@ const RARITY_WEIGHTS : Dictionary = {
 	"Legendary": 2,
 	"Epic": 4,
 	"Rare": 8,
-	"Common": 15
+	"Common": 13
 }
 
 
