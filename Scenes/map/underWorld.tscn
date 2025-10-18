@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=4 uid="uid://rekblaynb4gg"]
+[gd_scene load_steps=75 format=4 uid="uid://rekblaynb4gg"]
 
 [ext_resource type="Script" uid="uid://b8tcib7cuxmbg" path="res://Scripts/0Managers/0_game_manager.gd" id="1_jlqbh"]
 [ext_resource type="Texture2D" uid="uid://cna7hum5q5uek" path="res://Assets/UI/staminaBar_gimp.png" id="2_ui3k5"]
@@ -57,6 +57,7 @@
 [ext_resource type="PackedScene" uid="uid://con4njs0s7cgm" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/bottle_C_brown.tscn" id="55_kmury"]
 [ext_resource type="PackedScene" uid="uid://csg3avo6jdl63" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/bottle_A_labeled_brown.tscn" id="56_5el2v"]
 [ext_resource type="PackedScene" uid="uid://bunjk24oh3lip" path="res://Scenes/rooms/allROOMS/_zshop_room1.tscn" id="57_5el2v"]
+[ext_resource type="PackedScene" uid="uid://utm3idllwmmj" path="res://Assets/_my/spells/beam/beamSpell.tscn" id="58_njmy1"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2ulnn"]
 
@@ -1493,6 +1494,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 0, -123)
 
 [node name="room17" parent="SubViewportContainer/SubViewport/myy/rooms" instance=ExtResource("57_5el2v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -150)
+
+[node name="beam" parent="." instance=ExtResource("58_njmy1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.8902135, 0.968096, 1.1909777)
 
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
 [connection signal="body_entered" from="killzone" to="GameManager" method="_on_killzone_body_entered"]

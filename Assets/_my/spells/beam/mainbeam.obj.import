@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b8jhgqt65ocil"
+path="res://.godot/imported/mainbeam.obj-6b7d3bdb0a33947a92f82208681d6983.mesh"
+
+[deps]
+
+files=["res://.godot/imported/mainbeam.obj-6b7d3bdb0a33947a92f82208681d6983.mesh"]
+
+source_file="res://Assets/_my/spells/beam/mainbeam.obj"
+dest_files=["res://.godot/imported/mainbeam.obj-6b7d3bdb0a33947a92f82208681d6983.mesh", "res://.godot/imported/mainbeam.obj-6b7d3bdb0a33947a92f82208681d6983.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
