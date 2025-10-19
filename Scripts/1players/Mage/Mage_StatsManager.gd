@@ -1,6 +1,6 @@
 extends Node
 
-@export var stats : Stats
+@onready var stats : Stats
 var RES : Resource = load("res://Res/character/RES_mage.tres")
 
 @onready var player : CharacterBody3D = get_parent().get_parent().get_parent()

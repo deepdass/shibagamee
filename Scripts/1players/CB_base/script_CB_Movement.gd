@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 ##refs
-@onready var game_manager: Node = %GameManager  ## game_manager.decrease_health()
+@onready var game_manager: Node = %GameManager
 @export var character_mesh : PackedScene = preload("res://Scenes/characters/players/mage.tscn")
 
 #@onready var bloodeffanim: AnimationPlayer = $bloodeff/bloodeffanim
@@ -34,6 +34,7 @@ const DASH_STAMINAcost : int = 20
 
 func _ready() -> void:
 	# setup
+	EnemyStats.set_player(self)
 	var character_mesh_inst : Node3D = character_mesh.instantiate()
 	visuals.add_child(character_mesh_inst)
 	character_mesh_inst.global_transform = visuals.global_transform

@@ -460,6 +460,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.5755, 10.1963)
 [node name="cam_finalpt" type="Node3D" parent="SubViewportContainer/SubViewport/myy/per/camera_rig"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
+[node name="beam" parent="SubViewportContainer/SubViewport/myy/per" instance=ExtResource("58_njmy1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3, 1, 1)
+
 [node name="envProps" type="Node" parent="SubViewportContainer/SubViewport/myy"]
 
 [node name="floor" type="GridMap" parent="SubViewportContainer/SubViewport/myy/envProps"]
@@ -1494,9 +1497,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 0, -123)
 
 [node name="room17" parent="SubViewportContainer/SubViewport/myy/rooms" instance=ExtResource("57_5el2v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -150)
-
-[node name="beam" parent="." instance=ExtResource("58_njmy1")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.8902135, 0.968096, 1.1909777)
 
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
 [connection signal="body_entered" from="killzone" to="GameManager" method="_on_killzone_body_entered"]

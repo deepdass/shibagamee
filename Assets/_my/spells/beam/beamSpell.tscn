@@ -26,7 +26,7 @@ shader_parameter/speed = Vector2(-2, 1)
 shader_parameter/maintexture = ExtResource("2_m76jm")
 shader_parameter/alphapower = 0.65
 shader_parameter/maintexture2 = SubResource("GradientTexture2D_ugba3")
-shader_parameter/gra_power = 1.5350000000000001
+shader_parameter/gra_power = 1.535
 
 [sub_resource type="Curve" id="Curve_2agjf"]
 _limits = [0.0, 20.0, 0.0, 1.0]
@@ -126,7 +126,7 @@ point_count = 2
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_fc0pr")
 amount = 1
-lifetime = 2.0
+lifetime = 1.5
 process_material = SubResource("ParticleProcessMaterial_t8tr6")
 draw_pass_1 = ExtResource("3_fi611")
 
@@ -134,15 +134,14 @@ draw_pass_1 = ExtResource("3_fi611")
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_cpfq3")
 amount = 1
-lifetime = 2.0
+lifetime = 1.5
 process_material = SubResource("ParticleProcessMaterial_2agjf")
 draw_pass_1 = ExtResource("3_fi611")
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+[node name="spawnpt" type="GPUParticles3D" parent="."]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_fi611")
 amount = 1
-lifetime = 1.5
 process_material = SubResource("ParticleProcessMaterial_ugba3")
 draw_pass_1 = ExtResource("5_ugba3")
 
