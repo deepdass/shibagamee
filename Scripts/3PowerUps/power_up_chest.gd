@@ -43,7 +43,7 @@ var allrarity : Array = allRES_dict.keys()
 
 var player_entered : bool = false
 var already_opened : bool = false
-
+var player : CharacterBody3D
 
 @onready var pts_parent: Node3D = $pts
 @onready var powerUp : PackedScene = preload("res://Scenes/powerUPs/power_up_base.tscn") 
@@ -82,10 +82,25 @@ func _process(_delta: float) -> void:
 
 func pick_weighted_rarity() -> String:
 	var pool: Array[String] = []
-	for rarity : String in allrarity:
+	
+	var luck_factor: float = player.StatsManager.stats.luck
+
+	
+	for rarity: String in allrarity:
 		if rarity in RARITY_WEIGHTS:
-			for _i in range(RARITY_WEIGHTS[rarity]):
+			var base_weight: float = RARITY_WEIGHTS[rarity]
+			var luck_boost: float = 1.0
+			match rarity:
+				"Mythic":    luck_boost = 1.0 + (luck_factor * 20.0)
+				"Legendary": luck_boost = 1.0 + (luck_factor * 10.0)
+				"Epic":      luck_boost = 1.0 + (luck_factor * 7.0)
+				"Rare":      luck_boost = 1.0 + (luck_factor * 3.0)
+				"Common":    luck_boost = 1.0 - (luck_factor * 0.5)
+			
+			var adjusted_weight := int(base_weight * luck_boost )
+			for _i in range(adjusted_weight):
 				pool.append(rarity)
+	
 	return pool.pick_random()
 
 
@@ -113,8 +128,10 @@ func spawn_powerUps() -> void:
 		if allRES_dict[powerUP_rarity].is_empty():
 			allrarity.erase(powerUP_rarity)
 
-func _on_interact_area_body_entered(_body: Node3D) -> void:
-	player_entered = true
+func _on_interact_area_body_entered(body: Node3D) -> void:
+	if body.has_method("ui"):
+		player = body
+		player_entered = true
 
 func _on_interact_area_body_exited(_body: Node3D) -> void:
 	player_entered = false
