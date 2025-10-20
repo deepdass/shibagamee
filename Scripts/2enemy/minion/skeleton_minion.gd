@@ -69,8 +69,7 @@ func _hitfinish() -> void:
 	if global_position.distance_to(Stat.player.global_position) < Stat.attack_range + 0.5 :
 		var dir : Vector3 = global_position.direction_to(Stat.player.global_position)
 		Stat.player.velocity += Vector3(dir.x , dir.y * 0.1, dir.z ) * Stat.KnockbackMul
-		Stat.player.decrease_health()
-		Stat.player.decrease_health()
+		Stat.player.decrease_health(Stat.damage)
 		Stat.player.game_manager.shakeCamera(0.3,0.1)
 		
 	

@@ -2,7 +2,9 @@ extends RigidBody3D
 
 @export var PowerUp : PowerUps 
 
-const allRES_dict : Dictionary = {"Mythic": ["res://Scenes/powerUPs/1_mythic/attack_mythic.tres"],
+const allRES_dict : Dictionary = {
+"Mythic": ["res://Scenes/powerUPs/1_mythic/attack_mythic.tres",
+"res://Scenes/powerUPs/1_mythic/luck.tres"],
 
 "Legendary": ["res://Scenes/powerUPs/2_Legendary/monster_legendary.tres"],
 
@@ -91,13 +93,13 @@ func pick_weighted_rarity() -> String:
 			var base_weight: float = RARITY_WEIGHTS[rarity]
 			var luck_boost: float = 1.0
 			match rarity:
-				"Mythic":    luck_boost = 1.0 + (luck_factor * 20.0)
-				"Legendary": luck_boost = 1.0 + (luck_factor * 10.0)
-				"Epic":      luck_boost = 1.0 + (luck_factor * 7.0)
-				"Rare":      luck_boost = 1.0 + (luck_factor * 3.0)
-				"Common":    luck_boost = 1.0 - (luck_factor * 0.5)
+				"Mythic":    luck_boost = 1.0 + (luck_factor * 10.0)
+				"Legendary": luck_boost = 1.0 + (luck_factor * 7.0)
+				"Epic":      luck_boost = 1.0 + (luck_factor * 5.0)
+				"Rare":      luck_boost = 1.0 + (luck_factor * 2.0)
+				"Common":    luck_boost = 1.0 - (luck_factor * 0.2)
 			
-			var adjusted_weight := int(base_weight * luck_boost )
+			var adjusted_weight := int(base_weight * luck_boost)
 			for _i in range(adjusted_weight):
 				pool.append(rarity)
 	

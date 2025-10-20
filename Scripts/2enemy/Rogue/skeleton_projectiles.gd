@@ -22,10 +22,10 @@ func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.has_method("decrease_health"):
-		body.decrease_health()
+		body.decrease_health(1)
 		var dir : Vector3 = global_position.direction_to(body.global_position)
 		body.velocity += Vector3(dir.x , dir.y * 0.1, dir.z ) * KnockbackMul
-		body.game_manager.shakeCamera(0.1,0.05)
+		body.game_manager.shakeCamera(0.1,0.1)
 	elif !body.has_method("take_damage"):
 		queue_free()
 	

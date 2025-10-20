@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PowerUps" load_steps=3 format=3 uid="uid://c857xctci8fda"]
+
+[ext_resource type="Script" uid="uid://ctxk67plu8g8l" path="res://Scripts/3PowerUps/RES_PowerUp.gd" id="1_c4ms2"]
+[ext_resource type="PackedScene" uid="uid://mmn7ciywhqmm" path="res://Scenes/powerUPs/allpowerUpsThings/luck/4leafClover.fbx" id="1_f60xq"]
+
+[resource]
+script = ExtResource("1_c4ms2")
+mesh = ExtResource("1_f60xq")
+name = "Four Leaf Clover"
+description = "+0.1 luck"
+rarity = "Mythic"
+type = "justUpgrades"
+luck = 0.1
+metadata/_custom_type_script = "uid://ctxk67plu8g8l"

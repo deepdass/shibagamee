@@ -145,8 +145,8 @@ func _push_away_rigid_bodies() -> void:
 	#look_at_me = where
 
 
-func decrease_health() -> void:
-	StatsManager.stats.health -= 1
+func decrease_health(damage : int) -> void:
+	StatsManager.stats.health -= damage
 	
 	#bloodeffanim.play("blood")
 	
