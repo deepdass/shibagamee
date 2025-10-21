@@ -1,0 +1,121 @@
+[gd_resource type="VisualShader" load_steps=7 format=3 uid="uid://cbrt7shk35lyt"]
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_psgvi"]
+default_input_values = [0, Quaternion(0, 0, 0, 0), 1, Quaternion(0, 0, 0, 0)]
+op_type = 2
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_70eft"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeTextureParameterTriplanar" id="VisualShaderNodeTextureParameterTriplanar_4plwy"]
+parameter_name = "TextureParameterTriplanar"
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_3gxuy"]
+expanded_output_ports = [0]
+source = 5
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_qyg0p"]
+expanded_output_ports = [0]
+parameter_name = "ColorParameter"
+
+[sub_resource type="VisualShaderNodeBillboard" id="VisualShaderNodeBillboard_4plwy"]
+billboard_type = 3
+keep_scale = true
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, depth_test_default, cull_disabled, diffuse_lambert, specular_schlick_ggx, unshaded;
+
+uniform sampler2D TextureParameterTriplanar;
+uniform vec4 ColorParameter : source_color;
+
+
+// TextureParameterTriplanar
+	vec4 triplanar_texture(sampler2D p_sampler, vec3 p_weights, vec3 p_triplanar_pos) {
+		vec4 samp = vec4(0.0);
+		samp += texture(p_sampler, p_triplanar_pos.xy) * p_weights.z;
+		samp += texture(p_sampler, p_triplanar_pos.xz) * p_weights.y;
+		samp += texture(p_sampler, p_triplanar_pos.zy * vec2(-1.0, 1.0)) * p_weights.x;
+		return samp;
+	}
+
+	uniform vec3 triplanar_scale = vec3(1.0, 1.0, 1.0);
+	uniform vec3 triplanar_offset;
+	uniform float triplanar_sharpness = 0.5;
+
+	varying vec3 triplanar_power_normal;
+	varying vec3 triplanar_pos;
+
+void vertex() {
+// TextureParameterTriplanar
+	{
+		triplanar_power_normal = pow(abs(NORMAL), vec3(triplanar_sharpness));
+		triplanar_power_normal /= dot(triplanar_power_normal, vec3(1.0));
+		triplanar_pos = VERTEX * triplanar_scale + triplanar_offset;
+		triplanar_pos *= vec3(1.0, -1.0, 1.0);
+	}
+	mat4 n_out2p0;
+// GetBillboardMatrix:2
+	{
+		mat4 __wm = mat4(normalize(INV_VIEW_MATRIX[0]), normalize(INV_VIEW_MATRIX[1]), normalize(INV_VIEW_MATRIX[2]), MODEL_MATRIX[3]);
+		__wm = __wm * mat4(vec4(cos(INSTANCE_CUSTOM.x), -sin(INSTANCE_CUSTOM.x), 0.0, 0.0), vec4(sin(INSTANCE_CUSTOM.x), cos(INSTANCE_CUSTOM.x), 0.0, 0.0), vec4(0.0, 0.0, 1.0, 0.0), vec4(0.0, 0.0, 0.0, 1.0));
+		__wm = __wm * mat4(vec4(length(MODEL_MATRIX[0].xyz), 0.0, 0.0, 0.0), vec4(0.0, length(MODEL_MATRIX[1].xyz), 0.0, 0.0), vec4(0.0, 0.0, length(MODEL_MATRIX[2].xyz), 0.0), vec4(0.0, 0.0, 0.0, 1.0));
+		n_out2p0 = VIEW_MATRIX * __wm;
+	}
+
+
+// Output:0
+	MODELVIEW_MATRIX = n_out2p0;
+
+
+}
+
+void fragment() {
+// TextureParameterTriplanar:6
+	vec4 n_out6p0 = triplanar_texture(TextureParameterTriplanar, triplanar_power_normal, triplanar_pos);
+
+
+	vec4 n_out7p0;
+// Texture2D:7
+	n_out7p0 = texture(TextureParameterTriplanar, UV);
+	float n_out7p1 = n_out7p0.r;
+	float n_out7p4 = n_out7p0.a;
+
+
+// ColorParameter:8
+	vec4 n_out8p0 = ColorParameter;
+	float n_out8p4 = n_out8p0.a;
+
+
+// VectorOp:4
+	vec4 n_out4p0 = vec4(n_out7p1) * n_out8p0;
+
+
+// FloatOp:5
+	float n_out5p0 = n_out8p4 * n_out7p4;
+
+
+// Output:0
+	ALBEDO = vec3(n_out4p0.xyz);
+	ALPHA = n_out5p0;
+
+
+}
+"
+modes/cull = 2
+flags/unshaded = true
+nodes/vertex/2/node = SubResource("VisualShaderNodeBillboard_4plwy")
+nodes/vertex/2/position = Vector2(40, 460)
+nodes/vertex/connections = PackedInt32Array(2, 0, 0, 10)
+nodes/fragment/4/node = SubResource("VisualShaderNodeVectorOp_psgvi")
+nodes/fragment/4/position = Vector2(91.711105, 298.8703)
+nodes/fragment/5/node = SubResource("VisualShaderNodeFloatOp_70eft")
+nodes/fragment/5/position = Vector2(160, 540)
+nodes/fragment/6/node = SubResource("VisualShaderNodeTextureParameterTriplanar_4plwy")
+nodes/fragment/6/position = Vector2(-720, 460)
+nodes/fragment/7/node = SubResource("VisualShaderNodeTexture_3gxuy")
+nodes/fragment/7/position = Vector2(-380, 460)
+nodes/fragment/8/node = SubResource("VisualShaderNodeColorParameter_qyg0p")
+nodes/fragment/8/position = Vector2(-380, 80)
+nodes/fragment/connections = PackedInt32Array(4, 0, 0, 0, 6, 1, 7, 2, 7, 1, 4, 0, 7, 4, 5, 1, 5, 0, 0, 1, 8, 0, 4, 1, 8, 4, 5, 0)

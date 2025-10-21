@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fawxh4t3b7vg"
-path.s3tc="res://.godot/imported/T_VFX_Glow31.png-7c97569c9a3e0160beb2f8c47255924f.s3tc.ctex"
+uid="uid://brcaktftf7u0k"
+path.s3tc="res://.godot/imported/firetoon.png-e18aec6766d1af9d9a137eb27f066c85.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/_my/vfx/powerUp/t/T_VFX_Glow31.png"
-dest_files=["res://.godot/imported/T_VFX_Glow31.png-7c97569c9a3e0160beb2f8c47255924f.s3tc.ctex"]
+source_file="res://Assets/_my/vfx/fire/T/firetoon.png"
+dest_files=["res://.godot/imported/firetoon.png-e18aec6766d1af9d9a137eb27f066c85.s3tc.ctex"]
 
 [params]
 

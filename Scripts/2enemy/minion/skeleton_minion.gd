@@ -1,8 +1,5 @@
 extends CharacterBody3D
 
-var subViewport : SubViewport = null
-@onready var sub_viewport_path : String = "/root/World/SubViewportContainer/SubViewport"
-
 var Stat : EnemyStats
 @onready var RES : Resource = load("res://Scripts/2enemy/minion/RES_minion.tres")
 
@@ -33,8 +30,6 @@ func _ready() -> void:
 	randomize()
 	timer.wait_time = animation_tree.get_animation("Death_C_Skeletons").length + 0.3
 	
-	subViewport = get_node(sub_viewport_path)
-	
 	state_machine = animation_tree.get("parameters/playback")
 	animation_tree.set("parameters/conditions/Resurrect",true)
 
@@ -42,7 +37,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	velocity = Vector3.ZERO
-	idk.look_at(subViewport.get_camera_3d().global_position)
 	
 	match state_machine.get_current_node():
 		"Walking_A":
