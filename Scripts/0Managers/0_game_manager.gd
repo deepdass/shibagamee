@@ -115,5 +115,4 @@ func _on_area_3d_body_entered(body: Node3D) -> void: ##inside crypt
 
 func _on_killzone_body_entered(body: Node3D) -> void:
 	if body == player:
-		for i : int in player.StatsManager.stats.health:
-			player.decrease_health()
+		player.decrease_health(player.StatsManager.stats.health)

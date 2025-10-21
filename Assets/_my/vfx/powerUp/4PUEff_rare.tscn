@@ -9,7 +9,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ic20k"]
 render_priority = 0
 shader = ExtResource("1_cp8gb")
-shader_parameter/main_color = Color(0.53015363, 1.3224915, 1.585, 1)
+shader_parameter/main_color = Color(0.71876377, 1.7681019, 2.1168277, 1)
 shader_parameter/T_transparency = ExtResource("2_5afbk")
 
 [sub_resource type="QuadMesh" id="QuadMesh_i7xmq"]

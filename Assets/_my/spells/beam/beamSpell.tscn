@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://utm3idllwmmj"]
+[gd_scene load_steps=29 format=3 uid="uid://utm3idllwmmj"]
 
 [ext_resource type="Shader" uid="uid://dapq7btjwbe01" path="res://Assets/_my/spells/beam/beam.tres" id="1_x06st"]
 [ext_resource type="Texture2D" uid="uid://yop6kxkdm8wb" path="res://Assets/_my/spells/beam/t/T_Noise_Wf4.png" id="2_m76jm"]
@@ -6,6 +6,7 @@
 [ext_resource type="ArrayMesh" uid="uid://b8jhgqt65ocil" path="res://Assets/_my/spells/beam/mainbeam.obj" id="3_fi611"]
 [ext_resource type="Texture2D" uid="uid://c6av4ueqyjxqf" path="res://Assets/_my/spells/beam/t/T_Noise1_tiled.png" id="4_ugba3"]
 [ext_resource type="ArrayMesh" uid="uid://6ag22j2tp3tv" path="res://Assets/_my/spells/beam/mainaura.obj" id="5_ugba3"]
+[ext_resource type="Texture2D" uid="uid://cg7ve8v5gwyfe" path="res://Assets/_my/spells/beam/t/magic circle.png" id="7_2agjf"]
 [ext_resource type="Texture2D" uid="uid://bkqluxwyygtme" path="res://Assets/_my/spells/beam/t/T_VFX_Flare_15.PNG" id="7_cpfq3"]
 
 [sub_resource type="Gradient" id="Gradient_fi611"]
@@ -29,8 +30,8 @@ shader_parameter/maintexture2 = SubResource("GradientTexture2D_ugba3")
 shader_parameter/gra_power = 1.535
 
 [sub_resource type="Curve" id="Curve_2agjf"]
-_limits = [0.0, 20.0, 0.0, 1.0]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 20), 0.0, 0.0, 0, 0]
+_limits = [0.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 92.38411), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_ugba3"]
@@ -99,6 +100,18 @@ scale_min = 0.099999994
 scale_max = 0.099999994
 color = Color(18.892, 0, 18.892, 1)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t8tr6"]
+render_priority = 0
+shader = ExtResource("1_x06st")
+shader_parameter/speed = Vector2(0, 0)
+shader_parameter/maintexture = ExtResource("7_2agjf")
+shader_parameter/alphapower = 2.09
+shader_parameter/maintexture2 = SubResource("GradientTexture2D_2agjf")
+shader_parameter/gra_power = -0.01
+
+[sub_resource type="QuadMesh" id="QuadMesh_jc8qr"]
+size = Vector2(30, 30)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2agjf"]
 blend_mode = 1
 cull_mode = 2
@@ -141,9 +154,18 @@ draw_pass_1 = ExtResource("3_fi611")
 [node name="spawnpt" type="GPUParticles3D" parent="."]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_fi611")
-amount = 1
+amount = 2
+lifetime = 1.5
 process_material = SubResource("ParticleProcessMaterial_ugba3")
 draw_pass_1 = ExtResource("5_ugba3")
+
+[node name="spawnpt2" type="GPUParticles3D" parent="."]
+transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, -2.8314133e-08, 0, -0.32387593)
+material_override = SubResource("ShaderMaterial_t8tr6")
+amount = 1
+lifetime = 1.5
+process_material = SubResource("ParticleProcessMaterial_ugba3")
+draw_pass_1 = SubResource("QuadMesh_jc8qr")
 
 [node name="sparks" type="CPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.06685221)

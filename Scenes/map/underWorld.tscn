@@ -90,7 +90,7 @@ sky_material = SubResource("PhysicalSkyMaterial_idx2o")
 
 [sub_resource type="Environment" id="Environment_n4gow"]
 background_mode = 1
-background_color = Color(0.147604, 0.21763, 0.326386, 1)
+background_color = Color(0.02375596, 0.04816789, 0.0898462, 1)
 sky = SubResource("Sky_2ulnn")
 ambient_light_source = 2
 ambient_light_color = Color(0.415686, 0.537255, 0.72549, 1)
@@ -104,7 +104,7 @@ ssil_intensity = 4.0
 ssil_sharpness = 0.43
 ssil_normal_rejection = 0.9
 sdfgi_read_sky_light = false
-glow_intensity = 1.2
+glow_enabled = true
 adjustment_enabled = true
 adjustment_contrast = 1.1
 
