@@ -104,6 +104,7 @@ ssil_intensity = 4.0
 ssil_sharpness = 0.43
 ssil_normal_rejection = 0.9
 sdfgi_read_sky_light = false
+glow_intensity = 1.2
 adjustment_enabled = true
 adjustment_contrast = 1.1
 
