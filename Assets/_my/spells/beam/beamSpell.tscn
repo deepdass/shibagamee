@@ -100,14 +100,12 @@ scale_min = 0.099999994
 scale_max = 0.099999994
 color = Color(18.892, 0, 18.892, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_t8tr6"]
-render_priority = 0
-shader = ExtResource("1_x06st")
-shader_parameter/speed = Vector2(0, 0)
-shader_parameter/maintexture = ExtResource("7_2agjf")
-shader_parameter/alphapower = 2.09
-shader_parameter/maintexture2 = SubResource("GradientTexture2D_2agjf")
-shader_parameter/gra_power = -0.01
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t8tr6"]
+transparency = 1
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("7_2agjf")
+albedo_texture_force_srgb = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_jc8qr"]
 size = Vector2(30, 30)
@@ -140,6 +138,7 @@ transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 
 material_override = SubResource("ShaderMaterial_fc0pr")
 amount = 1
 lifetime = 1.5
+local_coords = true
 process_material = SubResource("ParticleProcessMaterial_t8tr6")
 draw_pass_1 = ExtResource("3_fi611")
 
@@ -148,6 +147,7 @@ transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 
 material_override = SubResource("ShaderMaterial_cpfq3")
 amount = 1
 lifetime = 1.5
+local_coords = true
 process_material = SubResource("ParticleProcessMaterial_2agjf")
 draw_pass_1 = ExtResource("3_fi611")
 
@@ -156,14 +156,16 @@ transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 
 material_override = SubResource("ShaderMaterial_fi611")
 amount = 2
 lifetime = 1.5
+local_coords = true
 process_material = SubResource("ParticleProcessMaterial_ugba3")
 draw_pass_1 = ExtResource("5_ugba3")
 
 [node name="spawnpt2" type="GPUParticles3D" parent="."]
 transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, -2.8314133e-08, 0, -0.32387593)
-material_override = SubResource("ShaderMaterial_t8tr6")
+material_override = SubResource("StandardMaterial3D_t8tr6")
 amount = 1
 lifetime = 1.5
+local_coords = true
 process_material = SubResource("ParticleProcessMaterial_ugba3")
 draw_pass_1 = SubResource("QuadMesh_jc8qr")
 
@@ -175,6 +177,7 @@ lifetime = 0.4
 explosiveness = 0.4
 fixed_fps = 30
 visibility_aabb = AABB(-4, -4, -4, 8, 8, 8)
+local_coords = true
 mesh = SubResource("QuadMesh_t8tr6")
 emission_shape = 6
 emission_ring_axis = Vector3(0, 0, 1)

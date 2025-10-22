@@ -463,7 +463,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.5755, 10.1963)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="beam" parent="SubViewportContainer/SubViewport/myy/per" instance=ExtResource("58_njmy1")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3, 1, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.2980081, -1.3476226)
 
 [node name="envProps" type="Node" parent="SubViewportContainer/SubViewport/myy"]
 
@@ -1501,7 +1501,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 0, -123)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -150)
 
 [node name="Vfire" parent="." instance=ExtResource("59_hhixm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.1703669, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.1703669, -1.1476264)
 
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
 [connection signal="body_entered" from="killzone" to="GameManager" method="_on_killzone_body_entered"]
