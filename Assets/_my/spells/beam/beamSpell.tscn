@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://utm3idllwmmj"]
+[gd_scene load_steps=32 format=3 uid="uid://utm3idllwmmj"]
 
 [ext_resource type="Shader" uid="uid://dapq7btjwbe01" path="res://Assets/_my/spells/beam/beam.tres" id="1_x06st"]
 [ext_resource type="Texture2D" uid="uid://yop6kxkdm8wb" path="res://Assets/_my/spells/beam/t/T_Noise_Wf4.png" id="2_m76jm"]
@@ -118,6 +118,10 @@ particles_anim_loop = false
 
 [sub_resource type="QuadMesh" id="QuadMesh_ufcgm"]
 size = Vector2(0.3, 0.3)
+
+[sub_resource type="Curve" id="Curve_jc8qr"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5050848, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.15607738), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="Animation" id="Animation_t8tr6"]
 length = 0.001
@@ -255,7 +259,7 @@ _data = {
 [node name="beam" type="Node3D"]
 
 [node name="outerbeam" type="CPUParticles3D" parent="."]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0, 0, 0)
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0, 0, 0.801373)
 material_override = SubResource("ShaderMaterial_fc0pr")
 emitting = false
 amount = 1
@@ -276,7 +280,7 @@ scale_curve_z = SubResource("Curve_ugba3")
 color = Color(18.892, 0, 18.892, 1)
 
 [node name="insidebeam" type="CPUParticles3D" parent="."]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0, 0, 0)
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0, 0, 0.801373)
 material_override = SubResource("ShaderMaterial_cpfq3")
 emitting = false
 amount = 1
@@ -297,7 +301,7 @@ scale_curve_z = SubResource("Curve_ugba3")
 color = Color(0.27305266, 1.786881, 3.5533943, 1)
 
 [node name="spawnpt" type="CPUParticles3D" parent="."]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0, 0, 0)
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0, 0, 0.801373)
 material_override = SubResource("ShaderMaterial_fi611")
 emitting = false
 amount = 2
@@ -315,7 +319,7 @@ scale_amount_curve = SubResource("Curve_t8tr6")
 color = Color(18.892, 0, 18.892, 1)
 
 [node name="magicCircle" type="GPUParticles3D" parent="."]
-transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, -2.8314133e-08, 0, -0.32387593)
+transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, -2.8314133e-08, 0, 0.47749707)
 material_override = SubResource("StandardMaterial3D_t8tr6")
 emitting = false
 amount = 1
@@ -327,7 +331,7 @@ process_material = SubResource("ParticleProcessMaterial_qm1yf")
 draw_pass_1 = SubResource("QuadMesh_jc8qr")
 
 [node name="sparks" type="CPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.17344874)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.97482175)
 material_override = SubResource("StandardMaterial3D_jc8qr")
 emitting = false
 amount = 30
@@ -342,14 +346,16 @@ emission_sphere_radius = 1.0
 direction = Vector3(0, 0, 1)
 spread = 7.0
 gravity = Vector3(0, 0, 0)
-initial_velocity_min = 10.0
-initial_velocity_max = 15.0
+initial_velocity_min = 7.0
+initial_velocity_max = 10.0
 angle_min = -119.99999
 angle_max = 120.000015
 scale_amount_max = 1.5
+scale_amount_curve = SubResource("Curve_jc8qr")
 color = Color(10.034221, 1.1419811, 10.034221, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_jc8qr")
 }
+autoplay = "beamBrust"

@@ -11,7 +11,6 @@ var can_crit : bool = false
 ## attack basic
 @export var projectile : PackedScene
 @onready var fireposnode: Node3D = $"../fireposnode"
-@export var projectile_speed : int = 15
 @export var milli_per_shots : int = 800
 
 var nearestEnemy : CharacterBody3D 
@@ -59,7 +58,6 @@ func attack_basic() -> void:
 		animation_tree.set("parameters/attack_basic/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 		var new_projectile : Node3D = projectile.instantiate()
 		new_projectile.global_transform = fireposnode.global_transform
-		new_projectile.projectile_speed = projectile_speed
 		get_tree().get_current_scene().add_child(new_projectile)
 		
 		new_projectile.attack_thisenemy(nearestEnemy)
