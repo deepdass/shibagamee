@@ -9,5 +9,5 @@ mesh = ExtResource("1_utge7")
 description = "+20 stamina"
 rarity = "Common"
 type = "justUpgrades"
-stamina = 15.0
+stamina = 5.0
 metadata/_custom_type_script = "uid://ctxk67plu8g8l"

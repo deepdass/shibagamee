@@ -90,7 +90,7 @@ func update_UI() -> void:
 	else:
 		hearts_overload.text = "+" + str(player.StatsManager.stats.health - hearts.size())
 		hearts_overload.visible = true
-	if player.StatsManager.stats.health == 0:
+	if player.StatsManager.stats.health <= 0:
 		get_tree().set_meta("saved_stats", null)
 		timer.start()
 		Engine.time_scale = 0.3

@@ -46,4 +46,7 @@ func spawn_hiteffect(body) -> void:
 	if body != null:
 		var effect_inst : Node3D = effect.instantiate()
 		body.add_child(effect_inst)
-		effect_inst.get_node("AnimationPlayer").play("firestart")
+		var effect_player : AnimationPlayer = effect_inst.get_node("AnimationPlayer")
+		effect_player.play("firestart")
+		if body.Stat.health <= 0:
+			effect_inst.queue_free()

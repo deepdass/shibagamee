@@ -199,3 +199,4 @@ color_ramp = SubResource("Gradient_ern08")
 libraries = {
 &"": SubResource("AnimationLibrary_iac7y")
 }
+autoplay = "firestart"
