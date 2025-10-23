@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://utm3idllwmmj"]
+[gd_scene load_steps=39 format=3 uid="uid://utm3idllwmmj"]
 
 [ext_resource type="Shader" uid="uid://dapq7btjwbe01" path="res://Assets/_my/spells/beam/beam.tres" id="1_x06st"]
 [ext_resource type="Texture2D" uid="uid://yop6kxkdm8wb" path="res://Assets/_my/spells/beam/t/T_Noise_Wf4.png" id="2_m76jm"]
@@ -117,6 +117,22 @@ cull_mode = 2
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("7_2agjf")
 albedo_texture_force_srgb = true
+
+[sub_resource type="Curve" id="Curve_ufcgm"]
+_data = [Vector2(0, 0.9593749), 0.0, 0.0, 0, 0, Vector2(0.6431373, 1), -0.27442074, -0.27442074, 0, 0, Vector2(1, 0.19765615), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_sr02i"]
+width = 32
+curve = SubResource("Curve_ufcgm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qm1yf"]
+gravity = Vector3(0, 0, 0)
+scale_min = 0.099999994
+scale_max = 0.099999994
+scale_curve = SubResource("CurveTexture_sr02i")
+color = Color(18.892, 0, 18.892, 1)
+alpha_curve = SubResource("CurveTexture_2agjf")
 
 [sub_resource type="QuadMesh" id="QuadMesh_jc8qr"]
 size = Vector2(30, 30)
@@ -336,7 +352,7 @@ amount = 1
 lifetime = 1.5
 explosiveness = 1.0
 local_coords = true
-process_material = SubResource("ParticleProcessMaterial_ugba3")
+process_material = SubResource("ParticleProcessMaterial_qm1yf")
 draw_pass_1 = SubResource("QuadMesh_jc8qr")
 
 [node name="sparks" type="GPUParticles3D" parent="."]
