@@ -9,7 +9,8 @@ var can_crit : bool = false
 
 
 ## attack basic
-@export var projectile : PackedScene
+@export var baiscprojectile : PackedScene
+@export var spattackscene : PackedScene
 @onready var fireposnode: Node3D = $"../fireposnode"
 @export var milli_per_shots : int = 800
 
@@ -40,7 +41,17 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	
 	##pewpew
-	if Input.is_action_pressed("attack"):
+	if Input.is_action_just_pressed("spattack"):
+		attack(spattackscene)
+	elif Input.is_action_pressed("attack"):
+		#player.get_node("visuals").look_at(player.look_at_me, Vector3.UP)
+		attack(baiscprojectile)
+		
+
+
+func attack(projectile : PackedScene) -> void:
+	if can_attack_basic:
+		###############################
 		nearestEnemy_distance = INF
 		for i : CharacterBody3D in enemylist:
 			var newdis : float = (player.global_position - i.global_position).length()
@@ -49,12 +60,7 @@ func _physics_process(_delta: float) -> void:
 				nearestEnemy = i
 		if nearestEnemy:
 			player.get_node("visuals").look_at(Vector3(nearestEnemy.global_position.x, player.global_position.y, nearestEnemy.global_position.z), Vector3.UP)
-		#player.get_node("visuals").look_at(player.look_at_me, Vector3.UP)
-		attack_basic()
-
-
-func attack_basic() -> void:
-	if can_attack_basic:
+		###############################
 		animation_tree.set("parameters/attack_basic/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 		var new_projectile : Node3D = projectile.instantiate()
 		new_projectile.global_transform = fireposnode.global_transform

@@ -1,5 +1,6 @@
-[gd_scene load_steps=32 format=3 uid="uid://utm3idllwmmj"]
+[gd_scene load_steps=33 format=3 uid="uid://utm3idllwmmj"]
 
+[ext_resource type="Script" uid="uid://duioi6aoa6laq" path="res://Scripts/1players/Mage/spellbeam.gd" id="1_t8tr6"]
 [ext_resource type="Shader" uid="uid://dapq7btjwbe01" path="res://Assets/_my/spells/beam/beam.tres" id="1_x06st"]
 [ext_resource type="Texture2D" uid="uid://yop6kxkdm8wb" path="res://Assets/_my/spells/beam/t/T_Noise_Wf4.png" id="2_m76jm"]
 [ext_resource type="Texture2D" uid="uid://cdugvl45lx4wx" path="res://Assets/_my/spells/beam/t/T_VFX_Noise_4.PNG" id="3_fc0pr"]
@@ -257,6 +258,7 @@ _data = {
 }
 
 [node name="beam" type="Node3D"]
+script = ExtResource("1_t8tr6")
 
 [node name="outerbeam" type="CPUParticles3D" parent="."]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0, 0, 0.801373)
@@ -359,3 +361,8 @@ libraries = {
 &"": SubResource("AnimationLibrary_jc8qr")
 }
 autoplay = "beamBrust"
+
+[node name="hitbox" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, 100)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

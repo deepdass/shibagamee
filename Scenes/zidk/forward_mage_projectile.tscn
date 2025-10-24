@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://in5kn62g2jfk"]
 
-[ext_resource type="Script" uid="uid://bcih858s23f8s" path="res://Scripts/1players/Mage/mage_projectile.gd" id="1_lm2f6"]
+[ext_resource type="Script" uid="uid://bcih858s23f8s" path="res://Scripts/1players/Mage/fireball.gd" id="1_lm2f6"]
 [ext_resource type="Shader" uid="uid://dgxuvs6hpakck" path="res://Shaders/pojectile/basic_fireball/mage_projectile_ball.tres" id="2_jbmcb"]
 [ext_resource type="Shader" uid="uid://dna72u8nellpt" path="res://Shaders/pojectile/basic_fireball/mage_projectile.tres" id="3_hbkxe"]
 [ext_resource type="ArrayMesh" uid="uid://d11xfp7ihys5v" path="res://Assets/_my/fireball_head_mesh.obj" id="4_u53ve"]
