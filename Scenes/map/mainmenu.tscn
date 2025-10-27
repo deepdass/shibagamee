@@ -1,0 +1,94 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck0l25ra42ffg"]
+
+[ext_resource type="Texture2D" uid="uid://ddybkppnopvpn" path="res://Assets/UI/main menu/Screenshot 2025-09-08 001652.png" id="1_5lion"]
+[ext_resource type="Script" uid="uid://cybuguaf6cfq0" path="res://Scripts/0Managers/mainmenu.gd" id="1_acl7v"]
+
+[node name="mainmenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_acl7v")
+
+[node name="realScreenVis" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 3840.0
+offset_bottom = 2160.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -199.99998
+offset_top = -339.0
+offset_right = -200.0
+offset_bottom = -339.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.3, 1.31)
+texture = ExtResource("1_5lion")
+stretch_mode = 5
+
+[node name="title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -489.5
+offset_top = 100.0
+offset_right = 489.5
+offset_bottom = 373.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 200
+text = "SkullWard"
+horizontal_alignment = 1
+
+[node name="B_play" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -147.28998
+offset_right = 250.0
+offset_bottom = -27.29004
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 100
+text = "PLAY"
+
+[node name="B_option" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = -100.0
+offset_right = 275.0
+offset_bottom = -20.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "OPTION"
+
+[node name="b_quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -270.0
+offset_top = -100.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "QUIT"
+
+[connection signal="pressed" from="B_play" to="." method="_on_b_play_pressed"]

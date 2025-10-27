@@ -25,6 +25,7 @@ var enemylist : Array[CharacterBody3D]
 
 
 var can_attack_basic : bool = true
+var can_attack_sp : bool = true
 @onready var attack_bacis__timer: Timer = $attack_bacis__Timer
 
 
@@ -42,25 +43,17 @@ func _physics_process(_delta: float) -> void:
 	
 	##pewpew
 	if Input.is_action_just_pressed("spattack"):
-		attack(spattackscene)
+		sp_attack(spattackscene)
 	elif Input.is_action_pressed("attack"):
 		#player.get_node("visuals").look_at(player.look_at_me, Vector3.UP)
-		attack(baiscprojectile)
+		bacis_attack(baiscprojectile)
 		
 
 
-func attack(projectile : PackedScene) -> void:
+func bacis_attack(projectile : PackedScene) -> void:
 	if can_attack_basic:
-		###############################
-		nearestEnemy_distance = INF
-		for i : CharacterBody3D in enemylist:
-			var newdis : float = (player.global_position - i.global_position).length()
-			if !(nearestEnemy_distance < newdis) and newdis < stats.attack_range:
-				nearestEnemy_distance = newdis
-				nearestEnemy = i
-		if nearestEnemy:
-			player.get_node("visuals").look_at(Vector3(nearestEnemy.global_position.x, player.global_position.y, nearestEnemy.global_position.z), Vector3.UP)
-		###############################
+		calnearst_enemy()
+		
 		animation_tree.set("parameters/attack_basic/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 		var new_projectile : Node3D = projectile.instantiate()
 		new_projectile.global_transform = fireposnode.global_transform
@@ -72,9 +65,37 @@ func attack(projectile : PackedScene) -> void:
 		attack_bacis__timer.start()
 	
 
+func sp_attack(projectile : PackedScene) -> void:
+	if can_attack_sp:
+		calnearst_enemy()
+		
+		animation_tree.set("parameters/attack_basic/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+		var new_projectile : Node3D = projectile.instantiate()
+		new_projectile.global_transform = fireposnode.global_transform
+		get_tree().get_current_scene().add_child(new_projectile)
+		
+		new_projectile.fired = true
+		
+		#can_attack_sp = false
+		#attack_bacis__timer.start()
+
+
 
 func _on_timer_timeout() -> void: ##  attack basic timer
 	can_attack_basic = true
+
+
+func calnearst_enemy() -> void:
+	nearestEnemy_distance = INF
+	for i : CharacterBody3D in enemylist:
+		var newdis : float = (player.global_position - i.global_position).length()
+		if !(nearestEnemy_distance < newdis) and newdis < stats.attack_range:
+			nearestEnemy_distance = newdis
+			nearestEnemy = i
+	if nearestEnemy:
+		player.get_node("visuals").look_at(Vector3(nearestEnemy.global_position.x, player.global_position.y, nearestEnemy.global_position.z), Vector3.UP)
+
+
 
 
 ###################################################################

@@ -8,7 +8,6 @@ var Stat : EnemyStats
 
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
-@onready var idk: Marker3D = $idk
 @onready var damagepopup: Label3D = $idk/damagepopup
 
 @onready var destroyaftertime: Timer = $destroyaftertime
@@ -19,6 +18,7 @@ var state_machine : AnimationNodeStateMachinePlayback
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var timer: Timer = $Timer
 
+var can_see_player : bool = true
 
 signal died
 
@@ -33,8 +33,21 @@ func _ready() -> void:
 	state_machine = animation_tree.get("parameters/playback")
 	animation_tree.set("parameters/conditions/Resurrect",true)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+
+func _physics_process(delta: float) -> void:
+	
+	var space_state : PhysicsDirectSpaceState3D = Stat.player.game_manager.world.get_world_3d().direct_space_state
+	#var space_state : PhysicsDirectSpaceState3D = world.get_world_3d().direct_space_state
+	var params : PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(global_transform.origin,Stat.player.global_transform.origin + Vector3(0,0.3,0))
+	params.exclude = [self]
+	var intersection : Dictionary = space_state.intersect_ray(params)
+	
+	if intersection and !Stat.health <= 0:
+		#print(intersection.collider)
+		if intersection.collider == Stat.player and intersection.collider.has_method("decrease_health"):
+			can_see_player = true
+		else:
+			can_see_player = false
 	
 	velocity = Vector3.ZERO
 	
@@ -54,8 +67,6 @@ func _process(delta: float) -> void:
 	
 	move_and_slide()
 	
-
-
 func _target_in_range() -> bool:
 	return global_position.distance_to(Stat.player.global_position) < Stat.attack_range
 	
@@ -71,6 +82,7 @@ func _hitfinish() -> void:
 func take_damage()  -> void:
 	var damageRec : float = Stat.player.StatsManager.effective_damage()
 	Stat.health -= damageRec
+	clamp(Stat.health , 0 , 1000)
 	
 	var fallChance : int = randi_range(0,100)
 	if fallChance < 5:
@@ -116,3 +128,4 @@ func _on_timer_timeout() -> void:
 
 func _on_destroyaftertime_timeout() -> void:
 	queue_free()
+	
