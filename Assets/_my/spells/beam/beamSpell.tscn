@@ -363,6 +363,6 @@ libraries = {
 autoplay = "beamBrust"
 
 [node name="hitbox" type="RayCast3D" parent="."]
-target_position = Vector3(0, 0, 100)
+target_position = Vector3(0, 0, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

@@ -10,10 +10,17 @@ extends Node3D
 var is_colliding : bool = false
 var fired : bool = false
 
+@onready var cast_speed : int = 40
+@onready var maxlenght : int = 200
+
+
 #var forward_direction : Vector3
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	
+	hitbox.target_position.z = move_toward(hitbox.target_position.z , maxlenght, cast_speed * delta)
+	
 	
 	if hitbox.is_colliding() and fired:
 		attack_thisenemy(hitbox.get_collider())
@@ -36,15 +43,14 @@ func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
 
 
 func attack_thisenemy(hit) -> void:
-	var body = hit
-	if body.has_method("take_damage"):
-		body.take_damage()
+	if hit.has_method("take_damage"):
+		hit.take_damage()
 		#spawn_hiteffect(body)
-	elif !body.has_method("decrease_health") and body != rigid:
+	elif !hit.has_method("decrease_health") and hit != rigid:
 			
-		if body is RigidBody3D:
-			var dir : Vector3 = (body.global_position - global_position).normalized()
-			body.apply_impulse(dir * 5000)  # tweak force value
+		if hit is RigidBody3D:
+			var dir : Vector3 = (hit.global_position - global_position).normalized()
+			hit.apply_impulse(dir * 5000)  # tweak force value
 		
 		#audio_stream_player.stop()
 		#spawn_hiteffect(null)

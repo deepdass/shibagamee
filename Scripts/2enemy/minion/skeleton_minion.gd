@@ -62,16 +62,17 @@ func _physics_process(delta: float) -> void:
 		"1H_Melee_Attack_Stab":
 			look_at(Vector3(Stat.player.global_position.x, global_position.y, Stat.player.global_position.z), Vector3.UP)
 	
+	
 	animation_tree.set("parameters/conditions/attack", _target_in_range())
 	animation_tree.set("parameters/conditions/run", !_target_in_range())
 	
 	move_and_slide()
 	
 func _target_in_range() -> bool:
-	return global_position.distance_to(Stat.player.global_position) < Stat.attack_range
+	return global_position.distance_to(Stat.player.global_position) < Stat.attack_range and can_see_player
 	
 func _hitfinish() -> void:
-	if global_position.distance_to(Stat.player.global_position) < Stat.attack_range + 0.5 :
+	if global_position.distance_to(Stat.player.global_position) < Stat.attack_range + 0.5 and can_see_player :
 		var dir : Vector3 = global_position.direction_to(Stat.player.global_position)
 		Stat.player.velocity += Vector3(dir.x , dir.y * 0.1, dir.z ) * Stat.KnockbackMul
 		Stat.player.decrease_health(Stat.damage)

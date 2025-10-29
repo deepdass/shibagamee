@@ -79,10 +79,10 @@ func _physics_process(delta: float) -> void:
 	
 	
 func _target_in_range() -> bool:
-	return global_position.distance_to(Stat.player.global_position) < Stat.attack_range
+	return global_position.distance_to(Stat.player.global_position) < Stat.attack_range and can_see_player
 	
 func _hitfinish() -> void:
-	if global_position.distance_to(Stat.player.global_position) < Stat.attack_range :
+	if global_position.distance_to(Stat.player.global_position) < Stat.attack_range and can_see_player :
 		var new_projectile : Node3D = projectile.instantiate()
 		new_projectile.global_transform = fireposnode.global_transform
 		new_projectile.projectile_speed = projectile_speed
