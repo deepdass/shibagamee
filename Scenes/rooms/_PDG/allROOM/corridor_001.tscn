@@ -26,7 +26,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 [node name="DOOR?_RIGHT" type="Marker3D" parent="NavigationRegion3D/env/door_Container" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 
-[node name="wall2" parent="NavigationRegion3D/env/door_Container" index="4" instance=ExtResource("2_8cwhx")]
+[node name="wall" parent="NavigationRegion3D/env/door_Container" index="4" instance=ExtResource("2_8cwhx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 2)
 
 [node name="set_wallMESH" type="Node" parent="." index="3"]

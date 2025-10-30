@@ -1,37 +1,38 @@
-[gd_scene load_steps=39 format=4 uid="uid://bunjk24oh3lip"]
+[gd_scene load_steps=40 format=4 uid="uid://bhn0g3ocvknel"]
 
-[ext_resource type="PackedScene" uid="uid://bx0lm5lum16xd" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/table_long.tscn" id="1_2nmtq"]
-[ext_resource type="PackedScene" uid="uid://cov5icp8oa8a" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/table_medium.tscn" id="2_5y2xm"]
-[ext_resource type="PackedScene" uid="uid://cfxdtnlqs8d17" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/box_large.tscn" id="3_0iu88"]
-[ext_resource type="PackedScene" uid="uid://vmcw5jyixika" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/box_small.tscn" id="4_jqapx"]
-[ext_resource type="PackedScene" uid="uid://fk10dwa1jj41" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/chair.tscn" id="5_7mc64"]
-[ext_resource type="PackedScene" uid="uid://mv4gfi316aiq" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/bottle_A_green.tscn" id="6_343fo"]
-[ext_resource type="PackedScene" uid="uid://teq0dywlhm1t" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/stool.tscn" id="7_1iuhu"]
-[ext_resource type="PackedScene" uid="uid://7d8m3u8ip205" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/coin.tscn" id="8_qs1vl"]
-[ext_resource type="PackedScene" uid="uid://b6l50wikbqmes" path="res://Assets/Skeletons/assets/gltf/Skeleton_Arrow.gltf" id="9_sxlhb"]
-[ext_resource type="PackedScene" uid="uid://c710rd6ldcvng" path="res://Assets/Skeletons/assets/gltf/Skeleton_Arrow_Half.gltf" id="10_kwnb6"]
-[ext_resource type="PackedScene" uid="uid://dan6hvbai3aut" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/_bones/sheild.tscn" id="11_5mu1u"]
-[ext_resource type="PackedScene" uid="uid://dnd1c36f2315c" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/_bones/skull.tscn" id="12_eu8vj"]
-[ext_resource type="MeshLibrary" uid="uid://crl8041p05pde" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib1.tres" id="13_iihi3"]
-[ext_resource type="PackedScene" uid="uid://dhyxa7a2s4e84" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/_bones/axe.tscn" id="14_343fo"]
-[ext_resource type="PackedScene" uid="uid://cnx23bwhhijuj" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/barrel_small.tscn" id="15_0iu88"]
-[ext_resource type="PackedScene" uid="uid://bi82dl1ci1ygb" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/_bones/bone_A.tscn" id="16_jqapx"]
-[ext_resource type="PackedScene" uid="uid://dowo04m643hdh" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/bottle_C_green.tscn" id="17_7mc64"]
-[ext_resource type="PackedScene" uid="uid://ljf34vx2fpmb" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/_bones/dagger.tscn" id="18_343fo"]
-[ext_resource type="PackedScene" uid="uid://bgekqkethfn71" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/_bones/spellbook.tscn" id="19_1iuhu"]
-[ext_resource type="PackedScene" uid="uid://bcw5fu4xy8br7" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/props/crates_stacked.tscn" id="20_qs1vl"]
-[ext_resource type="PackedScene" uid="uid://gr7aam6spx3n" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/props/keg_decorated.tscn" id="21_sxlhb"]
-[ext_resource type="PackedScene" uid="uid://dicnbd3jj77tl" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/_bones/trunk.tscn" id="22_kwnb6"]
-[ext_resource type="Material" uid="uid://bihl8kfakw0ig" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/texture.tres" id="23_5mu1u"]
-[ext_resource type="PackedScene" uid="uid://d1wgxyjle83x1" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/props/keyring_hanging.tscn" id="24_eu8vj"]
-[ext_resource type="PackedScene" uid="uid://cuub7tv5fgul8" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/props/sword_shield_gold.tscn" id="25_iihi3"]
-[ext_resource type="PackedScene" uid="uid://dffxgagomaeqe" path="res://Assets/env/_myVeggies/ivybush.fbx" id="26_gessm"]
-[ext_resource type="PackedScene" uid="uid://13830kak03xt" path="res://Assets/env/_myVeggies/ivyCorner_3.fbx" id="27_j0jix"]
-[ext_resource type="PackedScene" uid="uid://p0h8ytkf8bai" path="res://Assets/env/_myVeggies/ivyGround_2.fbx" id="28_gpkce"]
-[ext_resource type="PackedScene" uid="uid://dsqkar63wcd4d" path="res://Assets/env/_myVeggies/ivyGround_1.fbx" id="29_2c2t4"]
-[ext_resource type="PackedScene" uid="uid://b2hjpgefhvt30" path="res://Assets/env/_myVeggies/ivyGround_5.fbx" id="30_2c2t4"]
-[ext_resource type="PackedScene" uid="uid://c11k8ehi280h" path="res://Assets/env/_myVeggies/ivyWall_2.fbx" id="31_ncx61"]
-[ext_resource type="PackedScene" uid="uid://bo6isdiofn7db" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/props/torch_mounted.tscn" id="32_j7ja5"]
+[ext_resource type="Script" uid="uid://eqgp7no52l1i" path="res://addons/SimpleDungeons/DungeonRoom3D.gd" id="1_r5cnj"]
+[ext_resource type="PackedScene" uid="uid://bx0lm5lum16xd" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/table_long.tscn" id="2_7wrri"]
+[ext_resource type="PackedScene" uid="uid://cov5icp8oa8a" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/table_medium.tscn" id="3_ql665"]
+[ext_resource type="PackedScene" uid="uid://cfxdtnlqs8d17" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/box_large.tscn" id="4_mexsc"]
+[ext_resource type="PackedScene" uid="uid://vmcw5jyixika" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/box_small.tscn" id="5_atlc5"]
+[ext_resource type="PackedScene" uid="uid://fk10dwa1jj41" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/chair.tscn" id="6_aq3gt"]
+[ext_resource type="PackedScene" uid="uid://mv4gfi316aiq" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/bottle_A_green.tscn" id="7_tu6xd"]
+[ext_resource type="PackedScene" uid="uid://teq0dywlhm1t" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/stool.tscn" id="8_dovam"]
+[ext_resource type="PackedScene" uid="uid://7d8m3u8ip205" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/coin.tscn" id="9_nndav"]
+[ext_resource type="PackedScene" uid="uid://b6l50wikbqmes" path="res://Assets/Skeletons/assets/gltf/Skeleton_Arrow.gltf" id="10_5o8fr"]
+[ext_resource type="PackedScene" uid="uid://c710rd6ldcvng" path="res://Assets/Skeletons/assets/gltf/Skeleton_Arrow_Half.gltf" id="11_3sr0u"]
+[ext_resource type="PackedScene" uid="uid://dan6hvbai3aut" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/_bones/sheild.tscn" id="12_c66mt"]
+[ext_resource type="PackedScene" uid="uid://dnd1c36f2315c" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/_bones/skull.tscn" id="13_w1rjc"]
+[ext_resource type="PackedScene" uid="uid://dhyxa7a2s4e84" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/_bones/axe.tscn" id="14_dgt3b"]
+[ext_resource type="PackedScene" uid="uid://cnx23bwhhijuj" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/barrel_small.tscn" id="15_c78as"]
+[ext_resource type="PackedScene" uid="uid://bi82dl1ci1ygb" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/_bones/bone_A.tscn" id="16_lsc4f"]
+[ext_resource type="PackedScene" uid="uid://dowo04m643hdh" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/bottle_C_green.tscn" id="17_v6i3p"]
+[ext_resource type="PackedScene" uid="uid://ljf34vx2fpmb" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/_bones/dagger.tscn" id="18_qg2ig"]
+[ext_resource type="PackedScene" uid="uid://bgekqkethfn71" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/_bones/spellbook.tscn" id="19_r6tuq"]
+[ext_resource type="PackedScene" uid="uid://bcw5fu4xy8br7" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/props/crates_stacked.tscn" id="20_4pjow"]
+[ext_resource type="PackedScene" uid="uid://gr7aam6spx3n" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/props/keg_decorated.tscn" id="21_4ejii"]
+[ext_resource type="PackedScene" uid="uid://dicnbd3jj77tl" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/_bones/trunk.tscn" id="22_xulpi"]
+[ext_resource type="Material" uid="uid://bihl8kfakw0ig" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/texture.tres" id="23_af47y"]
+[ext_resource type="PackedScene" uid="uid://d1wgxyjle83x1" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/props/keyring_hanging.tscn" id="24_igvdr"]
+[ext_resource type="PackedScene" uid="uid://cuub7tv5fgul8" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/props/sword_shield_gold.tscn" id="25_5nuir"]
+[ext_resource type="PackedScene" uid="uid://dffxgagomaeqe" path="res://Assets/env/_myVeggies/ivybush.fbx" id="26_850in"]
+[ext_resource type="PackedScene" uid="uid://13830kak03xt" path="res://Assets/env/_myVeggies/ivyCorner_3.fbx" id="27_eh2p2"]
+[ext_resource type="PackedScene" uid="uid://p0h8ytkf8bai" path="res://Assets/env/_myVeggies/ivyGround_2.fbx" id="28_ppmaq"]
+[ext_resource type="PackedScene" uid="uid://dsqkar63wcd4d" path="res://Assets/env/_myVeggies/ivyGround_1.fbx" id="29_drh3i"]
+[ext_resource type="PackedScene" uid="uid://b2hjpgefhvt30" path="res://Assets/env/_myVeggies/ivyGround_5.fbx" id="30_6dmie"]
+[ext_resource type="PackedScene" uid="uid://c11k8ehi280h" path="res://Assets/env/_myVeggies/ivyWall_2.fbx" id="31_iit3o"]
+[ext_resource type="PackedScene" uid="uid://bo6isdiofn7db" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/props/torch_mounted.tscn" id="32_aaky2"]
+[ext_resource type="MeshLibrary" uid="uid://crl8041p05pde" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib1.tres" id="33_yphk2"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_krk3g"]
 _surfaces = [{
@@ -57,7 +58,7 @@ _surfaces = [{
 "index_count": 3318,
 "index_data": PackedByteArray("AAABAAIAdQQBAAAAAgABAAQAAgAEAAUAdQQGAAEAdgQGAHUECQAGAHYECQAKAAYACwAMAAIADQAMAAsADQAOAAwAEwAUAA0AEwAVABQAFgAVABMAFgAXABUAFAAVABgAFAAYABkAGQAYAHcEGAAaAHcEGAAbABoAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0ALgAwACwALgAxADAAMgAwADEAMgAzADAANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkAOAA8ADsAOAA9ADwAPgA8AD0APgA9AD8AQABBAEIAQABDAEEARABFAEYARABHAEUASABJAEoASABLAEkATABNAE4ATABPAE0AUABRAFIAUABTAFEAVABVAFYAVABXAFUAWABZAFoAWABbAFkADwASABEAeAR5BBAAeAR6BHkEXABdAF4AXABfAF0AYABhAGIAYABjAGEAewR8BGYAaQBqAGsAaQBsAGoAbQBuAG8AbQBwAG4AcQByAHMAcQB0AHIAdQB2AHcAdQB4AHYAewB8AH0AewB+AHwAfwCAAIEAfwCCAIAAgwCEAIUAgwCGAIQAAwAIAAcAhwCIAIkAjACNAI4AjwCQAJEAlACVAJYAlACXAJUAfQR+BJIAmACZAJoAmACbAJkAngCfAKAAngChAJ8ApAClAKYApACnAKUAqACpAKoAqACrAKkAfwSABK4AsQCyALMAgQSCBLgAugCDBIEEuwC8AL0AvgC/AMAAwgDDAMQAwgDFAMMAxgDHAMgAxgDJAMcAzADNAM4AzADPAM0A0ADRANIA0ADTANEA1ADVANYA1ADXANUA2ADZANoA2ADbANkA3ADdAN4A3ADfAN0A4ADhAOIA4ADjAOEA5ADlAOYA5ADnAOUA6ADpAOoA6ADrAOkA7ADtAO4A7ADvAO0A8ADxAPIA8ADzAPEA9AD1APYA9AD3APUA+AD5APoA+AD7APkA/AD9AP4A/AD/AP0AhASFBK0AAAEBAQIBAAEDAQEBBAEFAQYBBAEHAQUBCAEJAQoBCAELAQkBDAENAQ4BDAEPAQ0BEAERARIBEAETAREBFAEVARYBFAEXARUBGAEZARoBGAEbARkBHAEdAR4BHAEfAR0BIAEhASIBIAEjASEBJAElASYBJAEnASUBKAEpASoBKAErASkBLAEtAS4BLAEvAS0BMAExATIBMAEzATEBNAE1ATYBNAE3ATUBOAE5AToBOAE7ATkBPAE9AT4BPAE/AT0BQAFBAUIBQAFDAUEBogCGBKMAogCHBIYEnACIBJ0AnACJBIgEygCKBMsAygCLBIoEeQCMBHoAeQCNBIwEtQCOBI8EsACvAKwAZQBkAGcAigCLAJAEaACRBJIEkwCTBJQERAGVBJYESAFJAUoBRwFGAUUBtwC2ALkAwQCXBJgEmQS0AJoESwFMAU0BSwFOAUwBTwFQAVEBTwFSAVABUwFUAVUBUwFWAVQBVwFYAVkBVwFaAVgBWwFcAV0BWwFeAVwBmwRgAZwEmwRfAWABYgGbBJwEYgGcBGEBnQRiAWEBnQRhAZ4EYwFkAWUBYwFmAWQBZwGfBGkBZwFoAZ8EagFpAZ8EagGfBGsBbAGgBG4BbwFuAaAEbwGgBG0BbAGhBKAEbAFwAaEEbAFxAXABcgF0AaIEcgFzAXQBcgGiBHUBcgF1AXYBdwF4AaMEdwF7AXgBowR4AXoBowR6AXkBgAF3AaQEgAGkBIEBgQGkBIIBgQGCAYMBfAF5AX0BfAGlBHkBfwGlBHwBfwF+AaUEhAF+AYYBhAGmBH4BhQGmBIQBhQGCAaYEpwSoBH4BggGpBKcEpwSpBKgEqQR5AagEggGqBKkEqQSrBHkBqgSrBKkEqgR3AasEhwGIAawEhwGLAYgBrASIAYoBrASKAYkBkAGHAa0EkAGtBJEBkQGtBJIBkQGSAZMBjAGJAY0BjAGuBIkBjwGuBIwBjwGOAa4ElAGOAZYBlAGvBI4BlQGvBJQBlQGSAa8EsASxBI4BkgGyBLAEsASyBLEEsgSJAbEEkgGzBLIEsgS0BIkBswS0BLIEswSHAbQElwGYAZkBlwGaAZgBmwGcAZ0BmwGeAZwBnwGgAaEBnwGiAaABowGkAaUBowGmAaQBpwGoAakBpwGqAagBtQTGAcgBtQS2BMYBtgTFAcYBxAG2BLUEtgS3BMUBxAG4BLYEuAS3BLYEuATHAbcEuQTPAdABuQS6BM8BuwS5BNABuwTQAdIB0QG5BLsE0QG8BLkEvAS6BLkEvATOAboEvQTKAcsBvQS+BMoBvwS9BMsBvwTLAc0BzAG9BL8EzAHABL0EwAS+BL0EwATJAb4EwQTBAcMBwQTCBMEBwgTAAcEBvwHCBMEEwgTDBMABvwHEBMIExATDBMIExATCAcMEqwHFBK0BqwGsAcUErAGuAcUErAGvAa4BsAGyAcYEsAGxAbIBswGwAcYEswHGBLQBtQG3AccEtQG2AbcBuAG1AccEuAHHBLkBugG7AcgEugG9AbsBvgG6AcgEvgHIBLwB5QHJBMoE5QHiAckEygTJBMsEygTLBOYByQTkAcsEyQTMBOQB4gHMBMkE4gHjAcwE4AHNBM4E4AHdAc0EzgTNBM8EzgTPBOEBzQTfAc8EzQTQBN8B3QHQBM0E3QHeAdAE0wHRBNIE0wHUAdEE0gTRBNME0gTTBNUB0QTXAdME0QTUBNcB1AHUBNEE1AHWAdQE2AHVBNYE2AHZAdUE1gTVBNcE1gTXBNoB1QTcAdcE1QTYBNwB2QHYBNUE2QHbAdgE2QTaBPoB2QTbBNoE2wT5AdoE+wHbBNkE2wTcBPkB+wHdBNsE3QTcBNsE3QT4AdwE3gTfBPYB3gTgBN8E4AT1Ad8E9wHgBN4E4AThBPUB9wHiBOAE4gThBOAE4gT0AeEE4wTkBOkB4wTlBOQE5QToAeQE5wHlBOME5QTmBOgB5wHnBOUE5wTmBOUE5wTqAeYE6wHsAe0B7gHtAe8B6ATpBPIB6ATqBOkE6gTxAekE8AHqBOgE6gTrBPEB8AHsBOoE7ATrBOoE7ATzAesE/AHtBP4B/AH9Ae0E/gHtBP8B/gH/AQACAQLuBAMCAQICAu4EAwLuBAQCAwIEAgUCBgLvBAgCBgIHAu8ECALvBAkCCAIJAgoCCwLwBA0CCwIMAvAEDQLwBA4CDQIOAg8CEAIRAhICEwIUAhECFQIWAhcCGAIZAhYCGgIbAhwCHQIeAhsC8QRMAk4C8QTyBEwC8gRLAkwCSgLyBPEE8gTzBEsCSgL0BPIE9ATzBPIE9ARNAvMEHwL1BCECHwIgAvUEIAIiAvUEIAIjAiICJAL2BCYCJAIlAvYEJQInAvYEJQIoAicCKQL3BCsCKQIqAvcEKgIsAvcEKgItAiwCLgIvAjACLgIxAi8CMQIyAi8CMQIzAjIC+ARVAlYC+AT5BFUC+gT4BFYC+gRWAlgCVAL4BPoEVAL7BPgE+wT5BPgE+wRXAvkE/ARQAlEC/AT9BFAC/gT8BFEC/gRRAlMCTwL8BP4ETwL/BPwE/wT9BPwE/wRSAv0EAAVHAkkCAAUBBUcCAQVGAkcCRQIBBQAFAQUCBUYCRQIDBQEFAwUCBQEFAwVIAgIFNAIEBTYCNAI1AgQFNQI3AgQFNQI4AjcCBQU6AgYFBQU8AjoCOQIFBQYFOQIGBTsCBwU+AggFBwVAAj4CPQIHBQgFPQIIBT8CCQVCAgoFCQVEAkICQQIJBQoFQQIKBUMCawILBQwFawJoAgsFDAULBQ0FDAUNBWwCCwVqAg0FCwUOBWoCaAIOBQsFaAJpAg4FZgIPBRAFZgJjAg8FEAUPBREFEAURBWcCDwVlAhEFDwUSBWUCYwISBQ8FYwJkAhIFWQITBRQFWQJaAhMFFAUTBRUFFAUVBVsCEwVdAhUFEwUWBV0CWgIWBRMFWgJcAhYFXgIXBRgFXgJfAhcFGAUXBRkFGAUZBWACFwViAhkFFwUaBWICXwIaBRcFXwJhAhoFGwUcBYACGwUdBRwFHQV/AhwFgQIdBRsFHQUeBX8CgQIfBR0FHwUeBR0FHwV+Ah4FIAUhBXwCIAUiBSEFIgV7AiEFfQIiBSAFIgUjBXsCfQIkBSIFJAUjBSIFJAV6AiMFJQUmBW8CJQUnBSYFJwVuAiYFbQInBSUFJwUoBW4CbQIpBScFKQUoBScFKQVwAigFcQJyAnMCdAJzAnUCKgUrBXgCKgUsBSsFLAV3AisFdgIsBSoFLAUtBXcCdgIuBSwFLgUtBSwFLgV5Ai0FggIvBYQCggKDAi8FhAIvBYUChAKFAoYChwIwBYkChwKIAjAFiQIwBYoCiQKKAosCjAIxBY4CjAKNAjEFjgIxBY8CjgKPApACkQIyBZMCkQKSAjIFkwIyBZQCkwKUApUClgKXApgCmQKaApcCmwKcAp0CngKfApwCoAKhAqICowKkAqECMwXAAsICMwU0BcACNAW/AsACvgI0BTMFNAU1Bb8CvgI2BTQFNgU1BTQFNgXBAjUFpQI3BTgFpQKmAjcFOAU3BTkFOAU5BacCNwWpAjkFNwU6BakCpgI6BTcFpgKoAjoFrgI7BTwFrgKqAjsFPAU7BT0FPAU9Ba0COwWsAj0FOwU+BawCqgI+BTsFqgKrAj4FrwI/BUAFrwKwAj8FQAU/BUEFQAVBBbECPwWzAkEFPwVCBbMCsAJCBT8FsAKyAkIFtAJDBUQFtAK1AkMFRAVDBUUFRAVFBbYCQwW4AkUFQwVGBbgCtQJGBUMFtQK3AkYFRwXJAsoCRwVIBckCSQVHBcoCSQXKAswCyAJHBUkFyAJKBUcFSgVIBUcFSgXLAkgFSwXEAsUCSwVMBcQCTQVLBcUCTQXFAscCwwJLBU0FwwJOBUsFTgVMBUsFTgXGAkwFTwW7Ar0CTwVQBbsCUAW6ArsCuQJQBU8FUAVRBboCuQJSBVAFUgVRBVAFUgW8AlEF3wJTBVQF3wLcAlMFVAVTBVUFVAVVBeACUwXeAlUFUwVWBd4C3AJWBVMF3ALdAlYF2gJXBVgF2gLXAlcFWAVXBVkFWAVZBdsCVwXZAlkFVwVaBdkC1wJaBVcF1wLYAloFzQJbBVwFzQLOAlsFXAVbBV0FXAVdBc8CWwXRAl0FWwVeBdECzgJeBVsFzgLQAl4F0gJfBWAF0gLTAl8FYAVfBWEFYAVhBdQCXwXWAmEFXwViBdYC0wJiBV8F0wLVAmIFYwVkBfQCYwVlBWQFZQXzAmQF9QJlBWMFZQVmBfMC9QJnBWUFZwVmBWUFZwXyAmYFaAVpBfACaAVqBWkFagXvAmkF8QJqBWgFagVrBe8C8QJsBWoFbAVrBWoFbAXuAmsFbQVuBeMCbQVvBW4FbwXiAm4F4QJvBW0FbwVwBeIC4QJxBW8FcQVwBW8FcQXkAnAF5QLmAucC6ALnAukCcgVzBewCcgV0BXMFdAXrAnMF6gJ0BXIFdAV1BesC6gJ2BXQFdgV1BXQFdgXtAnUF9gJ3BfgC9gL3AncF+AJ3BfkC+AL5AvoC+wJ4Bf0C+wL8AngF/QJ4Bf4C/QL+Av8CAAN5BQIDAAMBA3kFAgN5BQMDAgMDAwQDBQN6BQcDBQMGA3oFBwN6BQgDBwMIAwkDCgMLAwwDDQMOAwsDDwMQAxEDEgMTAxADFAMVAxYDFwMYAxUDGQMaAxsDGQN7BRoDewUcAxoDewUdAxwDfAUfAyADfAUhAx8DHgN8BSADHgMgAyIDfQUkAyUDfQUmAyQDIwN9BSUDIwMlAycDKAMpAyoDKAN+BSkDfgUrAykDfgUsAysDLQMuA38FLQMwAy4DMQMtA38FMQN/BS8DMgMzA4AFMgM1AzMDNgMyA4AFNgOABTQDNwM4A4EFNwM6AzgDOwM3A4EFOwOBBTkDPAM9A4IFPAM/Az0DQAM8A4IFQAOCBT4DUwODBYQFUwNQA4MFhAWDBYUFhAWFBVQDgwVSA4UFgwWGBVIDUAOGBYMFUANRA4YFTgOHBYgFTgNLA4cFiAWHBYkFiAWJBU8DhwVNA4kFhwWKBU0DSwOKBYcFSwNMA4oFSQOLBYwFSQNGA4sFjAWLBY0FjAWNBUoDiwVIA40FiwWOBUgDRgOOBYsFRgNHA44FQQOPBZAFQQNCA48FkAWPBZEFkAWRBUMDjwVEA5EFjwWSBUQDQgOSBY8FQgNFA5IFkwWUBWgDkwWVBZQFlQVnA5QFaQOVBZMFlQWWBWcDaQOXBZUFlwWWBZUFlwVmA5YFmAWZBWQDmAWaBZkFmgVjA5kFZQOaBZgFmgWbBWMDZQOcBZoFnAWbBZoFnAViA5sFnQWeBWADnQWfBZ4FnwVfA54FYQOfBZ0FnwWgBV8DYQOhBZ8FoQWgBZ8FoQVeA6AFVQNWA1cDWANXA1kDogWjBVwDogWkBaMFpAVbA6MFWgOkBaIFpAWlBVsDWgOmBaQFpgWlBaQFpgVdA6UFagOnBWwDagNrA6cFbAOnBW0DbANtA24DbwOoBXEDbwNwA6gFcQOoBXIDcQNyA3MDdAOpBXYDdAN1A6kFdgOpBXcDdgN3A3gDeQOqBXsDeQN6A6oFewOqBXwDewN8A30DfgN/A4ADgQOCA38DgwOEA4UDhgOHA4QDiAOJA4oDiwOMA4kDjQOrBY8DjQOOA6sFjgOQA6sFjgORA5ADkgOsBZQDkgOTA6wFkwOVA6wFkwOWA5UDlwOtBZkDlwOYA60FmAOaA60FmAObA5oDnAOuBZ4DnAOdA64FnQOfA64FnQOgA58DrQOvBa8DrQOwBa8FsAWuA68FsAWwA64DsQWjA7IFsQWiA6MDoQOxBbIFoQOyBaQDswWnA7QFswWmA6cDpQOzBbQFpQO0BagDtQWrA7YFtQWqA6sDqQO1BbYFqQO2BawDtwW4BcQDtwW5BbgFuQXDA7gFxQO5BbcFuQW6BcMDxQO7BbkFuwW6BbkFuwXCA7oFvAW9BcADvAW+Bb0FvgW/A70FwQO+BbwFvgW/Bb8DwQPABb4FwAW/Bb4FwAW+A78FwQXCBbwDwQXDBcIFwwW7A8IFvQPDBcEFwwXEBbsDvQPFBcMFxQXEBcMFxQW6A8QFsQOyA7MDtAOzA7UDxgXHBbgDxgXIBccFyAW3A8cFtgPIBcYFyAXJBbcDtgPKBcgFygXJBcgFygW5A8kFxgPLBcgDxgPHA8sFyAPLBckDyAPJA8oDywPMBc0DywPMA8wFzQPMBc4DzQPOA88D0APNBdID0APRA80F0gPNBdMD0gPTA9QD1QPOBdcD1QPWA84F1wPOBdgD1wPYA9kD2gPbA9wD3QPeA9sD3wPgA+ED4gPjA+AD5APlA+YD5wPoA+UDzwX9AwAEzwXQBf0D0AX8A/0D/wPQBc8F0AXRBfwD/wP7A9AF+wPRBdAF+wP+A9EF0gX3A/oD0gXTBfcD0wX2A/cD+QPTBdIF0wXUBfYD+QP1A9MF9QPUBdMF9QP4A9QF1QXxA/QD1QXWBfED1gXwA/ED8wPWBdUF1gXXBfAD8wPvA9YF7wPXBdYF7wPyA9cF2AUcBB4E2AXZBRwE2QUbBBwEGgTZBdgF2QXaBRsEGgTbBdkF2wXaBdkF2wUdBNoF3AXrA+4D3AXdBesD3QXqA+sD7QPdBdwF3QXeBeoD7QPpA90F6QPeBd0F6QPsA94FFATfBeAFFAQQBN8F4AXfBeEF4AXhBRIE3wURBOEF3wXiBREEEATiBd8FEAQTBOIFDgTjBeQFDgQLBOMF5AXjBeUF5AXlBQ8E4wUNBOUF4wXmBQ0ECwTmBeMFCwQMBOYFAQTnBegFAQQCBOcF6AXnBekF6AXpBQME5wUFBOkF5wXqBQUEAgTqBecFAgQEBOoFBgTrBewFBgQHBOsF7AXrBe0F7AXtBQgE6wUKBO0F6wXuBQoEBwTuBesFBwQJBO4F7wUlBCYE7wXwBSUE8QXvBSYE8QUmBCgEJwTvBfEFJwTyBe8F8gXwBe8F8gUkBPAF8wUgBCEE8wX0BSAE9QXzBSEE9QUhBCMEHwTzBfUFHwT2BfMF9gX0BfMF9gUiBPQF9wUXBBkE9wX4BRcE+AUWBBcEFQT4BfcF+AX5BRYEFQT6BfgF+gX5BfgF+gUYBPkFOwT7BfwFOwQ4BPsF/AX7Bf0F/AX9BTwE+wU6BP0F+wX+BToEOAT+BfsFOAQ5BP4FNgT/BQAGNgQzBP8FAAb/BQEGAAYBBjcE/wU1BAEG/wUCBjUEMwQCBv8FMwQ0BAIGKQQDBgQGKQQqBAMGBAYDBgUGBAYFBisEAwYtBAUGAwYGBi0EKgQGBgMGKgQsBAYGLgQHBggGLgQvBAcGCAYHBgkGCAYJBjAEBwYyBAkGBwYKBjIELwQKBgcGLwQxBAoGCwYMBlAECwYNBgwGDQZPBAwGUQQNBgsGDQYOBk8EUQQPBg0GDwYOBg0GDwZOBA4GEAYRBkwEEAYSBhEGEgZLBBEGTQQSBhAGEgYTBksETQQUBhIGFAYTBhIGFAZKBBMGFQYWBj8EFQYXBhYGFwY+BBYGPQQXBhUGFwYYBj4EPQQZBhcGGQYYBhcGGQZABBgGQQRCBEMERARDBEUEGgYbBkgEGgYcBhsGHAZHBBsGRgQcBhoGHAYdBkcERgQeBhwGHgYdBhwGHgZJBB0GUgQfBlQEUgRTBB8GVAQfBlUEVARVBFYEVwQgBlkEVwRYBCAGWQQgBloEWQRaBFsEXAQhBl4EXARdBCEGXgQhBl8EXgRfBGAEYQQiBmMEYQRiBCIGYwQiBmQEYwRkBGUEZgRnBGgEaQRqBGcEawRsBG0EbgRvBGwEcARxBHIEcwR0BHEE"),
 "lods": [0.10957793, PackedByteArray("AAABAAIAAwABAAAAAgABAAQAAgAEAAUAAwAGAAEABwAGAAMAAwAIAAcACQAGAAcACQAKAAYACwAMAAIADQAMAAsADQAOAAwADwAIABAADwARAAgADwASABEAEwAUAA0AEwAVABQAFgAVABMAFgAXABUAFAAVABgAFAAYABkAGQAYABIAGAAaABIAGAAbABoAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0ALgAwACwALgAxADAAMgAwADEAMgAzADAANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkAOAA8ADsAOAA9ADwAPgA8AD0APgA9AD8AQABBAEIAQABDAEEARABFAEYARABHAEUASABJAEoASABLAEkATABNAE4ATABPAE0AUABRAFIAUABTAFEAVABVAFYAVABXAFUAWABZAFoAWABbAFkAXABdAF4AXABfAF0AYABhAGIAYABjAGEAZABlAGYAZQBkAGcAaABnAGQAaQBqAGsAaQBsAGoAbQBuAG8AbQBwAG4AcQByAHMAcQB0AHIAdQB2AHcAdQB4AHYAeQB1AHcAeQB3AHoAewB8AH0AewB+AHwAfwCAAIEAfwCCAIAAgwCEAIUAgwCGAIQAhwCIAIkAigCLAIcAjACNAI4AjwCQAJEAkACPAJIAkwCSAI8AlACVAJYAlACXAJUAmACZAJoAmACbAJkAnACYAJoAnACaAJ0AngCfAKAAngChAJ8AogCeAKAAogCgAKMApAClAKYApACnAKUAqACpAKoAqACrAKkArACtAK4ArACvAK0AsACvAKwAsQCyALMAsQC0ALIAtQC0ALEAtgC3ALgAtwC2ALkAugC5ALYAuwC8AL0AvgC/AMAAwQDAAL8AwgDDAMQAwgDFAMMAxgDHAMgAxgDJAMcAygDGAMgAygDIAMsAzADNAM4AzADPAM0A0ADRANIA0ADTANEA1ADVANYA1ADXANUA2ADZANoA2ADbANkA3ADdAN4A3ADfAN0A4ADhAOIA4ADjAOEA5ADlAOYA5ADnAOUA6ADpAOoA6ADrAOkA7ADtAO4A7ADvAO0A8ADxAPIA8ADzAPEA9AD1APYA9AD3APUA+AD5APoA+AD7APkA/AD9AP4A/AD/AP0AAAEBAQIBAAEDAQEBBAEFAQYBBAEHAQUBCAEJAQoBCAELAQkBDAENAQ4BDAEPAQ0BEAERARIBEAETAREBFAEVARYBFAEXARUBGAEZARoBGAEbARkBHAEdAR4BHAEfAR0BIAEhASIBIAEjASEBJAElASYBJAEnASUBKAEpASoBKAErASkBLAEtAS4BLAEvAS0BMAExATIBMAEzATEBNAE1ATYBNAE3ATUBOAE5AToBOAE7ATkBPAE9AT4BPAE/AT0BQAFBAUIBQAFDAUEBRAFFAUYBRwFGAUUBSAFJAUoBSwFMAU0BSwFOAUwBTwFQAVEBTwFSAVABUwFUAVUBUwFWAVQBVwFYAVkBVwFaAVgBWwFcAV0BWwFeAVwBXwFgAWEBYgFfAWEBYwFkAWUBYwFmAWQBZwFoAWkBagFpAWgBagFoAWsBbAFtAW4BbwFuAW0BbAFwAW0BbAFxAXABcgFzAXQBcgF0AXUBcgF1AXYBdwF4AXkBeQF4AXoBdwF7AXgBfAF5AX0BfAF+AXkBdwF5AX4BfwF+AXwBgAF3AYEBgQF3AYIBggF3AX4BgQGCAYMBhAGCAX4BhQGCAYQBhAF+AYYBhwGIAYkBiQGIAYoBhwGLAYgBjAGJAY0BjAGOAYkBhwGJAY4BjwGOAYwBkAGHAZEBkQGHAZIBkgGHAY4BkQGSAZMBlAGSAY4BlQGSAZQBlAGOAZYBlwGYAZkBlwGaAZgBmwGcAZ0BmwGeAZwBnwGgAaEBnwGiAaABowGkAaUBowGmAaQBpwGoAakBpwGqAagBqwGsAa0BrAGuAa0BrAGvAa4BsAGxAbIBswGwAbIBswGyAbQBtQG2AbcBuAG1AbcBuAG3AbkBugG7AbwBugG9AbsBvgG6AbwBvwHAAcEBvwHCAcABvwHBAcMBxAHFAcYBxAHHAcUBxAHGAcgByQHKAcsBzAHJAcsBzAHLAc0BzgHPAdAB0QHOAdAB0QHQAdIB0wHUAdUB1AHWAdUB1QHWAdcB2AHZAdoB2QHbAdoB2gHbAdwB3QHeAd8B4AHdAd8B4AHfAeEB4gHjAeQB5QHiAeQB5QHkAeYB5wHoAekB5wHqAegB6wHsAe0B7gHtAe8B8AHxAfIB8AHzAfEB9AH1AfYB9wH0AfYB+AH5AfoB+wH4AfoB/AH9Af4B/gH9Af8B/gH/AQACAQICAgMCAwICAgQCAwIEAgUCBgIHAggCCAIHAgkCCAIJAgoCCwIMAg0CDQIMAg4CDQIOAg8CEAIRAhICEwIUAhECFQIWAhcCGAIZAhYCGgIbAhwCHQIeAhsCHwIgAiECIAIiAiECIAIjAiICJAIlAiYCJQInAiYCJQIoAicCKQIqAisCKgIsAisCKgItAiwCLgIvAjACLgIxAi8CMQIyAi8CMQIzAjICNAI1AjYCNQI3AjYCNQI4AjcCOQI6AjsCOQI8AjoCPQI+Aj8CPQJAAj4CQQJCAkMCQQJEAkICRQJGAkcCRQJIAkYCRQJHAkkCSgJLAkwCSgJNAksCSgJMAk4CTwJQAlECTwJSAlACTwJRAlMCVAJVAlYCVAJXAlUCVAJWAlgCWQJaAlsCWgJcAlsCWwJcAl0CXgJfAmACXwJhAmACYAJhAmICYwJkAmUCZgJjAmUCZgJlAmcCaAJpAmoCawJoAmoCawJqAmwCbQJuAm8CbQJwAm4CcQJyAnMCdAJzAnUCdgJ3AngCdgJ5AncCegJ7AnwCfQJ6AnwCfgJ/AoACgQJ+AoACggKDAoQChAKDAoUChAKFAoYChwKIAokCiQKIAooCiQKKAosCjAKNAo4CjgKNAo8CjgKPApACkQKSApMCkwKSApQCkwKUApUClgKXApgCmQKaApcCmwKcAp0CngKfApwCoAKhAqICowKkAqECpQKmAqcCpgKoAqcCpwKoAqkCqgKrAqwCqgKsAq0CrgKqAq0CrwKwArECsAKyArECsQKyArMCtAK1ArYCtQK3ArYCtgK3ArgCuQK6ArsCuQK8AroCuQK7Ar0CvgK/AsACvgLBAr8CvgLAAsICwwLEAsUCwwLGAsQCwwLFAscCyALJAsoCyALLAskCyALKAswCzQLOAs8CzgLQAs8CzwLQAtEC0gLTAtQC0wLVAtQC1ALVAtYC1wLYAtkC2gLXAtkC2gLZAtsC3ALdAt4C3wLcAt4C3wLeAuAC4QLiAuMC4QLkAuIC5QLmAucC6ALnAukC6gLrAuwC6gLtAusC7gLvAvAC8QLuAvAC8gLzAvQC9QLyAvQC9gL3AvgC+AL3AvkC+AL5AvoC+wL8Av0C/QL8Av4C/QL+Av8CAAMBAwIDAgMBAwMDAgMDAwQDBQMGAwcDBwMGAwgDBwMIAwkDCgMLAwwDDQMOAwsDDwMQAxEDEgMTAxADFAMVAxYDFwMYAxUDGQMaAxsDGQMcAxoDGQMdAxwDHgMfAyADHgMhAx8DHgMgAyIDIwMkAyUDIwMmAyQDIwMlAycDKAMpAyoDKAMrAykDKAMsAysDLQMuAy8DLQMwAy4DMQMtAy8DMgMzAzQDMgM1AzMDNgMyAzQDNwM4AzkDNwM6AzgDOwM3AzkDPAM9Az4DPAM/Az0DQAM8Az4DQQNCA0MDQgNEA0MDQgNFA0QDRgNHA0gDSQNGA0gDSQNIA0oDSwNMA00DTgNLA00DTgNNA08DUANRA1IDUwNQA1IDUwNSA1QDVQNWA1cDWANXA1kDWgNbA1wDWgNdA1sDXgNfA2ADYQNeA2ADYgNjA2QDZQNiA2QDZgNnA2gDaQNmA2gDagNrA2wDbANrA20DbANtA24DbwNwA3EDcQNwA3IDcQNyA3MDdAN1A3YDdgN1A3cDdgN3A3gDeQN6A3sDewN6A3wDewN8A30DfgN/A4ADgQOCA38DgwOEA4UDhgOHA4QDiAOJA4oDiwOMA4kDjQOOA48DjgOQA48DjgORA5ADkgOTA5QDkwOVA5QDkwOWA5UDlwOYA5kDmAOaA5kDmAObA5oDnAOdA54DnQOfA54DnQOgA58DoQOiA6MDoQOjA6QDpQOmA6cDpQOnA6gDqQOqA6sDqQOrA6wDrQOuA68DrQOwA64DsQOyA7MDtAOzA7UDtgO3A7gDtgO5A7cDugO7A7wDvQO6A7wDvgO/A8ADwQO+A8ADwgPDA8QDxQPCA8QDxgPHA8gDyAPHA8kDyAPJA8oDywPMA80DzQPMA84DzQPOA88D0APRA9ID0gPRA9MD0gPTA9QD1QPWA9cD1wPWA9gD1wPYA9kD2gPbA9wD3QPeA9sD3wPgA+ED4gPjA+AD5APlA+YD5wPoA+UD6QPqA+sD6QPsA+oD7QPpA+sD7QPrA+4D7wPwA/ED7wPyA/AD8wPvA/ED8wPxA/QD9QP2A/cD9QP4A/YD+QP1A/cD+QP3A/oD+wP8A/0D+wP+A/wD/wP7A/0D/wP9AwAEAQQCBAMEAgQEBAMEAwQEBAUEBgQHBAgEBwQJBAgECAQJBAoECwQMBA0EDgQLBA0EDgQNBA8EEAQRBBIEEAQTBBEEFAQQBBIEFQQWBBcEFQQYBBYEFQQXBBkEGgQbBBwEGgQdBBsEGgQcBB4EHwQgBCEEHwQiBCAEHwQhBCMEJAQlBCYEJwQkBCYEJwQmBCgEKQQqBCsEKgQsBCsEKwQsBC0ELgQvBDAELwQxBDAEMAQxBDIEMwQ0BDUENgQzBDUENgQ1BDcEOAQ5BDoEOwQ4BDoEOwQ6BDwEPQQ+BD8EPQRABD4EQQRCBEMERARDBEUERgRHBEgERgRJBEcESgRLBEwETQRKBEwETgRPBFAEUQROBFAEUgRTBFQEVARTBFUEVARVBFYEVwRYBFkEWQRYBFoEWQRaBFsEXARdBF4EXgRdBF8EXgRfBGAEYQRiBGMEYwRiBGQEYwRkBGUEZgRnBGgEaQRqBGcEawRsBG0EbgRvBGwEcARxBHIEcwR0BHEE")],
-"material": ExtResource("23_5mu1u"),
+"material": ExtResource("23_af47y"),
 "name": "texture",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -89,7 +90,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 1386,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAAJAAsADQAJAAwADgAJAA0ADgANAA8AEAAOAA8AEQAOABAAEgAOABEAEgARABMAFAASABMAFQASABQAFgASABUAFgAVABcAGAAWABcAGQAWABgAGgAWABkAGgAZABsAHAAaABsAHQAaABwAHgAaAB0AHgAdAB8AIAAeAB8AIQAeACAAIgAeACEAIgAhACMAJAAlACYAJwAmACUAJAAoACUAJwApACYAKgAoACQAKwApACcAKgAsACgAKwAtACkALgAsACoAKwAvAC0ALgAwACwAKwAxAC8AMgAwAC4ALwAxADMAMgA0ADAALwAzADUANgA0ADIANQAzADcANgA4ADQANQA3ADkAOgA4ADYAOQA3ADsAOgA8ADgAOQA7AD0APgA8ADoAPQA7AD8APgBAADwAPQA/AEEAQgBAAD4AQQA/AEMAQgA+AEQAQQBDAEUAQgBEAEYARQBDAEcAQgBGAEgARQBHAEkASgBIAEYASQBHAEsASgBLAEgASQBLAEoATABNAE4ATgBNAE8ATgBPAFAATgBQAFEATABSAE0ATABTAFIAVABTAEwAVABVAFMAVgBXAFgAVgBZAFcAWABXAFoAWwBZAFYAWABaAFwAXQBcAFoAXQBaAF4AWwBfAFkAYABfAFsAYABhAF8AYgBhAGAAYgBjAGEAZABjAGIAZABlAGMAZgBnAGgAaQBmAGgAagBmAGkAZgBrAGcAZwBrAGwAbABrAG0AawBuAG0AbwBmAGoAbwBqAHAAcQBvAHAAcgBvAHEAawBzAG4AbgBzAHQAdABzAHUAcwB2AHUAdwBvAHIAdwByAHgAeQB3AHgAegB3AHkAewB3AHoAewB6AHwAcwB9AHYAdgB9AH4AfgB9AH8AgAB/AH0AgAB9AIEAggCDAIQAggCFAIMAhgCHAIgAhgCJAIcAigCLAIwAigCNAIsAjgCPAJAAkACPAJEAjgCSAI8AkwCSAI4AkwCUAJIAkACRAJUAlQCRAJYAlQCWAJcAlwCWAJgAlwCYAJkAmQCYAJoAmQCaAJsAnACbAJoAnACaAJ0AngCfAKAAngChAJ8AogCjAKQAogClAKMApgCnAKgApgCpAKcAqgCrAKwAqgCtAKsArgCvALAArgCxAK8AsgCzALQAsgC1ALMAtgC3ALgAtgC5ALcAugC7ALwAugC9ALsAvgC/AMAAvgDBAL8AwgDDAMQAwgDFAMMAxgDHAMgAyQDGAMgAygDGAMkAxgDLAMcAxwDLAMwAzADLAM0AywDOAM0AzwDGAMoAzwDKANAA0QDPANAA0gDPANEA0wDPANIA0wDSANQAywDVAM4AzgDVANYA1gDVANcA1QDYANcA1QDZANgA2ADZANoA2gDZANsA2QDcANsA2QDdANwA3ADdAN4A3gDdAN8A4ADfAN0A4ADdAOEA4gDjAOQA4gDlAOMA5gDnAOgA5gDpAOcA6gDmAOgA6gDoAOsA7ADpAOYA7ADtAOkA7QDsAO4A7gDsAO8A7ADwAO8A7ADxAPAA8ADxAPIA8gDxAPMA8QD0APMA8QD1APQA9AD1APYA9gD1APcA9QD4APcA9QD5APgA+AD5APoA+gD5APsA+QD8APsA+QD9APwA/AD9AP4A/gD9AP8A/QAAAf8A/QABAQABAgEDAQQBAgEFAQMBBgEHAQgBBgEJAQcBCgELAQwBDAELAQ0BDAENAQ4BCgEPAQsBEAEPAQoBEAERAQ8BEgERARABEgETAREBFAETARIBFAEVARMBFgEVARQBFgEXARUBGAEXARYBGAEZARcBGgEbARwBHQEcARsBHQEbAR4BHQEeAR8BGgEgARsBGgEhASABIgEgASEBIgEjASABJAElASYBJAEnASUBKAEpASoBKgEpASsBKgErASwBKAEtASkBLgEtASgBLgEvAS0BMAEvAS4BMAExAS8BMgExATABMgEzATEBNAEzATIBNAE1ATMBNgE1ATQBNgE3ATUBOAE5AToBOAE7ATkBPAE9AT4BPAE/AT0BQAFBAUIBQAFDAUEBRAFFAUYBRAFHAUUBSAFJAUoBSAFLAUkBTAFNAU4BTAFPAU0BUAFRAVIBUAFTAVEBVAFVAVYBVAFXAVUBWAFZAVoBWAFbAVkBXAFdAV4BXwFgAWEBYgFjAWQBZQFmAWcBaAFpAWoBaAFrAWkBbAFtAW4BbAFvAW0BcAFxAXIBcAFzAXEBdAF1AXYBdAF3AXUBeAF5AXoBewF8AX0BfgF/AYABgQGCAYMBhAGFAYYBhwGIAYkBigGLAYwBigGNAYsBjgGPAZABjgGRAY8BkgGTAZQBlQGWAZcBmAGZAZoBmwGcAZ0BngGfAaABoQGiAaMBpAGlAaYBpAGnAaUBqAGpAaoBqAGrAakBrAGtAa4BrAGvAa0BsAGxAbIBsAGzAbEBtAG1AbYBtwG4AbkBugG7AbwBvQG+Ab8BwAHBAcIBwwHEAcUBxgHHAcgBxgHJAccBygHLAcwBygHNAcsBzgHPAdAB0QHSAdMB1AHVAdYB1AHXAdUB2AHZAdoB2AHbAdkB3AHdAd4B3AHfAd0B4AHhAeIB4AHjAeEB5AHlAeYB5AHnAeUB6AHpAeoB6AHrAekB7AHtAe4B7AHvAe0B8AHxAfIB8AHzAfEB9AH1AfYB9AH3AfUB+AH5AfoB+AH7AfkB/AH9Af4B/AH/Af0BAAL8Af4BAAL+AQECAgIDAgQCAgIFAgMCBgIDAgcCBgIIAgMCBgIJAggCCAIJAgoCCgIJAgsCCwIJAgwCDAINAgsCDAIOAg0CDwINAhACDwIRAg0CEQIPAhICEQISAhMCEgIUAhUCEgIWAhQCFwIUAhgCFwIZAhQCGgIZAhcCGgIbAhkCHAIbAhoCHQIcAhoCHQIeAhwCHQIfAh4CIAIeAiECIAIiAh4CAgIiAiACAgIjAiICJAIlAiYCJwIlAiQCJwIoAiUCJQIoAikCJwIkAioCKQIoAisCJAIsAioCKgIsAi0CKgItAi4CLgItAi8CLwItAjACLgIvAjECLgIxAjICMgIzAjQCNAIzAjUCNAI2AjICNwI2AjQCOAI2AjcCKwI2AjgCKwI4AjkCOQI4AjoCOwI8Aj0COwI+AjwCPwJAAkECPwJBAkICQgJBAkMCRAI/AkICRAJFAj8CRgJHAkgCRgJJAkcCSgJLAkwCSgJNAksCTAJLAk4CTAJOAk8CUAJRAlICUAJTAlECVAJTAlACVAJVAlMCVgJXAlgCVgJZAlcCWgJZAlYCWgJbAlkCXAJdAl4CXAJfAl0CXgJdAmACXgJgAmECYgJcAmMCYgJjAmQCZAJjAmUCZAJlAmYCZwJhAmgCZwJpAmECagJpAmcCagJrAmkCbAJrAm0CbAJuAmsCbwJuAmwCbwJlAm4CcAJxAmsCZQJyAnACcAJyAnECcgJhAnECZQJzAnICcgJ0AmECcwJ0AnICcwJcAnQCdQJ2AncCdQJ4AnYCdwJ2AnkCdwJ5AnoCewJ1AnwCewJ8An0CfQJ8An4CfQJ+An8CgAJ6AoECgAKCAnoCgwKCAoACgwKEAoIChQKEAoYChQKHAoQCiAKHAoUCiAJ+AocCiQKKAoQCfgKLAokCiQKLAooCiwJ6AooCfgKMAosCiwKNAnoCjAKNAosCjAJ1Ao0C"),
-"material": ExtResource("23_5mu1u"),
+"material": ExtResource("23_af47y"),
 "name": "texture",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -105,267 +106,285 @@ points = PackedVector3Array(-0.6050509, 0.019950196, -0.13511756, -0.85, -7.5295
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0hj6o"]
 points = PackedVector3Array(-0.60501176, 0.02495716, -0.6000004, -0.65011746, -2.3841858e-07, -0.5750014, -0.8, -2.3841858e-07, -0.5000045, -0.60501176, 0.49996266, -0.6000004, 0.6048551, 0.02495716, -0.6000004, 0.6499608, -2.3841858e-07, -0.5750014, -0.8, -2.3841858e-07, 0.49995482, -0.8, 0.599996, -0.5000045, 0.015348434, 1.0406723, -0.3406207, 0.6048551, 0.49996266, -0.6000004, 0.8, -2.3841858e-07, -0.5000045, -0.8, 0.599996, 0.49995482, -0.65011746, -2.3841858e-07, 0.57495177, -0.60501176, 0.02495716, 0.5999507, -0.5465936, 0.11999901, 0.6343396, -0.5224745, 0.91639465, -0.22916183, -0.44917777, 0.91853386, -0.3174509, -0.09537983, 1.0406723, -0.31062192, 0.114956915, 1.0406723, -0.28354988, 0.8, 0.599996, -0.5000045, 0.8, -2.3841858e-07, 0.49995482, -0.02286613, 1.0406723, -0.043071866, -0.12247455, 1.0406723, -0.10026464, -0.51198125, 0.91670024, -0.114898205, -0.60501176, 0.49996266, 0.5999507, 0.013938904, 0.8705545, 0.3072797, 0.6499608, -2.3841858e-07, 0.57495177, -0.5000783, 0.07344582, 0.6343396, -0.5000783, 0.11999901, 0.6458025, 0.6048551, 0.02495716, 0.5999507, -0.15254503, 1.0406723, -0.21111378, 0.1450274, 1.0406723, -0.17270073, 0.5199687, 0.8271592, -0.25562418, 0.52310103, 0.82705736, -0.14087275, 0.8, 0.599996, 0.49995482, 0.54643697, 0.11999901, 0.6343396, 0.12873918, 0.87045264, 0.31081617, 0.087862134, 1.0406723, -0.0731926, 0.6048551, 0.49996266, 0.5999507, 0.49992162, 0.07344582, 0.6343396, 0.49992162, 0.11999901, 0.6458025)
 
-[node name="room" type="Node3D"]
+[node name="DungeonRoom3D" type="Node3D"]
+script = ExtResource("1_r5cnj")
+size_in_voxels = Vector3i(7, 1, 5)
+voxel_scale = Vector3(4, 4, 4)
+min_count = 1
+max_count = 2
+metadata/_custom_type_script = "uid://eqgp7no52l1i"
 
-[node name="env" type="Marker3D" parent="."]
+[node name="room" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -2, 14)
+
+[node name="env" type="Marker3D" parent="room"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -2, -22)
 
-[node name="props" type="Marker3D" parent="env"]
+[node name="props" type="Marker3D" parent="room/env"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9999995, 0, -4)
 
-[node name="table_long" parent="env/props" instance=ExtResource("1_2nmtq")]
+[node name="table_long" parent="room/env/props" instance=ExtResource("2_7wrri")]
 transform = Transform3D(-4.371138e-08, 0, 1, 0, 1, 0, -1, 0, -4.371138e-08, 3.466332, 2, 4.4689503)
 
-[node name="table_long2" parent="env/props" instance=ExtResource("1_2nmtq")]
+[node name="table_long2" parent="room/env/props" instance=ExtResource("2_7wrri")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.488958, 2, -0.5307312)
 
-[node name="table_long3" parent="env/props" instance=ExtResource("1_2nmtq")]
+[node name="table_long3" parent="room/env/props" instance=ExtResource("2_7wrri")]
 transform = Transform3D(-4.371138e-08, 0, 1, 0, 1, 0, -1, 0, -4.371138e-08, -11.513126, 2, 1.0051098)
 
-[node name="table_long6" parent="env/props" instance=ExtResource("1_2nmtq")]
+[node name="table_long6" parent="room/env/props" instance=ExtResource("2_7wrri")]
 transform = Transform3D(0.032788813, 0, 0.9994623, 0, 1, 0, -0.9994623, 0, 0.032788813, -7.435042, 2, 1.0328407)
 
-[node name="table_medium" parent="env/props" instance=ExtResource("2_5y2xm")]
+[node name="table_medium" parent="room/env/props" instance=ExtResource("3_ql665")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.510427, 2, -0.9839611)
 
-[node name="table_medium2" parent="env/props" instance=ExtResource("2_5y2xm")]
+[node name="table_medium2" parent="room/env/props" instance=ExtResource("3_ql665")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.488957, 2, 2.4692688)
 
-[node name="box_large_col" parent="env/props" instance=ExtResource("3_0iu88")]
+[node name="box_large_col" parent="room/env/props" instance=ExtResource("4_mexsc")]
 transform = Transform3D(0.99207747, 0, -0.1256276, 0, 1, 0, 0.1256276, 0, 0.99207747, -12.370377, 3, 0.031011581)
 
-[node name="box_large_col2" parent="env/props" instance=ExtResource("3_0iu88")]
+[node name="box_large_col2" parent="room/env/props" instance=ExtResource("4_mexsc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7484665, 2, -0.74378777)
 
-[node name="box_small" parent="env/props" instance=ExtResource("4_jqapx")]
+[node name="box_small" parent="room/env/props" instance=ExtResource("5_atlc5")]
 transform = Transform3D(0.9856624, 0, 0.16873026, 0, 1, 0, -0.16873026, 0, 0.9856624, -11.051577, 3, 0.60378075)
 
-[node name="chair" parent="env/props" instance=ExtResource("5_7mc64")]
+[node name="chair" parent="room/env/props" instance=ExtResource("6_aq3gt")]
 transform = Transform3D(-0.3850525, 0, -0.92289454, 0, 1, 0, 0.92289454, 0, -0.3850525, -9.015064, 2, 2.980816)
 
-[node name="bottle_A_green_col" parent="env/props" instance=ExtResource("6_343fo")]
+[node name="bottle_A_green_col" parent="room/env/props" instance=ExtResource("7_tu6xd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.565603, 2.525031, -0.18596268)
 
-[node name="stool" parent="env/props" instance=ExtResource("7_1iuhu")]
+[node name="stool" parent="room/env/props" instance=ExtResource("8_dovam")]
 transform = Transform3D(0.76042867, 0, 0.6494215, 0, 1, 0, -0.6494215, 0, 0.76042867, -9.504938, 2.0499868, -0.37221718)
 
-[node name="coin" parent="env/props" instance=ExtResource("8_qs1vl")]
+[node name="coin" parent="room/env/props" instance=ExtResource("9_nndav")]
 transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -11.063145, 3.377946, -0.4371853)
 
-[node name="coin2" parent="env/props" instance=ExtResource("8_qs1vl")]
+[node name="coin2" parent="room/env/props" instance=ExtResource("9_nndav")]
 transform = Transform3D(0.9595895, 0, -0.28140378, 0, 1, 0, 0.28140378, 0, 0.9595895, -10.724752, 3.377946, -0.5222988)
 
-[node name="coin3" parent="env/props" instance=ExtResource("8_qs1vl")]
+[node name="coin3" parent="room/env/props" instance=ExtResource("9_nndav")]
 transform = Transform3D(0.9595895, 0, -0.28140378, 0, 1, 0, 0.28140378, 0, 0.9595895, -10.724752, 3.4980521, -0.5222988)
 
-[node name="coin8" parent="env/props" instance=ExtResource("8_qs1vl")]
+[node name="coin8" parent="room/env/props" instance=ExtResource("9_nndav")]
 transform = Transform3D(0.86673146, 0, -0.49877524, 0, 1, 0, 0.49877524, 0, 0.86673146, -10.966497, 3.377946, -0.7599926)
 
-[node name="coin9" parent="env/props" instance=ExtResource("8_qs1vl")]
+[node name="coin9" parent="room/env/props" instance=ExtResource("9_nndav")]
 transform = Transform3D(0.86673146, 0, -0.49877524, 0, 1, 0, 0.49877524, 0, 0.86673146, -10.966497, 3.4980521, -0.7599926)
 
-[node name="coin10" parent="env/props" instance=ExtResource("8_qs1vl")]
+[node name="coin10" parent="room/env/props" instance=ExtResource("9_nndav")]
 transform = Transform3D(0.9340597, -0.1466671, -0.32560915, 0.2624872, 0.9001897, 0.34750402, 0.24214253, -0.41005757, 0.879329, -10.946066, 3.658616, -0.7210636)
 
-[node name="coin11" parent="env/props" instance=ExtResource("8_qs1vl")]
+[node name="coin11" parent="room/env/props" instance=ExtResource("9_nndav")]
 transform = Transform3D(-0.43885738, 0, -0.89855677, 0, 1, 0, 0.89855677, 0, -0.43885738, -11.030258, 2.117339, -1.6699543)
 
-[node name="coin12" parent="env/props" instance=ExtResource("8_qs1vl")]
+[node name="coin12" parent="room/env/props" instance=ExtResource("9_nndav")]
 transform = Transform3D(-0.43885738, 0, -0.89855677, 0, 1, 0, 0.89855677, 0, -0.43885738, -11.030258, 2.2374449, -1.6699543)
 
-[node name="coin13" parent="env/props" instance=ExtResource("8_qs1vl")]
+[node name="coin13" parent="room/env/props" instance=ExtResource("9_nndav")]
 transform = Transform3D(-0.17825016, 0.39916894, -0.89938366, 0.2624872, 0.9001897, 0.34750405, 0.94832885, -0.17413403, -0.2652357, -11.067713, 2.3980088, -1.6469288)
 
-[node name="coin4" parent="env/props" instance=ExtResource("8_qs1vl")]
+[node name="coin4" parent="room/env/props" instance=ExtResource("9_nndav")]
 transform = Transform3D(0.9595895, 0, -0.28140378, 0, 1, 0, 0.28140378, 0, 0.9595895, -10.724752, 3.6233668, -0.5222988)
 
-[node name="coin5" parent="env/props" instance=ExtResource("8_qs1vl")]
+[node name="coin5" parent="room/env/props" instance=ExtResource("9_nndav")]
 transform = Transform3D(0.9595895, 0, -0.28140378, 0, 1, 0, 0.28140378, 0, 0.9595895, -11.068275, 3.5106125, -0.43025398)
 
-[node name="coin6" parent="env/props" instance=ExtResource("8_qs1vl")]
+[node name="coin6" parent="room/env/props" instance=ExtResource("9_nndav")]
 transform = Transform3D(0.9595895, 0, -0.28140378, 0, 1, 0, 0.28140378, 0, 0.9595895, -11.068275, 3.6307185, -0.43025398)
 
-[node name="coin7" parent="env/props" instance=ExtResource("8_qs1vl")]
+[node name="coin7" parent="room/env/props" instance=ExtResource("9_nndav")]
 transform = Transform3D(0.9595895, 0, -0.28140378, 0, 1, 0, 0.28140378, 0, 0.9595895, -11.068275, 3.7560334, -0.43025398)
 
-[node name="coin14" parent="env/props" instance=ExtResource("8_qs1vl")]
+[node name="coin14" parent="room/env/props" instance=ExtResource("9_nndav")]
 transform = Transform3D(0.9889099, 0, -0.1485171, 0, 1, 0, 0.1485171, 0, 0.9889099, -4.0449343, 2.1171842, 3.7836819)
 
-[node name="coin15" parent="env/props" instance=ExtResource("8_qs1vl")]
+[node name="coin15" parent="room/env/props" instance=ExtResource("9_nndav")]
 transform = Transform3D(0.767333, 0, -0.64124876, 0, 1, 0, 0.64124876, 0, 0.767333, -3.7007098, 2.1171842, 3.840807)
 
-[node name="coin16" parent="env/props" instance=ExtResource("8_qs1vl")]
+[node name="coin16" parent="room/env/props" instance=ExtResource("9_nndav")]
 transform = Transform3D(0.767333, 0, -0.64124876, 0, 1, 0, 0.64124876, 0, 0.767333, -3.7007098, 2.2372904, 3.840807)
 
-[node name="coin17" parent="env/props" instance=ExtResource("8_qs1vl")]
+[node name="coin17" parent="room/env/props" instance=ExtResource("9_nndav")]
 transform = Transform3D(0.5953838, 0, -0.8034415, 0, 1, 0, 0.8034415, 0, 0.5953838, -3.8273993, 2.1171842, 3.5263405)
 
-[node name="coin18" parent="env/props" instance=ExtResource("8_qs1vl")]
+[node name="coin18" parent="room/env/props" instance=ExtResource("9_nndav")]
 transform = Transform3D(0.5953838, 0, -0.8034415, 0, 1, 0, 0.8034415, 0, 0.5953838, -3.8273993, 2.2372904, 3.5263405)
 
-[node name="coin19" parent="env/props" instance=ExtResource("8_qs1vl")]
+[node name="coin19" parent="room/env/props" instance=ExtResource("9_nndav")]
 transform = Transform3D(0.75960904, 0.029318482, -0.64971876, 0.2624872, 0.9001897, 0.34750405, 0.59505844, -0.43450993, 0.6760965, -3.8242164, 2.3978543, 3.5701904)
 
-[node name="coin20" parent="env/props" instance=ExtResource("8_qs1vl")]
+[node name="coin20" parent="room/env/props" instance=ExtResource("9_nndav")]
 transform = Transform3D(0.767333, 0, -0.64124876, 0, 1, 0, 0.64124876, 0, 0.767333, -3.7007098, 2.362605, 3.840807)
 
-[node name="coin21" parent="env/props" instance=ExtResource("8_qs1vl")]
+[node name="coin21" parent="room/env/props" instance=ExtResource("9_nndav")]
 transform = Transform3D(0.767333, 0, -0.64124876, 0, 1, 0, 0.64124876, 0, 0.767333, -4.052407, 2.2498507, 3.7879868)
 
-[node name="coin22" parent="env/props" instance=ExtResource("8_qs1vl")]
+[node name="coin22" parent="room/env/props" instance=ExtResource("9_nndav")]
 transform = Transform3D(0.767333, 0, -0.64124876, 0, 1, 0, 0.64124876, 0, 0.767333, -4.052407, 2.3699567, 3.7879868)
 
-[node name="coin23" parent="env/props" instance=ExtResource("8_qs1vl")]
+[node name="coin23" parent="room/env/props" instance=ExtResource("9_nndav")]
 transform = Transform3D(0.767333, 0, -0.64124876, 0, 1, 0, 0.64124876, 0, 0.767333, -4.052407, 2.4952717, 3.7879868)
 
-[node name="coin24" parent="env/props" instance=ExtResource("8_qs1vl")]
+[node name="coin24" parent="room/env/props" instance=ExtResource("9_nndav")]
 transform = Transform3D(0.767333, 0, -0.64124876, 0, 1, 0, 0.64124876, 0, 0.767333, -3.7288303, 2.4952717, 3.8486786)
 
-[node name="coin25" parent="env/props" instance=ExtResource("8_qs1vl")]
+[node name="coin25" parent="room/env/props" instance=ExtResource("9_nndav")]
 transform = Transform3D(0.767333, 0, -0.64124876, 0, 1, 0, 0.64124876, 0, 0.767333, -3.7288303, 2.62809, 3.8486786)
 
-[node name="Skeleton_Arrow2" parent="env/props" instance=ExtResource("9_sxlhb")]
+[node name="Skeleton_Arrow2" parent="room/env/props" instance=ExtResource("10_5o8fr")]
 transform = Transform3D(0.45767212, -8.742277e-08, -0.88912094, -0.8891211, -3.886472e-08, -0.45767224, -3.449484e-08, 0.99999994, 1.167755e-08, -8.383493, 2.0772936, 0.43964386)
 
-[node name="Skeleton_Arrow3" parent="env/props" instance=ExtResource("9_sxlhb")]
+[node name="Skeleton_Arrow3" parent="room/env/props" instance=ExtResource("10_5o8fr")]
 transform = Transform3D(0.55427814, -0.78751594, -0.2694327, -0.53956443, -0.09348897, -0.83673763, 0.6337553, 0.6091622, -0.47673446, -8.494696, 2.105088, 0.32844353)
 
-[node name="Skeleton_Arrow_Half2" parent="env/props" instance=ExtResource("10_kwnb6")]
+[node name="Skeleton_Arrow_Half2" parent="room/env/props" instance=ExtResource("11_3sr0u")]
 transform = Transform3D(0.07785285, -0.9939967, -0.07687198, 0.19981164, 0.09109832, -0.9755901, 0.97673655, 0.060592536, 0.2057044, -8.531296, 2.0642369, 0.21292877)
 
-[node name="shield" parent="env/props" instance=ExtResource("11_5mu1u")]
+[node name="shield" parent="room/env/props" instance=ExtResource("12_c66mt")]
 transform = Transform3D(0.8748903, -0.46004656, -0.1514069, 0, -0.3126168, 0.94987935, -0.48432106, -0.83104026, -0.27350542, -6.1295514, 3.1488285, 0.74316597)
 
-[node name="skull" parent="env/props" instance=ExtResource("12_eu8vj")]
+[node name="skull" parent="room/env/props" instance=ExtResource("13_w1rjc")]
 transform = Transform3D(-0.8660254, -0.063307256, 0.49597606, 0, 0.991952, 0.1266145, -0.50000006, 0.10965137, -0.85905564, -5.09922, 2.038918, 0.6678238)
 
-[node name="table_long5" parent="env/props" instance=ExtResource("1_2nmtq")]
+[node name="table_long5" parent="room/env/props" instance=ExtResource("2_7wrri")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.49563, 2, 4.488411)
 
-[node name="box_large_col3" parent="env/props" instance=ExtResource("3_0iu88")]
+[node name="box_large_col3" parent="room/env/props" instance=ExtResource("4_mexsc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.732901, 2, 4.735344)
 
-[node name="box_small2" parent="env/props" instance=ExtResource("4_jqapx")]
+[node name="box_small2" parent="room/env/props" instance=ExtResource("5_atlc5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.994041, 2.0499854, 3.4745216)
 
-[node name="idk" parent="env/props" instance=ExtResource("14_343fo")]
+[node name="idk" parent="room/env/props" instance=ExtResource("14_dgt3b")]
 transform = Transform3D(-0.9659258, 0, 0.25881913, 0, 1, 0, -0.25881913, 0, -0.9659258, 2.3545094, 3.076632, 4.22303)
 
-[node name="barrel_small_col" parent="env/props" instance=ExtResource("15_0iu88")]
+[node name="barrel_small_col" parent="room/env/props" instance=ExtResource("15_c78as")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 8.876127, 3, -2)
 
-[node name="box_large_col4" parent="env/props" instance=ExtResource("3_0iu88")]
+[node name="box_large_col4" parent="room/env/props" instance=ExtResource("4_mexsc")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.6961216, 2.0499854, 4.720249)
 
-[node name="bone_A" parent="env/props" instance=ExtResource("16_jqapx")]
+[node name="bone_A" parent="room/env/props" instance=ExtResource("16_lsc4f")]
 transform = Transform3D(-0.853196, -0.5215904, 2.279944e-08, 0, -4.371139e-08, -1, 0.5215904, -0.853196, 3.7294384e-08, 6.1578355, 2.049986, 3.8792973)
 
-[node name="stool2" parent="env/props" instance=ExtResource("7_1iuhu")]
+[node name="stool2" parent="room/env/props" instance=ExtResource("8_dovam")]
 transform = Transform3D(-0.9413587, 0, -0.33740735, 0, 1, 0, 0.33740735, 0, -0.9413587, 1.0943037, 2, 3.5393677)
 
-[node name="bottle_C_green" parent="env/props" instance=ExtResource("17_7mc64")]
+[node name="bottle_C_green" parent="room/env/props" instance=ExtResource("17_v6i3p")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.058206797, 2.0418773, 3.5797596)
 
-[node name="idk2" parent="env/props" instance=ExtResource("18_343fo")]
+[node name="idk2" parent="room/env/props" instance=ExtResource("18_qg2ig")]
 transform = Transform3D(-0.7292314, 0, -0.6842671, 0, 1, 0, 0.6842671, 0, -0.7292314, 8.21418, 2.9999995, -1.6520348)
 
-[node name="idk3" parent="env/props" instance=ExtResource("19_1iuhu")]
+[node name="idk3" parent="room/env/props" instance=ExtResource("19_r6tuq")]
 transform = Transform3D(-0.8660253, 0, 0.50000006, 0, 1, 0, -0.50000006, 0, -0.8660253, 8.478636, 3.118141, -0.60246277)
 
-[node name="idk4" parent="env/props" instance=ExtResource("19_1iuhu")]
+[node name="idk4" parent="room/env/props" instance=ExtResource("19_r6tuq")]
 transform = Transform3D(-0.8061365, -0.33844092, -0.48538864, -0.42618898, 0.9011349, 0.079494014, 0.41049644, 0.2709503, -0.87067705, 8.084304, 3.2303596, -0.35259247)
 
-[node name="box_small3" parent="env/props" instance=ExtResource("4_jqapx")]
+[node name="box_small3" parent="room/env/props" instance=ExtResource("5_atlc5")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 9.051938, 3.047594, 0.6140461)
 
-[node name="crates_stacked" parent="env/props" instance=ExtResource("20_qs1vl")]
+[node name="crates_stacked" parent="room/env/props" instance=ExtResource("20_4pjow")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 12.422651, 2.049989, -7.1235733)
 
-[node name="keg_decorated" parent="env/props" instance=ExtResource("21_sxlhb")]
+[node name="keg_decorated" parent="room/env/props" instance=ExtResource("21_4ejii")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.9435978, 2.0499854, 4.4563217)
 
-[node name="idk5" parent="env/props" instance=ExtResource("22_kwnb6")]
+[node name="idk5" parent="room/env/props" instance=ExtResource("22_xulpi")]
 transform = Transform3D(-0.8928768, 0, -0.45030096, 0, 1, 0, 0.45030096, 0, -0.8928768, -9.944113, 3, 0.5739002)
 
-[node name="chest_gold" type="Node3D" parent="env/props"]
+[node name="chest_gold" type="Node3D" parent="room/env/props"]
 transform = Transform3D(-0.9285702, 0, -0.37115708, 0, 1, 0, 0.37115708, 0, -0.9285702, -4.43829, 2, 4.750744)
 
-[node name="chest_gold" type="MeshInstance3D" parent="env/props/chest_gold"]
+[node name="chest_gold" type="MeshInstance3D" parent="room/env/props/chest_gold"]
 mesh = SubResource("ArrayMesh_vccto")
 skeleton = NodePath("")
 
-[node name="chest_gold_lid" type="MeshInstance3D" parent="env/props/chest_gold/chest_gold"]
+[node name="chest_gold_lid" type="MeshInstance3D" parent="room/env/props/chest_gold/chest_gold"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.56488323)
 visible = false
 mesh = SubResource("ArrayMesh_q4fcw")
 skeleton = NodePath("")
 
-[node name="chest_gold_lid_col" type="StaticBody3D" parent="env/props/chest_gold/chest_gold/chest_gold_lid"]
+[node name="chest_gold_lid_col" type="StaticBody3D" parent="room/env/props/chest_gold/chest_gold/chest_gold_lid"]
 
-[node name="chest_gold_lid_col_shape" type="CollisionShape3D" parent="env/props/chest_gold/chest_gold/chest_gold_lid/chest_gold_lid_col"]
+[node name="chest_gold_lid_col_shape" type="CollisionShape3D" parent="room/env/props/chest_gold/chest_gold/chest_gold_lid/chest_gold_lid_col"]
 shape = SubResource("ConvexPolygonShape3D_15nqd")
 
-[node name="chest_gold_col" type="StaticBody3D" parent="env/props/chest_gold/chest_gold"]
+[node name="chest_gold_col" type="StaticBody3D" parent="room/env/props/chest_gold/chest_gold"]
 
-[node name="chest_gold_col_shape" type="CollisionShape3D" parent="env/props/chest_gold/chest_gold/chest_gold_col"]
+[node name="chest_gold_col_shape" type="CollisionShape3D" parent="room/env/props/chest_gold/chest_gold/chest_gold_col"]
 shape = SubResource("ConvexPolygonShape3D_0hj6o")
 
-[node name="keyring_hanging" parent="env/props" instance=ExtResource("24_eu8vj")]
+[node name="keyring_hanging" parent="room/env/props" instance=ExtResource("24_igvdr")]
 transform = Transform3D(-0.7, 0, 6.119594e-08, 0, 0.7, 0, -6.119594e-08, 0, -0.7, -4.0294814, 4.3744483, 5.6844177)
 
-[node name="sword_shield_gold" parent="env/props" instance=ExtResource("25_iihi3")]
+[node name="sword_shield_gold" parent="room/env/props" instance=ExtResource("25_5nuir")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -8.064714, 4, 5.430479)
 
-[node name="ivybush" parent="env/props" instance=ExtResource("26_gessm")]
+[node name="ivybush" parent="room/env/props" instance=ExtResource("26_850in")]
 transform = Transform3D(-0.15989825, 0, -0.53779143, 0, 0.70000005, 0, 0.39027947, 0, -0.22033416, -12.981611, 1.955712, -2.1339617)
 
-[node name="ivyCorner_3" parent="env/props" instance=ExtResource("27_j0jix")]
+[node name="ivyCorner_3" parent="room/env/props" instance=ExtResource("27_eh2p2")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9.495316, 2.4428215, 5.5027695)
 
-[node name="ivyGround_2" parent="env/props" instance=ExtResource("28_gpkce")]
+[node name="ivyGround_2" parent="room/env/props" instance=ExtResource("28_ppmaq")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 5.8788357, 2.0836887, -0.78483963)
 
-[node name="ivyGround_1" parent="env/props" instance=ExtResource("29_2c2t4")]
+[node name="ivyGround_1" parent="room/env/props" instance=ExtResource("29_drh3i")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -5.4137464, 2.0869722, -1.7327328)
 
-[node name="ivyGround_5" parent="env/props" instance=ExtResource("30_2c2t4")]
+[node name="ivyGround_5" parent="room/env/props" instance=ExtResource("30_6dmie")]
 transform = Transform3D(-0.7061558, 0, 0.7080565, 0, 1, 0, -0.7080565, 0, -0.7061558, 9.785927, 2.0789142, -7.5969763)
 
-[node name="ivyWall_2" parent="env/props" instance=ExtResource("31_ncx61")]
+[node name="ivyWall_2" parent="room/env/props" instance=ExtResource("31_iit3o")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -6.051823, 2.046636, 5.7342014)
 
-[node name="torch_mounted" parent="env/props" instance=ExtResource("32_j7ja5")]
+[node name="torch_mounted" parent="room/env/props" instance=ExtResource("32_aaky2")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -3.4826565, 4.043259, 5.748396)
 
-[node name="torch_mounted5" parent="env/props" instance=ExtResource("32_j7ja5")]
+[node name="torch_mounted5" parent="room/env/props" instance=ExtResource("32_aaky2")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 12.714577, 4.200124, -2.3234587)
 
-[node name="torch_mounted6" parent="env/props" instance=ExtResource("32_j7ja5")]
+[node name="torch_mounted6" parent="room/env/props" instance=ExtResource("32_aaky2")]
 transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 1.4571784, 4.24782, -13.7420025)
 
-[node name="torch_mounted3" parent="env/props" instance=ExtResource("32_j7ja5")]
+[node name="torch_mounted3" parent="room/env/props" instance=ExtResource("32_aaky2")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -13.685915, 4.1026897, 4.4457817)
 
-[node name="torch_mounted4" parent="env/props" instance=ExtResource("32_j7ja5")]
+[node name="torch_mounted4" parent="room/env/props" instance=ExtResource("32_aaky2")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -13.685913, 4.1026897, -5.996273)
 
-[node name="torch_mounted2" parent="env/props" instance=ExtResource("32_j7ja5")]
+[node name="torch_mounted2" parent="room/env/props" instance=ExtResource("32_aaky2")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 8.61742, 4.043259, 5.748396)
 
-[node name="floor" type="GridMap" parent="env"]
+[node name="floor" type="GridMap" parent="room/env"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -1)
-mesh_library = ExtResource("13_iihi3")
+mesh_library = ExtResource("33_yphk2")
 collision_mask = 7
 data = {
 "cells": PackedInt32Array(65530, 65528, 655389, 65530, 65534, 655389, 65530, 0, 655389, 65532, 0, 655389, 65534, 0, 655389, 2, 65528, 655389, 0, 65528, 655389, 65534, 65528, 655389, 65532, 65528, 655389, 65532, 65530, 655389, 65532, 65532, 655389, 65532, 65534, 655389, 2, 65534, 655389, 0, 65534, 655389, 65534, 65534, 655389, 4, 65532, 655389, 2, 65532, 655389, 65534, 65530, 655389, 0, 65530, 655389, 2, 65530, 655389, 0, 65532, 655389, 65534, 65532, 655389, 4, 65530, 655389, 65528, 0, 655389, 65528, 65534, 655389, 65530, 65530, 655389, 65530, 65532, 655389, 65528, 65530, 655389, 0, 0, 655389, 65528, 65532, 655389, 2, 0, 29)
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="walls" type="GridMap" parent="env"]
+[node name="walls" type="GridMap" parent="room/env"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -1)
-mesh_library = ExtResource("13_iihi3")
+mesh_library = ExtResource("33_yphk2")
 collision_layer = 2
 collision_mask = 7
 data = {
 "cells": PackedInt32Array(3, 65529, 655428, 5, 65529, 68, 5, 65532, 1441864, 5, 65530, 1441874, 4, 65529, 655442, 3, 65528, 1048658, 3, 65527, 68, 65529, 65529, 1441860, 65527, 1, 655428, 3, 1, 1441859, 3, 65535, 1441874, 3, 65533, 1048643, 5, 65533, 1441860, 4, 65533, 69, 3, 65534, 1441861, 2, 65527, 655429, 0, 65527, 655436, 65534, 65527, 655431, 65532, 65527, 655436, 65530, 65527, 655421, 65529, 65527, 1048644, 65529, 65528, 1048645, 65528, 65529, 655436, 65527, 65529, 1048644, 65527, 0, 1048658, 65527, 65534, 1048658, 65527, 65532, 1048648, 65527, 65530, 1048658, 65528, 1, 69, 65529, 1, 69, 65531, 1, 69, 65533, 1, 81, 65535, 1, 69, 1, 1, 59, 65534, 1, 69)
 }
+
+[node name="DOOR?_FRONT" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+
+[node name="DOOR?_LEFT" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 0)
+
+[node name="DOOR?_RIGHT" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 0)

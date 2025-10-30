@@ -18,7 +18,7 @@ var enemylist_ref : Array[CharacterBody3D]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player = get_node(player_path)
-	get_parent().ChangeroomCount()
+	#get_parent().ChangeroomCount()
 	
 	enemylist_ref = player.StatsManager.enemylist
 	
