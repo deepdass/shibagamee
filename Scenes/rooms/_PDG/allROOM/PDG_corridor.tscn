@@ -1,0 +1,103 @@
+[gd_scene load_steps=7 format=3 uid="uid://4k1kstjos1qa"]
+
+[ext_resource type="Script" uid="uid://eqgp7no52l1i" path="res://addons/SimpleDungeons/DungeonRoom3D.gd" id="1_sikyg"]
+[ext_resource type="MeshLibrary" uid="uid://crl8041p05pde" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib1.tres" id="2_sikyg"]
+[ext_resource type="PackedScene" uid="uid://dosndo3doirp5" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall.gltf" id="3_ouel3"]
+[ext_resource type="PackedScene" uid="uid://bypqb4utrjgu3" path="res://Scenes/rooms/_PDG/DOOR/Corridorcornner.fbx" id="4_sikyg"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_6ddo6"]
+vertices = PackedVector3Array(-1, 2.4, -1, -1, 2.4, 1, 1, 2.4, 1, 1, 2.4, -1)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+agent_height = 1.0
+agent_max_climb = 0.5
+
+[sub_resource type="GDScript" id="GDScript_68yl7"]
+resource_name = "remUnuseddoors"
+script/source = "extends Node
+
+
+
+
+func RemoveUnusedDoor():
+	for door in get_parent().get_parent().get_doors():
+		print(door)
+		if door.get_room_leads_to() != null:
+			door.door_node.queue_free()
+
+
+func _on_dungeon_room_3d_dungeon_done_generating() -> void:
+	RemoveUnusedDoor()
+"
+
+[node name="DungeonRoom3D" type="Node3D"]
+script = ExtResource("1_sikyg")
+voxel_scale = Vector3(4, 4, 4)
+metadata/_custom_type_script = "uid://eqgp7no52l1i"
+
+[node name="PDG_corridor" type="Node3D" parent="."]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="PDG_corridor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+navigation_mesh = SubResource("NavigationMesh_6ddo6")
+
+[node name="env" type="Marker3D" parent="PDG_corridor/NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="floor" type="GridMap" parent="PDG_corridor/NavigationRegion3D/env"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -1)
+mesh_library = ExtResource("2_sikyg")
+collision_mask = 7
+data = {
+"cells": PackedInt32Array(65535, 0, 1048605)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="walls" type="GridMap" parent="PDG_corridor/NavigationRegion3D/env"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -1)
+mesh_library = ExtResource("2_sikyg")
+collision_layer = 2
+collision_mask = 7
+
+[node name="door_Container" type="Marker3D" parent="PDG_corridor/NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="DOOR?_FRONT" type="Marker3D" parent="PDG_corridor/NavigationRegion3D/door_Container"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
+
+[node name="wall" parent="PDG_corridor/NavigationRegion3D/door_Container/DOOR?_FRONT" instance=ExtResource("3_ouel3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="Corridorcornner" parent="PDG_corridor/NavigationRegion3D/door_Container/DOOR?_FRONT" instance=ExtResource("4_sikyg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, 2.3841858e-07)
+
+[node name="DOOR?_LEFT" type="Marker3D" parent="PDG_corridor/NavigationRegion3D/door_Container"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 0)
+
+[node name="wall" parent="PDG_corridor/NavigationRegion3D/door_Container/DOOR?_LEFT" instance=ExtResource("3_ouel3")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.742278e-08, -1, 0)
+
+[node name="Corridorcornner7" parent="PDG_corridor/NavigationRegion3D/door_Container/DOOR?_LEFT" instance=ExtResource("4_sikyg")]
+transform = Transform3D(-4.371138e-08, 0, -1, 0, 1, 0, 1, 0, -4.371138e-08, 1.1920929e-07, -1, 2)
+
+[node name="DOOR?_BACK" type="Marker3D" parent="PDG_corridor/NavigationRegion3D/door_Container"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2)
+
+[node name="wall" parent="PDG_corridor/NavigationRegion3D/door_Container/DOOR?_BACK" instance=ExtResource("3_ouel3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="Corridorcornner3" parent="PDG_corridor/NavigationRegion3D/door_Container/DOOR?_BACK" instance=ExtResource("4_sikyg")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2, -1, 1.1920929e-07)
+
+[node name="DOOR?_RIGHT" type="Marker3D" parent="PDG_corridor/NavigationRegion3D/door_Container"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0)
+
+[node name="wall" parent="PDG_corridor/NavigationRegion3D/door_Container/DOOR?_RIGHT" instance=ExtResource("3_ouel3")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -1, 1.1920929e-07)
+
+[node name="Corridorcornner5" parent="PDG_corridor/NavigationRegion3D/door_Container/DOOR?_RIGHT" instance=ExtResource("4_sikyg")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -1, -2)
+
+[node name="removeunusedmesh" type="Node" parent="PDG_corridor"]
+script = SubResource("GDScript_68yl7")
+
+[connection signal="dungeon_done_generating" from="." to="PDG_corridor/removeunusedmesh" method="_on_dungeon_room_3d_dungeon_done_generating"]

@@ -14,8 +14,8 @@ data = {
 [node name="walls" parent="NavigationRegion3D/env" index="1"]
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="DOOR?_FRONT" type="Marker3D" parent="NavigationRegion3D/env/door_Container" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+[node name="DOOR?_FRONT2" parent="NavigationRegion3D/env/door_Container" index="0" instance=ExtResource("2_8cwhx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 2)
 
 [node name="DOOR?_LEFT" type="Marker3D" parent="NavigationRegion3D/env/door_Container" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
@@ -25,9 +25,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 
 [node name="DOOR?_RIGHT" type="Marker3D" parent="NavigationRegion3D/env/door_Container" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
-
-[node name="wall" parent="NavigationRegion3D/env/door_Container" index="4" instance=ExtResource("2_8cwhx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 2)
 
 [node name="set_wallMESH" type="Node" parent="." index="3"]
 script = ExtResource("3_iaouo")
