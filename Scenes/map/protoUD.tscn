@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c7illv6kf10b2" path="res://Scenes/characters/players/character_base.tscn" id="5_ielc5"]
 [ext_resource type="MeshLibrary" uid="uid://crl8041p05pde" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib1.tres" id="6_377bg"]
 [ext_resource type="Script" uid="uid://c1ciyr271og1w" path="res://Scenes/rooms/roomsManager.gd" id="7_qjqld"]
-[ext_resource type="Script" uid="uid://dwrg1j4xsnvtx" path="res://Scenes/rooms/roomSCRIPT.gd" id="8_lbtde"]
+[ext_resource type="Script" uid="uid://dwrg1j4xsnvtx" path="res://Scenes/rooms/PDG_room.gd" id="8_lbtde"]
 [ext_resource type="Texture2D" uid="uid://c3mchi10usuw1" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="9_xb210"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2ulnn"]
@@ -219,7 +219,7 @@ stretch_shrink = 2
 
 [node name="SubViewport" type="SubViewport" parent="UI/miniMap/SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(200, 200)
+size = Vector2i(2, 2)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="UI/miniMap/SubViewportContainer/SubViewport"]

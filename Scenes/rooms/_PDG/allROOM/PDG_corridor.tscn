@@ -20,7 +20,6 @@ script/source = "extends Node
 
 func RemoveUnusedDoor():
 	for door in get_parent().get_parent().get_doors():
-		print(door)
 		if door.get_room_leads_to() != null:
 			door.door_node.queue_free()
 

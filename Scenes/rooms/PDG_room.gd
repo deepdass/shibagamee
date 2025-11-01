@@ -50,10 +50,11 @@ func _on_enemy_killed() -> void:
 
 func openDoors() -> void:
 	for door : StaticBody3D in doors.get_children():
-		door.get_node("doorBlock").disabled = true
 		var anim : AnimationPlayer = door.get_node("AnimationPlayer")
-		anim.play("door_open")
-		setmesh(door, anim)
+		if anim:
+			door.get_node("doorBlock").disabled = true
+			anim.play("door_open")
+			setmesh(door, anim)
 		
 
 func setmesh(door : StaticBody3D, anim : AnimationPlayer) -> void:
@@ -62,8 +63,20 @@ func setmesh(door : StaticBody3D, anim : AnimationPlayer) -> void:
 
 func closeDoors() -> void:
 	for door : StaticBody3D in doors.get_children():
-		door.get_node("doorBlock").disabled = false
-		door.get_node("wall_doorway_door").visible = true
-		door.get_node("AnimationPlayer").play("door_close")
+		if door.get_node("doorBlock").disabled == true:
+			door.get_node("doorBlock").disabled = false
+			door.get_node("wall_doorway_door").visible = true
+			var anim : AnimationPlayer = door.get_node("AnimationPlayer")
+			anim.play("door_close")
 		
 	
+
+
+func _on_dungeon_room_3d_dungeon_done_generating() -> void:
+	for door : RefCounted in get_parent().get_doors():
+		if door.get_room_leads_to() == null:
+			var mesh : MeshInstance3D = door.door_node.get_node("wall_doorway_door")
+			mesh.visible = true
+			mesh.position += Vector3(0,3,0)
+			door.door_node.get_node("doorBlock").disabled = false
+			door.door_node.get_node("AnimationPlayer").queue_free()

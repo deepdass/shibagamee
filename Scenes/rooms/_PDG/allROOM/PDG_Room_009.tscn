@@ -1,9 +1,22 @@
-[gd_scene load_steps=15 format=4 uid="uid://dpob5021sk7o3"]
+[gd_scene load_steps=28 format=4 uid="uid://dpob5021sk7o3"]
 
 [ext_resource type="Script" uid="uid://eqgp7no52l1i" path="res://addons/SimpleDungeons/DungeonRoom3D.gd" id="1_loiro"]
-[ext_resource type="Script" uid="uid://dwrg1j4xsnvtx" path="res://Scenes/rooms/roomSCRIPT.gd" id="2_m7taw"]
+[ext_resource type="Script" uid="uid://dwrg1j4xsnvtx" path="res://Scenes/rooms/PDG_room.gd" id="2_m7taw"]
 [ext_resource type="MeshLibrary" uid="uid://crl8041p05pde" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib1.tres" id="3_oh5bt"]
 [ext_resource type="Texture2D" uid="uid://c3mchi10usuw1" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="4_5co45"]
+[ext_resource type="PackedScene" uid="uid://dcyej82fy3mav" path="res://Assets/env/_myVeggies/ivyCorner_1.fbx" id="4_5t6bw"]
+[ext_resource type="PackedScene" uid="uid://dx16i037brfmi" path="res://Assets/env/_myVeggies/ivyWall_1.fbx" id="5_j421c"]
+[ext_resource type="PackedScene" uid="uid://p0h8ytkf8bai" path="res://Assets/env/_myVeggies/ivyGround_2.fbx" id="6_3vc65"]
+[ext_resource type="PackedScene" uid="uid://dki0ifhnm8ilv" path="res://Assets/env/_myVeggies/ivyGround_4.fbx" id="7_ug1p0"]
+[ext_resource type="PackedScene" uid="uid://cldv6it0do0yw" path="res://Assets/env/_myVeggies/ivyWall_3.fbx" id="8_lxpdf"]
+[ext_resource type="PackedScene" uid="uid://dvsa0eawo65uh" path="res://Assets/env/_myVeggies/ivyGround_6.fbx" id="9_jlv8v"]
+[ext_resource type="PackedScene" uid="uid://dffxgagomaeqe" path="res://Assets/env/_myVeggies/ivybush.fbx" id="10_8f6ay"]
+[ext_resource type="PackedScene" uid="uid://1uug6yuadss" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/barrel_large.tscn" id="11_e1r36"]
+[ext_resource type="PackedScene" uid="uid://cnx23bwhhijuj" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/barrel_small.tscn" id="12_gwk7x"]
+[ext_resource type="PackedScene" uid="uid://fk10dwa1jj41" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/chair.tscn" id="13_63fuo"]
+[ext_resource type="PackedScene" uid="uid://bx0lm5lum16xd" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/table_long.tscn" id="14_gob27"]
+[ext_resource type="PackedScene" uid="uid://cfxdtnlqs8d17" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/box_large.tscn" id="15_wwv30"]
+[ext_resource type="PackedScene" uid="uid://vmcw5jyixika" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/box_small.tscn" id="16_v2ofl"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_hmakl"]
 vertices = PackedVector3Array(10.855024, 4.40613, -19.144974, 11.105024, 4.40613, -18.644974, 13.105024, 4.40613, -18.644974, 13.105024, 4.40613, -29.144974, -9.644976, 4.40613, -26.894974, -13.144976, 4.40613, -27.144974, -12.894976, 4.40613, -21.894974, 3.6050243, 4.40613, -14.894974, 9.355024, 4.90613, -14.644974, 8.855024, 4.40613, -18.894974, 7.9175243, 4.40613, -14.707474, 9.188358, 4.40613, -16.06164, -8.894976, 4.40613, -27.644974, 5.1050243, 4.40613, -29.394974, 5.1050243, 4.40613, -31.144974, -9.144976, 4.40613, -31.144974, 5.6050243, 4.40613, -28.894974, -10.144976, 4.40613, -12.894974, 3.1050243, 4.65613, -12.644974, 3.1050243, 4.40613, -14.394974, -13.144976, 4.40613, -11.144974, -10.894976, 4.65613, -10.644974, -10.894976, 4.40613, -12.394974, -13.644976, 4.40613, -20.894974, -17.144976, 4.40613, -21.144974, -16.894976, 4.40613, -19.644974, -14.644976, 4.40613, -6.8949738, -11.394976, 2.4061298, -6.8949738, -11.394976, 2.4061298, -9.144974, -14.894976, 4.40613, -8.894974, -13.561643, 4.40613, -6.8949738, -13.728309, 4.40613, -8.978308, -21.144976, 4.40613, -8.894974, -17.394976, 4.40613, -8.894974, -15.144976, 4.40613, -10.894974, -17.644976, 4.40613, -18.894974, -21.144976, 4.40613, -19.144974, -16.894976, 4.40613, -8.394974, -17.144976, 4.40613, -2.8949738, -14.894976, 4.40613, -2.8949738, 13.105024, 0.40612984, -7.3949738, 13.605024, 0.40612984, -7.6449738, 13.605024, 0.40612984, -8.394974, 13.105024, 0.40612984, -8.644974, 12.855024, 2.4061298, -13.644974, 10.605024, 0.40612984, -9.394974, 13.042524, 0.40612984, -9.894974, 12.980024, 1.4061298, -11.144974, 9.105024, 0.40612984, -13.144974, 4.8550243, 0.65612984, -13.144974, 4.8550243, 0.40612984, -11.394974, 9.105024, 0.40612984, -9.644974, 11.105024, 0.40612984, -2.3949738, 11.605024, 0.40612984, -2.8949738, 13.105024, 0.40612984, -2.8949738, 12.980024, 3.9061298, -16.144974, 10.962168, 3.9061298, -16.002117, 10.890738, 2.9061298, -14.680689, 2.8550243, 0.40612984, -10.894974, 2.8550243, 0.40612984, -0.89497375, 11.105024, 0.40612984, -0.89497375, 10.355024, 8.40613, -17.644974, 10.355024, 8.40613, -18.394974, 9.605024, 8.40613, -18.144974, 9.605024, 8.40613, -14.144974, 10.105024, 8.40613, -13.894974, 4.3550243, 8.40613, -13.894974, 4.1050243, 8.40613, -14.144974, 3.6050243, 8.40613, -12.144974, 4.1050243, 8.40613, -11.894974, -10.394976, 8.40613, -10.144974, -14.394976, 8.40613, -10.144974, -14.394976, 8.40613, -9.644974, -9.894976, 8.40613, -9.894974, -9.644976, 8.40613, -11.894974, -9.894976, 8.40613, -12.144974, -7.6449757, 0.40612984, -15.644974, -7.6449757, 0.40612984, -12.894974, -0.39497566, 0.40612984, -12.894974, -0.39497566, 0.40612984, -15.644974, -0.64497566, 0.40612984, -0.89497375, -0.39497566, 0.40612984, -0.14497375, 0.35502434, 0.40612984, -0.14497375, 0.60502434, 0.40612984, -0.89497375, -6.6449757, 0.40612984, -10.644974, -9.394976, 0.40612984, -9.144974, -9.394976, 0.40612984, -5.3949738, -9.644976, 0.40612984, -6.8949738, -6.3949757, 0.40612984, -11.144974, -9.144976, 0.40612984, -10.644974, -13.144976, 0.40612984, -5.1449738, -13.144976, 0.40612984, -2.8949738, -9.394976, 0.40612984, -2.8949738, -9.144976, 0.40612984, -0.89497375, 12.105024, 4.40613, -1.6449738, 13.105024, 4.40613, -1.8949738, 11.855024, 4.40613, -1.8949738, -9.894976, 4.40613, -2.1449738, -12.894976, 4.40613, -2.1449738, -10.394976, 4.40613, -1.8949738, 11.605024, 4.40613, -0.14497375, 12.105024, 4.40613, 0.105026245, -9.894976, 4.40613, 0.105026245, -9.644976, 4.40613, -0.14497375, -0.64497566, 0.40612984, 0.85502625, 0.60502434, 0.40612984, 0.85502625, 1.6050243, 0.40612984, 3.8550262, 3.6050243, 0.40612984, 3.6050262, 3.6050243, 0.40612984, 0.85502625, -3.6449757, 0.40612984, 0.85502625, -3.6449757, 0.40612984, 3.6050262, -1.8949757, 0.40612984, 3.6050262, -1.6449757, 0.40612984, 5.6050262, 1.6050243, 0.40612984, 5.6050262)
@@ -166,6 +179,67 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
+[node name="props" type="Marker3D" parent="room/NavigationRegion3D/env"]
+
+[node name="veggies" type="Marker3D" parent="room/NavigationRegion3D/env/props"]
+
+[node name="ivyCorner_11" parent="room/NavigationRegion3D/env/props/veggies" instance=ExtResource("4_5t6bw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.445824, 2, -13.274353)
+
+[node name="ivyWall_25" parent="room/NavigationRegion3D/env/props/veggies" instance=ExtResource("5_j421c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.52985, 2.1378813, -13.7178955)
+
+[node name="ivyGround_32" parent="room/NavigationRegion3D/env/props/veggies" instance=ExtResource("6_3vc65")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.066254, 2.0016246, -5.2291565)
+
+[node name="ivyCorner_12" parent="room/NavigationRegion3D/env/props/veggies" instance=ExtResource("4_5t6bw")]
+transform = Transform3D(-0.12356688, 0, 0.9923363, 0, 1, 0, -0.9923363, 0, -0.12356688, -9.621929, 2.1731684, -11.401428)
+
+[node name="ivyGround_33" parent="room/NavigationRegion3D/env/props/veggies" instance=ExtResource("7_ug1p0")]
+transform = Transform3D(0.80850375, 0, 0.588491, 0, 1, 0, -0.588491, 0, 0.80850375, 3, 5.9999995, -23)
+
+[node name="ivyWall_26" parent="room/NavigationRegion3D/env/props/veggies" instance=ExtResource("8_lxpdf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.18021, 6.234829, -11.798065)
+
+[node name="ivyGround_34" parent="room/NavigationRegion3D/env/props/veggies" instance=ExtResource("9_jlv8v")]
+transform = Transform3D(-1, 0, 8.742278e-08, 8.742278e-08, -4.371139e-08, 1, 3.821371e-15, 1, 4.371139e-08, 1.5169449, 7.6627007, -11.574142)
+
+[node name="ivybush5" parent="room/NavigationRegion3D/env/props/veggies" instance=ExtResource("10_8f6ay")]
+transform = Transform3D(-0.57518417, -0.07773564, 0.8143223, 0.15373252, 0.9674653, 0.20094141, -0.80344856, 0.24076611, -0.54452014, -20.864395, 5.800145, -19.532425)
+
+[node name="barrel_large_col" parent="room/NavigationRegion3D/env/props" instance=ExtResource("11_e1r36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.268238, 2, -12.614197)
+
+[node name="barrel_small_col" parent="room/NavigationRegion3D/env/props" instance=ExtResource("12_gwk7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5712166, 2, -13.058121)
+
+[node name="chair5" parent="room/NavigationRegion3D/env/props" instance=ExtResource("13_63fuo")]
+transform = Transform3D(0.49999997, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.49999997, 8.921719, 2.049986, -13.017105)
+
+[node name="table_long11" parent="room/NavigationRegion3D/env/props" instance=ExtResource("14_gob27")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.73340607, 2, -10.709793)
+
+[node name="box_large_col2" parent="room/NavigationRegion3D/env/props" instance=ExtResource("15_wwv30")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10850906, 3, -10.840179)
+
+[node name="box_large_col3" parent="room/NavigationRegion3D/env/props" instance=ExtResource("15_wwv30")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 6, -22)
+
+[node name="box_small9" parent="room/NavigationRegion3D/env/props" instance=ExtResource("16_v2ofl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.324913, 6, -20.73491)
+
+[node name="box_small10" parent="room/NavigationRegion3D/env/props" instance=ExtResource("16_v2ofl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7401428, 6, -22.205688)
+
+[node name="box_large_col4" parent="room/NavigationRegion3D/env/props" instance=ExtResource("15_wwv30")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.278366, 6, -23.49553)
+
+[node name="barrel_large_col2" parent="room/NavigationRegion3D/env/props" instance=ExtResource("11_e1r36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.989998, 6, -23.646927)
+
+[node name="box_small11" parent="room/NavigationRegion3D/env/props" instance=ExtResource("16_v2ofl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0059433, 7.313238, -22.015854)
+
 [node name="door_Container" type="Marker3D" parent="room/NavigationRegion3D/env"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
@@ -225,5 +299,6 @@ visible = false
 mesh = SubResource("ArrayMesh_iog33")
 skeleton = NodePath("")
 
+[connection signal="dungeon_done_generating" from="." to="room" method="_on_dungeon_room_3d_dungeon_done_generating"]
 [connection signal="body_entered" from="room/NavigationRegion3D/env/door_Container/DOOR?_FRONT/Area3D" to="room" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="room/NavigationRegion3D/env/door_Container/DOOR?_RIGHT/Area3D" to="room" method="_on_area_3d_body_entered"]

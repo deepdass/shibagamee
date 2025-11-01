@@ -43,7 +43,7 @@
 [ext_resource type="PackedScene" uid="uid://dffxgagomaeqe" path="res://Assets/env/_myVeggies/ivybush.fbx" id="41_gafyc"]
 [ext_resource type="Script" uid="uid://c1ciyr271og1w" path="res://Scenes/rooms/roomsManager.gd" id="42_a6sqw"]
 [ext_resource type="PackedScene" uid="uid://dtfykehixm3vo" path="res://Scenes/rooms/allROOMS/_znature_room.tscn" id="43_lluov"]
-[ext_resource type="Script" uid="uid://dwrg1j4xsnvtx" path="res://Scenes/rooms/roomSCRIPT.gd" id="44_kwn4t"]
+[ext_resource type="Script" uid="uid://dwrg1j4xsnvtx" path="res://Scenes/rooms/PDG_room.gd" id="44_kwn4t"]
 [ext_resource type="Texture2D" uid="uid://c3mchi10usuw1" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/dungeon_texture.png" id="45_no2i6"]
 [ext_resource type="PackedScene" uid="uid://dy3xf0k58ncpg" path="res://Scenes/rooms/allROOMS/_Room_001.tscn" id="46_qvmd3"]
 [ext_resource type="PackedScene" uid="uid://dcw5e6cjvxy3b" path="res://Scenes/rooms/allROOMS/_Room_002.tscn" id="47_08cgf"]
