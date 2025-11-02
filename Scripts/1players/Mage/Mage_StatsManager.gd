@@ -27,6 +27,7 @@ var enemylist : Array[CharacterBody3D]
 var can_attack_basic : bool = true
 var can_attack_sp : bool = true
 @onready var attack_bacis__timer: Timer = $attack_bacis__Timer
+@onready var sp__timer: Timer = $sp__timer
 
 
 
@@ -76,14 +77,16 @@ func sp_attack(projectile : PackedScene) -> void:
 		
 		new_projectile.fired = true
 		
-		#can_attack_sp = false
-		#attack_bacis__timer.start()
+		can_attack_sp = false
+		sp__timer.start()
 
 
 
 func _on_timer_timeout() -> void: ##  attack basic timer
 	can_attack_basic = true
 
+func _on_sp__timer_timeout() -> void:
+	can_attack_sp = true
 
 func calnearst_enemy() -> void:
 	nearestEnemy_distance = INF
