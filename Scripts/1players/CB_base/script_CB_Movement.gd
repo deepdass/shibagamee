@@ -28,7 +28,7 @@ var running : bool= false
 
 ##
 
-const JUMP_VELOCITY : float = 3.5
+const JUMP_VELOCITY : float = 4
 const DASH_STAMINAcost : int = 20
 
 
