@@ -1,0 +1,82 @@
+[gd_scene load_steps=3 format=3 uid="uid://eoy4lpxae2h7"]
+
+[sub_resource type="GDScript" id="GDScript_68elg"]
+script/source = "extends Control
+
+const engmenu : String = \"res://Scenes/map/mainmenueng.tscn\"
+const japmenu : String = \"res://Scenes/map/mainmenujap.tscn\"
+
+func _on_eng_pressed() -> void:
+	get_tree().change_scene_to_file(engmenu)
+
+
+func _on_jap_pressed() -> void:
+	get_tree().change_scene_to_file(japmenu)
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_68elg"]
+bg_color = Color(0.11372549, 0.11372549, 0.11372549, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_68elg")
+
+[node name="realScreenVis" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 3840.0
+offset_bottom = 2160.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_68elg")
+
+[node name="eng" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -47.0
+offset_right = 540.0
+offset_bottom = 303.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 250
+text = "ENGLISH"
+
+[node name="jap" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = 330.0
+offset_right = 540.0
+offset_bottom = 680.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 250
+text = "日本語"
+
+[node name="title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1245.0
+offset_top = 223.0
+offset_right = 1248.0
+offset_bottom = 635.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 300
+text = "LANGUAGE / 言語"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="eng" to="." method="_on_eng_pressed"]
+[connection signal="pressed" from="jap" to="." method="_on_jap_pressed"]

@@ -1,0 +1,283 @@
+[gd_scene load_steps=8 format=3 uid="uid://cfhjiuwlw73hr"]
+
+[ext_resource type="Script" uid="uid://cybuguaf6cfq0" path="res://Scripts/0Managers/mainmenu.gd" id="1_tbwvw"]
+[ext_resource type="Texture2D" uid="uid://ddybkppnopvpn" path="res://Assets/UI/main menu/Screenshot 2025-09-08 001652.png" id="2_l2mko"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uc6qh"]
+bg_color = Color(0.09985284, 0.09985284, 0.09985284, 0.6)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qr6u2"]
+bg_color = Color(0.06666667, 0.06666667, 0.06666667, 0)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dhudx"]
+bg_color = Color(0.09985284, 0.09985284, 0.09985284, 0.6)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbwvw"]
+bg_color = Color(0.06666667, 0.06666667, 0.06666667, 0)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5xsv"]
+bg_color = Color(0.09985284, 0.09985284, 0.09985284, 0.6)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="mainmenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tbwvw")
+
+[node name="realScreenVis" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 3840.0
+offset_bottom = 2160.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -199.99998
+offset_top = -339.0
+offset_right = -200.0
+offset_bottom = -339.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.3, 1.31)
+texture = ExtResource("2_l2mko")
+stretch_mode = 5
+
+[node name="title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -489.5
+offset_top = 100.0
+offset_right = 489.5
+offset_bottom = 373.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 220
+text = "スカルワード"
+horizontal_alignment = 1
+
+[node name="B_play" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -165.0
+offset_right = 250.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_uc6qh")
+text = "プレイ"
+
+[node name="B_option" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = -100.0
+offset_right = 275.0
+offset_bottom = -20.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_uc6qh")
+text = "オプション"
+
+[node name="B_credits" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = -194.0
+offset_right = 275.0
+offset_bottom = -114.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_uc6qh")
+text = "クレジット"
+
+[node name="B_quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -270.0
+offset_top = -100.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_uc6qh")
+text = "やめる"
+
+[node name="Play panel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 710.0
+offset_top = 430.0
+offset_right = -710.0
+offset_bottom = -352.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qr6u2")
+
+[node name="selmap" type="Label" parent="Play panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -489.5
+offset_top = 100.0
+offset_right = 489.5
+offset_bottom = 373.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 150
+text = "どのタイプのマップを
+プレイしたいですか？"
+horizontal_alignment = 1
+
+[node name="PDG" type="Button" parent="Play panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -631.0
+offset_right = 450.0
+offset_bottom = -431.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 110
+theme_override_styles/normal = SubResource("StyleBoxFlat_dhudx")
+text = "プロシージャルマップ"
+
+[node name="HANDCRAFT" type="Button" parent="Play panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -414.0
+offset_right = 450.0
+offset_bottom = -214.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 110
+theme_override_styles/normal = SubResource("StyleBoxFlat_dhudx")
+text = "てづくりマップ"
+
+[node name="back" type="Button" parent="Play panel"]
+layout_mode = 1
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 171.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_uc6qh")
+text = "もどる"
+
+[node name="options panel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 710.0
+offset_top = 430.0
+offset_right = -710.0
+offset_bottom = -352.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tbwvw")
+
+[node name="op" type="Label" parent="options panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -489.5
+offset_top = 100.0
+offset_right = 489.5
+offset_bottom = 373.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 150
+text = "オプション"
+horizontal_alignment = 1
+
+[node name="back" type="Button" parent="options panel"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 171.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_uc6qh")
+text = "もどる"
+
+[node name="changelang" type="Button" parent="options panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -298.0
+offset_right = 400.0
+offset_bottom = -98.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_y5xsv")
+text = "言語チェンジ！"
+
+[connection signal="pressed" from="B_play" to="." method="_on_b_play_pressed"]
+[connection signal="pressed" from="B_option" to="." method="_on_b_option_pressed"]
+[connection signal="pressed" from="B_quit" to="." method="_on_b_quit_pressed"]
+[connection signal="pressed" from="Play panel/PDG" to="." method="_on_pdg_pressed"]
+[connection signal="pressed" from="Play panel/HANDCRAFT" to="." method="_on_handcraft_pressed"]
+[connection signal="pressed" from="Play panel/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="options panel/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="options panel/changelang" to="." method="_on_changelang_pressed"]

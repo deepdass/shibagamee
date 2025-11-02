@@ -1,7 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://ck0l25ra42ffg"]
+[gd_scene load_steps=6 format=3 uid="uid://ck0l25ra42ffg"]
 
 [ext_resource type="Texture2D" uid="uid://ddybkppnopvpn" path="res://Assets/UI/main menu/Screenshot 2025-09-08 001652.png" id="1_5lion"]
 [ext_resource type="Script" uid="uid://cybuguaf6cfq0" path="res://Scripts/0Managers/mainmenu.gd" id="1_acl7v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uc6qh"]
+bg_color = Color(0.09985284, 0.09985284, 0.09985284, 0.6)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qr6u2"]
+bg_color = Color(0.06666667, 0.06666667, 0.06666667, 0)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dhudx"]
+bg_color = Color(0.09985284, 0.09985284, 0.09985284, 0.6)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="mainmenu" type="Control"]
 layout_mode = 3
@@ -54,12 +76,13 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -250.0
-offset_top = -147.28998
+offset_top = -165.0
 offset_right = 250.0
-offset_bottom = -27.29004
+offset_bottom = -28.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_uc6qh")
 text = "PLAY"
 
 [node name="B_option" type="Button" parent="."]
@@ -73,7 +96,8 @@ offset_right = 275.0
 offset_bottom = -20.0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 50
-text = "OPTION"
+theme_override_styles/normal = SubResource("StyleBoxFlat_uc6qh")
+text = "OPTIONS"
 
 [node name="B_credits" type="Button" parent="."]
 layout_mode = 1
@@ -86,6 +110,7 @@ offset_right = 275.0
 offset_bottom = -114.0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_uc6qh")
 text = "Credits"
 
 [node name="B_quit" type="Button" parent="."]
@@ -102,6 +127,7 @@ offset_bottom = -20.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_uc6qh")
 text = "QUIT"
 
 [node name="Play panel" type="Panel" parent="."]
@@ -116,6 +142,7 @@ offset_right = -710.0
 offset_bottom = -352.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qr6u2")
 
 [node name="selmap" type="Label" parent="Play panel"]
 layout_mode = 1
@@ -129,7 +156,7 @@ offset_bottom = 373.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 150
 text = "Which Type of Map do
-you Want to Play"
+you Want to Play?"
 horizontal_alignment = 1
 
 [node name="PDG" type="Button" parent="Play panel"]
@@ -139,13 +166,14 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -300.0
-offset_top = -558.0
-offset_right = 300.0
-offset_bottom = -398.0
+offset_left = -400.0
+offset_top = -631.0
+offset_right = 400.0
+offset_bottom = -431.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 75
+theme_override_font_sizes/font_size = 110
+theme_override_styles/normal = SubResource("StyleBoxFlat_dhudx")
 text = "Procedural"
 
 [node name="HANDCRAFT" type="Button" parent="Play panel"]
@@ -155,24 +183,86 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -300.0
-offset_top = -368.0
-offset_right = 300.0
-offset_bottom = -208.0
+offset_left = -400.0
+offset_top = -414.0
+offset_right = 400.0
+offset_bottom = -214.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 75
+theme_override_font_sizes/font_size = 110
+theme_override_styles/normal = SubResource("StyleBoxFlat_dhudx")
 text = "HandCrafted"
 
 [node name="back" type="Button" parent="Play panel"]
 layout_mode = 1
 offset_left = 15.0
 offset_top = 15.0
-offset_right = 155.0
-offset_bottom = 135.0
+offset_right = 171.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_uc6qh")
+text = "Back"
+
+[node name="options panel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 710.0
+offset_top = 430.0
+offset_right = -710.0
+offset_bottom = -352.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qr6u2")
+
+[node name="op" type="Label" parent="options panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -489.5
+offset_top = 100.0
+offset_right = 489.5
+offset_bottom = 373.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 150
+text = "OPTIONS"
+horizontal_alignment = 1
+
+[node name="back" type="Button" parent="options panel"]
+layout_mode = 1
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 171.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_uc6qh")
+text = "Back"
+
+[node name="changelang" type="Button" parent="options panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -298.0
+offset_right = 400.0
+offset_bottom = -98.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_dhudx")
+text = "Change Language"
 
 [connection signal="pressed" from="B_play" to="." method="_on_b_play_pressed"]
+[connection signal="pressed" from="B_option" to="." method="_on_b_option_pressed"]
 [connection signal="pressed" from="B_quit" to="." method="_on_b_quit_pressed"]
 [connection signal="pressed" from="Play panel/PDG" to="." method="_on_pdg_pressed"]
 [connection signal="pressed" from="Play panel/HANDCRAFT" to="." method="_on_handcraft_pressed"]
 [connection signal="pressed" from="Play panel/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="options panel/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="options panel/changelang" to="." method="_on_changelang_pressed"]
