@@ -123,12 +123,12 @@ shadow_mesh = SubResource("ArrayMesh_cmng2")
 
 [node name="DungeonRoom3D" type="Node3D"]
 script = ExtResource("1_f0inm")
-size_in_voxels = Vector3i(7, 1, 6)
+size_in_voxels = Vector3i(8, 1, 6)
 voxel_scale = Vector3(4, 4, 4)
 metadata/_custom_type_script = "uid://eqgp7no52l1i"
 
 [node name="room" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, -2, 12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -2, 12)
 script = ExtResource("2_15anf")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="room"]
