@@ -9,8 +9,8 @@ var can_crit : bool = false
 
 
 ## attack basic
-@export var baiscprojectile : PackedScene
-@export var spattackscene : PackedScene
+@onready var baiscprojectile : PackedScene = preload("res://Scenes/zidk/mage_projectile.tscn")
+@onready var spattackscene : PackedScene = preload("res://Assets/_my/spells/beam/beamSpell.tscn")
 @onready var fireposnode: Node3D = $"../fireposnode"
 @export var milli_per_shots : int = 800
 

@@ -1,14 +1,14 @@
 extends CharacterBody3D
 
 var Stat : EnemyStats
-@onready var RES : Resource = load("res://Scripts/2enemy/Rogue/RES_rogue.tres")
+@onready var RES : Resource = preload("res://Scripts/2enemy/Rogue/RES_rogue.tres")
 
 @onready var skeleton_rogue_eyes: MeshInstance3D = $Skeleton_Rogue/Rig/Skeleton3D/Skeleton_Rogue_Eyes
 @onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
 
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
-@export var projectile : PackedScene
+@onready var projectile : PackedScene = preload("res://Scenes/zidk/arrow_Ske_rogue_projectile.tscn")
 @onready var fireposnode : Node3D = $fireposnode
 
 @onready var damagepopup: Label3D = $idk/damagepopup

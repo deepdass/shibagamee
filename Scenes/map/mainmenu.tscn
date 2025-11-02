@@ -75,7 +75,20 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 50
 text = "OPTION"
 
-[node name="b_quit" type="Button" parent="."]
+[node name="B_credits" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = -194.0
+offset_right = 275.0
+offset_bottom = -114.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Credits"
+
+[node name="B_quit" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -91,4 +104,75 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 50
 text = "QUIT"
 
+[node name="Play panel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 710.0
+offset_top = 430.0
+offset_right = -710.0
+offset_bottom = -352.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="selmap" type="Label" parent="Play panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -489.5
+offset_top = 100.0
+offset_right = 489.5
+offset_bottom = 373.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 150
+text = "Which Type of Map do
+you Want to Play"
+horizontal_alignment = 1
+
+[node name="PDG" type="Button" parent="Play panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -558.0
+offset_right = 300.0
+offset_bottom = -398.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 75
+text = "Procedural"
+
+[node name="HANDCRAFT" type="Button" parent="Play panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -368.0
+offset_right = 300.0
+offset_bottom = -208.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 75
+text = "HandCrafted"
+
+[node name="back" type="Button" parent="Play panel"]
+layout_mode = 1
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 155.0
+offset_bottom = 135.0
+
 [connection signal="pressed" from="B_play" to="." method="_on_b_play_pressed"]
+[connection signal="pressed" from="B_quit" to="." method="_on_b_quit_pressed"]
+[connection signal="pressed" from="Play panel/PDG" to="." method="_on_pdg_pressed"]
+[connection signal="pressed" from="Play panel/HANDCRAFT" to="." method="_on_handcraft_pressed"]
+[connection signal="pressed" from="Play panel/back" to="." method="_on_back_pressed"]

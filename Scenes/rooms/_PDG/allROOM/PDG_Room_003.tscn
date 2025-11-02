@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=4 uid="uid://cxav372qpdewi"]
 
 [ext_resource type="Script" uid="uid://eqgp7no52l1i" path="res://addons/SimpleDungeons/DungeonRoom3D.gd" id="1_oqbb4"]
-[ext_resource type="Script" uid="uid://dwrg1j4xsnvtx" path="res://Scenes/rooms/PDG_room.gd" id="2_8kv1s"]
+[ext_resource type="Script" uid="uid://dwrg1j4xsnvtx" path="res://Scenes/rooms/_room.gd" id="2_8kv1s"]
 [ext_resource type="MeshLibrary" uid="uid://crl8041p05pde" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib1.tres" id="3_a5evy"]
 [ext_resource type="PackedScene" uid="uid://bx0lm5lum16xd" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/table_long.tscn" id="4_3rnsb"]
 [ext_resource type="PackedScene" uid="uid://dcyej82fy3mav" path="res://Assets/env/_myVeggies/ivyCorner_1.fbx" id="4_g644l"]

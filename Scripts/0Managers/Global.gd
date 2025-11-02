@@ -1,7 +1,3 @@
 extends Node
 
-##enemy
-var enemy_left : int
-
-
-##
+var which_scene : String

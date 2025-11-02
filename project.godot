@@ -11,12 +11,14 @@ config_version=5
 [application]
 
 config/name="shibagamee"
-run/main_scene="uid://ckx7yoifur4qb"
+run/main_scene="uid://ck0l25ra42ffg"
 config/features=PackedStringArray("4.5", "Forward Plus")
+boot_splash/main_scene="uid://ck0l25ra42ffg"
 
 [autoload]
 
 Music="res://Scenes/zidk/Music.tscn"
+Global="*res://Scripts/0Managers/Global.gd"
 
 [debug]
 

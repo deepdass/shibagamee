@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://ckx7yoifur4qb"]
+[gd_scene load_steps=42 format=3 uid="uid://ckx7yoifur4qb"]
 
 [ext_resource type="Script" uid="uid://b8tcib7cuxmbg" path="res://Scripts/0Managers/0_game_manager.gd" id="1_v5tqv"]
 [ext_resource type="Texture2D" uid="uid://cna7hum5q5uek" path="res://Assets/UI/staminaBar_gimp.png" id="2_levil"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://gr7aam6spx3n" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/props/keg_decorated.tscn" id="31_1j14m"]
 [ext_resource type="PackedScene" uid="uid://032a0lm65n2s" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/props/shelves.tscn" id="32_htahc"]
 [ext_resource type="PackedScene" uid="uid://bx0lm5lum16xd" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/table_long.tscn" id="33_6s50m"]
+[ext_resource type="PackedScene" uid="uid://fk10dwa1jj41" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/chair.tscn" id="35_11fku"]
 [ext_resource type="Script" uid="uid://baoxatbdyxt4" path="res://addons/SimpleDungeons/DungeonGenerator3D.gd" id="58_levil"]
 [ext_resource type="PackedScene" uid="uid://lodnbc1nd75p" path="res://Scenes/rooms/_PDG/allROOM/PDG_Room_001.tscn" id="59_86md2"]
 [ext_resource type="PackedScene" uid="uid://davnllrgfs667" path="res://Scenes/rooms/_PDG/allROOM/PDG_Room_002.tscn" id="60_6mgj5"]
@@ -421,6 +422,33 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -15.
 
 [node name="ivybush" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env/props" instance=ExtResource("30_6d0l6")]
 transform = Transform3D(-0.31160536, 0, 0.95021164, 0, 1, 0, -0.95021164, 0, -0.31160536, -14.786938, 0.04998517, -24.98312)
+
+[node name="table_long12" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env/props" instance=ExtResource("33_6s50m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.314922, 0, -10.502968)
+
+[node name="table_long13" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env/props" instance=ExtResource("33_6s50m")]
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -12.314922, 0, -14.694779)
+
+[node name="chair6" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env/props" instance=ExtResource("35_11fku")]
+transform = Transform3D(-0.05343524, -0.35849476, -0.9320014, -0.9965379, 0.078671895, 0.026874216, 0.06368799, 0.9302105, -0.36145762, -14.09881, 0.39020663, -13.87562)
+
+[node name="box_large_col5" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env/props" instance=ExtResource("21_2a2g8")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10.825237, 0, -6.607422)
+
+[node name="box_small13" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env/props" instance=ExtResource("22_i31he")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10.977055, 0, -7.8918304)
+
+[node name="box_large5" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env/props" instance=ExtResource("21_2a2g8")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.35437, 0, -34.824043)
+
+[node name="box_small3" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env/props" instance=ExtResource("22_i31he")]
+transform = Transform3D(0.061327223, 0, -0.9981177, 0, 1, 0, 0.9981177, 0, 0.061327223, 5.125292, 0.049985886, -33.54593)
+
+[node name="table_long4" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env/props" instance=ExtResource("33_6s50m")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.564518, 0.049985886, -34.584137)
+
+[node name="box_small4" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env/props" instance=ExtResource("22_i31he")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.000878, 1.0277331, -35.066605)
 
 [node name="door_Container" type="Marker3D" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env"]
 

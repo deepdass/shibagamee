@@ -32,9 +32,9 @@ func _init() -> void:
 
 func  _ready() -> void:
 	pass
-	
 
 func _physics_process(delta: float) -> void:
+	print(Engine.get_frames_per_second())
 	#####print(sub_viewport.get_camera_3d().unproject_position(player.global_position))
 	##
 	camera_rig.position = lerp(camera_rig.position,player.position,0.13)
@@ -90,8 +90,9 @@ func update_UI() -> void:
 			else:
 				hearts[i].hide()
 	else:
-		hearts_overload.text = "+" + str(player.StatsManager.stats.health - hearts.size())
-		hearts_overload.visible = true
+		if hearts_overload:
+			hearts_overload.text = "+" + str(player.StatsManager.stats.health - hearts.size())
+			hearts_overload.visible = true
 	if player.StatsManager.stats.health <= 0:
 		get_tree().set_meta("saved_stats", null)
 		timer.start()
@@ -100,8 +101,9 @@ func update_UI() -> void:
 
 func _on_timer_timeout() -> void:  ## kill timeout
 	Engine.time_scale = 1
-	dungeon_generator_3d.cleanup_and_reset_dungeon_generator()
-	dungeon_generator_3d.clear_rooms_container_and_setup_for_next_iteration()
+	if dungeon_generator_3d:
+		dungeon_generator_3d.cleanup_and_reset_dungeon_generator()
+		dungeon_generator_3d.clear_rooms_container_and_setup_for_next_iteration()
 	get_tree().reload_current_scene()
 	
 
@@ -115,7 +117,7 @@ func won() -> void:
 
 func _on_area_3d_body_entered(body: Node3D) -> void: ##inside crypt
 	if body == player:
-		get_tree().change_scene_to_file("res://Scenes/map/underWorld.tscn")
+		get_tree().change_scene_to_file(Global.which_scene)
 
 
 func _on_killzone_body_entered(body: Node3D) -> void:

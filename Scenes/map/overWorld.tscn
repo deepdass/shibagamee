@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dly6jv8oiogek"]
+[gd_scene load_steps=29 format=3 uid="uid://dly6jv8oiogek"]
 
 [ext_resource type="Script" uid="uid://b8tcib7cuxmbg" path="res://Scripts/0Managers/0_game_manager.gd" id="1_c00dn"]
 [ext_resource type="Script" uid="uid://bm5mc8ak8jjih" path="res://Scripts/0Managers/minimap_cam.gd" id="2_oakbx"]
@@ -6,7 +6,6 @@
 [ext_resource type="MeshLibrary" uid="uid://crol18xh2ltij" path="res://Assets/env/HalloweenBits/Assets/upperworldtiles.tres" id="5_16mms"]
 [ext_resource type="PackedScene" uid="uid://br483nydnq3u5" path="res://Scenes/props/overworldgate.tscn" id="5_oakbx"]
 [ext_resource type="PackedScene" uid="uid://buu6tgndshc3j" path="res://Assets/env/HalloweenBits/Assets/gltf/tree_pine_orange_large.gltf" id="6_0odvr"]
-[ext_resource type="PackedScene" uid="uid://bqp5gwc1bjj17" path="res://Scenes/characters/players/mage.tscn" id="6_h2kxg"]
 [ext_resource type="MeshLibrary" uid="uid://b14igan24nl53" path="res://Assets/env/HalloweenBits/Assets/upperworldtiles1.tres" id="6_hrm0u"]
 [ext_resource type="PackedScene" uid="uid://bfi56748suwnn" path="res://Assets/env/HalloweenBits/Assets/gltf/tree_pine_orange_small.gltf" id="7_qheq5"]
 [ext_resource type="PackedScene" uid="uid://bi32f8c7ukjt0" path="res://Assets/env/HalloweenBits/Assets/gltf/tree_pine_orange_medium.gltf" id="8_qheq5"]
@@ -62,7 +61,7 @@ sky_material = SubResource("PhysicalSkyMaterial_idx2o")
 
 [sub_resource type="Environment" id="Environment_n4gow"]
 background_mode = 1
-background_color = Color(0.415686, 0.537255, 0.72549, 1)
+background_color = Color(0.071701966, 0.11659623, 0.18189728, 1)
 sky = SubResource("Sky_cw0pf")
 ambient_light_source = 2
 ambient_light_color = Color(0.415686, 0.537255, 0.72549, 1)
@@ -76,13 +75,13 @@ ssil_intensity = 4.0
 ssil_sharpness = 0.43
 ssil_normal_rejection = 0.9
 sdfgi_read_sky_light = false
+glow_enabled = true
 
 [node name="World" type="Node3D"]
 
-[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
+[node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_c00dn")
-hearts = [NodePath("../UI/Panel/Heart1"), NodePath("../UI/Panel/Heart2"), NodePath("../UI/Panel/Heart3"), NodePath("../UI/Panel/Heart4"), NodePath("../UI/Panel/Heart5"), NodePath("../UI/Panel/Heart6"), NodePath("../UI/Panel/Heart7")]
 
 [node name="Timer" type="Timer" parent="GameManager"]
 wait_time = 0.3
@@ -258,7 +257,6 @@ shape = SubResource("BoxShape3D_7xp1n")
 [node name="Player" parent="SubViewportContainer/SubViewport/myy/per" instance=ExtResource("17_cw0pf")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 3, 1, 7)
-character_mesh = ExtResource("6_h2kxg")
 
 [node name="camera_rig" type="Node3D" parent="SubViewportContainer/SubViewport/myy/per"]
 unique_name_in_owner = true
