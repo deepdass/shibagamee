@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ckx7yoifur4qb"]
+[gd_scene load_steps=41 format=3 uid="uid://ckx7yoifur4qb"]
 
 [ext_resource type="Script" uid="uid://b8tcib7cuxmbg" path="res://Scripts/0Managers/0_game_manager.gd" id="1_v5tqv"]
 [ext_resource type="Texture2D" uid="uid://cna7hum5q5uek" path="res://Assets/UI/staminaBar_gimp.png" id="2_levil"]
@@ -6,6 +6,22 @@
 [ext_resource type="Texture2D" uid="uid://dwnmocndg7gk7" path="res://Assets/UI/Heart.png" id="4_1qdhe"]
 [ext_resource type="PackedScene" uid="uid://c7illv6kf10b2" path="res://Scenes/characters/players/character_base.tscn" id="5_46j4x"]
 [ext_resource type="PackedScene" uid="uid://4k1kstjos1qa" path="res://Scenes/rooms/_PDG/allROOM/PDG_corridor.tscn" id="18_5237r"]
+[ext_resource type="Script" uid="uid://eqgp7no52l1i" path="res://addons/SimpleDungeons/DungeonRoom3D.gd" id="19_i50fy"]
+[ext_resource type="MeshLibrary" uid="uid://crl8041p05pde" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/Assets/obj_things/Boundslib1.tres" id="20_qmkrs"]
+[ext_resource type="PackedScene" uid="uid://cfxdtnlqs8d17" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/box_large.tscn" id="21_2a2g8"]
+[ext_resource type="PackedScene" uid="uid://vmcw5jyixika" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/box_small.tscn" id="22_i31he"]
+[ext_resource type="PackedScene" uid="uid://1uug6yuadss" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/barrel_large.tscn" id="23_rnnj1"]
+[ext_resource type="PackedScene" uid="uid://dcyej82fy3mav" path="res://Assets/env/_myVeggies/ivyCorner_1.fbx" id="24_4b67l"]
+[ext_resource type="PackedScene" uid="uid://dx16i037brfmi" path="res://Assets/env/_myVeggies/ivyWall_1.fbx" id="25_1j14m"]
+[ext_resource type="PackedScene" uid="uid://c11k8ehi280h" path="res://Assets/env/_myVeggies/ivyWall_2.fbx" id="26_htahc"]
+[ext_resource type="PackedScene" uid="uid://b2hjpgefhvt30" path="res://Assets/env/_myVeggies/ivyGround_5.fbx" id="27_6s50m"]
+[ext_resource type="PackedScene" uid="uid://bi82dl1ci1ygb" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/_bones/bone_A.tscn" id="27_nbsqm"]
+[ext_resource type="PackedScene" uid="uid://p0h8ytkf8bai" path="res://Assets/env/_myVeggies/ivyGround_2.fbx" id="28_nbsqm"]
+[ext_resource type="PackedScene" uid="uid://ceolwuxw83bo5" path="res://Assets/env/_myVeggies/ivyCorner_2.fbx" id="29_11fku"]
+[ext_resource type="PackedScene" uid="uid://dffxgagomaeqe" path="res://Assets/env/_myVeggies/ivybush.fbx" id="30_6d0l6"]
+[ext_resource type="PackedScene" uid="uid://gr7aam6spx3n" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/props/keg_decorated.tscn" id="31_1j14m"]
+[ext_resource type="PackedScene" uid="uid://032a0lm65n2s" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/props/shelves.tscn" id="32_htahc"]
+[ext_resource type="PackedScene" uid="uid://bx0lm5lum16xd" path="res://Assets/env/KayKit_DungeonRemastered_1.1_FREE/_Scenes/0_rigidbody/table_long.tscn" id="33_6s50m"]
 [ext_resource type="Script" uid="uid://baoxatbdyxt4" path="res://addons/SimpleDungeons/DungeonGenerator3D.gd" id="58_levil"]
 [ext_resource type="PackedScene" uid="uid://lodnbc1nd75p" path="res://Scenes/rooms/_PDG/allROOM/PDG_Room_001.tscn" id="59_86md2"]
 [ext_resource type="PackedScene" uid="uid://davnllrgfs667" path="res://Scenes/rooms/_PDG/allROOM/PDG_Room_002.tscn" id="60_6mgj5"]
@@ -317,13 +333,108 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.5755, 10.1963)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="DungeonGenerator3D" type="Node3D" parent="SubViewportContainer/SubViewport/myy"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, -83)
 script = ExtResource("58_levil")
 room_scenes = Array[PackedScene]([ExtResource("59_86md2"), ExtResource("60_6mgj5"), ExtResource("61_8cdg1"), ExtResource("62_8hq5e"), ExtResource("63_iph15"), ExtResource("64_wfqt0"), ExtResource("64_wfqt0"), ExtResource("65_2a3n8"), ExtResource("66_s18tj"), ExtResource("67_bwslh"), ExtResource("68_7dr38"), ExtResource("69_v4u7f")])
 corridor_room_scene = ExtResource("18_5237r")
-dungeon_size = Vector3i(70, 1, 70)
+dungeon_size = Vector3i(75, 1, 75)
 voxel_scale = Vector3(4, 4, 4)
+max_retries = 3
 metadata/_custom_type_script = "uid://baoxatbdyxt4"
+
+[node name="DungeonRoom3D" type="Node3D" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 70)
+script = ExtResource("19_i50fy")
+size_in_voxels = Vector3i(10, 1, 9)
+voxel_scale = Vector3(4, 4, 4)
+metadata/_custom_type_script = "uid://eqgp7no52l1i"
+
+[node name="room" type="Node3D" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -2, 18)
+
+[node name="env" type="Marker3D" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room"]
+
+[node name="floor" type="GridMap" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -1)
+mesh_library = ExtResource("20_qmkrs")
+collision_mask = 7
+data = {
+"cells": PackedInt32Array(0, 65535, 655389, 65534, 65535, 655389, 2, 65535, 655389, 65532, 65533, 655389, 4, 65531, 655389, 65530, 65533, 655389, 65530, 65531, 655389, 65530, 65529, 655389, 65530, 65527, 655389, 10, 65527, 655389, 10, 65525, 655389, 10, 65523, 655389, 10, 65521, 655389, 8, 65519, 655389, 6, 65519, 655389, 4, 65519, 655389, 2, 65519, 655389, 0, 65519, 655389, 65534, 65519, 655389, 65532, 65521, 655389, 65530, 65522, 655389, 65530, 65524, 655389, 65528, 65531, 655389, 65528, 65529, 655389, 65528, 65527, 655389, 65528, 65525, 655389, 65528, 65524, 655389, 65534, 65533, 655389, 0, 65533, 655389, 2, 65533, 655389, 2, 65531, 655389, 0, 65531, 655389, 65534, 65531, 655389, 65532, 65531, 655389, 65532, 65529, 655389, 65532, 65527, 655389, 65530, 65526, 655389, 65532, 65525, 655389, 65532, 65523, 655389, 65534, 65521, 655389, 65534, 65523, 655389, 65534, 65529, 655389, 0, 65529, 655389, 0, 65523, 655389, 0, 65521, 655389, 2, 65521, 655389, 4, 65521, 655389, 6, 65521, 655389, 8, 65521, 655389, 8, 65523, 655389, 8, 65525, 655389, 8, 65527, 655389, 8, 65528, 655389, 6, 65528, 655389, 6, 65526, 655389, 6, 65524, 655389, 6, 65523, 655389, 4, 65523, 655389, 2, 65523, 655389, 2, 65529, 655389, 4, 65529, 655389, 4, 65527, 655389, 4, 65525, 655389, 6, 65529, 29, 8, 65529, 29, 65533, 65528, 37, 5, 65526, 37, 2, 65522, 36, 65535, 65522, 36, 0, 65526, 25, 3, 65525, 29, 3, 65527, 29, 65533, 65527, 29, 65533, 65525, 29)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="walls" type="GridMap" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -1)
+mesh_library = ExtResource("20_qmkrs")
+collision_layer = 2
+collision_mask = 7
+data = {
+"cells": PackedInt32Array(65527, 65525, 1048647, 11, 65523, 1048647, 0, 0, 72, 3, 65533, 1441854, 2, 0, 655442, 65534, 0, 655429, 65533, 65535, 1441869, 65532, 65534, 655429, 65530, 65534, 655429, 65529, 65533, 1441874, 65528, 65532, 655442, 3, 65535, 1048658, 4, 65532, 82, 5, 65531, 1441874, 6, 65530, 655429, 8, 65530, 655429, 65527, 65531, 1048645, 65527, 65529, 1048635, 65527, 65527, 1048635, 65527, 65523, 1048641, 65529, 65523, 1441857, 65529, 65521, 1048641, 65531, 65521, 1441857, 65531, 65520, 1048641, 65533, 65520, 1441857, 65533, 65518, 1048641, 65535, 65518, 69, 1, 65518, 69, 4, 65518, 69, 2, 65518, 79, 6, 65518, 655431, 8, 65518, 59, 9, 65519, 1441851, 10, 65520, 655419, 11, 65521, 1048635, 11, 65527, 1048635, 11, 65525, 1048635, 9, 65528, 1048641, 9, 65530, 1441857, 11, 65528, 1441857, 11, 65520, 68, 9, 65518, 68, 9, 65520, 655428, 0, 65526, 43, 65529, 65534, 655428, 65527, 65532, 655428, 65529, 65532, 68, 65533, 65534, 67, 65533, 0, 655427, 3, 0, 1441860, 3, 65532, 1048644, 5, 65532, 1441860, 5, 65530, 1048644, 3, 65518, 655429)
+}
+
+[node name="props" type="Marker3D" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env"]
+
+[node name="box_large" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env/props" instance=ExtResource("21_2a2g8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.825096, 0, -23)
+
+[node name="box_small" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env/props" instance=ExtResource("22_i31he")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.107395, 0, -21.753262)
+
+[node name="barrel_large" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env/props" instance=ExtResource("23_rnnj1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.696236, 0, -34.615147)
+
+[node name="keg_decorated" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env/props" instance=ExtResource("31_1j14m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.589725, 0, -28.46775)
+
+[node name="shelves" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env/props" instance=ExtResource("32_htahc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0103273, -0.051648617, -31.948315)
+
+[node name="box_large_col" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env/props" instance=ExtResource("21_2a2g8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.666377, 0.049984932, -30.362267)
+
+[node name="box_small2" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env/props" instance=ExtResource("22_i31he")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1872835, 0.04998541, -29.009514)
+
+[node name="table_long" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env/props" instance=ExtResource("33_6s50m")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.5060194, 0, -34.634583)
+
+[node name="bone_A" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env/props" instance=ExtResource("27_nbsqm")]
+transform = Transform3D(0.90165144, -0.43246347, 1.890358e-08, 0, -4.371139e-08, -1, 0.43246347, 0.90165144, -3.9412438e-08, -2.4468513, 0.04998541, -33.705963)
+
+[node name="ivyCorner_1" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env/props" instance=ExtResource("24_4b67l")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.516914, 0.18103603, -35.40777)
+
+[node name="ivyWall_1" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env/props" instance=ExtResource("25_1j14m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4144063, 0, -35.65892)
+
+[node name="ivyWall_2" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env/props" instance=ExtResource("26_htahc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.150356, 0.15024626, -31.731377)
+
+[node name="ivyGround_5" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env/props" instance=ExtResource("27_6s50m")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 22.026003, 0.012966633, -29.760864)
+
+[node name="ivyGround_2" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env/props" instance=ExtResource("28_nbsqm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9902995, -0.0030000359, -21.84319)
+
+[node name="ivyCorner_4" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env/props" instance=ExtResource("29_11fku")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -15.509314, 0, -25.73427)
+
+[node name="ivybush" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env/props" instance=ExtResource("30_6d0l6")]
+transform = Transform3D(-0.31160536, 0, 0.95021164, 0, 1, 0, -0.95021164, 0, -0.31160536, -14.786938, 0.04998517, -24.98312)
+
+[node name="door_Container" type="Marker3D" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env"]
+
+[node name="DOOR_FRONT" type="Marker3D" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env/door_Container"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
+
+[node name="DOOR_LEFT" type="Marker3D" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env/door_Container"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 2, -22)
+
+[node name="DOOR_RIGHT" type="Marker3D" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env/door_Container"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 2, -26)
+
+[node name="DOOR_BACK" type="Marker3D" parent="SubViewportContainer/SubViewport/myy/DungeonGenerator3D/DungeonRoom3D/room/env/door_Container"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 2, -36)
 
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
 [connection signal="body_entered" from="killzone" to="GameManager" method="_on_killzone_body_entered"]

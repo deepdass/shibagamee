@@ -1,6 +1,5 @@
 extends Node3D
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
-@onready var rigid: RigidBody3D = $rigid
 
 #@onready var hiteffect : PackedScene = preload("res://Assets/_my/vfx/hiteffects/hiteffect_scene.tscn")
 #@onready var effect : PackedScene = preload("res://Assets/_my/vfx/fire/vfire.tscn")
@@ -46,11 +45,6 @@ func attack_thisenemy(hit) -> void:
 	if hit.has_method("take_damage"):
 		hit.take_damage()
 		#spawn_hiteffect(body)
-	elif !hit.has_method("decrease_health") and hit != rigid:
-			
-		if hit is RigidBody3D:
-			var dir : Vector3 = (hit.global_position - global_position).normalized()
-			hit.apply_impulse(dir * 5000)  # tweak force value
 		
 		#audio_stream_player.stop()
 		#spawn_hiteffect(null)

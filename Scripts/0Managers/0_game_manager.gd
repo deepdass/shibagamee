@@ -22,11 +22,13 @@ var ray_target_pt : Vector3
 
 @onready var panel_2: Panel = $"../UI/Panel2"
 
+@onready var dungeon_generator_3d: DungeonGenerator3D = $"../SubViewportContainer/SubViewport/myy/DungeonGenerator3D"
 
 ########################################
 
 func _init() -> void:
 	randomize()
+	
 
 func  _ready() -> void:
 	pass
@@ -98,7 +100,10 @@ func update_UI() -> void:
 
 func _on_timer_timeout() -> void:  ## kill timeout
 	Engine.time_scale = 1
+	dungeon_generator_3d.cleanup_and_reset_dungeon_generator()
+	dungeon_generator_3d.clear_rooms_container_and_setup_for_next_iteration()
 	get_tree().reload_current_scene()
+	
 
 func won() -> void:
 	player.StatsManager.stats.score += 1
