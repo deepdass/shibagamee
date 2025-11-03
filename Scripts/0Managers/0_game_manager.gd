@@ -20,8 +20,6 @@ var ray_target_pt : Vector3
 @export var hearts : Array[Node]
 @onready var hearts_overload: Label = $"../UI/Panel/heartsOverload"
 
-@onready var panel_2: Panel = $"../UI/Panel2"
-
 @onready var dungeon_generator_3d: DungeonGenerator3D = $"../SubViewportContainer/SubViewport/myy/DungeonGenerator3D"
 
 ########################################
@@ -60,12 +58,12 @@ func _physics_process(delta: float) -> void:
 		#player._rotate(look_at_me)
 
 		
-	if panel_2 != null:
-		panel_2.get_node("score").text = "Score: " + str(player.StatsManager.stats.score)
-		if player.StatsManager.stats.score == 0:
-			panel_2.get_node("tip").visible = true
-		else:
-			panel_2.get_node("tip").visible = false
+	#if panel_2 != null:
+		#panel_2.get_node("score").text = "Score: " + str(player.StatsManager.stats.score)
+		#if player.StatsManager.stats.score == 0:
+			#panel_2.get_node("tip").visible = true
+		#else:
+			#panel_2.get_node("tip").visible = false
 		
 
 func shakeCamera(duration :float, strength: float) -> void:
