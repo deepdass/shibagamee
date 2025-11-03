@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://hyvvetgvs1hg"
 path.s3tc="res://.godot/imported/elip.png-e9e0cfdda3fd988da45dc57883a7f632.s3tc.ctex"
+path.etc2="res://.godot/imported/elip.png-e9e0cfdda3fd988da45dc57883a7f632.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/_my/vfx/powerUp/t/elip.png"
-dest_files=["res://.godot/imported/elip.png-e9e0cfdda3fd988da45dc57883a7f632.s3tc.ctex"]
+dest_files=["res://.godot/imported/elip.png-e9e0cfdda3fd988da45dc57883a7f632.s3tc.ctex", "res://.godot/imported/elip.png-e9e0cfdda3fd988da45dc57883a7f632.etc2.ctex"]
 
 [params]
 

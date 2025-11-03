@@ -2,7 +2,7 @@ extends Marker3D
 
 @export var roomsCount : int 
 
-@onready var portal : PackedScene = preload("res://Scenes/rooms/portal.tscn")
+const portal : PackedScene = preload("res://Scenes/rooms/portal.tscn")
 
 var PortalSpawned : bool = false
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://wdvnwxx1fhrs"
 path.bptc="res://.godot/imported/wandcursor.png-e38b34eb32e8c9a65a63e05f8d1ed092.bptc.ctex"
+path.astc="res://.godot/imported/wandcursor.png-e38b34eb32e8c9a65a63e05f8d1ed092.astc.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/_my/wandcursor.png"
-dest_files=["res://.godot/imported/wandcursor.png-e38b34eb32e8c9a65a63e05f8d1ed092.bptc.ctex"]
+dest_files=["res://.godot/imported/wandcursor.png-e38b34eb32e8c9a65a63e05f8d1ed092.bptc.ctex", "res://.godot/imported/wandcursor.png-e38b34eb32e8c9a65a63e05f8d1ed092.astc.ctex"]
 
 [params]
 

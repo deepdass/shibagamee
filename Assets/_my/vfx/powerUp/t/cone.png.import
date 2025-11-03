@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://vvjk5wb5dsfi"
 path.s3tc="res://.godot/imported/cone.png-30288202f46c6ebb759dda893a9eec1f.s3tc.ctex"
+path.etc2="res://.godot/imported/cone.png-30288202f46c6ebb759dda893a9eec1f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/_my/vfx/powerUp/t/cone.png"
-dest_files=["res://.godot/imported/cone.png-30288202f46c6ebb759dda893a9eec1f.s3tc.ctex"]
+dest_files=["res://.godot/imported/cone.png-30288202f46c6ebb759dda893a9eec1f.s3tc.ctex", "res://.godot/imported/cone.png-30288202f46c6ebb759dda893a9eec1f.etc2.ctex"]
 
 [params]
 

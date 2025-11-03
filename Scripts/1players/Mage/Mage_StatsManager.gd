@@ -1,7 +1,7 @@
 extends Node
 
 @onready var stats : Stats
-var RES : Resource = load("res://Res/character/RES_mage.tres")
+const RES : Resource = preload("res://Res/character/RES_mage.tres")
 
 @onready var player : CharacterBody3D = get_parent().get_parent().get_parent()
 
@@ -9,10 +9,10 @@ var can_crit : bool = false
 
 
 ## attack basic
-@onready var baiscprojectile : PackedScene = preload("res://Scenes/zidk/mage_projectile.tscn")
-@onready var spattackscene : PackedScene = preload("res://Assets/_my/spells/beam/beamSpell.tscn")
+const baiscprojectile : PackedScene = preload("res://Scenes/zidk/mage_projectile.tscn")
+const spattackscene : PackedScene = preload("res://Assets/_my/spells/beam/beamSpell.tscn")
 @onready var fireposnode: Node3D = $"../fireposnode"
-@export var milli_per_shots : int = 800
+const milli_per_shots : int = 800
 
 var nearestEnemy : CharacterBody3D 
 var nearestEnemy_distance : float = INF

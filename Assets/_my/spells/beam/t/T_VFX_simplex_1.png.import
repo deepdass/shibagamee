@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ip7ukrmyaby"
 path.s3tc="res://.godot/imported/T_VFX_simplex_1.png-6855e0ab7654562b1dcd33dd8f2e05d6.s3tc.ctex"
+path.etc2="res://.godot/imported/T_VFX_simplex_1.png-6855e0ab7654562b1dcd33dd8f2e05d6.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/_my/spells/beam/t/T_VFX_simplex_1.png"
-dest_files=["res://.godot/imported/T_VFX_simplex_1.png-6855e0ab7654562b1dcd33dd8f2e05d6.s3tc.ctex"]
+dest_files=["res://.godot/imported/T_VFX_simplex_1.png-6855e0ab7654562b1dcd33dd8f2e05d6.s3tc.ctex", "res://.godot/imported/T_VFX_simplex_1.png-6855e0ab7654562b1dcd33dd8f2e05d6.etc2.ctex"]
 
 [params]
 

@@ -1,11 +1,11 @@
 extends Node
 
-var power_up_Chest : PackedScene = preload("res://Scenes/powerUPs/PowerUp_chest.tscn")
+const power_up_Chest : PackedScene = preload("res://Scenes/powerUPs/PowerUp_chest.tscn")
 
 var player : CharacterBody3D = null
 @onready var player_path : String = "/root/World/SubViewportContainer/SubViewport/myy/per/Player"
 
-var enemySCENEs : Dictionary = {"minion" : preload("res://Scenes/characters/enemy/skeleton_minion.tscn"),
+const enemySCENEs : Dictionary = {"minion" : preload("res://Scenes/characters/enemy/skeleton_minion.tscn"),
  								"rogue" : preload("res://Scenes/characters/enemy/skeleton_rogue.tscn")
 								}
 

@@ -1,10 +1,10 @@
 extends Node3D
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
-@onready var hiteffect : PackedScene = preload("res://Assets/_my/vfx/hiteffects/hiteffect_scene.tscn")
-@onready var effect : PackedScene = preload("res://Assets/_my/vfx/fire/vfire.tscn")
+const hiteffect : PackedScene = preload("res://Assets/_my/vfx/hiteffects/hiteffect_scene.tscn")
+const effect : PackedScene = preload("res://Assets/_my/vfx/fire/vfire.tscn")
 
-var projectile_speed : int = 15
+const projectile_speed : int = 15
 var forward_direction : Vector3
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

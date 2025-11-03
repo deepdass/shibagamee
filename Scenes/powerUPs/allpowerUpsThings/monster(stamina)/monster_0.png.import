@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://diq3cw5tnxo0v"
 path.s3tc="res://.godot/imported/monster_0.png-bb2544b0a5dfc319cc829f0f77a7b7a9.s3tc.ctex"
+path.etc2="res://.godot/imported/monster_0.png-bb2544b0a5dfc319cc829f0f77a7b7a9.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Scenes/powerUPs/allpowerUpsThings/monster(stamina)/monster_0.png"
-dest_files=["res://.godot/imported/monster_0.png-bb2544b0a5dfc319cc829f0f77a7b7a9.s3tc.ctex"]
+dest_files=["res://.godot/imported/monster_0.png-bb2544b0a5dfc319cc829f0f77a7b7a9.s3tc.ctex", "res://.godot/imported/monster_0.png-bb2544b0a5dfc319cc829f0f77a7b7a9.etc2.ctex"]
 
 [params]
 

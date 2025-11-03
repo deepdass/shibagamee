@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmfnabew7mvoh"
 path.s3tc="res://.godot/imported/wave.png-456ad18388c3de2e087fbc9e85a71089.s3tc.ctex"
+path.etc2="res://.godot/imported/wave.png-456ad18388c3de2e087fbc9e85a71089.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/_my/vfx/powerUp/t/wave.png"
-dest_files=["res://.godot/imported/wave.png-456ad18388c3de2e087fbc9e85a71089.s3tc.ctex"]
+dest_files=["res://.godot/imported/wave.png-456ad18388c3de2e087fbc9e85a71089.s3tc.ctex", "res://.godot/imported/wave.png-456ad18388c3de2e087fbc9e85a71089.etc2.ctex"]
 
 [params]
 

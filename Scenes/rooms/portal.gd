@@ -1,7 +1,6 @@
 extends Node3D
 
 var gameMangager : Node = null
-@onready var gamemanagerPath : String = "/root/World/GameManager"
 
 func _ready() -> void:
 	gameMangager = get_node("/root/World/GameManager")

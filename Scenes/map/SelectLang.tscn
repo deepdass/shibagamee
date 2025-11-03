@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://eoy4lpxae2h7"]
+[gd_scene load_steps=4 format=3 uid="uid://eoy4lpxae2h7"]
+
+[ext_resource type="FontFile" uid="uid://b1ey7xrx4o1hp" path="res://Assets/UI/MPLUSRounded1c-Medium.ttf" id="1_2dq6f"]
 
 [sub_resource type="GDScript" id="GDScript_68elg"]
 script/source = "extends Control
@@ -46,6 +48,7 @@ offset_right = 540.0
 offset_bottom = 303.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_2dq6f")
 theme_override_font_sizes/font_size = 250
 text = "ENGLISH"
 
@@ -62,6 +65,7 @@ offset_right = 540.0
 offset_bottom = 680.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_2dq6f")
 theme_override_font_sizes/font_size = 250
 text = "日本語"
 
@@ -75,9 +79,11 @@ offset_top = 223.0
 offset_right = 1248.0
 offset_bottom = 635.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 300
+theme_override_fonts/font = ExtResource("1_2dq6f")
+theme_override_font_sizes/font_size = 320
 text = "LANGUAGE / 言語"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="eng" to="." method="_on_eng_pressed"]
 [connection signal="pressed" from="jap" to="." method="_on_jap_pressed"]

@@ -1,11 +1,9 @@
 extends Node3D
 
-var projectile_speed : int = 15
-var timer:int = 0
-
+const projectile_speed : int = 13
 var forward_direction : Vector3
 
-var KnockbackMul : int = 30
+const KnockbackMul : int = 30
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:

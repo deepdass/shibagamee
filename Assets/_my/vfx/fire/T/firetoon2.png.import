@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d25m0ytbcamuj"
 path.s3tc="res://.godot/imported/firetoon2.png-5d9119d15f6ee1fd174c9100abbb1bc9.s3tc.ctex"
+path.etc2="res://.godot/imported/firetoon2.png-5d9119d15f6ee1fd174c9100abbb1bc9.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/_my/vfx/fire/T/firetoon2.png"
-dest_files=["res://.godot/imported/firetoon2.png-5d9119d15f6ee1fd174c9100abbb1bc9.s3tc.ctex"]
+dest_files=["res://.godot/imported/firetoon2.png-5d9119d15f6ee1fd174c9100abbb1bc9.s3tc.ctex", "res://.godot/imported/firetoon2.png-5d9119d15f6ee1fd174c9100abbb1bc9.etc2.ctex"]
 
 [params]
 

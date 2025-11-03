@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bw2bj864j8q8d"
 path.s3tc="res://.godot/imported/magic_portal_3.png-d96321433611eeb2369dce367e84a09b.s3tc.ctex"
+path.etc2="res://.godot/imported/magic_portal_3.png-d96321433611eeb2369dce367e84a09b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Scenes/rooms/magic_portal_3.png"
-dest_files=["res://.godot/imported/magic_portal_3.png-d96321433611eeb2369dce367e84a09b.s3tc.ctex"]
+dest_files=["res://.godot/imported/magic_portal_3.png-d96321433611eeb2369dce367e84a09b.s3tc.ctex", "res://.godot/imported/magic_portal_3.png-d96321433611eeb2369dce367e84a09b.etc2.ctex"]
 
 [params]
 

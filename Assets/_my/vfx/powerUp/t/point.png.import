@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvikh2ru2phm"
 path.s3tc="res://.godot/imported/point.png-4ebd869247b59216493fec10ac4a19f4.s3tc.ctex"
+path.etc2="res://.godot/imported/point.png-4ebd869247b59216493fec10ac4a19f4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/_my/vfx/powerUp/t/point.png"
-dest_files=["res://.godot/imported/point.png-4ebd869247b59216493fec10ac4a19f4.s3tc.ctex"]
+dest_files=["res://.godot/imported/point.png-4ebd869247b59216493fec10ac4a19f4.s3tc.ctex", "res://.godot/imported/point.png-4ebd869247b59216493fec10ac4a19f4.etc2.ctex"]
 
 [params]
 

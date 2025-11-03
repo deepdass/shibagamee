@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bh6a64ar8vun0"
 path.s3tc="res://.godot/imported/T_VFX_Ex1d.jpg-51d54cfb9204649d485bab789515ea64.s3tc.ctex"
+path.etc2="res://.godot/imported/T_VFX_Ex1d.jpg-51d54cfb9204649d485bab789515ea64.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/_my/vfx/hiteffects/t/T_VFX_Ex1d.jpg"
-dest_files=["res://.godot/imported/T_VFX_Ex1d.jpg-51d54cfb9204649d485bab789515ea64.s3tc.ctex"]
+dest_files=["res://.godot/imported/T_VFX_Ex1d.jpg-51d54cfb9204649d485bab789515ea64.s3tc.ctex", "res://.godot/imported/T_VFX_Ex1d.jpg-51d54cfb9204649d485bab789515ea64.etc2.ctex"]
 
 [params]
 
