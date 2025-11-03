@@ -23,11 +23,11 @@ func _on_b_play_pressed() -> void:
 
 func _on_pdg_pressed() -> void:
 	Global.which_scene = PDG_underworld
-	get_tree().change_scene_to_file(overworld)
+	Global.loadscreen(overworld)
 
 func _on_handcraft_pressed() -> void:
 	Global.which_scene = underworld
-	get_tree().change_scene_to_file(overworld)
+	Global.loadscreen(overworld)
 
 func _on_back_pressed() -> void:
 	play_panel.visible = false
@@ -44,4 +44,4 @@ func _on_b_option_pressed() -> void:
 
 
 func _on_changelang_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/map/SelectLang.tscn")
+	Global.loadscreen("res://Scenes/map/SelectLang.tscn")

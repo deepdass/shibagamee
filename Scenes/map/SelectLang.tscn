@@ -7,11 +7,12 @@ const engmenu : String = \"res://Scenes/map/mainmenueng.tscn\"
 const japmenu : String = \"res://Scenes/map/mainmenujap.tscn\"
 
 func _on_eng_pressed() -> void:
-	get_tree().change_scene_to_file(engmenu)
-
+	Global.which_loading_screen = \"res://Scenes/map/LoadingScreeneng.tscn\"
+	Global.loadscreen(engmenu)
 
 func _on_jap_pressed() -> void:
-	get_tree().change_scene_to_file(japmenu)
+	Global.which_loading_screen = \"res://Scenes/map/LoadingScreenjap.tscn\"
+	Global.loadscreen(japmenu)
 "
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_68elg"]

@@ -34,7 +34,6 @@ func  _ready() -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
-	print(Engine.get_frames_per_second())
 	#####print(sub_viewport.get_camera_3d().unproject_position(player.global_position))
 	##
 	camera_rig.position = lerp(camera_rig.position,player.position,0.13)
@@ -104,7 +103,7 @@ func _on_timer_timeout() -> void:  ## kill timeout
 	if dungeon_generator_3d:
 		dungeon_generator_3d.cleanup_and_reset_dungeon_generator()
 		dungeon_generator_3d.clear_rooms_container_and_setup_for_next_iteration()
-	get_tree().reload_current_scene()
+	Global.loadscreen(get_tree().current_scene.scene_file_path)
 	
 
 func won() -> void:
@@ -113,11 +112,11 @@ func won() -> void:
 	Engine.time_scale = 0.3
 	await get_tree().create_timer(0.1).timeout
 	Engine.time_scale = 1
-	get_tree().reload_current_scene()
+	Global.loadscreen(get_tree().current_scene.scene_file_path)
 
 func _on_area_3d_body_entered(body: Node3D) -> void: ##inside crypt
 	if body == player:
-		get_tree().change_scene_to_file(Global.which_scene)
+		Global.loadscreen(Global.which_scene)
 
 
 func _on_killzone_body_entered(body: Node3D) -> void:

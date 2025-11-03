@@ -219,7 +219,7 @@ stretch_shrink = 2
 
 [node name="SubViewport" type="SubViewport" parent="UI/miniMap/SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(2, 2)
+size = Vector2i(200, 200)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="UI/miniMap/SubViewportContainer/SubViewport"]
@@ -530,6 +530,10 @@ libraries = {
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0128989, -2.84387, 0.812118)
 mesh = SubResource("ArrayMesh_iog33")
 skeleton = NodePath("")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 2.12132, 2.12132, 0, -2.12132, 2.12132, 8.54325, 3.21722, 6.73366)
+text = "Head inside the crypt"
 
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
 [connection signal="body_entered" from="killzone" to="GameManager" method="_on_killzone_body_entered"]
