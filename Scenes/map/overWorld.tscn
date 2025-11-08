@@ -387,6 +387,7 @@ shape = SubResource("BoxShape3D_h2kxg")
 [node name="OmniLight3D" type="OmniLight3D" parent="SubViewportContainer/SubViewport/myy/env/post_lantern2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.98804, 1.00336)
 light_color = Color(1.2742168, 1.2742168, 0.9366262, 1)
+light_energy = 0.6
 
 [node name="tree_dead_large_decorated2" parent="SubViewportContainer/SubViewport/myy/env" instance=ExtResource("16_mh7yw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.736984, 1, -15)
