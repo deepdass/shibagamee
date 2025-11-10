@@ -35,40 +35,6 @@ offset_right = 3840.0
 offset_bottom = 2160.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_68elg")
 
-[node name="eng" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -540.0
-offset_top = -47.0
-offset_right = 540.0
-offset_bottom = 303.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_2dq6f")
-theme_override_font_sizes/font_size = 250
-text = "ENGLISH"
-
-[node name="jap" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -540.0
-offset_top = 330.0
-offset_right = 540.0
-offset_bottom = 680.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_2dq6f")
-theme_override_font_sizes/font_size = 250
-text = "日本語"
-
 [node name="title" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
@@ -85,5 +51,24 @@ text = "LANGUAGE / 言語"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="eng" to="." method="_on_eng_pressed"]
-[connection signal="pressed" from="jap" to="." method="_on_jap_pressed"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1388.0
+offset_top = 883.0
+offset_right = 2437.0
+offset_bottom = 1601.0
+
+[node name="eng" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_2dq6f")
+theme_override_font_sizes/font_size = 250
+text = "ENGLISH"
+
+[node name="jap" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_2dq6f")
+theme_override_font_sizes/font_size = 250
+text = "日本語"
+
+[connection signal="pressed" from="VBoxContainer/eng" to="." method="_on_eng_pressed"]
+[connection signal="pressed" from="VBoxContainer/jap" to="." method="_on_jap_pressed"]
