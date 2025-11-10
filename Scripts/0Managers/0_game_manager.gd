@@ -32,6 +32,11 @@ func  _ready() -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
+	
+	if Input.is_action_just_pressed("menuu"):
+		Global.loadscreen("res://Scenes/map/SelectLang.tscn")
+
+	
 	#####print(sub_viewport.get_camera_3d().unproject_position(player.global_position))
 	##
 	camera_rig.position = lerp(camera_rig.position,player.position,0.13)
