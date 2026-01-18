@@ -3,6 +3,7 @@ extends CanvasLayer
 var next_scene_path : String
 
 func _ready() -> void:
+	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 	ResourceLoader.load_threaded_request(next_scene_path)
 
 func _process(_delta: float) -> void:

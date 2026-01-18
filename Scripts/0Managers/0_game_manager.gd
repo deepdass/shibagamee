@@ -26,6 +26,7 @@ var ray_target_pt : Vector3
 
 func _init() -> void:
 	randomize()
+	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
 	
 
 func  _ready() -> void:
