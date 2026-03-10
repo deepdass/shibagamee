@@ -1,9 +1,11 @@
 # SkullWard
-SkullWard is a 3D pixel-style Dungeon Crawler with procedural dungeon generation made using Godot. You play as a mage with powerful spells to cast, exploring dangerous dungeons beneath the crypt.
+Skullward is a 3D pixelated dungeon crawler, kind of a twist on the usual 2D top down ones. I wanted to make a cute arcadey game, with powerups that focus more on mechanics rather than just stats(but i haven't added those yet) I love roguelikes and always wanted to build one, so I just started building and added whatever came to my mind and seemed fun.
 
 The game was made for HackClub Shiba, a teenager hackathon where we made our own game over the 2 months and showcased it at a handmade arcade in Tokyo, Japan with our own physical arcade cabinet. We also got great feedback and used it to improve our games.
 
 btw the game should be very performant as it can run on a Raspberry Pi 
+
+whats next - add more spells that the mage can cast that focuses more on mechanics than just visuals and maybe a mod system so the player can make there own spell but idk how it will change the pacing as i dont want the player to be only in the menues so it will be like how it is in Far Gone Frontier - https://www.youtube.com/watch?v=e650-iuU_oM 
 
 credits-
 https://kaylousberg.itch.io/kaykit-skeletons
