@@ -8,6 +8,7 @@ btw the game should be very performant as it can run on a Raspberry Pi
 whats next - add more spells that the mage can cast that focuses more on mechanics than just visuals and maybe a mod system so the player can make there own spell but idk how it will change the pacing as i dont want the player to be only in the menues so it will be like how it is in Far Gone Frontier - https://www.youtube.com/watch?v=e650-iuU_oM 
 
 credits-
+
 https://kaylousberg.itch.io/kaykit-skeletons
 
 https://kaylousberg.itch.io/kaykit-dungeon-remastered
