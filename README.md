@@ -21,6 +21,7 @@ https://kaylousberg.itch.io/kaykit-adventurers
 
 Mission to planet Volx by Victor_Natas -- https://freesound.org/s/731791/ -- License: Attribution 4.0
 
+do see the demo vid in the repo for gameplay - https://github.com/deepdass/shibagamee/blob/fed33b8cfe0e0d8d64fa7df2e490d955802739e1/Skullward-%20Demo_vid.mp4
 
 ![image alt](https://github.com/deepdass/shibagamee/blob/446a9780f33dc9d03b729028c521e0586c39ccdd/readme_images/Screenshot%202026-01-17%20010749.png)
 
