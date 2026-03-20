@@ -18,6 +18,7 @@ btw the game should be very performant as it can run on a Raspberry Pi
 - I learned a lot about what goes in making a good roguelike 
 - Optimizing performance for low-power hardware like Raspberry Pi 
 - Iterating based on player feedback
+- Importance of sharing and tracking progress 
 - learned a lot about godot
 
 ## Whats next 
