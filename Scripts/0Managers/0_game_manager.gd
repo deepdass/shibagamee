@@ -119,7 +119,9 @@ func won() -> void:
 	Global.loadscreen(get_tree().current_scene.scene_file_path)
 
 func _on_area_3d_body_entered(body: Node3D) -> void: ##inside crypt
-	if body == player:
+	if !Global.which_scene:
+		Global.loadscreen("res://Scenes/map/PDG_underWorld.tscn")
+	elif body == player:
 		Global.loadscreen(Global.which_scene)
 
 
